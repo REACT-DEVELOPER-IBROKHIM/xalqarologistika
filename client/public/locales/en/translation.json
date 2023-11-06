@@ -1,0 +1,147 @@
+{
+    "nav": {
+        "home": "Home",
+        "admin": "Admin",
+        "work_hours" : "Mon - Sun",
+        "email" : "Email",
+        "tel" : "Tel",
+        "all" : "All days"
+    },
+    "hero": { 
+        "title": "Become a Certified Professional!",
+        "description": "Unlock your potential with our expert driver training services. The center where you can get your professional, reliable certificate",
+        "check_btn" : "Check your certificate",
+        "get_btn" : "Get your certificate with us",
+        "input_placeholder" : "Certificate number",
+        "view_btn" : "View full certificate"
+    },
+    "whatWeDo": {
+        "subtitle" : "what we offer",
+        "title": "Safe and Reliable Certificates",
+        "services": [
+            {
+                "title": "Driver Certificate Training",
+                "description": "Become a skilled, safe driver."
+              },
+              {
+                "title": "ADR Certificate Training",
+                "description": "Hone your skills for transporting dangerous goods."
+              },
+              {
+                "title": "ADR TANK Certificate Training",
+                "description": "Specialize in the transportation of hazardous materials in tanks."
+              },
+              {
+                "title": "Manager Certificate Training",
+                "description": "Learn to manage and lead in the transportation industry."
+              }
+        ]
+    },
+   
+    "meet":{
+      "subtitle": "The Transporters",
+      "title": "Meet Expert Team",
+      "main_director":"CEO",
+      "director":"Director",
+      "engineer":"Lead Engineer"
+    },
+    "contact":{
+      "subtitle": "Contact",
+      "title": "Get in touch with us",
+      "description": "Leverage agile frameworks to provide a robust synopsis for strategy foster collaborative thinking to further the overall value.",
+      "contact_email": "Email",
+      "contact_number": "Call Us",
+      "work_day": "Mon - Sun 9.00 - 18.00",
+      "day_off": "Sunday closed",
+      "input_name": "Your name*",
+      "input_number": "Phone Mumber*",
+      "input_email": "Email*",
+      "input_city": "City*",
+      "input_message": "Your Message",
+      "submit_btn": "SUBMIT MESSAGE"
+    },
+    "footer":{
+      "description": "Leverage agile frameworks to provide a robust synopsis for strategy foster collaborative thinking to further the overall value.",
+      "contact_email": "Email",
+      "contact_number": "Call Us",
+      "input_email": "Email Here",
+      "about": "About Us",
+      "team": "Our Team",
+      "project":"Our Project",  
+      "pricing": "Pricing",
+      "contact": "Contact",
+      "style_guide": "Style Guide",
+      "changelog": "Changelog",
+      "license": "Licenses",
+      "protect": "Protected",
+      "send_btn": "SEND NOW",
+      "send_email": "Email here*",
+      "copyright": "Copyright",
+      "password": "Password"
+    },
+    "status" : {
+      "success" : "Successfully processed!",
+      "error" : "An error occurred!",
+      "pending" : "Loading...Please wait!"
+  },
+    "utils" : {
+      "loading" : "Loading..."
+    },
+   "login": {
+    "title": "Login",
+    "name": "Username",
+    "password": "Password"
+  },
+  "services": {
+    "create": "Create certificate",
+    "manage": "Manage certificate",
+    "analytics": "Analytics"
+  },
+  "create": {
+    "title": "Create",
+    "firstname": "Firstname",
+    "validname": "Please, enter a valid name",
+    "surname": "Surname",
+    "validsurname": "Please, enter a valid lastname",
+    "middlename": "Middlename",
+    "validmiddlename": "Please, enter a middlename",
+    "certificate-type": "Certificate type",
+    "select": "Select certificate type",
+    "driver-certificate": "Certificate",
+    "driver-manager-certificate": "Manager",
+    "driver-adr-certificate": "ADR",
+    "driver-adr-tank-certificate": "ADR Tank",
+    "validselect": "Please, select certificate type",
+    "validdate": "Please, enter a valid date",
+    "birthdate": "Birth date",
+    "issuedate": "Issue date",
+    "todate": "Expiration date",
+    "vyubtn": "View",
+    "savebtn": "Save",
+    "printbtn": "Print",
+    "clearbtn": "Clear",
+    "logoutbtn": "Log out",
+    "logoutmodal-title": "Log out?",
+    "logoutmodal-text": "Are you sure you want to log out?"
+  },
+  "manage": {
+    "title": "Manage Certificates"
+  },
+  "analytics": {
+    "title": "Analytics"
+  },
+  "setrificatetable": {
+    "first-error": "No certificates found or something went wrong",
+    "second-error": "We could not find any certificates",
+    "searchinp": "Search certificate by ID or Name",
+    "userid": "ID",
+    "userfullname": "F.L.M",
+    "userdate": "DATE",
+    "userdownload": "DOWNLOAD",
+    "useredit": "EDIT",
+    "userdelete": "DELETE",
+    "undefinedtext": "Not available",
+    "deleteserificate-title": "Delete this certificate?",
+    "deleteserificate-text": "Are you sure you want to delete this certificate?"
+  }
+}

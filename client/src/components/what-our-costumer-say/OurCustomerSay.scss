@@ -1,0 +1,361 @@
+
+.our-customer-container{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+
+.our-customer-say{
+    padding: 100px 0;
+    >.our-customer-container{
+        >.our-customer-say-main-div{
+            position: relative;
+            >.our-customer-say-nav{
+                display: flex;
+                >p{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border-left: 4px solid rgb(255,217,99);
+                    background: rgba(232, 232, 232, 0.50);
+                    color: #1C1F35;
+                    font-family: "Rubik", sans-serif;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    padding: 0 9px;
+                }
+                padding: 40px 0;
+                >h2{
+                    color: #1C1F35;
+                    font-family: "Rubik", sans-serif;
+                    font-size: 35px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    flex: 1;
+                }
+                :nth-child(3){
+                    background-color: rgb(255,217,99);
+                }
+                :nth-child(4){
+                    background-color: #091242;
+                    color: #fff;
+                    margin-left: 10px;
+                }
+                >button{
+                    padding-top: 13px;
+                    padding-bottom: 6px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    
+                    font-size: 20px;
+                    border: none;
+                    border-radius: 50%;
+                }
+            }
+            >.our-customer-say-body{
+                display: flex;
+                overflow-x: hidden;
+                >.customer-say-card:nth-child(even){
+                    display: flex;
+                    flex-direction: column;
+                    padding: 62px 72px;
+                    min-width: 50%;
+                    width: 100%;                    
+                    gap: 24px 0;
+                    background-color: #091242;
+                    >.customer-title{
+                        display: flex;
+                        gap: 0 10px;
+                        >img{
+                            border-radius: 50%;
+                            width: 91px;
+                            aspect-ratio: 1/1;
+                        }
+                        >.customer-info{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px 0;
+                            justify-content: center;
+                            flex: 1;
+                            >h3{
+                                color: #FFF;
+                                font-family: "Rubik", sans-serif;
+                                font-size: 20px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: normal;
+                            }
+                            >p{
+                                color: #fff;
+                                font-family: "Krub", sans-serif;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 151.523%;
+                            }
+                        }
+                        
+                    }
+                    >p{
+                        color: #fff;
+                        font-family: "Krub", sans-serif;
+                        font-size: 16px;
+                        font-style: italic;
+                        font-weight: 500;
+                        line-height: 151.523%;
+                    }
+                    >.rating{
+                        display: flex;
+                        font-size: 34px;
+                        padding-top: 8px;
+                        color: #FDAF3B;
+                    }
+                }
+                >.customer-say-card:nth-child(odd){
+                    display: flex;
+                    flex-direction: column;
+                    padding: 62px 72px;
+                    min-width: 50%;
+                    width: 100%;                    
+                    gap: 24px 0;
+                    >.customer-title{
+                        display: flex;
+                        gap: 0 10px;
+                        >img{
+                            border-radius: 50%;
+                            width: 91px;
+                            aspect-ratio: 1/1;
+                        }
+                        >.customer-info{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px 0;
+                            justify-content: center;
+                            flex: 1;
+                            >h3{
+                                color: #091242;
+                                font-family: "Rubik", sans-serif;
+                                font-size: 20px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: normal;
+                            }
+                            >p{
+                                color: #091242;
+                                font-family: "Krub", sans-serif;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 151.523%;
+                            }
+                        }
+                        
+                    }
+                    >p{
+                        color: #666C89;
+                        font-family: "Krub", sans-serif;
+                        font-size: 16px;
+                        font-style: italic;
+                        font-weight: 500;
+                        line-height: 151.523%;
+                    }
+                    >.rating{
+                        display: flex;
+                        font-size: 34px;
+                        padding-top: 8px;
+                        color: #FDAF3B;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+.customer-say-card:nth-child(odd){
+    background-color: #fff;
+    color: #000;
+}
+
+@media screen and (max-width: 1000px) {
+    .our-customer-say{
+        >.our-customer-container{
+            >.our-customer-say-main-div{
+                >.our-customer-say-body{
+                    
+                    >.customer-say-card:nth-child(even){                        
+                        padding: 42px 52px;                        
+                        >.customer-title{                            
+                            >img{
+                                width: 81px;
+                                aspect-ratio: 1/1;
+                            }
+                            >.customer-info{                                
+                                >h3{
+                                    font-size: 16px;
+                                }                            
+                            }
+                            
+                        }
+                        >p{
+                            font-size: 14px;
+                        }
+                        
+                    }
+                    >.customer-say-card:nth-child(odd){
+                        >.customer-title{                            
+                            >img{
+                                width: 81px;
+                                aspect-ratio: 1/1;
+                            }
+                            >.customer-info{
+                                
+                                >h3{
+                                    font-size: 16px;
+                                }
+                                
+                            }
+                            
+                        }
+                        >p{
+                            font-size: 14px;
+                        }
+                        
+                    }
+                }
+            }
+    
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .our-customer-say{
+        >.our-customer-container{
+            >.our-customer-say-main-div{
+                >.our-customer-say-body{                    
+                    >.customer-say-card:nth-child(even){                        
+                        padding: 72px 92px;
+                        min-width: 100%;
+                        >.customer-title{                            
+                            >img{
+                                width: 81px;
+                                aspect-ratio: 1/1;
+                            }
+                            >.customer-info{                                
+                                >h3{
+                                    font-size: 16px;
+                                }                            
+                            }
+                            
+                        }
+                        >p{
+                            font-size: 14px;
+                        }
+                        
+                    }
+                    >.customer-say-card:nth-child(odd){
+                        padding: 72px 92px;
+                        min-width: 100%;
+                        >.customer-title{                            
+                            >img{
+                                width: 81px;
+                                aspect-ratio: 1/1;
+                            }
+                            >.customer-info{
+                                
+                                >h3{
+                                    font-size: 16px;
+                                }
+                                
+                            }
+                            
+                        }
+                        >p{
+                            font-size: 14px;
+                        }
+                        
+                    }
+                }
+            }
+    
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 553px){
+    .our-customer-say{
+        >.our-customer-container{
+            >.our-customer-say-main-div{
+                >.our-customer-say-nav{                    
+                    >h2{                        
+                        font-size: 25px;                        
+                    }                   
+                }            
+            }
+    
+        }
+    }
+}
+@media screen and (max-width: 438px){
+    .our-customer-say{
+        padding: 100px 0;
+        >.our-customer-container{
+            >.our-customer-say-main-div{
+                >.our-customer-say-nav{                   
+                    >h2{
+                        font-size: 20px;
+                    }
+                    >button{
+                        padding-top: 7px;
+                        padding-bottom: 0px;
+                        padding-left: 9px;
+                        padding-right: 9px;                        
+                        font-size: 20px;
+                        border: none;
+                        border-radius: 50%;
+                    }
+                }
+                >.our-customer-say-body{
+                    
+                    >.customer-say-card:nth-child(even){
+                        
+                        >.customer-title{
+                            
+                            >.addintional{
+                                display: none;
+                            }                           
+                            
+                        }
+                        
+                    }
+                    >.customer-say-card:nth-child(odd){
+                        
+                        >.customer-title{                          
+                            
+                            >.addintional{
+                                display: none;
+                            }                          
+                        }                        
+                    }
+                }
+                
+            }
+    
+        }
+    }
+}

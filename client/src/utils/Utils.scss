@@ -1,0 +1,290 @@
+
+// CONTAINER
+.container{
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+    padding: 0 20px;
+}
+
+// ADDRESS
+
+.address-item{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    img{
+        height: 100%;
+    }
+
+    &__text{
+        margin-left: 14px;
+    }
+}
+
+
+// BUTTON
+
+@mixin button($bgcolor, $color: #fff){
+    text-transform: uppercase;
+    background: $bgcolor;
+    color: var(--light-font-color);
+    padding: 16px 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px #353535;
+}
+
+button:disabled{
+  opacity: 0.5;
+}
+
+.button--loading{
+  display: flex;
+  align-items: center;
+}
+
+.primary-button{
+    @include button(var(--btn-gradient));
+    
+    color: #2b2b2b;
+}
+
+.danger-button{
+    @include button(var(--danger-color));
+}
+
+.warning-button{
+    @include button(var(--warning-color));
+}
+
+.info-button{
+  @include button(var(--info-color));
+}
+
+.main-button{
+  @include button(var(--main-bg-color));
+}
+
+.success-button{
+    @include button(var(--success-color));
+}
+
+// ANCHOR
+@mixin anchor($anchor-color: #fff){
+    text-transform: uppercase;
+    color: $anchor-color;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+.anchor--light{
+    @include anchor();
+}
+
+.anchor--dark{
+    @include anchor(#000);
+}
+
+// MAIN LOADING
+$size:1.4em;
+$dotCount:10;
+$animationTime:2.5s;
+
+.peeek-loading{
+	background-color: var(--main-bg-color);
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+}
+.peeek-loading ul{
+	position: absolute;
+	left: calc(50% - 0.7em);
+	top: calc(50% - 4.2em);
+	display: inline-block;
+	text-indent:$size*2;
+}
+.peeek-loading ul li:after,
+.peeek-loading ul:after{
+	width: $size;
+	height: $size;
+	background-color: #fff;
+	border-radius: 100%;
+}
+.peeek-loading ul li:after,
+.peeek-loading ul:after{
+	content:"";
+	display: block;
+}
+.peeek-loading ul:after{
+	position: absolute;
+	top: $size*2;
+}
+.peeek-loading li{
+	position: absolute;
+	padding-bottom: $size*4;
+	top: 0;
+	left: 0;
+}
+
+@for $i from 1 through 10{
+  .peeek-loading li:nth-child(#{$i}){
+	  $deg:($i - 1)*(360deg/$dotCount);
+	  transform: rotate($deg); 
+	  animation-delay: $animationTime*$i/$dotCount/2;
+  }
+  .peeek-loading li:nth-child(#{$i}):after{
+	  animation-delay: $animationTime*$i/$dotCount/2;
+  }
+}
+
+.peeek-loading li{
+  list-style-type: none;
+  animation: dotAnimation $animationTime infinite;
+}
+@keyframes dotAnimation {
+0%, 55%, 100%    { 
+	padding: 0 0 $size*4 0;
+	}
+5%,50%   { 
+	padding: $size*2 0;
+	}
+} 
+
+.peeek-loading li:after{
+  animation: dotAnimationTwo $animationTime infinite;
+}
+@keyframes dotAnimationTwo {
+    0%, 55%, 100%   { 
+      opacity:1;
+      transform: scale(1);
+    }
+    5%,50%  { 
+      opacity: .5;
+      transform: scale(0.5);
+    }
+}
+
+// LOADING
+.loader {
+  margin: 4px 15px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  background: #FFF;
+  box-shadow: -10px 0 #FFF, 10px 0 #FFF;
+  box-sizing: border-box;
+  animation: shadowPulse 2s linear infinite;
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: #FFF;
+    box-shadow: -10px 0 #000, 10px 0 #FFF;
+  }
+  66% {
+    background: #000;
+    box-shadow: -10px 0 #FFF, 10px 0 #FFF;
+  }
+  100% {
+    background: #FFF;
+    box-shadow: -10px 0 #FFF, 10px 0 #000;
+  }
+}
+
+//  SUCCESS
+
+.success-animation { margin:150px auto;}
+
+.checkmark {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #4bb71b;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #4bb71b;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    position:relative;
+    top: 5px;
+    right: 5px;
+   margin: 0 auto;
+}
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #4bb71b;
+    fill: #fff;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+ 
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #4bb71b;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+  .address-item{
+    font-size: 14px;
+    img{
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .address-item{
+    font-size: 12px;
+    img{
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

@@ -1,0 +1,184 @@
+.contact__wrapper {
+    padding: 143px 0;
+    background-color: var(--main-bg-color);
+    color: var(--light-font-color);
+  }
+  
+  .contact__items {
+    display: flex;
+    gap: 58px;
+    justify-content: space-between;
+  }
+  
+  .contact-text{
+      padding: 4px 9px;
+      border-left: 4px solid var(--warning-color);
+      margin-bottom: 13px;
+      display: inline-block;
+      font-family: var(--rubik);
+      font-size: 14px;
+      font-weight: 400;
+      background-color: rgba(232, 232, 232, 0.10);
+  }
+  
+  .contact__item{
+      h2{
+          color: var(--light-font-color);
+          font-family: var(--rubik);
+          font-size: 35px;
+          font-weight: 600;
+      }
+      p{
+          max-width: 353px ;
+          margin-top: 3px;
+      }
+      .form__menu{
+          margin-top: 32px;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          list-style: none;
+          align-items: flex-start;
+      }
+  }
+  
+  #form{
+      max-width: 758px;
+      width: 100%;
+      margin-top: 42px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      div{
+          display: flex;
+          gap: 30px;
+      }
+      input{
+          background-color: transparent;
+          border: 1px solid #4E5683;
+          padding: 21px 0;
+          text-indent: 30px;
+          color: var(--light-font-color);
+          font-family: "League Spartan", sans-serif;
+          font-size: 20px;
+          font-weight: 400;
+          max-width: 365px;
+          width: 100%;
+      }
+      input::placeholder{
+          color: var(--light-font-color);
+      }
+      #form-textarea{
+          background-color: transparent;
+          border: 1px solid #4E5683;
+          padding-top: 20px;
+          padding-left: 24px;
+          color: var(--light-font-color);
+          font-family: "League Spartan", sans-serif;
+          font-size: 20px;
+          font-weight: 400;
+          resize: none;
+          height: 154px;
+      }
+      #form-textarea::placeholder{
+          color: var(--light-font-color);
+      }
+      button{
+          color: #23212A;
+          align-self: self-start;
+          border-radius: 0;
+          
+      }
+  }
+  
+  .contact__cards{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 70px;
+  }
+  
+  .contact__card{
+      position: relative;
+      img:first-child{
+          width: 100%;
+      }  
+      img:last-child{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      } 
+  
+  }
+  
+  @media only screen and (max-width: 900px){
+      .contact__items{
+          align-items: center;
+          flex-direction: column;
+      }
+      .contact__item{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          .contact-text-p{
+              max-width: 580px;
+          }
+          .form__menu{
+              text-align: start;
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+          }
+      }
+      .contact__card{
+          img:last-child{
+              width: 100px;
+          } 
+      }
+  }
+  
+  @media only screen and (max-width: 500px){
+      .contact__item{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: start;
+          .form__menu{
+              display: flex;
+              flex-direction: column;
+          }
+      }
+      #form{
+          margin-top: 0;
+          div{
+              flex-direction: column;
+          }
+          input{
+              width: 100%;
+              max-width: none;
+              font-size: 16px;
+          }
+      }
+      .contact__card{
+          img:last-child{
+              width: 50px;
+          } 
+      }
+
+      .contact__cards{
+        grid-template-columns: repeat(2, 1fr);
+      }
+  }
+  
+  @media only screen and (max-width: 380px){
+      .contact__item{
+          h2{
+              font-size: 1.7rem;
+          }
+          p{
+              font-size: 12px;
+              max-width: 300px;
+          }
+      }
+  }

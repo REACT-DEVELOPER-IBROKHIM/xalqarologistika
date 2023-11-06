@@ -1,0 +1,435 @@
+import gerb from "../../assets/images/gerb.png"
+import { Link } from "react-router-dom";
+import signs from "../../assets/images/signs.png";
+import {FiArrowLeft} from "react-icons/fi";
+import QRCode from "react-qr-code";
+import av from "../../assets/images/images.jpeg";
+import summarizeName from "../../helpers/summarizeName";
+import summarizeTime from "../../helpers/summarizeTime";
+import getFromattedDate from "../../helpers/getFormattedTime"
+import "./Draft.scss";
+
+const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenDate}) => {
+  return (
+    <div className="darft_container drafted">
+        <h2 className="pdf_driverTitle">NAMANGANTRANS 2022 MCHJ</h2>
+        <Link to="/" className="main_pageLink">
+          <FiArrowLeft /> Asosiy sahifa
+        </Link>
+        {id.startsWith("D") || id.startsWith("M") ? (
+          <div className="pdf_container ">
+            <div className="draft_text">
+              <h1>EXIST</h1>
+              <h1>EXIST</h1>
+              <h1>EXIST</h1>
+              {id.startsWith("D") && (
+                <>
+                  <h1>EXIST</h1>
+                  <h1>EXIST</h1>
+                </>
+              )}
+            </div>
+            <div className="pdf_mainSection">
+              <div className="pdf_flag">
+                <div className="pdf_flagBlue"></div>
+                <div className="pdf_flagRed"></div>
+                <div className="pdf_flagWhite"></div>
+                <div className="pdf_flagRed"></div>
+                <div className="pdf_flagGreen"></div>
+                <img className="pdf_gerb" src={gerb} alt="" />
+                <div className="pdf_muhr">
+                  <QRCode
+                    className="pdf_flagQrcode"
+                    value={`https://www.xalqarologistika.uz/check-certificates/${id}`}
+                  />
+                </div>
+              </div>
+              <div className="pdf_content">
+                <h1 className="pdf_title">O'zbekiston Respublikasi</h1>
+                <h1 className="pdf_titleD">Malaka oshirish haqida</h1>
+                <h1 className="pdf_sertifikat">Sertifikat</h1>
+                <h2 className="pdf_id">{"MO №" + id}</h2>
+                <h2 className="pdf_userName">
+                  {summarizeName(firstname, lastname, parentname)}
+                </h2>
+                <p className="pdf_userNameDesc">
+                  (Familyasi, ismi, otasinig ismi)
+                </p>
+                <p className="pdf_date">
+                  <span>
+                    berilgan sana: {summarizeTime(from, to).from}
+                  </span>
+                  <span>
+                    amal qilish muddati: {summarizeTime(from, to).to}
+                  </span>
+                </p>
+                {id.startsWith("M") ? (
+                  <p className="additional">
+                    Avtomobil transportida yuk va yo'lovchilar tashish bilan
+                    shug'ullanayotgan yuridik shaxslarning rahbarlari va mas'ul
+                    xodimlarining malakasini oshirish
+                  </p>
+                ) : (
+                  <></>
+                )}
+                <h2 className="pdf_mchj">NAMANGANTRANS 2022 MCHJ</h2>
+                <p className="pdf_mchjDesc">
+                  (Malaka oshirish ta'lim muassasasining nomi)
+                </p>
+                <h2 className="pdf_course"> {id.startsWith("M") ? "72 soat" : "36 soat"} </h2>
+                <p className="pdf_mchjDesc">(Malaka oshirish kusrning nomi)</p>
+                <p className="additional_text">bo'yicha malakasini oshirdi</p>
+                <p className="additional_director">
+                  Bosh direktor: Bahromjon Muhiddinov{" "}
+                </p>
+                <div className="additonal_wrapper">
+                  <p className="additional_date">Sana: {summarizeTime(from, to).from} </p>
+                  <p className="additional_registId">
+                    Qayd raqami: № {id}
+                  </p>
+                </div>
+                <div className="additional_partner">
+                  <p>
+                    <strong>
+                      {summarizeName(firstname, lastname, parentname)}
+                    </strong>
+                    ga haqiqatdan ham milliy va xalqaro avtomobilda yuk tashish
+                    bo`yicha №1071/2009 sonli EC derektivasi va milliy me'yoriy
+                    xujjatlarga asoslangan maxsus kursda o`qidi va malakaviy
+                    imtixon topshirdi.
+                  </p>
+                  <strong>NAMANGAN - MQI qoshida</strong>
+                </div>
+              </div>
+            </div>
+            {id.startsWith("D") ? (
+              <>
+              <div className="pdf_lang">
+                <div className="pdf_langContainer">
+                  <div className="pdf_langRu">
+                    <h2 className="pdf_langTitle">Сертификат</h2>
+                    <h4>
+                      на осуществление международных автомобильных перевозов
+                    </h4>
+                    <h4 className="pdf_langName">
+                      {summarizeName(firstname, lastname, parentname)}
+                    </h4>
+                    <h4 className="pdf_langName">
+                    36 часов
+                    </h4>
+                    <p className="pdf_langNameDesc">
+                      О том что он прошел курс обучения по специальной программе{" "}
+                    </p>
+                    <p className="pdf_langOrganization">
+                      " Организация по осуществлению международных перевозок
+                      автомобильным транспортом "
+                    </p>
+                    <div className="pdf_langCon">
+                      <div className="pdf_langQrContainer">
+                        <QRCode
+                          className="pdf_langQrcode"
+                          value={`https://www.xalqarologistika.uz/check-certificates/${id}`}
+                        />
+                      </div>
+                      <div className="">
+                        <h3 className="pdf_langOOO">
+                          OOO "NAMANGANTRANS 2022"
+                        </h3>
+                        <p className="pdf_langData">
+                          выдан {summarizeTime(from, to).from}
+                        </p>
+                        <p className="pdf_langData">
+                          до {summarizeTime(from, to).to}
+                        </p>
+                      </div>
+                    </div>
+                    <h4 className="pdf_langDirector">
+                      {" "}
+                      Директор: OOO "NAMANGANTRANS 2022" Bahrom Muhiddinov
+                    </h4>
+                  </div>
+                  <div className="pdf_langEng">
+                    <h2 className="pdf_langTitle">Certificate</h2>
+                    <h4 className="pdf_langdesc">
+                      The implementation of international automobile
+                      transportation
+                    </h4>
+                    <h4 className="pdf_langName">
+                      {summarizeName(firstname, lastname, parentname)}
+                    </h4>
+                    <h4 className="pdf_langName">
+                    36 hours
+                    </h4>
+                    <p className="pdf_langNameDesc">
+                      This certificate that he completed training course on
+                      special program
+                    </p>
+                    <p className="pdf_langOrganization">
+                      "Organization and implementation of international
+                      automobile transportation"
+                    </p>
+
+                    <div className="pdf_langDateEn">
+                      <p className="pdf_langData">
+                        Issued {summarizeTime(from, to).from}
+                      </p>
+                      <p className="pdf_langData">
+                        Valid {summarizeTime(from, to).to}
+                      </p>
+                    </div>
+                    <h4 className="pdf_langDirector">
+                      {" "}
+                      Director: OOO "NAMANGANTRANS 2022" Bahrom Muhiddinov
+                    </h4>
+                  </div>
+                </div>
+              </div>
+               <div className="certficate-text__container">
+               <h2>Сертификат</h2>
+               <h4>Профессиональной
+                 компетентности
+                 <br></br>
+                 (СПК) международного
+                 автомобильного перевозчика
+               </h4>
+               <br/>
+               <br/>
+               <p>Выдано: <strong>{summarizeName(firstname, lastname, parentname)}</strong> </p>
+               <p>квалификационный экзамен({summarizeTime(from, to).from}) на профессиональную компетентность и
+                 признан(а) квалифицированным(ой) для
+                 профессиональной работы в качестве
+                 Водителя
+                 <br/>
+                 <br/>
+                 <i>По программе: Повышение квалификации
+                 водителей, занимающихся международными
+                 автомобильными перевозками</i>
+                 Выдано: {summarizeTime(from, to).from}
+                 Действителен до: {summarizeTime(from, to).to}
+                 по повышения квалификации и
+                 переподготовки кадров автомобильного
+                 транспорта</p>
+
+                 <h2>Certificate</h2>
+               <h4>Professional Competence
+                 <br></br>
+                 (SPK) international
+                  road carrier
+               </h4>
+               <br/>
+               <br/>
+               <p>Issued: <strong>{summarizeTime(from, to).from}</strong> </p>
+               <p>qualifying exam({summarizeTime(from, to).from}) for professional competence and
+                  recognized as qualified for
+                  professional work as
+                  Driver
+                 <br/>
+                 <br/>
+                 <i>According to the program: Advanced training
+                  drivers involved in international
+                  road transport</i>
+                  Issued: {summarizeTime(from, to).from}
+                       Valid until: {summarizeTime(from, to).to}
+                       for advanced training and
+                  retraining of automotive personnel
+                  transport</p>
+             </div>
+             </>
+            ) : (
+              <></>
+            )}
+          </div>
+        ) : (
+          <div className="adr__container">
+            <div className="draft_text">
+              <h1>EXIST</h1>
+              <h1>EXIST</h1>
+              <h1>EXIST</h1>
+              <h1>EXIST</h1>
+            </div>
+            <div className="adr_card">
+              <h2 className="adr_englishtitle">
+                ADR-DRIVER TRAINING CERTIFICATE
+              </h2>
+              <h3 className="adr_rustitle">
+                СВИДЕТЕЛЬСТВО О ПОДГОТОВКЕ ВОДИТЕЛЯ ПО ДОПОГ
+              </h3>
+              <div className="adr_maintop">
+                <div className="uz_wrapper">UZ</div>
+                <p className="main__bold">1.Nr. {id}</p>
+                <h2 className="adr_logo">NT2022</h2>
+              </div>
+              <div className="adr_maincenter">
+                <div className="center__image">
+                  {" "}
+                  <img className="image__avatar" src={av} alt="" />{" "}
+                </div>
+                <div className="center__info">
+                  <p className="main__bold">2. {firstname}</p>
+                  <p className="main__bold">3. {lastname}</p>
+                  <p className="main__bold">
+                    4. <span className="smaller_text"> {birthdate} </span>
+                  </p>
+                  <p className="main__bold">
+                    5.{" "}
+                    <span className="smaller_text">
+                      {" "}
+                      REPUBLIC OF UZBEKISTAN
+                    </span>
+                  </p>
+                  <p className="main__bold">
+                    6. <span className="smaller_text">NAMANGANTRANS 2022</span>
+                  </p>
+                  <p className="main__bold">
+                    7.{" "}
+                    <span className="smaller_text">
+                      Until (date) {getFromattedDate(summarizeTime(birthdate, to).to)}
+                    </span>
+                  </p>
+                  <div className="adr_sign"></div>
+                </div>
+                <div className="adr_qrcode">
+                  <QRCode
+                    className="adr_qrcodemain"
+                    value={`https://www.xalqarologistika.uz/check-certificates/${id}`}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="adr_cardback">
+              <h2 className="back__title">VALID FOR CLASS(ES) OR UN NOS.:</h2>
+              <h3 className="back__smalltitle">
+                ДЕЙСТВИТЕЛЬНО В ОТНОШЕНИИ ВЕЩЕСТВ КЛАССА(ОВ) ИЛИ № ООН
+              </h3>
+              <table>
+                <tr>
+                  <th>9. In tank</th>
+                  <th>10. Other than in tank</th>
+                </tr>
+                <tr>
+                  <td>
+                    2
+                  <br />
+                  3
+                  <br />
+                  4.1, 4.2, 4.3
+                  <br />
+                  5.1, 5.2
+                  <br />
+                  6.1, 6.2
+                  <br />
+                  8
+                  <br />
+                  9
+                  </td>
+                  <td>
+                    2
+                    <br />
+                    3
+                    <br />
+                    4.1, 4.2, 4.3
+                    <br />
+                    5.1, 5.2
+                    <br />
+                    6.1, 6.2
+                    <br />
+                    8
+                    <br />9
+                  </td>
+                </tr>
+              </table>
+            </div>
+            {
+          parseInt(id) > 200 &&
+         <div className="cartifificate__adr-danger">
+         <div className="pdf_lang">
+            <div className="pdf_langContainer">
+              <div className="pdf_langRu">
+                <h2 className="pdf_langTitle">АДР Сертификат</h2>
+                <img src={signs} alt="" className="signs" />
+                <p>
+                  <b>MO № {id}</b>
+                </p>
+                <h4 className="pdf_langName">
+                {summarizeName(firstname, lastname)}
+                </h4>
+                <h4 className="pdf_langName">
+                АДР
+                </h4>
+                <p className="pdf_langNameDesc">
+                  О том что он прошел курс обучения по специальной программе{" "}
+                </p>
+                <p className="pdf_langOrganization">
+                  "Сертификат профессиональной компетентности в области
+                Перевозка опасных грузов автомобильным транспортом (ADR) "
+                </p>
+                {/* <p><b>Директиве 1071/2009 ЕС</b></p> */}
+                <div className="pdf_langCon">
+                  <div className="pdf_langQrContainer">
+                    <QRCode
+                      className="pdf_langQrcode"
+                      value={`https://www.xalqarologistika.uz/check-certificates/${
+                        id
+                      }`}
+                    />
+                  </div>
+                  <div>
+                    <h3 className="pdf_langOOO">OOO "NAMANGANTRANS 2022"</h3>
+                    <p className="pdf_langData">
+                      выдан: {getFromattedDate(summarizeTime(from, to).from)}
+                    </p>
+                    <p className="pdf_langData">
+                      до: {to}
+                    </p>
+                  </div>
+                </div>
+                <h4 className="pdf_langDirector">
+                  Директор: OOO "NAMANGANTRANS 2022" B.Muhidinov
+                </h4>
+              </div>
+              <div className="pdf_langEng ">
+                <h2 className="pdf_langTitle">ADR Certificate</h2>
+                <p className="adr_title-eng">
+                  <b>MO № {id}</b>
+                </p>
+
+                {/* <h2 className="pdf_id"></h2> */}
+                <h4 className="pdf_langName">
+                  {summarizeName(firstname, lastname)}
+                </h4>
+                <h4 className="pdf_langName">
+                ADR
+                </h4>
+                <p className="pdf_langNameDesc">
+                  This certificate that he completed training course on special
+                  program
+                </p>
+                <p className="pdf_langOrganization">
+                Certificate of Professional Competence in the
+                  Transport of Dangerous Goods by Road (ADR)
+                </p>
+
+                <div className="pdf_langDateEn adr_lang-eng-date">
+                  <p className="pdf_langData">
+                    Issued: {getFromattedDate(summarizeTime(from, to).from)}
+                  </p>
+                  <p className="pdf_langData">
+                    Valid: {to}
+                  </p>
+                </div>
+                <h4 className="pdf_langDirector">
+                  {" "}
+                  Director: OOO "NAMANGANTRANS 2022" B.Muhidinov
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+         }
+          </div>
+        )}
+      </div>
+  )
+}
+
+export default Draft

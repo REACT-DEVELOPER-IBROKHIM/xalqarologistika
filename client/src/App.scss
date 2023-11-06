@@ -1,0 +1,17 @@
+.message{
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    &--error{
+        background-color: var(--danger-color);   
+    }
+
+    &--success{
+        background-color: var(--success-color);
+    }
+
+    &--loading{
+        background-color: var(--warning-color);
+    }
+}
