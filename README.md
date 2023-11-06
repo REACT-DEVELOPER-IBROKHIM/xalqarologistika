@@ -2,7 +2,7 @@
 
 
 
-![Project Logo](./src/assets/images/mdlogo.png) <!-- Replace with your project logo or banner -->
+![Project Logo](./client/src/assets/images/mdlogo.png) <!-- Replace with your project logo or banner -->
 
 
 
@@ -63,7 +63,8 @@ Follow these steps to set up the project locally.
 2. Navigate to the project directory:
 
    ```bash
-   cd client.xalqarologistika.uz
+      cd client
+      cd server
 
    ```
 
@@ -77,8 +78,16 @@ Follow these steps to set up the project locally.
 4. Create a `.env` file in the project root and add the necessary environment variables:
 
    ```bash
-    REACT_APP_API_URL=https://your-api-endpoint.com
-    GENERATE_SOURCEMAP=your-google-maps-api-key
+    REACT_APP_API_URL=****<URL>****
+    GENERATE_SOURCEMAP=true
+    # Add other environment variables as needed
+
+   ```
+   or
+   ```bash
+    PORT=****<PORT>****
+    DB_CONNECTION=*****<URI>****
+    TOKEN_SECRET_KEY = ****<TOKEN-SECRET>****
     # Add other environment variables as needed
 
    ```
