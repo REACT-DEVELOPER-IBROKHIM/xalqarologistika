@@ -13,7 +13,7 @@ const admin = require("./src/routes/admin");
 
 const port = process.env.PORT || 1000;
 const app = express();
-const whitelist = ['https://ntl-client.vercel.app', 'https://xalqarologistika.uz', "http://localhost:3000"]
+const whitelist = ['https://ntl-client.vercel.app', 'https://www.xalqarologistika.uz', 'https://xalqarologistika.uz', "http://localhost:3000"]
 app.use(cors({
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
