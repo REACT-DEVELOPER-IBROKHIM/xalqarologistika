@@ -14,17 +14,16 @@ const comments = require("./src/routes/comments");
 
 const port = process.env.PORT || 1000;
 const app = express();
-app.use(cors());
-// const whitelist = ['https://ntl-client.vercel.app', 'https://www.xalqarologistika.uz', 'https://xalqarologistika.uz', "http://localhost:3000"]
-// app.use(cors({
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }));
+const whitelist = ['https://ntl-client.vercel.app', 'https://www.xalqarologistika.uz', 'https://xalqarologistika.uz', "http://localhost:3000"]
+app.use(cors({
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}));
 app.use(express.json());
 
 
