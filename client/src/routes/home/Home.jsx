@@ -3,7 +3,7 @@ import Hero from "../../components/hero/Hero";
 import "./Home.scss";
 import Services from "../../components/services/Services"
 import Footer from "../../components/footer/Footer";
-import OurCustomerSay from "../../components/what-our-costumer-say/OurCustomerSay";
+import Comments from "../../components/comments/Comments";
 import Meet from "../../components/meet/Meet";
 import Contact from "../../components/contact/Contact";
 
@@ -12,7 +12,7 @@ const Home = () => {
     <div>
        <Nav/>
        <Hero/>
-       <OurCustomerSay/>
+       <Comments/>
        <Services/>
        <Meet/>
        <Contact/>
