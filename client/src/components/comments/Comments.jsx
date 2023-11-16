@@ -7,6 +7,9 @@ import "./Comments.scss";
 import { Container } from "../../utils/Utils";
 
 const OurCustomerSay = () => {
+
+  const lang= localStorage.getItem('lang');
+
   const [userreviews, setUserreviews] = useState([]);
 
   useEffect(() => {
@@ -42,7 +45,7 @@ const OurCustomerSay = () => {
                     </div>
                   </div>
 
-                  <p className="comments__card__text">{review.comment_uz}</p>
+                  <p className="comments__card__text">{ lang === 'ru' ? review.comment_ru : lang === "en" ?  review.comment_en : review.comment_uz}</p>
                   <div className="comments__card__footer">
                     <div className="comments__card__footer__stars">
                       {[...Array(review.rating)].map((_, index) => (
