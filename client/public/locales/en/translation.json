@@ -15,6 +15,7 @@
         "input_placeholder" : "Certificate number",
         "view_btn" : "View full certificate"
     },
+    "comments_title" : "Comments about us",
     "whatWeDo": {
         "subtitle" : "what we offer",
         "title": "Safe and Reliable Certificates",

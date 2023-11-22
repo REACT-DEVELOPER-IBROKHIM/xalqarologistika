@@ -36,7 +36,7 @@ const Nav = () => {
                 <li className="top__menu-item">
                   <Address
                     maintext={t("nav.work_hours") + " 8.00 - 18.00"} 
-                    secondarytext={t("nav.all") + " 24/7"}
+                    secondarytext={t("nav.all") + " 7"}
                     icon={time}
                   />
                 </li>

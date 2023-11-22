@@ -5,8 +5,10 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import "./Comments.scss";
 import { Container } from "../../utils/Utils";
+import {useTranslation} from "react-i18next";
 
 const OurCustomerSay = () => {
+  const {t} = useTranslation()
 
   const lang= localStorage.getItem('lang');
 
@@ -24,7 +26,7 @@ const OurCustomerSay = () => {
    
     <div className="comments">
       <Container>
-      <h2>Biz haqimizda fikrlar</h2>
+      <h2>{t("comments_title")}</h2>
 
         <div className="comments__wrapper">
       <AwesomeSlider>
