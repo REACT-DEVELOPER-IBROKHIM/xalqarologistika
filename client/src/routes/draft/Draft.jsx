@@ -1,15 +1,18 @@
 import gerb from "../../assets/images/gerb.png"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import signs from "../../assets/images/signs.png";
 import {FiArrowLeft} from "react-icons/fi";
 import QRCode from "react-qr-code";
 import av from "../../assets/images/images.jpeg";
 import summarizeName from "../../helpers/summarizeName";
 import summarizeTime from "../../helpers/summarizeTime";
-import getFromattedDate from "../../helpers/getFormattedTime"
+import getFromattedDate from "../../helpers/getFormattedTime";
+import moment from "moment";
 import "./Draft.scss";
 
 const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenDate}) => {
+  const {pathname} = useLocation();
+  const isValidDate = moment(birthdate, 'DD.MM.YYYY', true).isValid();
   return (
     <div className="darft_container drafted">
         <h2 className="pdf_driverTitle">NAMANGANTRANS 2022 MCHJ</h2>
@@ -268,7 +271,7 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                   <p className="main__bold">2. {firstname}</p>
                   <p className="main__bold">3. {lastname}</p>
                   <p className="main__bold">
-                    4. <span className="smaller_text"> {birthdate} </span>
+                    4. <span className="smaller_text"> {pathname.includes("check-certificates") ? getFromattedDate(isValidDate ? birthdate.split(".").reverse().join(".") : birthdate) : birthdate } </span>
                   </p>
                   <p className="main__bold">
                     5.{" "}
