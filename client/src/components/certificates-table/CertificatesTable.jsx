@@ -27,6 +27,7 @@ const CertificatesTable = () => {
   const [certificateDataResult, setCertificateDataResult] = useState(createStatusInstance("pending", t("status.pending")));
   const [totalPageNumber, setTotalPageNumber] = useState(0);
   const [downloadData, setDownloadData] = useState(null);
+  const [deletedata, setDeleteData] = useState(null)
 
   const handlePreviousPageFetching = () => {
     if(currentPageNumber > 1) {
@@ -110,15 +111,16 @@ const CertificatesTable = () => {
   }, [search, currentPageNumber, certificateLimit])
 
 
-  const handleDeleteCertificate = (id) => {
+  const handleDeleteCertificate = () => {
       try{
-      axios.patch(`/${pathname.split("/")[3].replace("manage-", "").replace(/-/g, "")}/delete/${id}`)
+      axios.patch(`/${pathname.split("/")[3].replace("manage-", "").replace(/-/g, "")}/delete/${deletedata._id}`)
         .then(response => {
           if(response.status === 200){
             modal.current.close()
           }
           setCertificateDataResult(createStatusInstance("success", t("status.success")))
         })
+        window.location.reload();
     }
     catch(err){
       console.log(err )
@@ -179,8 +181,11 @@ const CertificatesTable = () => {
                     content={() => printFrame.current}
                   />}</td>
                   <td>{certificate.id !== "Mavjud emas" &&  <Button  text="Edit" appearance="warning" disabled={true} loading={false}/>}</td>
-                  <Modal ref={modal} title="Delete this certificate?" text="Are you sure you want to delete this certificate?" btn={{text: "Delete", appearance: "danger", clickHandler: () => handleDeleteCertificate(certificate._id)}}/>
-                  <td>{certificate.id !== "Mavjud emas" && <Button text="Delete" appearance="danger" clickHandler={() => modal.current.openModal()} loading={false}/>}</td>
+                  <Modal ref={modal} title={`Delete this certificate? ${deletedata?.id}`} text="Are you sure you want to delete this certificate?" btn={{text: "Delete", appearance: "danger", clickHandler: () => handleDeleteCertificate(deletedata?._id)}}/>
+                  <td>{certificate.id !== "Mavjud emas" && <Button   text={`Delete ${certificate.id}`} appearance="danger" clickHandler={() => {
+                    modal.current.openModal()
+                    setDeleteData(certificate);
+                  }} loading={false}/>}</td>
                 </tr>)
               })}
           </tbody>
