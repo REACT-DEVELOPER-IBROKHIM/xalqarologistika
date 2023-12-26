@@ -117,10 +117,10 @@ const CertificatesTable = () => {
         .then(response => {
           if(response.status === 200){
             modal.current.close()
+            window.location.reload();
           }
           setCertificateDataResult(createStatusInstance("success", t("status.success")))
         })
-        window.location.reload();
     }
     catch(err){
       console.log(err )

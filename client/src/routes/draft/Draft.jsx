@@ -13,6 +13,7 @@ import "./Draft.scss";
 const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenDate}) => {
   const {pathname} = useLocation();
   const isValidDate = moment(birthdate, 'DD.MM.YYYY', true).isValid();
+  const number = +id?.replace(/[A-Z]/g, "");
   return (
     <div className="darft_container drafted">
         <h2 className="pdf_driverTitle">NAMANGANTRANS 2022 MCHJ</h2>
@@ -79,7 +80,7 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                 <p className="pdf_mchjDesc">
                   (Malaka oshirish ta'lim muassasasining nomi)
                 </p>
-                <h2 className="pdf_course"> {id.startsWith("M") ? "72 soat" : "36 soat"} </h2>
+                <h2 className="pdf_course"> {id.startsWith("M") ? "72 soat" : number >= 566 ? "36 soat" : "40 soat"} </h2>
                 <p className="pdf_mchjDesc">(Malaka oshirish kusrning nomi)</p>
                 <p className="additional_text">bo'yicha malakasini oshirdi</p>
                 <p className="additional_director">
@@ -118,7 +119,9 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                       {summarizeName(firstname, lastname, parentname)}
                     </h4>
                     <h4 className="pdf_langName">
-                    36 часов
+                    {
+                      number  >= 566 ? "36 часов" : "40 часов"
+                    }
                     </h4>
                     <p className="pdf_langNameDesc">
                       О том что он прошел курс обучения по специальной программе{" "}
@@ -161,7 +164,7 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                       {summarizeName(firstname, lastname, parentname)}
                     </h4>
                     <h4 className="pdf_langName">
-                    36 hours
+                    { number >= 566 ? "36 hours" : "40 hours"}
                     </h4>
                     <p className="pdf_langNameDesc">
                       This certificate that he completed training course on
