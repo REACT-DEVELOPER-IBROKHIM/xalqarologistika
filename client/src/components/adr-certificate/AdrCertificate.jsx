@@ -146,7 +146,7 @@ const AdrCertificate = forwardRef(({ firstname, lastname, to, birthdate, id, giv
                   <div>
                     <h3 className="pdf_langOOO">OOO "NAMANGANTRANS 2022"</h3>
                     <p className="pdf_langData">
-                      выдан:  {givenDate ? getFormattedTime(givenDate) : getFormattedTime(new Date()) }
+                      выдан:  {givenDate}
                     </p>
                     <p className="pdf_langData">
                       до: {to}
@@ -181,7 +181,7 @@ const AdrCertificate = forwardRef(({ firstname, lastname, to, birthdate, id, giv
 
                 <div className="pdf_langDateEn adr_lang-eng-date">
                   <p className="pdf_langData">
-                    Issued: {givenDate ? getFormattedTime(givenDate) : getFormattedTime(new Date()) }
+                    Issued: {givenDate}
                   </p>
                   <p className="pdf_langData">
                     Valid: {to}

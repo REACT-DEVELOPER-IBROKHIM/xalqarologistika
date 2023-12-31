@@ -36,6 +36,7 @@ const Create = () => {
     middlename: "",
     from: "",
     to: "",
+    givenDate: "",
     certificateType: "select",
   });
 
@@ -61,6 +62,7 @@ const Create = () => {
       middlename: "",
       from: "",
       to: "",
+      givenDate: "",
       certificateType: "select",
     });
     setCertificateStatus(createStatusInstance("backlog"));
@@ -75,7 +77,7 @@ const Create = () => {
       certificateData.certificateType !== "select" &&
       inputValidationSurname &&
       inputValidationName &&
-      inputValidationMiddleName
+      (inputValidationMiddleName || certificateData.givenDate)
     ) {
       setCertificateStatus(
         createStatusInstance("pending", t("status.pending"))
@@ -110,6 +112,7 @@ const Create = () => {
     const { certificateType, ...data } = certificateData;
     data.from = getFormattedTime(data.from);
     data.to = getFormattedTime(data.to);
+    data.givenDate = getFormattedTime(data.givenDate);
     data.id = +certificateStatus.data.match(/[0-9]+/)[0];
     if(certificateType === "driver-adr-certificate" || certificateType === "driver-adr-tank-certificate"){
       data.birthDate = data.from
@@ -141,6 +144,7 @@ const Create = () => {
       });
     }
   };
+
 
   return (
     <div admincontent="content" className="create-certificate">
@@ -204,8 +208,28 @@ const Create = () => {
               className="create-certificate__form-item"
               inputwrapperitem="true"
             >
-              <label htmlFor="middlename">{t("create.middlename")}</label>
-              <input
+              <label htmlFor="middlename">
+              {certificateData.certificateType === "driver-adr-certificate" ||
+                certificateData.certificateType ===
+                  "driver-adr-tank-certificate"
+                  ? `${t("create.issuedate")}`
+                  : `${t("create.middlename")}`}
+              </label>
+              {certificateData.certificateType === "driver-adr-certificate" ||
+                certificateData.certificateType ===
+                  "driver-adr-tank-certificate"
+                  ?
+                  <DatePicker
+                  id="givenDate"
+                  autoComplete="off"
+                  selected={certificateData.givenDate}
+                  onChange={(date) =>
+                    setCertificateData({ ...certificateData, givenDate: date })
+                  }
+                  required
+                />
+                  :
+                  <input
                 type="text"
                 id="middlename"
                 autoComplete="off"
@@ -218,6 +242,8 @@ const Create = () => {
                 }
                 required
               />
+                  }
+              
               {!inputValidationMiddleName &&
                 certificateStatus.status === "error" && (
                   <p className="message message--error">
@@ -373,6 +399,7 @@ const Create = () => {
                 firstname={certificateData.name}
                 to={getFormattedTime(certificateData.to)}
                 birthdate={getFormattedTime(certificateData.from)}
+                givenDate={getFormattedTime(certificateData.givenDate)}
                 ref={printFrame}
               />
             )}

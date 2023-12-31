@@ -18,7 +18,7 @@ certificate.post("/", verifyAdmin, async (req, res) => {
           name: req.body.name,
           surname: req.body.surname,
           birthDate: req.body.birthDate,
-          givenDate: summarizeTime(`${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`),
+          givenDate: req.body.givenDate,
           to: req.body.to
         });
         const certificate = await newCertificate.save();

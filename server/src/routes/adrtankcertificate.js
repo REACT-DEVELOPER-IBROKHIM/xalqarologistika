@@ -19,7 +19,7 @@ certificateTank.post("/", verifyAdmin, async (req, res) => {
           surname: req.body.surname,
           birthDate: req.body.birthDate,
           to: req.body.to,
-          givenDate: summarizeTime(`${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`),
+          givenDate: req.body.givenDate,
         });
         const certificate = await newCertificate.save();
         res.status(201).json(certificate);
