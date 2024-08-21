@@ -158,7 +158,7 @@ const DriverCertificate = forwardRef(({ id, firstname, lastname, parentname, fro
                       {summarizeName(firstname, lastname, parentname)}
                     </strong>{" "}
                     прошел обучение по данному курсу, основанному национальных
-                    требованиях, и успешно сдал экзамено.
+                    требованиям, и успешно сдал экзамены.
                   </p>
                 </div>
               </div>
