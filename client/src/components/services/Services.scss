@@ -55,6 +55,22 @@
     background-color:#d8d8d8;
 }
 
+.banner{
+    display: flex;
+    position: relative;
+}
+
+.banner::after{
+    content: '';
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--main-bg-color);
+    background: linear-gradient(0deg, var(--main-bg-color) 0%, rgba(0,212,255,0) 100%);
+}
+
 .banner img{
     width:100%;
     object-fit:cover;

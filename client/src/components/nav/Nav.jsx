@@ -11,16 +11,10 @@ import { Address, Container } from "../../utils/Utils";
 
 const Nav = () => {
   const { t } = useTranslation();
-
-     /**
-     * Handles the change of language.
-     * @param {Event} e - The event object.
-     */
-    const handleChangeLanguage = (e) => {
-    // Change the language using the value from the event target
-      i18n.changeLanguage(e.target.value);
-      window.location.reload()
-    };
+  const handleChangeLanguage = (e) => {
+    i18n.changeLanguage(e.target.value);
+    window.location.reload();
+  };
 
   return (
     <header className="header">
@@ -35,8 +29,8 @@ const Nav = () => {
               <ul className="top__menu">
                 <li className="top__menu-item">
                   <Address
-                    maintext={t("nav.work_hours") + " 8.00 - 18.00"} 
-                    secondarytext={t("nav.all") + " 7"}
+                    maintext={t("nav.work_hours") + " 8.00 - 18.00"}
+                    secondarytext={t("nav.all")}
                     icon={time}
                   />
                 </li>
@@ -69,27 +63,30 @@ const Nav = () => {
                   to="/"
                   className={({ isActive }) => isActive && "nav--active"}
                 >
-                  {t('nav.home')}
+                  {t("nav.home")}
                 </NavLink>
               </li>
               <li className="nav__menu-item">
-                <NavLink to="/login">
-                  {t('nav.admin')}
-                </NavLink>
+                <NavLink to="/login">{t("nav.admin")}</NavLink>
               </li>
             </ul>
             <ul className="nav__socials">
               <select
-              defaultValue={localStorage.getItem("lang")}
+                defaultValue={localStorage.getItem("lang")}
                 onChange={handleChangeLanguage}
                 className="nav__language-select"
               >
-                <option value="uz">UZ 🇺🇿</option>
-                <option value="ru">RU 🇷🇺 </option>
-                <option value="en">EN 🇺🇸</option>
+                <option value="uz">UZ</option>
+                <option value="ru">RU </option>
+                <option value="en">EN</option>
               </select>
               <li>
-                <a without rel="noreferrer" target="_blank" href="https://t.me/bahrom0828">
+                <a
+                  without
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://t.me/bahrom0828"
+                >
                   <BsTelegram />
                 </a>
               </li>

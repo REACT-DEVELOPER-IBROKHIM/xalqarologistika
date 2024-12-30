@@ -10,6 +10,7 @@ const Search = () => {
     const {t} = useTranslation();
     const [certificateDataResult, setCertificateDataResult] = useState(createStatusInstance("pending", t("status.pending")));
     const {id} = useParams();
+    
     useEffect(() => {
         async function loadSearchResults(){
           try{
