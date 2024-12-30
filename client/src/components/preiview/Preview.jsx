@@ -2,7 +2,6 @@ import "./Preview.scss";
 import gerb from "../../assets/images/gerb.png";
 import user from "../../assets/images/images.jpeg"
 import summarizeName from "../../helpers/summarizeName";
-import summarizeTime from "../../helpers/summarizeTime";
 import { forwardRef } from "react";
 import QRCode from "react-qr-code";
 
@@ -35,8 +34,8 @@ const Preview = ({ id, firstname, lastname, parentname, from, to, size, birthdat
             {summarizeName(firstname, lastname, parentname)}
           </p>
           <p className="certifcate__date">
-            <span> berilgan sana: {summarizeTime(from, to).from}</span>
-            <span> amal qilish muddati: {summarizeTime(from, to).to}</span>
+            <span> berilgan sana: {from}</span>
+            <span> amal qilish muddati: {to}</span>
           </p>
           <p className="certificate__org">NAMANAGANTRANS MCHJ</p>
           <p className="certificate__course">36 soat</p>
@@ -48,7 +47,7 @@ const Preview = ({ id, firstname, lastname, parentname, from, to, size, birthdat
               <span>
                 Bosh direktor: Bahromjon Muhiddinov
                 <br />
-                Sana: {summarizeTime(from, to).from}
+                Sana: {from}
               </span>
               <span>Qayd raqami: MO № {id}</span>
             </p>
@@ -80,10 +79,10 @@ const Preview = ({ id, firstname, lastname, parentname, from, to, size, birthdat
                     <div>
                         <h5>2.  {firstname}</h5>
                         <h5>3.  {lastname}</h5>
-                        <h5>4. {summarizeTime(to, birthdate).from} </h5>
+                        <h5>4. {birthdate} </h5>
                         <h5>5. REPUBLIC OF UZBEKISTAN</h5>
                         <h5>6. NAMANGANTRANS 2022</h5>
-                        <h5>7. Until (date) {summarizeTime(to, birthdate).to}</h5>
+                        <h5>7. Until (date) {to}</h5>
                         <div className="adr__sign"></div>
                     </div>
                     <QRCode 

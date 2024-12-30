@@ -4,7 +4,6 @@ import summarizeName from "../../helpers/summarizeName";
 import QRCode from "react-qr-code";
 import { forwardRef } from "react";
 import { useState } from "react";
-import summarizeTime from "../../helpers/summarizeTime";
 import { AiOutlineZoomIn, AiOutlineZoomOut } from "react-icons/ai";
 
 
@@ -56,10 +55,10 @@ const DriverCertificate = forwardRef(({ id, firstname, lastname, parentname, fro
                 </p>
                 <p className="pdf_date">
                   <span>
-                    berilgan sana: {summarizeTime(from, to).from}
+                    berilgan sana: {from}
                   </span>
                   <span>
-                    amal qilish muddati:{summarizeTime(from, to).to}
+                    amal qilish muddati:{to}
                   </span>
                 </p>
                 <h2 className="pdf_mchj">NAMANGANTRANS 2022 MCHJ</h2>
@@ -76,7 +75,7 @@ const DriverCertificate = forwardRef(({ id, firstname, lastname, parentname, fro
                 <p className="additional_director">Direktor: B.Muhidinov </p>
                 <div className="additonal_wrapper">
                   <p className="additional_date">
-                    Sana: {summarizeTime(from, to).from}
+                    Sana: {from}
                   </p>
                   <p className="additional_registId">
                     Qayd raqami: № {id}
@@ -128,10 +127,10 @@ const DriverCertificate = forwardRef(({ id, firstname, lastname, parentname, fro
                 <p className="pdf_userNameDesc">(Фамилия, Имя, Отчество)</p>
                 <p className="pdf_date">
                   <span>
-                    выдан:{ summarizeTime(from, to).from}
+                    выдан:{from}
                   </span>
                   <span>
-                    до: {summarizeTime(from, to).to}
+                    до: {to}
                   </span>
                 </p>
                 <h2 className="pdf_mchj">Намангантранс 2022 МЧЖ</h2>
@@ -146,7 +145,7 @@ const DriverCertificate = forwardRef(({ id, firstname, lastname, parentname, fro
                 <p className="additional_director">Директор: Б.Мухиддинов </p>
                 <div className="additonal_wrapper">
                   <p className="additional_date">
-                    число: {summarizeTime(from, to).from}
+                    число: {from}
                   </p>
                   <p className="additional_registId">
                     Регистрационный номер: № {id}
@@ -214,10 +213,10 @@ const DriverCertificate = forwardRef(({ id, firstname, lastname, parentname, fro
                   <div className="">
                     <h3 className="pdf_langOOO">OOO "NAMANGANTRANS 2022"</h3>
                     <p className="pdf_langData">
-                      выдан: {summarizeTime(from, to).from}
+                      выдан: {from}
                     </p>
                     <p className="pdf_langData">
-                      до: {summarizeTime(from, to).to}
+                      до: {to}
                     </p>
                   </div>
                 </div>
@@ -252,10 +251,10 @@ const DriverCertificate = forwardRef(({ id, firstname, lastname, parentname, fro
 
                 <div className="pdf_langDateEn">
                   <p className="pdf_langData">
-                    Issued: {summarizeTime(from, to).from}
+                    Issued: {from}
                   </p>
                   <p className="pdf_langData">
-                    Valid: {summarizeTime(from, to).to}
+                    Valid: {to}
                   </p>
                 </div>
                 <h4 className="pdf_langDirector">

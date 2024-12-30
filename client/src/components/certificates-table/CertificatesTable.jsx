@@ -1,8 +1,6 @@
 import "./CertificatesTable.scss";
 import axios from "../../api";
 import summarizeName from '../../helpers/summarizeName';
-import summarizeTime from '../../helpers/summarizeTime';
-import getFormattedTime from "../../helpers/getFormattedTime";
 import { createStatusInstance } from '../../helpers/createStatusInstance';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLayoutEffect, useState, useEffect, useRef } from 'react';
@@ -167,13 +165,12 @@ const CertificatesTable = () => {
           </thead>
           <tbody>
             {certificateDataResult.data &&
-              certificateDataResult.data.allCertificates.map((certificate, index) => {
-                const time = summarizeTime(certificate.from || certificate.givenDate, certificate.to);
+              certificateDataResult.data.allCertificates.map(certificate => {
                 return (
                 <tr className='certificates__table-row' key={certificate._id}>
                   <td>{certificate.id}</td>
                   <td>{summarizeName(certificate.name, certificate.surname)}</td>
-                  <td>{time.from + " / " + time.to}</td>
+                  <td>{certificate.from + " / " + certificate.to}</td>
                   <td>{certificate.id !== "Mavjud emas" && <ReactToPrint
                     trigger={
                       () => <button type="text" class="success-button" onFocus={()=> setDownloadData(certificate)} >Download</button>
@@ -214,7 +211,7 @@ const CertificatesTable = () => {
             firstname={downloadData.name}
             to={downloadData.to}
             birthdate={downloadData.birthDate}
-            givenDate={downloadData.givenDate}
+            from={downloadData.from}
             ref={printFrame}
         />}
        </>} 

@@ -5,10 +5,9 @@ import signs from "../../assets/images/signs.png";
 import { forwardRef, useState } from "react";
 import QRCode from "react-qr-code";
 import { AiOutlineZoomIn, AiOutlineZoomOut } from "react-icons/ai";
-import getFormattedTime from "../../helpers/getFormattedTime"
 
 
-const AdrCertificate = forwardRef(({ firstname, lastname, to, birthdate, id, givenDate}, ref) => {
+const AdrCertificate = forwardRef(({ firstname, lastname, to, birthdate, id, from}, ref) => {
   const [zoom, setZoom] = useState(1);
   return (
     <>
@@ -146,7 +145,7 @@ const AdrCertificate = forwardRef(({ firstname, lastname, to, birthdate, id, giv
                   <div>
                     <h3 className="pdf_langOOO">OOO "NAMANGANTRANS 2022"</h3>
                     <p className="pdf_langData">
-                      выдан:  {givenDate}
+                      выдан:  {from}
                     </p>
                     <p className="pdf_langData">
                       до: {to}
@@ -181,7 +180,7 @@ const AdrCertificate = forwardRef(({ firstname, lastname, to, birthdate, id, giv
 
                 <div className="pdf_langDateEn adr_lang-eng-date">
                   <p className="pdf_langData">
-                    Issued: {givenDate}
+                    Issued: {from}
                   </p>
                   <p className="pdf_langData">
                     Valid: {to}
