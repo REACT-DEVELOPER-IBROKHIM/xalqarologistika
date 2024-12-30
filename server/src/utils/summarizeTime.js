@@ -1,11 +1,3 @@
-const summarizeTime = (fromDate) => {
-    let from = fromDate.replace(/[\s\n]+/g, "").replace(/\./g, "-").split("-");
-    if(fromDate.startsWith("202")) {
-      from = from.reverse();
-    }
-    return `${from[2]}.${from[1]?.toString().padStart(2, "0")}.${from[0]?.toString().padStart(2, "0")}`
-  }
-  
 const identifyMonth = (num) => {
   let monthName;
     switch (num) {
@@ -51,6 +43,5 @@ const identifyMonth = (num) => {
 return monthName;
 }
 module.exports = {
-  summarizeTime,
   identifyMonth
 };

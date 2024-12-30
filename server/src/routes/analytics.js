@@ -4,7 +4,6 @@ const ManagerCertificates = require("../models/ManagerCertificates");
 const AdrCertificates = require("../models/AdrCertificates");
 const AdrTankCertificates = require("../models/AdrTankCertificate");
 const identifyMonth = require("../utils/summarizeTime").identifyMonth;
-const summarizeTime = require("../utils/summarizeTime").summarizeTime;
 const verifyAdmin = require("../middleware/verifytoken");
 
 const analytics = express.Router();
@@ -13,7 +12,7 @@ analytics.get("/allbymonth", verifyAdmin, async (req, res) => {
     const certificates = await DriverCertificates.find();
     const dates = certificates.map(certificate => {
         if (certificate.from !== "Mavjud emas") {
-            return summarizeTime(certificate.from)
+            return certificate.from
         }
     }).filter(validCertificateDate => validCertificateDate).map(i => i.slice(0, 7));
     const counts = {};

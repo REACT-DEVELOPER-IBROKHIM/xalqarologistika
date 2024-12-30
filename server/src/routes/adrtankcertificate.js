@@ -2,7 +2,6 @@ const express = require("express");
 const CertificateTank = require("../models/AdrTankCertificate");
 const generateId = require("../utils/generateId");
 const verifyAdmin = require("../middleware/verifytoken");
-const { summarizeTime } = require("../utils/summarizeTime");
 const certificateTank = express.Router();
 
 certificateTank.post("/", verifyAdmin, async (req, res) => {
