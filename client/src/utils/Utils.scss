@@ -1,6 +1,5 @@
-
 // CONTAINER
-.container{
+.container {
     max-width: 1200px;
     margin: auto;
     height: 100%;
@@ -10,25 +9,24 @@
 
 // ADDRESS
 
-.address-item{
+.address-item {
     height: 50px;
     display: flex;
     align-items: center;
     color: #fff;
     font-size: 14px;
-    img{
+    img {
         height: 100%;
     }
 
-    &__text{
+    &__text {
         margin-left: 14px;
     }
 }
 
-
 // BUTTON
 
-@mixin button($bgcolor, $color: #fff){
+@mixin button($bgcolor, $color: #fff) {
     text-transform: uppercase;
     background: $bgcolor;
     color: var(--light-font-color);
@@ -44,43 +42,43 @@
     box-shadow: 0px 0px 5px #353535;
 }
 
-button:disabled{
-  opacity: 0.5;
+button:disabled {
+    opacity: 0.5;
 }
 
-.button--loading{
-  display: flex;
-  align-items: center;
+.button--loading {
+    display: flex;
+    align-items: center;
 }
 
-.primary-button{
+.primary-button {
     @include button(var(--btn-gradient));
-    
+
     color: #2b2b2b;
 }
 
-.danger-button{
+.danger-button {
     @include button(var(--danger-color));
 }
 
-.warning-button{
+.warning-button {
     @include button(var(--warning-color));
 }
 
-.info-button{
-  @include button(var(--info-color));
+.info-button {
+    @include button(var(--info-color));
 }
 
-.main-button{
-  @include button(var(--main-bg-color));
+.main-button {
+    @include button(var(--main-bg-color));
 }
 
-.success-button{
+.success-button {
     @include button(var(--success-color));
 }
 
 // ANCHOR
-@mixin anchor($anchor-color: #fff){
+@mixin anchor($anchor-color: #fff) {
     text-transform: uppercase;
     color: $anchor-color;
     font-weight: 600;
@@ -89,131 +87,146 @@ button:disabled{
     white-space: nowrap;
 }
 
-
-.anchor--light{
+.anchor--light {
     @include anchor();
 }
 
-.anchor--dark{
+.anchor--dark {
     @include anchor(#000);
 }
 
 // MAIN LOADING
-$size:1.4em;
-$dotCount:10;
-$animationTime:2.5s;
+$size: 1.4em;
+$dotCount: 10;
+$animationTime: 2.5s;
 
-.peeek-loading{
-	background-color: var(--main-bg-color);
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
+.peeek-loading {
+    background-color: var(--main-bg-color);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
 }
-.peeek-loading ul{
-	position: absolute;
-	left: calc(50% - 0.7em);
-	top: calc(50% - 4.2em);
-	display: inline-block;
-	text-indent:$size*2;
+.peeek-loading ul {
+    position: absolute;
+    left: calc(50% - 0.7em);
+    top: calc(50% - 4.2em);
+    display: inline-block;
+    text-indent: $size * 2;
 }
 .peeek-loading ul li:after,
-.peeek-loading ul:after{
-	width: $size;
-	height: $size;
-	background-color: #fff;
-	border-radius: 100%;
+.peeek-loading ul:after {
+    width: $size;
+    height: $size;
+    background-color: #fff;
+    border-radius: 100%;
 }
 .peeek-loading ul li:after,
-.peeek-loading ul:after{
-	content:"";
-	display: block;
+.peeek-loading ul:after {
+    content: '';
+    display: block;
 }
-.peeek-loading ul:after{
-	position: absolute;
-	top: $size*2;
+.peeek-loading ul:after {
+    position: absolute;
+    top: $size * 2;
 }
-.peeek-loading li{
-	position: absolute;
-	padding-bottom: $size*4;
-	top: 0;
-	left: 0;
-}
-
-@for $i from 1 through 10{
-  .peeek-loading li:nth-child(#{$i}){
-	  $deg:($i - 1)*(360deg/$dotCount);
-	  transform: rotate($deg); 
-	  animation-delay: $animationTime*$i/$dotCount/2;
-  }
-  .peeek-loading li:nth-child(#{$i}):after{
-	  animation-delay: $animationTime*$i/$dotCount/2;
-  }
+.peeek-loading li {
+    position: absolute;
+    padding-bottom: $size * 4;
+    top: 0;
+    left: 0;
 }
 
-.peeek-loading li{
-  list-style-type: none;
-  animation: dotAnimation $animationTime infinite;
+@for $i from 1 through 10 {
+    .peeek-loading li:nth-child(#{$i}) {
+        $deg: ($i - 1) * (360deg / $dotCount);
+        transform: rotate($deg);
+        animation-delay: $animationTime * $i/$dotCount/2;
+    }
+    .peeek-loading li:nth-child(#{$i}):after {
+        animation-delay: $animationTime * $i/$dotCount/2;
+    }
+}
+
+.peeek-loading li {
+    list-style-type: none;
+    animation: dotAnimation $animationTime infinite;
 }
 @keyframes dotAnimation {
-0%, 55%, 100%    { 
-	padding: 0 0 $size*4 0;
-	}
-5%,50%   { 
-	padding: $size*2 0;
-	}
-} 
+    0%,
+    55%,
+    100% {
+        padding: 0 0 $size * 4 0;
+    }
+    5%,
+    50% {
+        padding: $size * 2 0;
+    }
+}
 
-.peeek-loading li:after{
-  animation: dotAnimationTwo $animationTime infinite;
+.peeek-loading li:after {
+    animation: dotAnimationTwo $animationTime infinite;
 }
 @keyframes dotAnimationTwo {
-    0%, 55%, 100%   { 
-      opacity:1;
-      transform: scale(1);
+    0%,
+    55%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
-    5%,50%  { 
-      opacity: .5;
-      transform: scale(0.5);
+    5%,
+    50% {
+        opacity: 0.5;
+        transform: scale(0.5);
     }
 }
 
 // LOADING
 .loader {
-  margin: 4px 15px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  display: block;
-  position: relative;
-  background: #FFF;
-  box-shadow: -10px 0 #FFF, 10px 0 #FFF;
-  box-sizing: border-box;
-  animation: shadowPulse 2s linear infinite;
+    margin: 4px 15px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    background: #fff;
+    box-shadow:
+        -10px 0 #fff,
+        10px 0 #fff;
+    box-sizing: border-box;
+    animation: shadowPulse 2s linear infinite;
 }
 
 @keyframes shadowPulse {
-  33% {
-    background: #FFF;
-    box-shadow: -10px 0 #000, 10px 0 #FFF;
-  }
-  66% {
-    background: #000;
-    box-shadow: -10px 0 #FFF, 10px 0 #FFF;
-  }
-  100% {
-    background: #FFF;
-    box-shadow: -10px 0 #FFF, 10px 0 #000;
-  }
+    33% {
+        background: #fff;
+        box-shadow:
+            -10px 0 #000,
+            10px 0 #fff;
+    }
+    66% {
+        background: #000;
+        box-shadow:
+            -10px 0 #fff,
+            10px 0 #fff;
+    }
+    100% {
+        background: #fff;
+        box-shadow:
+            -10px 0 #fff,
+            10px 0 #000;
+    }
 }
 
 //  SUCCESS
 
-.success-animation { margin:150px auto;}
+.success-animation {
+    margin: 150px auto;
+}
 
 .checkmark {
     width: 100px;
@@ -224,11 +237,13 @@ $animationTime:2.5s;
     stroke: #4bb71b;
     stroke-miterlimit: 10;
     box-shadow: inset 0px 0px 0px #4bb71b;
-    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-    position:relative;
+    animation:
+        fill 0.4s ease-in-out 0.4s forwards,
+        scale 0.3s ease-in-out 0.9s both;
+    position: relative;
     top: 5px;
     right: 5px;
-   margin: 0 auto;
+    margin: 0 auto;
 }
 .checkmark__circle {
     stroke-dasharray: 166;
@@ -238,7 +253,6 @@ $animationTime:2.5s;
     stroke: #4bb71b;
     fill: #fff;
     animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
- 
 }
 
 .checkmark__check {
@@ -255,7 +269,8 @@ $animationTime:2.5s;
 }
 
 @keyframes scale {
-    0%, 100% {
+    0%,
+    100% {
         transform: none;
     }
 
@@ -271,21 +286,21 @@ $animationTime:2.5s;
 }
 
 @media only screen and (max-width: 1024px) {
-  .address-item{
-    font-size: 14px;
-    img{
-      width: 40px;
-      height: 40px;
+    .address-item {
+        font-size: 14px;
+        img {
+            width: 40px;
+            height: 40px;
+        }
     }
-  }
 }
 
 @media only screen and (max-width: 992px) {
-  .address-item{
-    font-size: 12px;
-    img{
-      width: 30px;
-      height: 30px;
+    .address-item {
+        font-size: 12px;
+        img {
+            width: 30px;
+            height: 30px;
+        }
     }
-  }
 }

@@ -1,4 +1,4 @@
-.login{
+.login {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -8,12 +8,12 @@
     background-color: var(--main-bg-color);
 }
 
-.login img{
+.login img {
     width: 200px;
     margin-bottom: 30px;
 }
 
-.login-form{
+.login-form {
     max-width: 350px;
     width: 100%;
     border: 3px solid var(--main-bg-color);
@@ -24,17 +24,17 @@
     text-align: center;
     padding: 20px;
     padding-bottom: 30px;
-    h1{
+    h1 {
         margin-bottom: 20px;
     }
 }
 
-.login-form__wrapper{
+.login-form__wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px 0;
     margin-top: 30px;
-    input{
+    input {
         height: 35px;
         border: 2px solid var(--main-bg-color);
         text-indent: 10px;
@@ -42,7 +42,7 @@
         outline: none;
     }
 
-    button{
+    button {
         width: 100%;
         max-width: 50%;
         margin: 0 auto;

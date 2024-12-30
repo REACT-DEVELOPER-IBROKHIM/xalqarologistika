@@ -1,12 +1,12 @@
-import './App.scss';
-import Routes from "./routes";
+import './App.scss'
+import Routes from './routes'
 
 function App() {
-  return (
-    <div className="App">
-      <Routes/>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Routes />
+        </div>
+    )
 }
 
-export default App;
+export default App

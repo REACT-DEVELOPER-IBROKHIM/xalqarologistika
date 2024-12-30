@@ -1,50 +1,50 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const Comment = new Schema({
     comment_uz: {
         type: String,
         required: true,
-        max: 1024
+        max: 1024,
     },
     comment_ru: {
         type: String,
         required: true,
-        max: 1024
+        max: 1024,
     },
     comment_en: {
         type: String,
         required: true,
-        max: 1024
+        max: 1024,
     },
     user: {
         type: String,
-        required: true
+        required: true,
     },
     user_role_uz: {
         type: String,
-        required: true
+        required: true,
     },
     user_role_en: {
         type: String,
-        required: true
+        required: true,
     },
     user_role_ru: {
         type: String,
-        required: true
+        required: true,
     },
     date: {
         type: String,
-        required: true
+        required: true,
     },
     user_avatar: {
         type: String,
-        required: true
+        required: true,
     },
     rating: {
         type: Number,
-        required: true
-    }
+        required: true,
+    },
 })
 
 module.exports = mongoose.model('Comment', Comment)

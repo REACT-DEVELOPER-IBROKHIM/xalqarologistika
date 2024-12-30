@@ -1,55 +1,55 @@
 .pdf_driver {
-  width: 100%;
-  height: calc(100vh - 180px);
-  min-height: calc(100vh - 140px);
-  overflow: auto;
-  position: relative;
-  background-color: #fff;
-  font-family: sans-serif !important;
-   cursor: grab;
+    width: 100%;
+    height: calc(100vh - 180px);
+    min-height: calc(100vh - 140px);
+    overflow: auto;
+    position: relative;
+    background-color: #fff;
+    font-family: sans-serif !important;
+    cursor: grab;
     overflow: auto;
     // TODO scroll to drag
     // https://phuoc.ng/collection/html-dom/drag-to-scroll/
 }
 
 .pdf_driverTitle {
-  text-align: center;
-  padding: 16px 0;
-  color: gray;
-  text-transform: uppercase;
+    text-align: center;
+    padding: 16px 0;
+    color: gray;
+    text-transform: uppercase;
 }
 .zoom_btns {
-  width: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-  position: sticky;
-  top: 7px;
-  left: 0;
-  z-index: 12;
-  margin: auto;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    position: sticky;
+    top: 7px;
+    left: 0;
+    z-index: 12;
+    margin: auto;
 }
 .zoom_btns button {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: none;
-  box-shadow: 0 0 8px #6969fd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background: #6969fdc2;
-  color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 8px #6969fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #6969fdc2;
+    color: #fff;
 }
 
-.zoom_btns button:hover{
+.zoom_btns button:hover {
     background: #6969fd;
 }
-.zoom_btns button:active{
-  transform: scale(1.1);
-  opacity: .8;
+.zoom_btns button:active {
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 // .pdf_mainContainer {
 //   display: grid;
@@ -62,309 +62,296 @@
 // }
 
 .pdf_container {
-  min-width: 210mm;
-  width: 210mm;
-  height: 295.5mm;
-  min-height: 295.5mm;
-  background: #fff8eb;
-  box-sizing: border-box;
-  padding: 20px;
+    min-width: 210mm;
+    width: 210mm;
+    height: 295.5mm;
+    min-height: 295.5mm;
+    background: #fff8eb;
+    box-sizing: border-box;
+    padding: 20px;
 }
 .pdf_mainContainer .pdf_container {
-  margin-right: 30px;
-  box-shadow: 0 0 25px #0000003f;
+    margin-right: 30px;
+    box-shadow: 0 0 25px #0000003f;
 }
 .pdf_mainContainer .pdf_lang {
-  background-color: #fff;
-  box-shadow: 0 0 25px #0000003f;
+    background-color: #fff;
+    box-shadow: 0 0 25px #0000003f;
 }
 
 .pdf_mainSection {
-  width: 100%;
-  height: 100%;
-  border: 5px solid #6969fd;
-  display: flex;
-  position: relative;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #6969fd;
+    display: flex;
+    position: relative;
 }
 .pdf_flag {
-  width: 130px;
-  height: 100%;
-  margin-left: 24px;
-  margin-right: 10px;
-  position: relative;
-  display: flex;
+    width: 130px;
+    height: 100%;
+    margin-left: 24px;
+    margin-right: 10px;
+    position: relative;
+    display: flex;
 }
 .pdf_flagBlue,
 .pdf_flagWhite,
 .pdf_flagGreen {
-  width: 40px;
-  height: 100%;
+    width: 40px;
+    height: 100%;
 }
 .pdf_flagBlue {
-  background: dodgerblue;
+    background: dodgerblue;
 }
 .pdf_flagWhite {
-  background: #fff;
+    background: #fff;
 }
 .pdf_flagGreen {
-  background: #0bbe0b;
+    background: #0bbe0b;
 }
 .pdf_flagRed {
-  width: 5px;
-  height: 100%;
-  background: #ff3030;
+    width: 5px;
+    height: 100%;
+    background: #ff3030;
 }
 .pdf_gerb {
-  width: 120%;
-  position: absolute;
-  top: 60px;
-  left: -10%;
+    width: 120%;
+    position: absolute;
+    top: 60px;
+    left: -10%;
 }
 .pdf_muhr {
-  position: absolute;
-  bottom: 80px;
-  background: #fff;
-  left: -15px;
-  box-shadow: 0 0 10px #00000030;
-  width: 160px;
-  height: 160px;
+    position: absolute;
+    bottom: 80px;
+    background: #fff;
+    left: -15px;
+    box-shadow: 0 0 10px #00000030;
+    width: 160px;
+    height: 160px;
 }
 .pdf_flagQrcode {
-  transform: scale(0.5) translate(-50%, -50%);
-  transform-origin: top left;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+    transform: scale(0.5) translate(-50%, -50%);
+    transform-origin: top left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 .pdf_content {
-  text-align: center;
-  width: calc(100% - 154px);
-  padding-right: 10px;
+    text-align: center;
+    width: calc(100% - 154px);
+    padding-right: 10px;
 }
 .pdf_title {
-  margin-top: 100px;
-  margin-bottom: 60px;
+    margin-top: 100px;
+    margin-bottom: 60px;
 }
-.pdf_titleDRu{
-  font-size: 16px;
+.pdf_titleDRu {
+    font-size: 16px;
 }
 .pdf_sertifikat {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-size: 60px;
-  color: #6969fd;
-  text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 60px;
+    color: #6969fd;
+    text-transform: uppercase;
 }
 
 .pdf_userName {
-  margin-top: 20px;
-  border-bottom: 1px solid;
+    margin-top: 20px;
+    border-bottom: 1px solid;
 }
 .pdf_userNameDesc {
-  font-size: 12px;
+    font-size: 12px;
 }
 .pdf_date {
-  margin-top: 30px;
-  font-size: 18px;
-  font-weight: 700;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 700;
 }
 .pdf_date span:first-child {
-  margin-right: 50px;
+    margin-right: 50px;
 }
 .pdf_mchj {
-  margin-top: 40px;
-  border-bottom: 1px solid;
-  text-transform: uppercase;
-  font-size: 21px;
+    margin-top: 40px;
+    border-bottom: 1px solid;
+    text-transform: uppercase;
+    font-size: 21px;
 }
 .pdf_mchjDesc {
-  font-size: 12px;
+    font-size: 12px;
 }
 .pdf_course {
-  margin-top: 40px;
-  border-bottom: 1px solid #000;
+    margin-top: 40px;
+    border-bottom: 1px solid #000;
 }
 
 .pdf_lang {
-  width: 210mm;
-  height: 297mm;
-  min-width: 210mm;
-  min-height: 297mm;
-  /* margin: 30px -20px; */
-  /* background: #fff8eb; */
-  text-align: center;
+    width: 210mm;
+    height: 297mm;
+    min-width: 210mm;
+    min-height: 297mm;
+    /* margin: 30px -20px; */
+    /* background: #fff8eb; */
+    text-align: center;
 }
 .pdf_langContainer {
-  padding: 0 5%;
-  width: 100%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 30px;
-  grid-gap: 0 30px;
-  background: #fff8eb;
+    padding: 0 5%;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 30px;
+    grid-gap: 0 30px;
+    background: #fff8eb;
 }
 .pdf_langTitle {
-  text-align: center;
+    text-align: center;
 }
 .pdf_langdesc {
-  text-align: center;
+    text-align: center;
 }
 .pdf_langName {
-  margin-top: 20px;
-  border-bottom: 1px solid #000;
+    margin-top: 20px;
+    border-bottom: 1px solid #000;
 }
 .pdf_langNameDesc {
-  font-size: 14px;
+    font-size: 14px;
 }
 .pdf_langOrganization {
-  padding-top: 10px;
-  width: 100%;
-  margin: auto;
-  font-style: italic;
-  font-size: 14px;
+    padding-top: 10px;
+    width: 100%;
+    margin: auto;
+    font-style: italic;
+    font-size: 14px;
 }
 
 .pdf_langCon {
-  display: flex;
-  margin-top: 12px;
+    display: flex;
+    margin-top: 12px;
 }
 .pdf_langImage {
-  min-width: 100px;
-  width: 100px;
-  height: 120px;
-  border: 1px solid;
-  margin-right: 8px;
+    min-width: 100px;
+    width: 100px;
+    height: 120px;
+    border: 1px solid;
+    margin-right: 8px;
 }
 .pdf_langOOO {
-  text-align: center;
-  margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 .pdf_langData {
-  border-bottom: 1px solid #000;
-  font-size: 14px;
-  font-weight: 700;
+    border-bottom: 1px solid #000;
+    font-size: 14px;
+    font-weight: 700;
 }
 .pdf_langData:last-child {
-  margin-top: 18px;
+    margin-top: 18px;
 }
 .pdf_langDateEn {
-  margin-top: 95px;
+    margin-top: 95px;
 }
 .pdf_langDirector {
-  margin-top: 12px;
-  padding-bottom: 25px;
+    margin-top: 12px;
+    padding-bottom: 25px;
 }
 .pdf_langQrContainer {
-  position: relative;
-  width: 130px;
-  height: 130px;
-  min-width: 130px;
-  margin-right: 10px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.253);
+    position: relative;
+    width: 130px;
+    height: 130px;
+    min-width: 130px;
+    margin-right: 10px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.253);
 }
 
 .pdf_langQrcode {
-  transform: scale(0.45) translate(-50%, -50%);
-  transform-origin: top left;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+    transform: scale(0.45) translate(-50%, -50%);
+    transform-origin: top left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 .additional {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .additional_text {
-  margin-top: 20px;
-  margin-left: 30px;
-  text-align: left;
+    margin-top: 20px;
+    margin-left: 30px;
+    text-align: left;
 }
 
 .additional_date {
-  margin-left: 30px;
-  text-align: left;
-  flex: 1;
+    margin-left: 30px;
+    text-align: left;
+    flex: 1;
 }
 
 .additional_registId {
-  margin-right: 5px;
+    margin-right: 5px;
 }
 
 .additonal_wrapper {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .additional_director {
-  margin-top: 50px;
-  margin-left: 30px;
-  text-align: left;
+    margin-top: 50px;
+    margin-left: 30px;
+    text-align: left;
 }
 
 .additional_partner {
-  position: absolute;
-  width: 60%;
-  bottom: 30px;
-  left: 60%;
-  transform: translateX(-50%);
+    position: absolute;
+    width: 60%;
+    bottom: 30px;
+    left: 60%;
+    transform: translateX(-50%);
 }
 
-
-
-
-
-
-
-
-
-
-.pdf_langSerContImg{
-  width: 70px;
+.pdf_langSerContImg {
+    width: 70px;
 }
-.pdf_langSertificate{
-  padding: 30px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  text-transform: uppercase;
-  background: #fff8eb;
+.pdf_langSertificate {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-transform: uppercase;
+    background: #fff8eb;
 }
-.pdf_langSertificateContent{
-  text-align: center;
-  padding: 0 30px;
+.pdf_langSertificateContent {
+    text-align: center;
+    padding: 0 30px;
 }
-.pdf_langSerContRes{
-  padding: 20px 0;
+.pdf_langSerContRes {
+    padding: 20px 0;
 }
-.pdf_langSerContDesc{
-  padding-top: 30px;
-  padding-bottom: 20px;
+.pdf_langSerContDesc {
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
-.pdf_langSerContName{
-  padding-top: 120px;
+.pdf_langSerContName {
+    padding-top: 120px;
 }
-.pdf_langSerContNam{
-  padding-top: 100px;
-  padding-bottom: 20px;
+.pdf_langSerContNam {
+    padding-top: 100px;
+    padding-bottom: 20px;
 }
 
-
-.pdf_foiz{
-  font-size: 20px;
-  font-weight: 600;
-  color: gray;
-  opacity: .5;
-  transition: .3s;
+.pdf_foiz {
+    font-size: 20px;
+    font-weight: 600;
+    color: gray;
+    opacity: 0.5;
+    transition: 0.3s;
 }
-
-
-
 
 @media screen and (max-width: 700px) {
-  .pdf_mainContainer {
-    flex-direction: column;
-  }
+    .pdf_mainContainer {
+        flex-direction: column;
+    }
 }

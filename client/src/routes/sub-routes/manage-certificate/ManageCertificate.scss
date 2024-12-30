@@ -1,9 +1,9 @@
-.manage-certificate{
+.manage-certificate {
     display: flex;
     flex-direction: column;
 }
 
-.manage-certificate__nav{
+.manage-certificate__nav {
     display: flex;
     background-color: var(--main-bg-color);
     margin: 16px 0;
@@ -11,14 +11,14 @@
     border-radius: 10px;
 }
 
-.manage-certificate__list{
+.manage-certificate__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     list-style-type: none;
     justify-content: center;
     gap: 0 20px;
     width: 100%;
-    .manage-certificate__link{
+    .manage-certificate__link {
         text-decoration: none;
         color: #fff;
         padding: 10px;
@@ -27,18 +27,18 @@
         text-align: center;
         border-radius: 10px;
         transition: 0.2s;
-        &--active{
+        &--active {
             background-color: var(--main-accent-color);
             color: #000;
         }
 
-        &:active{
+        &:active {
             transform: scaleX(0.97);
         }
     }
 }
 
-.manage-certificate__content{
+.manage-certificate__content {
     flex: 1;
     border-radius: 10px;
     background-color: var(--main-bg-color);
