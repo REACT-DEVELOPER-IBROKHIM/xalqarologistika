@@ -38,6 +38,8 @@ app.use("/search", searchCertificate);
 app.use("/analytics", analytics);
 app.use("/auth", login);
 app.use("/admin", admin);
-app.use("/comments", comments)
+app.use("/comments", comments);
 
-app.listen(port);
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
