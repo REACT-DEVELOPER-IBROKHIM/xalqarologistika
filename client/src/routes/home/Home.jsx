@@ -4,7 +4,6 @@ import "./Home.scss";
 import Services from "../../components/services/Services"
 import Footer from "../../components/footer/Footer";
 import Comments from "../../components/comments/Comments";
-import Meet from "../../components/meet/Meet";
 import Contact from "../../components/contact/Contact";
 
 const Home = () => {
@@ -14,7 +13,6 @@ const Home = () => {
        <Hero/>
        <Comments/>
        <Services/>
-       <Meet/>
        <Contact/>
        <Footer/>
     </div>

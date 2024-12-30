@@ -3,14 +3,6 @@ import { Address, Button, Container } from "../../utils/Utils";
 import emaill from "../../assets/icons/email.svg";
 import phone from "../../assets/icons/phone.svg";
 import time from "../../assets/icons/time.svg";
-import firstImg from '../../assets/images/contact-firtst-img.png';
-import secondImg from '../../assets/images/contact-second-img.png';
-import thirdImg from '../../assets/images/contact-third-img.png';
-import furthImg from '../../assets/images/contact-furth-img.png';
-import firstImgTitle from '../../assets/images/first-card-img.svg';
-import secondImgTitle from '../../assets/images/second-card-img.svg';
-import thirdImgTitle from '../../assets/images/third-card-img.svg';
-import furthImgTitle from '../../assets/images/furth-card-img.svg';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { createStatusInstance } from "../../helpers/createStatusInstance";
@@ -99,24 +91,6 @@ const Contact = () => {
                         <textarea value={message} onChange={(e) => setMessage(e.target.value)} id="form-textarea" cols="30" rows="10" placeholder={t("contact.input_message")}></textarea>
                         <Button text={t("contact.submit_btn")}/>
                     </form>
-                </div>
-                <div className="contact__cards">
-                    <div className="contact__card">
-                        <img src={firstImg} alt="img" />
-                        <img src={firstImgTitle} alt="img" />
-                    </div>
-                    <div className="contact__card">
-                        <img src={secondImg} alt="img" />
-                        <img src={secondImgTitle} alt="img" />
-                    </div>
-                    <div className="contact__card">
-                        <img src={thirdImg} alt="img" />
-                        <img src={thirdImgTitle} alt="img" />
-                    </div>
-                    <div className="contact__card">
-                        <img src={furthImg} alt="img" />
-                        <img src={furthImgTitle} alt="img" />
-                    </div>
                 </div>
             </div>
         </Container>

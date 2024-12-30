@@ -24,11 +24,18 @@
 .draft_text{
     font-size: 125px;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     opacity: 0.1;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+    user-select: none;
+    pointer-events: none;
+}
+
+.draft_text.expired{
+    opacity: 1;
+    backdrop-filter: blur(5px);
 }
 
 .image__avatar{
@@ -74,4 +81,12 @@
 .darft_container .cartifificate__adr-danger > .pdf_lang{
     min-height: 100%;
     height: 100%;
+}
+
+.expired{
+    color: red;
+}
+
+.exist{
+    color: green;
 }

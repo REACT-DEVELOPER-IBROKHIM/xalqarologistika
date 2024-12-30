@@ -16,26 +16,16 @@ const Footer = () => {
       <div className="footer-secondar__wrapper">
           <div className="info__wrapper">
             <p>{t("footer.description")}</p>
-            <ul className="footer-contact__wrapper">
-              <li className="form__menu-item"><Address maintext={t("footer.contact_email")} secondarytext="contact@logistics.com" icon={email}/></li>
-              <li className="form__menu-item"><Address maintext={t("footer.contact_number")} secondarytext="+998905980828" icon={phone}/></li>
-            </ul>
           </div>
 
           <div className="footer-menu">
             <ul className="pages__menu">
               <li><a href="/">{t("footer.about")}</a></li>
-              <li><a href="/">{t("footer.team")}</a></li>
-              <li><a href="/">{t("footer.project")}</a></li>
-              <li><a href="/">{t("footer.pricing")}</a></li>
               <li><a href="/">{t("footer.contact")}</a></li>
             </ul>
             <ul className="utility__menu">
-              <li><a href="/">{t("footer.style_guide")}</a></li>
-              <li><a href="/">{t("footer.changelog")}</a></li>
               <li><a href="/">{t("footer.license")}</a></li>
               <li><a href="/">{t("footer.protect")}</a></li>
-              <li><a href="/">Not Found</a></li>
             </ul>
           </div>
 
@@ -53,17 +43,15 @@ const Footer = () => {
               </div>
           </form>
         </div>
+        <ul className="footer-contact__wrapper">
+              <li className="form__menu-item"><Address maintext={t("footer.contact_email")} secondarytext="xalqarologistika@gmail.com" icon={email}/></li>
+              <li className="form__menu-item"><Address maintext={t("footer.contact_number")} secondarytext="+998905980828" icon={phone}/></li>
+            </ul>
       </Container>
         <hr />
         <Container>
         <div className="info__menu-wrapper">
           <h3>{t("footer.copyright")} &copy; The Binary Inc</h3>
-          <ul className="info__menu">
-            <li className="info__item"><a href="/">{t("footer.style_guide")}</a></li>
-            <li className="info__item"><a href="/">{t("footer.license")}</a></li>
-            <li className="info__item"><a href="/">{t("footer.changelog")}</a></li>
-            <li className="info__item"><a href="/">{t("footer.password")}</a></li>
-          </ul>
         </div>
         </Container>
     </footer>

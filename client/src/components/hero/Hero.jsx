@@ -6,7 +6,8 @@ import { createStatusInstance } from "../../helpers/createStatusInstance";
 import { Link } from "react-router-dom";
 import { Anchor, Container, Button } from "../../utils/Utils";
 import heroImage from "../../assets/images/hero.jpg";
-import Preview from "../preiview/Preview";
+import Preview from "../preview/Preview";
+
 
 const Hero = () => {
   const {t} = useTranslation();
@@ -78,11 +79,6 @@ const Hero = () => {
                   appearance="primary"
                   text={t("hero.check_btn")}
                   loading={searchResult.loading}
-                />
-                <Anchor
-                  link="/contact"
-                  text={t("hero.get_btn")}
-                  type="light"
                 />
               </div>
             </form>
