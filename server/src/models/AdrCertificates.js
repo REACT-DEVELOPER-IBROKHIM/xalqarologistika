@@ -26,6 +26,10 @@ const Adr = new mongoose.Schema({
     givenDate: {
         type: String,
         required: true
+    },
+    from: {
+        type: String,
+        required: true
     }
 })
 
