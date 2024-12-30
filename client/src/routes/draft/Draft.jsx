@@ -1,18 +1,13 @@
 import gerb from "../../assets/images/gerb.png"
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import signs from "../../assets/images/signs.png";
 import {FiArrowLeft} from "react-icons/fi";
 import QRCode from "react-qr-code";
 import av from "../../assets/images/images.jpeg";
 import summarizeName from "../../helpers/summarizeName";
-import summarizeTime from "../../helpers/summarizeTime";
-import getFromattedDate from "../../helpers/getFormattedTime";
-import moment from "moment";
 import "./Draft.scss";
 
-const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenDate}) => {
-  const {pathname} = useLocation();
-  const isValidDate = moment(birthdate, 'DD.MM.YYYY', true).isValid();
+const Draft = ({id, firstname, lastname, from, to, birthdate, parentname}) => {
   const number = +id?.replace(/[A-Z]/g, "");
   return (
     <div className="darft_container drafted">
@@ -61,10 +56,10 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                 </p>
                 <p className="pdf_date">
                   <span>
-                    berilgan sana: {summarizeTime(from, to).from}
+                    berilgan sana: {from}
                   </span>
                   <span>
-                    amal qilish muddati: {summarizeTime(from, to).to}
+                    amal qilish muddati: {to}
                   </span>
                 </p>
                 {id.startsWith("M") ? (
@@ -87,7 +82,7 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                   Bosh direktor: Bahromjon Muhiddinov{" "}
                 </p>
                 <div className="additonal_wrapper">
-                  <p className="additional_date">Sana: {summarizeTime(from, to).from} </p>
+                  <p className="additional_date">Sana: {from} </p>
                   <p className="additional_registId">
                     Qayd raqami: № {id}
                   </p>
@@ -142,10 +137,10 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                           OOO "NAMANGANTRANS 2022"
                         </h3>
                         <p className="pdf_langData">
-                          выдан {summarizeTime(from, to).from}
+                          выдан {from}
                         </p>
                         <p className="pdf_langData">
-                          до {summarizeTime(from, to).to}
+                          до {to}
                         </p>
                       </div>
                     </div>
@@ -177,10 +172,10 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
 
                     <div className="pdf_langDateEn">
                       <p className="pdf_langData">
-                        Issued {summarizeTime(from, to).from}
+                        Issued {from}
                       </p>
                       <p className="pdf_langData">
-                        Valid {summarizeTime(from, to).to}
+                        Valid {to}
                       </p>
                     </div>
                     <h4 className="pdf_langDirector">
@@ -201,7 +196,7 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                <br/>
                <br/>
                <p>Выдано: <strong>{summarizeName(firstname, lastname, parentname)}</strong> </p>
-               <p>квалификационный экзамен({summarizeTime(from, to).from}) на профессиональную компетентность и
+               <p>квалификационный экзамен({from}) на профессиональную компетентность и
                  признан(а) квалифицированным(ой) для
                  профессиональной работы в качестве
                  Водителя
@@ -210,8 +205,8 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                  <i>По программе: Повышение квалификации
                  водителей, занимающихся международными
                  автомобильными перевозками</i>
-                 Выдано: {summarizeTime(from, to).from}
-                 Действителен до: {summarizeTime(from, to).to}
+                 Выдано: {from}
+                 Действителен до: {to}
                  по повышения квалификации и
                  переподготовки кадров автомобильного
                  транспорта</p>
@@ -224,8 +219,8 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                </h4>
                <br/>
                <br/>
-               <p>Issued: <strong>{summarizeTime(from, to).from}</strong> </p>
-               <p>qualifying exam({summarizeTime(from, to).from}) for professional competence and
+               <p>Issued: <strong>{from}</strong> </p>
+               <p>qualifying exam({from}) for professional competence and
                   recognized as qualified for
                   professional work as
                   Driver
@@ -234,8 +229,8 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                  <i>According to the program: Advanced training
                   drivers involved in international
                   road transport</i>
-                  Issued: {summarizeTime(from, to).from}
-                       Valid until: {summarizeTime(from, to).to}
+                  Issued: {from}
+                       Valid until: {to}
                        for advanced training and
                   retraining of automotive personnel
                   transport</p>
@@ -274,7 +269,7 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                   <p className="main__bold">2. {firstname}</p>
                   <p className="main__bold">3. {lastname}</p>
                   <p className="main__bold">
-                    4. <span className="smaller_text"> {pathname.includes("check-certificates") ? getFromattedDate(isValidDate ? birthdate.split(".").reverse().join(".") : birthdate) : birthdate } </span>
+                    4. <span className="smaller_text"> {birthdate} </span>
                   </p>
                   <p className="main__bold">
                     5.{" "}
@@ -289,7 +284,7 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                   <p className="main__bold">
                     7.{" "}
                     <span className="smaller_text">
-                      Until (date) {getFromattedDate(summarizeTime(birthdate, to).to)}
+                      Until (date) {to}
                     </span>
                   </p>
                   <div className="adr_sign"></div>
@@ -382,7 +377,7 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
                   <div>
                     <h3 className="pdf_langOOO">OOO "NAMANGANTRANS 2022"</h3>
                     <p className="pdf_langData">
-                      выдан: {getFromattedDate(summarizeTime(from, to).from)}
+                      выдан: {from}
                     </p>
                     <p className="pdf_langData">
                       до: {to}
@@ -417,7 +412,7 @@ const Draft = ({id, firstname, lastname, from, to, birthdate, parentname, givenD
 
                 <div className="pdf_langDateEn adr_lang-eng-date">
                   <p className="pdf_langData">
-                    Issued: {getFromattedDate(summarizeTime(from, to).from)}
+                    Issued: {from}
                   </p>
                   <p className="pdf_langData">
                     Valid: {to}

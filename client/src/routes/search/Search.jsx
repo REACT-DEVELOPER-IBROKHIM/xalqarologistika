@@ -35,7 +35,7 @@ const Search = () => {
                 firstname={certificateDataResult.data.name}
                 lastname={certificateDataResult.data.surname}
                 parentname={certificateDataResult.data.middlename}
-                from={certificateDataResult.data.from || certificateDataResult.data.givenDate}
+                from={certificateDataResult.data.from}
                 to={certificateDataResult.data.to}
                 birthdate={certificateDataResult.data.birthDate}
               />
