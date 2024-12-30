@@ -1,33 +1,33 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const AdrTank = new mongoose.Schema({
     id: {
         type: String,
-        required: true
+        required: true,
     },
     name: {
         type: String,
         required: true,
-        max: 1024
+        max: 1024,
     },
     surname: {
         type: String,
         required: true,
-        max: 1024
+        max: 1024,
     },
     birthDate: {
         type: String,
-        required: true
+        required: true,
     },
     to: {
         type: String,
-        required: true
+        required: true,
     },
     givenDate: {
         type: String,
-        required: true
-    }
+        required: true,
+    },
 })
 
-const model = mongoose.model("AdrTanks", AdrTank);
-module.exports = model;
+const model = mongoose.model('AdrTanks', AdrTank)
+module.exports = model

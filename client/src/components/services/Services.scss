@@ -1,66 +1,65 @@
-.services-wrapper{
-    display:flex;
-    margin:160px 0px;
-    max-width:1200px;
+.services-wrapper {
+    display: flex;
+    margin: 160px 0px;
+    max-width: 1200px;
     gap: 33px;
 }
 
-
-.question{
-    display:flex;
+.question {
+    display: flex;
     max-width: 170px;
-    background-color:#f3f3f3;
-    border-left:3px solid gold;
-    text-transform:capitalize;
-    font-size:14px;
-    font-weight:400;
+    background-color: #f3f3f3;
+    border-left: 3px solid gold;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 400;
     margin-bottom: 29px;
     padding: 3px 6px;
 }
 
-.services-title{
+.services-title {
     max-width: 294px;
     font-size: 35px;
     font-weight: 600;
-    color: #1C1F35;
+    color: #1c1f35;
 }
 
-.services-cards{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap: 20px;
+.services-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-.services-card{
+.services-card {
     display: flex;
     max-width: 400px;
     align-items: flex-start;
     gap: 16px;
-    h3{
+    h3 {
         font-size: 14px;
         margin-bottom: 10px;
         flex: 1;
     }
-    img{
+    img {
         width: 70px !important;
         height: 70px !important;
         object-fit: contain;
     }
 }
 
-.line{
-    width:2px;
-    height:100px;
-    margin:0px 20px;
-    background-color:#d8d8d8;
+.line {
+    width: 2px;
+    height: 100px;
+    margin: 0px 20px;
+    background-color: #d8d8d8;
 }
 
-.banner{
+.banner {
     display: flex;
     position: relative;
 }
 
-.banner::after{
+.banner::after {
     content: '';
     height: 200px;
     width: 100%;
@@ -68,33 +67,36 @@
     bottom: 0;
     left: 0;
     background: var(--main-bg-color);
-    background: linear-gradient(0deg, var(--main-bg-color) 0%, rgba(0,212,255,0) 100%);
+    background: linear-gradient(
+        0deg,
+        var(--main-bg-color) 0%,
+        rgba(0, 212, 255, 0) 100%
+    );
 }
 
-.banner img{
-    width:100%;
-    object-fit:cover;
+.banner img {
+    width: 100%;
+    object-fit: cover;
 }
 
-@media only screen and (max-width: 1200px){
-
-    .services-wrapper{
+@media only screen and (max-width: 1200px) {
+    .services-wrapper {
         flex-wrap: wrap;
         margin: 50px 0;
         align-items: center;
     }
 
-    .services-title{
+    .services-title {
         max-width: 100%;
     }
 
-    .services-card{
+    .services-card {
         max-width: 100%;
         width: 100%;
         align-items: center;
     }
 
-    .what-we-do{
+    .what-we-do {
         width: 100%;
         text-align: center;
         display: flex;
@@ -102,62 +104,58 @@
         align-items: center;
     }
 
-    .question{
+    .question {
         max-width: 80%;
         margin-inline: auto;
     }
-
 }
 
 @media only screen and (max-width: 1024px) {
-
-    .services-wrapper{
+    .services-wrapper {
         text-align: center;
         flex-direction: column;
     }
 
-   
-
-    .services-cards{
+    .services-cards {
         justify-content: center;
         text-align: left;
         gap: 20px;
         grid-template-columns: 1fr;
     }
 
-    .services-card{
+    .services-card {
         justify-self: center;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .services-title{
+    .services-title {
         font-size: 26px;
     }
 
-    .card-info{
-        p{
+    .card-info {
+        p {
             font-size: 16px;
         }
     }
 
-    .banner img{
+    .banner img {
         aspect-ratio: 3 / 1;
     }
 }
 
 @media only screen and (max-width: 552px) {
-    .services-title{
+    .services-title {
         font-size: 26px;
     }
 
-    .card-info{
-        p{
+    .card-info {
+        p {
             font-size: 13px;
         }
     }
 
-    .banner img{
+    .banner img {
         aspect-ratio: 2 / 1;
     }
 }

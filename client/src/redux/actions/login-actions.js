@@ -1,19 +1,19 @@
-import { LOGIN, LOGOUT } from "../actions/types";
+import { LOGIN, LOGOUT } from '../actions/types'
 
 const login = (user, token) => {
     return {
         type: LOGIN,
         payload: {
             user,
-            token
-        }
+            token,
+        },
     }
 }
 
 const logout = () => {
     return {
-        type: LOGOUT
+        type: LOGOUT,
     }
 }
 
-export {login, logout};
+export { login, logout }

@@ -1,40 +1,40 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const DriverCertificates = new Schema({
     id: {
         type: String,
-        required: true
+        required: true,
     },
     name: {
         type: String,
         required: true,
-        max: 1024
+        max: 1024,
     },
     surname: {
         type: String,
         required: true,
-        max: 1024
+        max: 1024,
     },
     middlename: {
         type: String,
         required: true,
-        max: 1024
+        max: 1024,
     },
     from: {
         type: String,
-        required: true
+        required: true,
     },
     to: {
         type: String,
-        required: true
+        required: true,
     },
     courseName: {
         type: String,
         required: true,
-        max: 1024
-    }
+        max: 1024,
+    },
 })
 
-const model = mongoose.model("drivercertificates", DriverCertificates);
-module.exports = model;
+const model = mongoose.model('drivercertificates', DriverCertificates)
+module.exports = model

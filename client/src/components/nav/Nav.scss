@@ -1,20 +1,19 @@
 // HEADER
-.header{
+.header {
     position: sticky;
     top: 0;
     left: 0;
     z-index: 999;
 }
 
-
 // TOP
 
-.top{
+.top {
     height: 80px;
     background-color: var(--main-bg-color);
 }
 
-.top__wrapper{
+.top__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,67 +21,67 @@
     gap: 20px;
 }
 
-.top__logo{
-    h1{
+.top__logo {
+    h1 {
         visibility: hidden;
         width: 0;
         height: 0;
     }
-    img{
+    img {
         height: 50px;
         width: 200px;
     }
 }
 
-.top__menu{
+.top__menu {
     display: flex;
     list-style-type: none;
     gap: 0 40px;
 }
 
 // NAV
-.nav{
+.nav {
     background-color: #fff;
 }
 
-.nav__wrapper{
+.nav__wrapper {
     display: flex;
     justify-content: space-between;
 }
 
-.nav__menu{
+.nav__menu {
     display: flex;
     align-items: center;
     list-style-type: none;
     gap: 0 20px;
     padding: 10px 0;
-    .nav__menu-item{
+    .nav__menu-item {
         border-right: 1px solid #000;
         padding-right: 20px;
-        &:last-child{
+        &:last-child {
             border-right: none;
         }
-        a{
+        a {
             text-decoration: none;
             color: #000;
             font-weight: 500;
             padding: 3px 6px;
         }
 
-        .nav--active{
+        .nav--active {
             background-color: var(--main-accent-color);
             color: #000 !important;
         }
     }
 }
 
-.nav__socials{
+.nav__socials {
     display: flex;
     align-items: center;
     list-style-type: none;
     gap: 0 20px;
-    li{
-        a{
+    li {
+        a {
             text-decoration: none;
             color: #000;
             font-size: 20px;
@@ -90,8 +89,7 @@
     }
 }
 
-
-.nav__language-select{
+.nav__language-select {
     background-color: #fff;
     padding: 2px 0;
     border-radius: 5px;
@@ -99,37 +97,37 @@
     outline: none;
 }
 
-@media only screen and (max-width: 992px){
-    .top__logo{
-        img{
+@media only screen and (max-width: 992px) {
+    .top__logo {
+        img {
             width: 130px;
         }
     }
 
-    .nav__wrapper{
+    .nav__wrapper {
         font-size: 14px;
-        svg{
+        svg {
             font-size: 14px;
         }
     }
 }
 
-@media only screen and (max-width: 768px){
-    .top__logo{
-        img{
+@media only screen and (max-width: 768px) {
+    .top__logo {
+        img {
             width: 200px;
         }
     }
 
-    .top__menu{
+    .top__menu {
         display: none;
     }
 
-    .nav__language-select{
+    .nav__language-select {
         font-size: 14px;
     }
 
-    .top__wrapper{
+    .top__wrapper {
         justify-content: center;
     }
 }

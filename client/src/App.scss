@@ -1,17 +1,17 @@
-.message{
+.message {
     color: #fff;
     padding: 5px;
     border-radius: 5px;
     font-size: 13px;
-    &--error{
-        background-color: var(--danger-color);   
+    &--error {
+        background-color: var(--danger-color);
     }
 
-    &--success{
+    &--success {
         background-color: var(--success-color);
     }
 
-    &--loading{
+    &--loading {
         background-color: var(--warning-color);
     }
 }

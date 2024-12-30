@@ -1,4 +1,4 @@
-.darft_container{
+.darft_container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -9,19 +9,19 @@
     font-family: sans-serif !important;
 }
 
-.pdf_userName{
+.pdf_userName {
     text-transform: uppercase;
 }
 
-.pdf_langName{
+.pdf_langName {
     text-transform: uppercase;
 }
 
-.pdf_container{
+.pdf_container {
     position: relative;
 }
 
-.draft_text{
+.draft_text {
     font-size: 125px;
     position: absolute;
     z-index: 3;
@@ -33,18 +33,18 @@
     pointer-events: none;
 }
 
-.draft_text.expired{
+.draft_text.expired {
     opacity: 1;
     backdrop-filter: blur(5px);
 }
 
-.image__avatar{
+.image__avatar {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.main_pageLink{
+.main_pageLink {
     padding: 10px 20px;
     background-color: var(--main-bg-color);
     color: #fff;
@@ -56,37 +56,37 @@
     align-items: center;
 }
 
-.pdf_langOrganization{
+.pdf_langOrganization {
     text-align: left;
 }
 
-.search-certificate .pdf_container{
+.search-certificate .pdf_container {
     padding: 0;
 }
 
-.search-certificate .pdf_lang{
+.search-certificate .pdf_lang {
     margin-top: 30px;
 }
 
-.certficate-text__container{
+.certficate-text__container {
     text-align: center;
     margin-top: -600px;
     padding: 16px;
 }
 
-.darft_container .cartifificate__adr-danger{
+.darft_container .cartifificate__adr-danger {
     margin-top: 30px;
 }
 
-.darft_container .cartifificate__adr-danger > .pdf_lang{
+.darft_container .cartifificate__adr-danger > .pdf_lang {
     min-height: 100%;
     height: 100%;
 }
 
-.expired{
+.expired {
     color: red;
 }
 
-.exist{
+.exist {
     color: green;
 }

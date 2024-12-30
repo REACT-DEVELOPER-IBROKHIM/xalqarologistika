@@ -1,4 +1,4 @@
-.modal-layer{
+.modal-layer {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -12,7 +12,7 @@
     justify-content: center;
 }
 
-.modal{
+.modal {
     width: 100%;
     max-width: 450px;
     display: flex;
@@ -24,18 +24,18 @@
     gap: 15px 0;
     border-radius: 10px;
     position: relative;
-    p{
+    p {
         text-align: center;
     }
 }
 
-.modal__close{
+.modal__close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 25px;
     transition: 0.2s;
-    &:active{
+    &:active {
         transform: scale(0.9);
     }
 }
