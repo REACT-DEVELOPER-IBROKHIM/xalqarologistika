@@ -2,7 +2,6 @@ const express = require("express");
 const Certificate = require("../models/AdrCertificates");
 const generateId = require("../utils/generateId");
 const verifyAdmin = require("../middleware/verifytoken");
-const { summarizeTime } = require("../utils/summarizeTime");
 const certificate = express.Router();
 
 certificate.post("/", verifyAdmin, async (req, res) => {
