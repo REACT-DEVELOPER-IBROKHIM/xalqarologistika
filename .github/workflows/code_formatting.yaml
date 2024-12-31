@@ -9,8 +9,8 @@ on:
       - "**"
 
 jobs:
-  prettier:
-    name: Run Prettier Check
+  prettier-client:
+    name: Code Formatting (Client)
     runs-on: ubuntu-latest
 
     steps:
@@ -20,17 +20,33 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: '18'
 
-      - name: Install dependencies
-        run: |
-          npm install
+      - name: Install dependencies (Client)
+        working-directory: ./client
+        run: npm install
 
-      - name: Run Prettier Check
-        run: |
-          npx prettier --check .
+      - name: Run Code Formatting (Client)
+        working-directory: ./client
+        run: npx prettier --check .
 
-      - name: Report Prettier issues
-        if: failure()
-        run: |
-          echo "Prettier found issues. Please format your code."
+  prettier-server:
+    name: Code Formatting (Server)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies (Server)
+        working-directory: ./server
+        run: npm install
+
+      - name: Run Code Formatting (Server)
+        working-directory: ./server
+        run: npx prettier --check .
