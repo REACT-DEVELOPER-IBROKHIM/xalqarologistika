@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon index.js",
+        "start": "node index.js",
+        "start:dev": "nodemon index.js",
         "prettier:write": "prettier --write .",
         "prettier:check": "prettier --check ."
     },
@@ -17,7 +18,9 @@
         "express": "^4.21.2",
         "jsonwebtoken": "^9.0.2",
         "mongoose": "^8.9.3",
-        "nodemon": "^3.1.9",
         "prettier": "^3.4.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
     }
 }
