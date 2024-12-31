@@ -1,0 +1,36 @@
+name: Code Formatting
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  prettier:
+    name: Run Prettier Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run Prettier Check
+        run: |
+          npx prettier --check .
+
+      - name: Report Prettier issues
+        if: failure()
+        run: |
+          echo "Prettier found issues. Please format your code."
