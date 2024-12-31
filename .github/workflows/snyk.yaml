@@ -1,0 +1,34 @@
+name: Snyk Security Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  snyk:
+    name: Snyk Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install dependencies and test server for vulnerabilities
+      working-directory: ./server
+      run: |
+        npm install
+        npx snyk test
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+    - name: Install dependencies and test client for vulnerabilities
+      working-directory: ./client
+      run: |
+        npm install
+        npx snyk test
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
