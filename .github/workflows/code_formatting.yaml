@@ -1,0 +1,52 @@
+name: Code Formatting
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  prettier-client:
+    name: Code Formatting (Client)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies (Client)
+        working-directory: ./client
+        run: npm install
+
+      - name: Run Code Formatting (Client)
+        working-directory: ./client
+        run: npx prettier --check .
+
+  prettier-server:
+    name: Code Formatting (Server)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies (Server)
+        working-directory: ./server
+        run: npm install
+
+      - name: Run Code Formatting (Server)
+        working-directory: ./server
+        run: npx prettier --check .
