@@ -9,8 +9,6 @@ import { createStatusInstance } from '../../helpers/createStatusInstance'
 import axios from 'axios'
 const NUMBER_REGEX =
     /^(\+\d{1,2}\s?)?1?-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
-const BOT_ID = process.env.REACT_APP_BOT_ID
-const CHAT_ID = process.env.REACT_APP_CHAT_ID
 
 const Contact = () => {
     const { t } = useTranslation()
@@ -32,9 +30,9 @@ const Contact = () => {
             setContactData(createStatusInstance('pending', t('status.pending')))
             axios
                 .post(
-                    `https://api.telegram.org/bot${BOT_ID ? BOT_ID : '6950153994:AAE5CPBr_Cys3CfcG2nFPFIvKOp8eri66wY'}/sendMessage`,
+                    `https://api.telegram.org/bot${process.env.REACT_APP_BOT_ID}/sendMessage`,
                     {
-                        chat_id: CHAT_ID ? CHAT_ID : '821310024',
+                        chat_id: process.env.REACT_APP_CHAT_ID,
                         text: `\n Ismi: ${name}\n Telefon raqami: ${number}\n Xabar: ${message ? message : 'Xabar qoldirilmagan'}`,
                         headers: {
                             'Content-Type': 'application/json',
@@ -51,7 +49,7 @@ const Contact = () => {
                         )
                     )
                 })
-                .catch(error => {
+                .catch(() => {
                     setContactData(
                         createStatusInstance('error', t('status.error'))
                     )

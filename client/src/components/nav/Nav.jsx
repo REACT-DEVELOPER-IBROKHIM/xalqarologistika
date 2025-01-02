@@ -71,9 +71,6 @@ const Nav = () => {
                                     {t('nav.home')}
                                 </NavLink>
                             </li>
-                            <li className="nav__menu-item">
-                                <NavLink to="/login">{t('nav.admin')}</NavLink>
-                            </li>
                         </ul>
                         <ul className="nav__socials">
                             <select
