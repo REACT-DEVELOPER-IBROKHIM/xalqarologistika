@@ -38,7 +38,7 @@ Xalqarologistika.uz is a comprehensive web application built using React that ai
 
 ### Demo
 
-You can access a live demo of the project at [xalqarologistika.uz/demo](https://xalqarologistika.uz/demo). For demo purposes, you can use the following credentials:
+You can access a live demo of the project at [xalqarologistika.uz](https://xalqarologistika.uz). For demo purposes, you can use the following credentials:
 
 - **Username:** demo_user
 - **Password:** demo_password
