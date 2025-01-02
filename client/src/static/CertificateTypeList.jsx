@@ -1,4 +1,5 @@
 const certificateTypeList = (type, path) => {
+    // TODO: Add dynamic logic generation
     return [
         {
             route: `${path}/${type}-driver-certificate`,
