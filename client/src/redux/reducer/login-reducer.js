@@ -9,13 +9,11 @@ const loginReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOGIN:
             return {
-                ...state,
                 user: action.payload.user._id,
                 token: 'Bearer ' + action.payload.token,
             }
         case LOGOUT:
             return {
-                ...state,
                 user: null,
                 token: null,
             }

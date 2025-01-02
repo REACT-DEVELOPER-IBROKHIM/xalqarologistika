@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "Asosiy",
-        "admin": "Admin",
         "work_hours": "Dush - Yak",
         "email": "Elektron pochta",
         "tel": "Tel",
@@ -22,7 +21,7 @@
         "services": [
             {
                 "title": "Haydovchi Sertifikat Ta'limi",
-                "description": "Becoming yetuk haydovchi bo'ling."
+                "description": "Yetuk haydovchi bo'ling."
             },
             {
                 "title": "ADR Sertifikat Ta'limi",
@@ -30,7 +29,7 @@
             },
             {
                 "title": "ADR TANK Sertifikat Ta'limi",
-                "description": "Xavfli materiallarni sementlarida olib o'tishda ixtisoslashingiz."
+                "description": "Xavfli materiallarni olib o'tishda tajribangizni oshiring."
             },
             {
                 "title": "Menejer Sertifikat Ta'limi",
