@@ -5,19 +5,19 @@ const generateId = require('../utils/generateId')
 const certificate = express.Router()
 
 certificate.post('/', verifyAdmin, async (req, res) => {
-    const allCertificates = await Certificate.find()
-    const existCertificate = await Certificate.findOne({
-        name: req.body.name,
-        surname: req.body.surname,
-        middlename: req.body.middlename,
-    })
-    if (existCertificate) {
-        res.status(409).json('Sertifikat mavjud')
-        return
-    }
     try {
+        const allCertificates = await Certificate.countDocuments()
+        const existCertificate = await Certificate.findOne({
+            name: req.body.name,
+            surname: req.body.surname,
+            middlename: req.body.middlename,
+        })
+        if (existCertificate) {
+            return res.status(409).json('Sertifikat mavjud')
+        }
+
         const newCertificate = await Certificate.create({
-            id: generateId(allCertificates.length + 1, 5, 'D'),
+            id: generateId(allCertificates + 1, 5, 'D'),
             name: req.body.name,
             surname: req.body.surname,
             middlename: req.body.middlename,
@@ -25,8 +25,8 @@ certificate.post('/', verifyAdmin, async (req, res) => {
             to: req.body.to,
             courseName: '40 soat',
         })
-        const certificate = await newCertificate.save()
-        res.status(201).json(certificate)
+
+        return res.status(201).json(newCertificate)
     } catch (err) {
         res.status(400).json('Sertifikat yaratishda xatolik!')
     }
