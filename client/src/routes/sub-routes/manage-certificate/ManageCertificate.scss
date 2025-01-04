@@ -18,7 +18,7 @@
     justify-content: center;
     gap: 0 20px;
     width: 100%;
-    .manage-certificate__link {
+    a {
         text-decoration: none;
         color: #fff;
         padding: 10px;
@@ -27,15 +27,16 @@
         text-align: center;
         border-radius: 10px;
         transition: 0.2s;
-        &--active {
-            background-color: var(--main-accent-color);
-            color: #000;
-        }
 
         &:active {
             transform: scaleX(0.97);
         }
     }
+}
+
+.active {
+    background-color: var(--main-accent-color);
+    color: #000;
 }
 
 .manage-certificate__content {

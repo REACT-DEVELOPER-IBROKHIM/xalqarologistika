@@ -44,39 +44,18 @@ const Sidebar = () => {
                 <div className="sidebar__menu">
                     <ul className="sidebar__menu-list">
                         <li>
-                            <NavLink
-                                className={({ isActive }) =>
-                                    isActive
-                                        ? 'sidebar__menu-item--active'
-                                        : 'sidebar__menu-item-link'
-                                }
-                                to="/admin/create-certificate"
-                            >
+                            <NavLink to="create-certificate">
                                 {t('services.create')}
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink
-                                className={({ isActive }) =>
-                                    isActive
-                                        ? 'sidebar__menu-item--active'
-                                        : 'sidebar__menu-item-link'
-                                }
-                                to="/admin/manage-certificate"
-                            >
+                            <NavLink to="manage-certificate/manage-driver-certificate?limit=10&page=1">
                                 {t('services.manage')}
                             </NavLink>
                         </li>
                         {/* <li><NavLink className={({isActive}) => isActive ? "sidebar__menu-item--active" : "sidebar__menu-item-link"} to="/admin/add-admin">Add new admin</NavLink></li> */}
                         <li>
-                            <NavLink
-                                className={({ isActive }) =>
-                                    isActive
-                                        ? 'sidebar__menu-item--active'
-                                        : 'sidebar__menu-item-link'
-                                }
-                                to="/admin/analytics"
-                            >
+                            <NavLink to="analytics">
                                 {t('services.analytics')}
                             </NavLink>
                         </li>

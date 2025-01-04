@@ -1,8 +1,13 @@
-const certificateTypeList = (type, path) => {
-    const endpoints = ['driver', 'manager', 'adr', 'adr-tank']
+const certificateTypeList = () => {
+    const endpoints = [
+        'driver',
+        'driver-manager',
+        'driver-adr',
+        'driver-adr-tank',
+    ]
     return endpoints.map(endpoint => ({
-        route: `${path}/${type}-driver-${endpoint}-certificate`,
-        name: `${endpoint[0].toUpperCase() + endpoint.slice(1)} certificate`,
+        route: `manage-${endpoint}-certificate`,
+        name: `${endpoint[0].toUpperCase() + endpoint.slice(1).replace(/-/g, ' ')} certificate`,
     }))
 }
 

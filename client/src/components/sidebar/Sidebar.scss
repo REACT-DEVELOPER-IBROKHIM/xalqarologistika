@@ -91,10 +91,10 @@
         border-radius: 10px;
         font-size: 14px;
     }
+}
 
-    .sidebar__menu-item--active {
-        color: #000;
-        display: block;
-        background-color: var(--main-accent-color);
-    }
+.active {
+    color: #000 !important;
+    display: block;
+    background-color: var(--main-accent-color);
 }
