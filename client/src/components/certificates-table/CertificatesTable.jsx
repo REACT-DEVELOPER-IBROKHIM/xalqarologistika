@@ -150,10 +150,6 @@ const CertificatesTable = () => {
         }
     }
 
-    const handleEditCertificate = (certificate) => {
-        console.log(certificate)
-    }
-
     return (
         <div className="certificates">
             <div className="certificates__filters">
@@ -242,7 +238,7 @@ const CertificatesTable = () => {
                                                         trigger={() => (
                                                             <button
                                                                 type="text"
-                                                                className="success-button"
+                                                                class="success-button"
                                                                 onFocus={() =>
                                                                     setDownloadData(
                                                                         certificate
@@ -259,12 +255,15 @@ const CertificatesTable = () => {
                                                 )}
                                             </td>
                                             <td>
-                                                <Button
-                                                    clickHandler={() => handleEditCertificate(certificate)}
-                                                    text="Edit"
-                                                    appearance="warning"
-                                                    loading={false}
-                                                />
+                                                {certificate.id !==
+                                                    'Mavjud emas' && (
+                                                    <Button
+                                                        text="Edit"
+                                                        appearance="warning"
+                                                        disabled={true}
+                                                        loading={false}
+                                                    />
+                                                )}
                                             </td>
                                             <Modal
                                                 ref={modal}
