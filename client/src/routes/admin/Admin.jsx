@@ -9,9 +9,9 @@ import {
 } from '@ant-design/icons'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { Button, Layout, Menu } from 'antd'
-import { useTranslation } from 'react-i18next';
-import logo from "../../assets/logo/logo.svg";
-import logoSmall from "../../assets/logo/logo-small.svg";
+import { useTranslation } from 'react-i18next'
+import logo from '../../assets/logo/logo.svg'
+import logoSmall from '../../assets/logo/logo-small.svg'
 
 const { Header, Sider, Content } = Layout
 
@@ -26,12 +26,16 @@ const Admin = () => {
     }, [pathname])
     return (
         <Layout className="min-h-screen">
-            <Sider width={250} className='p-2 !bg-white shadow-xl' trigger={null}>
-                <div className='min-h-[40px] h-[40px] mt-2 mb-4'>
-                    <img className='my-4 px-4' src={logo} alt="" />
+            <Sider
+                width={250}
+                className="p-2 !bg-white shadow-xl"
+                trigger={null}
+            >
+                <div className="min-h-[40px] h-[40px] mt-2 mb-4">
+                    <img className="my-4 px-4" src={logo} alt="" />
                 </div>
                 <Menu
-                    className='bg-transparent !border-none'
+                    className="bg-transparent !border-none"
                     mode="inline"
                     items={[
                         {
@@ -51,12 +55,12 @@ const Admin = () => {
                                     {t('services.manage')}
                                 </NavLink>
                             ),
-                        }
+                        },
                     ]}
                 />
             </Sider>
             <Layout>
-                <Header className='px-4 bg-white shadow-xl flex items-center'>
+                <Header className="px-4 bg-white shadow-xl flex items-center">
                     <h2 className="text-xl">{t('manage.title')}</h2>
                 </Header>
                 <Content className="p-4">

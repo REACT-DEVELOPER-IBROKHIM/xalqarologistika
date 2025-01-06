@@ -24,10 +24,10 @@ const index = () => {
                     path="manage-certificate"
                     element={<ManageCertificates />}
                 >
-                    <Route path="driver" element={<Certificates/>} />
-                    <Route path="adr" element={<Adr/>} />
-                    <Route path="manager" element={<Manager/>} />
-                    <Route path="adr-tank" element={<AdrTank/>} />
+                    <Route path="driver" element={<Certificates />} />
+                    <Route path="adr" element={<Adr />} />
+                    <Route path="manager" element={<Manager />} />
+                    <Route path="adr-tank" element={<AdrTank />} />
                 </Route>
                 <Route path="analytics" element={<Analytics />} />
             </Route>

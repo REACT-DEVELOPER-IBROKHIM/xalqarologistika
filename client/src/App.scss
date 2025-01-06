@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .ant-menu-item-selected {
     background-color: transparent !important;
     color: unset !important;
@@ -17,13 +16,11 @@
     color: #fff !important;
 }
 
-
-.ant-menu{
-    display: flex !important; 
-    flex-direction: column  !important;
+.ant-menu {
+    display: flex !important;
+    flex-direction: column !important;
     gap: 10px !important;
 }
-
 
 .ant-layout-sider-children {
     display: flex;

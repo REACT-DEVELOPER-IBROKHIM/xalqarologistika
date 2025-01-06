@@ -150,7 +150,7 @@ const CertificatesTable = () => {
         }
     }
 
-    const handleEditCertificate = (certificate) => {
+    const handleEditCertificate = certificate => {
         console.log(certificate)
     }
 
@@ -260,7 +260,11 @@ const CertificatesTable = () => {
                                             </td>
                                             <td>
                                                 <Button
-                                                    clickHandler={() => handleEditCertificate(certificate)}
+                                                    clickHandler={() =>
+                                                        handleEditCertificate(
+                                                            certificate
+                                                        )
+                                                    }
                                                     text="Edit"
                                                     appearance="warning"
                                                     loading={false}
