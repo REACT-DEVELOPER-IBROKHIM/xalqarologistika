@@ -5,7 +5,7 @@ const verifyAdmin = require('../middleware/verifytoken')
 const certificate = express.Router()
 
 certificate.post('/', verifyAdmin, async (req, res) => {
-    const allCertificates = await Certificate.find()
+    const allCertificates = await Certificate.countDocuments()
     const existCertificate = await Certificate.findOne({
         name: req.body.name,
         surname: req.body.surname,
@@ -17,15 +17,14 @@ certificate.post('/', verifyAdmin, async (req, res) => {
     }
     try {
         const newCertificate = await Certificate.create({
-            id: generateId(allCertificates.length + 1, 6),
+            id: generateId(allCertificates + 1, 6),
             name: req.body.name,
             surname: req.body.surname,
             birthDate: req.body.birthDate,
-            givenDate: req.body.givenDate,
+            from: req.body.givenDate,
             to: req.body.to,
         })
-        const certificate = await newCertificate.save()
-        res.status(201).json(certificate)
+        res.status(201).json(newCertificate)
     } catch (err) {
         res.status(400).json('Sertifikat yaratishda xatolik!')
     }
