@@ -150,6 +150,10 @@ const CertificatesTable = () => {
         }
     }
 
+    const handleEditCertificate = certificate => {
+        console.log(certificate)
+    }
+
     return (
         <div className="certificates">
             <div className="certificates__filters">
@@ -238,7 +242,7 @@ const CertificatesTable = () => {
                                                         trigger={() => (
                                                             <button
                                                                 type="text"
-                                                                class="success-button"
+                                                                className="success-button"
                                                                 onFocus={() =>
                                                                     setDownloadData(
                                                                         certificate
@@ -255,15 +259,16 @@ const CertificatesTable = () => {
                                                 )}
                                             </td>
                                             <td>
-                                                {certificate.id !==
-                                                    'Mavjud emas' && (
-                                                    <Button
-                                                        text="Edit"
-                                                        appearance="warning"
-                                                        disabled={true}
-                                                        loading={false}
-                                                    />
-                                                )}
+                                                <Button
+                                                    clickHandler={() =>
+                                                        handleEditCertificate(
+                                                            certificate
+                                                        )
+                                                    }
+                                                    text="Edit"
+                                                    appearance="warning"
+                                                    loading={false}
+                                                />
                                             </td>
                                             <Modal
                                                 ref={modal}
