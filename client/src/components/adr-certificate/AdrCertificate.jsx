@@ -9,6 +9,7 @@ import { AiOutlineZoomIn, AiOutlineZoomOut } from 'react-icons/ai'
 const AdrCertificate = forwardRef(
     ({ firstname, lastname, to, birthdate, id, from }, ref) => {
         const [zoom, setZoom] = useState(1)
+        console.log(from, to)
         return (
             <>
                 <div className="pdf_driver">

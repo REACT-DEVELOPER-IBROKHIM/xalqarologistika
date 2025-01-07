@@ -37,7 +37,6 @@ const Create = () => {
         middlename: '',
         from: '',
         to: '',
-        givenDate: '',
         certificateType: 'select',
     })
 
@@ -66,7 +65,6 @@ const Create = () => {
             middlename: '',
             from: '',
             to: '',
-            givenDate: '',
             certificateType: 'select',
         })
         setCertificateStatus(createStatusInstance('backlog'))
@@ -81,7 +79,7 @@ const Create = () => {
             certificateData.certificateType !== 'select' &&
             inputValidationSurname &&
             inputValidationName &&
-            (inputValidationMiddleName || certificateData.givenDate)
+            (inputValidationMiddleName || certificateData.from)
         ) {
             setCertificateStatus(
                 createStatusInstance('pending', t('status.pending'))
@@ -120,7 +118,6 @@ const Create = () => {
         const { certificateType, ...data } = certificateData
         data.from = getFormattedTime(data.from)
         data.to = getFormattedTime(data.to)
-        data.givenDate = getFormattedTime(data.givenDate)
         data.id = +certificateStatus.data.match(/[0-9]+/)[0]
         if (
             certificateType === 'driver-adr-certificate' ||
@@ -240,13 +237,13 @@ const Create = () => {
                             certificateData.certificateType ===
                                 'driver-adr-tank-certificate' ? (
                                 <DatePicker
-                                    id="givenDate"
+                                    id="from"
                                     autoComplete="off"
-                                    selected={certificateData.givenDate}
+                                    selected={certificateData.from}
                                     onChange={date =>
                                         setCertificateData({
                                             ...certificateData,
-                                            givenDate: date,
+                                            from: date,
                                         })
                                     }
                                     required
@@ -455,9 +452,7 @@ const Create = () => {
                                 birthdate={getFormattedTime(
                                     certificateData.from
                                 )}
-                                givenDate={getFormattedTime(
-                                    certificateData.givenDate
-                                )}
+                                from={getFormattedTime(certificateData.from)}
                                 ref={printFrame}
                             />
                         )}
