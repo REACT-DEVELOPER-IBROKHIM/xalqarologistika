@@ -21,7 +21,7 @@ certificate.post('/', verifyAdmin, async (req, res) => {
             name: req.body.name,
             surname: req.body.surname,
             birthDate: req.body.birthDate,
-            from: req.body.givenDate,
+            from: req.body.from,
             to: req.body.to,
         })
         res.status(201).json(newCertificate)
