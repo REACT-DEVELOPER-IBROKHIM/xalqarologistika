@@ -9,7 +9,7 @@ certificate.post('/', verifyAdmin, async (req, res) => {
     const existCertificate = await Certificate.findOne({
         name: req.body.name,
         surname: req.body.surname,
-        birthDate: req.body.birthDate,
+        birthDate: req.body.birthdate,
     })
     if (existCertificate) {
         res.status(409).json('Sertifikat mavjud')
@@ -20,7 +20,7 @@ certificate.post('/', verifyAdmin, async (req, res) => {
             id: generateId(allCertificates + 1, 6),
             name: req.body.name,
             surname: req.body.surname,
-            birthDate: req.body.birthDate,
+            birthDate: req.body.birthdate,
             from: req.body.from,
             to: req.body.to,
         })
