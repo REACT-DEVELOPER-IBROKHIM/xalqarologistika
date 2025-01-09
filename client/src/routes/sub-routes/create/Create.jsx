@@ -36,6 +36,7 @@ const Create = () => {
         surname: '',
         middlename: '',
         from: '',
+        birthdate: '',
         to: '',
         certificateType: 'select',
     })
@@ -64,6 +65,7 @@ const Create = () => {
             surname: '',
             middlename: '',
             from: '',
+            birthdate: '',
             to: '',
             certificateType: 'select',
         })
@@ -118,13 +120,9 @@ const Create = () => {
         const { certificateType, ...data } = certificateData
         data.from = getFormattedTime(data.from)
         data.to = getFormattedTime(data.to)
+        data.birthdate = getFormattedTime(data.birthdate)
         data.id = +certificateStatus.data.match(/[0-9]+/)[0]
-        if (
-            certificateType === 'driver-adr-certificate' ||
-            certificateType === 'driver-adr-tank-certificate'
-        ) {
-            data.birthDate = data.from
-        }
+        console.log(data)
         try {
             setIsCreating({
                 loading: true,
@@ -329,11 +327,25 @@ const Create = () => {
                             <DatePicker
                                 id="fromdate"
                                 autoComplete="off"
-                                selected={certificateData.from}
+                                selected={
+                                    certificateData[
+                                        certificateData.certificateType ===
+                                            'driver-adr-certificate' ||
+                                        certificateData.certificateType ===
+                                            'driver-adr-tank-certificate'
+                                            ? 'birthdate'
+                                            : 'from'
+                                    ]
+                                }
                                 onChange={date =>
                                     setCertificateData({
                                         ...certificateData,
-                                        from: date,
+                                        [certificateData.certificateType ===
+                                            'driver-adr-certificate' ||
+                                        certificateData.certificateType ===
+                                            'driver-adr-tank-certificate'
+                                            ? 'birthdate'
+                                            : 'from']: date,
                                     })
                                 }
                                 required
@@ -450,7 +462,7 @@ const Create = () => {
                                 firstname={certificateData.name}
                                 to={getFormattedTime(certificateData.to)}
                                 birthdate={getFormattedTime(
-                                    certificateData.from
+                                    certificateData.birthdate
                                 )}
                                 from={getFormattedTime(certificateData.from)}
                                 ref={printFrame}
