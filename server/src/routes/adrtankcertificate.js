@@ -9,7 +9,7 @@ certificateTank.post('/', verifyAdmin, async (req, res) => {
     const existCertificate = await Certificate.findOne({
         name: req.body.name,
         surname: req.body.surname,
-        birthDate: req.body.birthDate,
+        birthDate: req.body.birthdate,
     })
     if (existCertificate) {
         res.status(409).json('Sertifikat mavjud')
@@ -20,9 +20,9 @@ certificateTank.post('/', verifyAdmin, async (req, res) => {
             id: generateId(allCertificates.length + 1, 6, 'T'),
             name: req.body.name,
             surname: req.body.surname,
-            birthDate: req.body.birthDate,
+            birthDate: req.body.birthdate,
             to: req.body.to,
-            givenDate: req.body.givenDate,
+            from: req.body.from,
         })
         const certificate = await newCertificate.save()
         res.status(201).json(certificate)
@@ -60,7 +60,7 @@ certificateTank.patch('/delete/:id', verifyAdmin, async (req, res) => {
                     name: 'Mavjud emas',
                     birthDate: 'Mavjud emas',
                     to: 'Mavjud emas',
-                    givenDate: 'Mavjud emas',
+                    form: 'Mavjud emas',
                 },
             }
         )
