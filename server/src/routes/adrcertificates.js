@@ -59,7 +59,7 @@ certificate.patch('/delete/:id', verifyAdmin, async (req, res) => {
                     name: 'Mavjud emas',
                     birthDate: 'Mavjud emas',
                     to: 'Mavjud emas',
-                    givenDate: 'Mavjud emas',
+                    from: 'Mavjud emas',
                 },
             }
         )
