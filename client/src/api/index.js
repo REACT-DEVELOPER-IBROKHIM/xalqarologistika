@@ -13,7 +13,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
     request => {
-        request.headers['Authorization'] = store.getState().login.token
+        request.headers['Authorization'] = store.getState().auth.token
         return request
     },
     error => {

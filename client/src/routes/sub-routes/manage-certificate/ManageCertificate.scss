@@ -1,48 +1,9 @@
-.manage-certificate {
-    display: flex;
-    flex-direction: column;
-}
-
-.manage-certificate__nav {
-    display: flex;
-    background-color: var(--main-bg-color);
-    margin: 16px 0;
-    padding: 16px;
-    border-radius: 10px;
-}
-
-.manage-certificate__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    list-style-type: none;
-    justify-content: center;
-    gap: 0 20px;
+.active {
+    background: #074799;
     width: 100%;
-    a {
-        text-decoration: none;
-        color: #fff;
-        padding: 10px;
-        display: block;
-        white-space: nowrap;
-        text-align: center;
-        border-radius: 10px;
-        transition: 0.2s;
-
-        &:active {
-            transform: scaleX(0.97);
-        }
-    }
+    color: #fff;
 }
 
-// .active {
-//     background-color: var(--main-accent-color);
-//     color: #000;
-// }
-
-.manage-certificate__content {
-    flex: 1;
-    border-radius: 10px;
-    background-color: var(--main-bg-color);
-    padding: 10px;
-    height: calc(100% - 145px);
+.active:hover {
+    color: #fff;
 }
