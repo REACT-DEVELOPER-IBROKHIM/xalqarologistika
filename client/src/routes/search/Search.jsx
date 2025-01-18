@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import './Search.scss'
 import { useParams } from 'react-router-dom'
-import { createStatusInstance } from '../../helpers/createStatusInstance'
+import { createStatusInstance } from '@helpers/createStatusInstance'
 import { useTranslation } from 'react-i18next'
-import axios from '../../api'
-import Draft from '../draft/Draft'
+import axios from '@api'
+import Draft from '@routes/draft/Draft'
 
 const Search = () => {
     const { t } = useTranslation()

@@ -5,8 +5,11 @@ export async function resolve(promise) {
     }
 
     try {
-        const { data } = await promise
+        const {
+            data: { data, error },
+        } = await promise
         resolved.data = data
+        resolved.error = error
     } catch (error) {
         resolved.error = error
     }

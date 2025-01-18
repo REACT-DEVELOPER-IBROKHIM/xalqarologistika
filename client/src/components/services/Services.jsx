@@ -1,10 +1,10 @@
 import React from 'react'
 import './Services.scss'
-import whatWeDoIcon from '../../assets/icons/what-we-do-Icon.svg'
-import whatWeDoIcon2 from '../../assets/icons/what-we-do-Icon2.svg'
-import whatWeDoIcon3 from '../../assets/icons/what-we-do-Icon3.svg'
-import whatWeDoIcon4 from '../../assets/icons/what-we-do-Icon4.svg'
-import bannerImg from '../../assets/images/Background.jpg'
+import whatWeDoIcon from '@assets/icons/what-we-do-Icon.svg'
+import whatWeDoIcon2 from '@assets/icons/what-we-do-Icon2.svg'
+import whatWeDoIcon3 from '@assets/icons/what-we-do-Icon3.svg'
+import whatWeDoIcon4 from '@assets/icons/what-we-do-Icon4.svg'
+import bannerImg from '@assets/images/Background.jpg'
 import { useTranslation } from 'react-i18next'
 
 const Services = () => {

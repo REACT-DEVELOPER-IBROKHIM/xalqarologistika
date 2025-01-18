@@ -1,23 +1,31 @@
-import './Login.scss'
-import logo from '../../assets/logo/logo.svg'
+import logo from '@assets/logo/logo.svg'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { loginUserThunk } from '../../redux/thunks/auth-thunks'
-import { Button, Checkbox, Form, Input, message, Typography } from 'antd'
+import { loginUserThunk } from '@thunks/auth-thunks'
+import { Button, Form, Input, message, Typography } from 'antd'
+import { useEffect } from 'react'
+import { getIsAuthenticated } from '@selectors'
 
 const { Title } = Typography
 
 const Login = () => {
+    const navigate = useNavigate()
     const [messageApi] = message.useMessage()
     const { t } = useTranslation()
     const dispatch = useDispatch()
-    // const { user } = useSelector(({ auth }) => auth)
+    const isAuthenticated = useSelector(getIsAuthenticated)
 
     const handleUserLogin = async ({ username, password }) => {
         dispatch(loginUserThunk({ username, password }))
-        // messageApi.success('Muvaffaqiyatli tizimga kirdingiz!');
     }
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            messageApi.success('Muvaffaqiyatli tizimga kirdingiz!')
+            navigate('/admin')
+        }
+    }, [isAuthenticated])
 
     const onFinishFailed = errorInfo => {
         messageApi.success(errorInfo)

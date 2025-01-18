@@ -1,9 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { loopAuthActions } from '../builders/auth-builder'
+import { loopAuthCases } from '@builders/auth-builder'
+import {
+    getDataFromLocalStorage,
+    removeDataFromLocalStorage,
+} from '@helpers/localStorageActions'
 
 const initialState = {
-    token: null,
-    user: null,
+    token: getDataFromLocalStorage('token') || null,
+    user: getDataFromLocalStorage('user') || null,
+    isAuthenticated: getDataFromLocalStorage('token') ? true : false,
     loading: false,
     error: null,
 }
@@ -11,7 +16,18 @@ const initialState = {
 export const authSlice = createSlice({
     initialState,
     name: 'auth',
+    reducers: {
+        logout: state => {
+            removeDataFromLocalStorage('token')
+            removeDataFromLocalStorage('user')
+            state.isAuthenticated = false
+            state.token = null
+            state.user = null
+        },
+    },
     extraReducers: builder => {
-        loopAuthActions(builder)
+        loopAuthCases(builder)
     },
 })
+
+export const { logout } = authSlice.actions

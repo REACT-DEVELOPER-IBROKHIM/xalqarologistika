@@ -1,10 +1,10 @@
-import gerb from '../../assets/images/gerb.png'
+import gerb from '@assets/images/gerb.png'
 import { Link } from 'react-router-dom'
-import signs from '../../assets/images/signs.png'
+import signs from '@assets/images/signs.png'
 import { FiArrowLeft } from 'react-icons/fi'
 import QRCode from 'react-qr-code'
-import av from '../../assets/images/images.jpeg'
-import summarizeName from '../../helpers/summarizeName'
+import av from '@assets/images/images.jpeg'
+import summarizeName from '@helpers/summarizeName'
 import './Draft.scss'
 
 const Draft = ({

@@ -4,6 +4,6 @@ export const generateDocumentType = url => {
     return {
         base: urlParts[1],
         secondary: urlParts[2],
-        type: urlParts[3],
+        type: urlParts[3] || 'driver',
     }
 }

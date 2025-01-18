@@ -16,15 +16,17 @@
     color: #fff !important;
 }
 
-.ant-menu {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
+.ant-menu a {
+    transition: color 0.0001s !important;
 }
 
 .ant-layout-sider-children {
     display: flex;
     flex-direction: column;
+}
+
+input {
+    color: #000 !important;
 }
 .message {
     color: #fff;

@@ -32,7 +32,7 @@ certificate.post('/', verifyAdmin, async (req, res) => {
     }
 })
 
-certificate.get('/all', verifyAdmin, async (req, res) => {
+certificate.get('/', verifyAdmin, async (req, res) => {
     const limit = req.query.limit
     const page = req.query.page || 1
     try {
@@ -41,9 +41,40 @@ certificate.get('/all', verifyAdmin, async (req, res) => {
         const allCertificates = await Certificate.find()
             .limit(limit)
             .skip(limit * (page - 1))
-        res.status(200).json({ allCertificates, totalPage })
+        res.status(200).json({
+            data: allCertificates,
+            total: totalCertificates,
+            total_page: totalPage,
+            error: null,
+            message: 'Sertifikatlar topildi',
+        })
     } catch (err) {
-        res.send(404).json('Sertifikat topilmadi')
+        res.send(404).json({
+            data: null,
+            total: 0,
+            total_page: 0,
+            error: 'Sertifikatlar topilmadi',
+            message: 'Sertifikatlar topilmadi',
+        })
+    }
+})
+
+certificate.get('/document-count', verifyAdmin, async (req, res) => {
+    try {
+        const totalCertificates = await Certificate.countDocuments({})
+        res.status(200).json({
+            data: generateId(totalCertificates + 1, 5, 'D'),
+            error: null,
+            message: 'Sertifikatlar soni topildi',
+        })
+    } catch (err) {
+        res.send(404).json({
+            data: null,
+            total: 0,
+            total_page: 0,
+            error: 'Sertifikatlar topilmadi',
+            message: 'Sertifikatlar topilmadi',
+        })
     }
 })
 

@@ -1,12 +1,12 @@
 import './Hero.scss'
-import axios from '../../api'
+import axios from '@api'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { createStatusInstance } from '../../helpers/createStatusInstance'
+import { createStatusInstance } from '@helpers/createStatusInstance'
 import { Link } from 'react-router-dom'
-import { Anchor, Container, Button } from '../../utils/Utils'
-import heroImage from '../../assets/images/hero.jpg'
-import Preview from '../preview/Preview'
+import { Anchor, Container, Button } from '@utils/Utils'
+import heroImage from '@assets/images/hero.jpg'
+import Preview from '@components/preview/Preview'
 
 const Hero = () => {
     const { t } = useTranslation()
