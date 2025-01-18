@@ -6,7 +6,7 @@ import { store } from '@store'
 import { BrowserRouter } from 'react-router-dom'
 import { MainLoading } from '@utils/Utils'
 import '@services/lang'
-const App = lazy(() => import('./App'))
+const App = lazy(() => import('@/App'))
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
