@@ -6,10 +6,10 @@ const certificateTank = express.Router()
 
 certificateTank.post('/', verifyAdmin, async (req, res) => {
     const allCertificates = await CertificateTank.find()
-    const existCertificate = await Certificate.findOne({
+    const existCertificate = await CertificateTank.findOne({
         name: req.body.name,
         surname: req.body.surname,
-        birthDate: req.body.birthdate,
+        birthDate: req.body.birthDate,
     })
     if (existCertificate) {
         res.status(409).json('Sertifikat mavjud')
@@ -20,7 +20,8 @@ certificateTank.post('/', verifyAdmin, async (req, res) => {
             id: generateId(allCertificates.length + 1, 6, 'T'),
             name: req.body.name,
             surname: req.body.surname,
-            birthDate: req.body.birthdate,
+            middlename: req.body.middlename,
+            birthDate: req.body.birthDate,
             to: req.body.to,
             from: req.body.from,
         })
@@ -98,6 +99,23 @@ certificateTank.patch('/delete/:id', verifyAdmin, async (req, res) => {
         res.json(removedCert)
     } catch (error) {
         res.json({ message: error })
+    }
+})
+
+certificateTank.get('/:id', async (req, res) => {
+    try {
+        const certificate = await CertificateTank.findById(req.params.id)
+        res.json({
+            data: certificate,
+            error: null,
+            message: 'Sertifikat topildi',
+        })
+    } catch (error) {
+        res.json({
+            data: null,
+            error: 'Sertifikat topilmadi',
+            message: 'Sertifikat topilmadi',
+        })
     }
 })
 

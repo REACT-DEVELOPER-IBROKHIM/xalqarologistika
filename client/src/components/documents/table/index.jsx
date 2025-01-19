@@ -9,9 +9,14 @@ import DriverCertificate from '@components/documents/driver/DriverCertificate'
 import AdrCertificate from '@components/documents/adr/AdrCertificate'
 import { useState, useRef } from 'react'
 import { EMPTY_DOCUMENT, SIMILAR_DOCUMENT_TYPES } from '@/constants/document'
+import { useDispatch } from 'react-redux'
+import { fetchSingleDocumentThunk } from '@/redux/thunks/documents-thunks'
+import { useNavigate } from 'react-router-dom'
 
 const DocumentsTable = ({ data, loading, type }) => {
     const printFrame = useRef()
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [document, setDocument] = useState(null)
     const columns = [
         {
@@ -70,6 +75,7 @@ const DocumentsTable = ({ data, loading, type }) => {
                     <Button
                         style={{ backgroundColor: '#FFB629' }}
                         type="primary"
+                        onClick={data => handleEditDocument(document)}
                     >
                         <EditOutlined />
                     </Button>
@@ -88,6 +94,18 @@ const DocumentsTable = ({ data, loading, type }) => {
 
     const handleDeleteDocument = document => {
         console.log(document)
+    }
+
+    const handleEditDocument = document => {
+        dispatch(
+            fetchSingleDocumentThunk({
+                endpoint: type,
+                id: document._id,
+                onSuccess: () => {
+                    navigate(`/admin/edit?type=${type}`)
+                },
+            })
+        )
     }
 
     return (

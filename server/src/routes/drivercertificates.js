@@ -21,6 +21,7 @@ certificate.post('/', verifyAdmin, async (req, res) => {
             name: req.body.name,
             surname: req.body.surname,
             middlename: req.body.middlename,
+            birthDate: req.body.birthDate,
             from: req.body.from,
             to: req.body.to,
             courseName: '40 soat',
@@ -101,6 +102,55 @@ certificate.patch('/delete/:id', verifyAdmin, async (req, res) => {
         res.json(removedCert)
     } catch (error) {
         res.json({ message: error })
+    }
+})
+
+certificate.get('/search', async (req, res) => {
+    const limit = req.query.limit
+    const page = req.query.page || 1
+    try {
+        const totalCertificates = await Certificate.countDocuments({})
+        const totalPage = Math.ceil(totalCertificates / limit)
+
+        const certificates = await Certificate.find({
+            $or: [
+                { id: { $regex: req.query.id, $options: 'i' } },
+                { name: { $regex: req.query.name, $options: 'i' } },
+                { surname: { $regex: req.query.surname, $options: 'i' } },
+            ],
+        })
+            .limit(limit)
+            .skip(limit * (page - 1))
+        res.status(200).json({
+            data: certificates,
+            total_page: totalPage,
+            total: totalCertificates,
+            error: null,
+            message: 'Sertifikatlar topildi',
+        })
+    } catch (error) {
+        res.status(400).json({
+            data: null,
+            error: 'Sertifikatlar topilmadi',
+            message: 'Sertifikatlar topilmadi',
+        })
+    }
+})
+
+certificate.get('/:id', async (req, res) => {
+    try {
+        const certificate = await Certificate.findById(req.params.id)
+        res.json({
+            data: certificate,
+            error: null,
+            message: 'Sertifikat topildi',
+        })
+    } catch (error) {
+        res.json({
+            data: null,
+            error: 'Sertifikat topilmadi',
+            message: 'Sertifikat topilmadi',
+        })
     }
 })
 

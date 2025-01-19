@@ -7,15 +7,8 @@ import av from '@assets/images/images.jpeg'
 import summarizeName from '@helpers/summarizeName'
 import './Draft.scss'
 
-const Draft = ({
-    id,
-    firstname,
-    lastname,
-    from,
-    to,
-    birthdate,
-    parentname,
-}) => {
+const Draft = ({ document }) => {
+    const { id, name, surname, from, to, birthDate, middlename } = document
     const number = +id?.replace(/[A-Z]/g, '')
     const currentYear = new Date().getFullYear()
     const currentMonth = new Date().getMonth() + 1
@@ -37,30 +30,8 @@ const Draft = ({
 
     return (
         <div className="darft_container drafted">
-            <h2 className="pdf_driverTitle">NAMANGANTRANS 2022 MCHJ</h2>
-            <Link to="/" className="main_pageLink">
-                <FiArrowLeft /> Asosiy sahifa
-            </Link>
             {id.startsWith('D') || id.startsWith('M') ? (
                 <div className="pdf_container ">
-                    <div
-                        className={`draft_text ${certificateStatus.toLowerCase()}`}
-                    >
-                        {
-                            <>
-                                {new Array(id?.includes('D') ? 8 : 4)
-                                    .fill(0)
-                                    .map((_, index) => (
-                                        <h1
-                                            className={certificateStatus.toLowerCase()}
-                                            key={index}
-                                        >
-                                            {certificateStatus}
-                                        </h1>
-                                    ))}
-                            </>
-                        }
-                    </div>
                     <div className="pdf_mainSection">
                         <div className="pdf_flag">
                             <div className="pdf_flagBlue"></div>
@@ -86,7 +57,7 @@ const Draft = ({
                             <h1 className="pdf_sertifikat">Sertifikat</h1>
                             <h2 className="pdf_id">{'MO №' + id}</h2>
                             <h2 className="pdf_userName">
-                                {summarizeName(firstname, lastname, parentname)}
+                                {summarizeName(name, surname, middlename)}
                             </h2>
                             <p className="pdf_userNameDesc">
                                 (Familyasi, ismi, otasinig ismi)
@@ -138,9 +109,9 @@ const Draft = ({
                                 <p>
                                     <strong>
                                         {summarizeName(
-                                            firstname,
-                                            lastname,
-                                            parentname
+                                            name,
+                                            surname,
+                                            middlename
                                         )}
                                     </strong>
                                     ga haqiqatdan ham milliy va xalqaro
@@ -167,9 +138,9 @@ const Draft = ({
                                         </h4>
                                         <h4 className="pdf_langName">
                                             {summarizeName(
-                                                firstname,
-                                                lastname,
-                                                parentname
+                                                name,
+                                                surname,
+                                                middlename
                                             )}
                                         </h4>
                                         <h4 className="pdf_langName">
@@ -221,9 +192,9 @@ const Draft = ({
                                         </h4>
                                         <h4 className="pdf_langName">
                                             {summarizeName(
-                                                firstname,
-                                                lastname,
-                                                parentname
+                                                name,
+                                                surname,
+                                                middlename
                                             )}
                                         </h4>
                                         <h4 className="pdf_langName">
@@ -271,9 +242,9 @@ const Draft = ({
                                     Выдано:{' '}
                                     <strong>
                                         {summarizeName(
-                                            firstname,
-                                            lastname,
-                                            parentname
+                                            name,
+                                            surname,
+                                            middlename
                                         )}
                                     </strong>{' '}
                                 </p>
@@ -330,12 +301,6 @@ const Draft = ({
                 </div>
             ) : (
                 <div className="adr__container">
-                    <div className="draft_text">
-                        <h1>EXIST</h1>
-                        <h1>EXIST</h1>
-                        <h1>EXIST</h1>
-                        <h1>EXIST</h1>
-                    </div>
                     <div className="adr_card">
                         <h2 className="adr_englishtitle">
                             ADR-DRIVER TRAINING CERTIFICATE
@@ -358,13 +323,13 @@ const Draft = ({
                                 />{' '}
                             </div>
                             <div className="center__info">
-                                <p className="main__bold">2. {firstname}</p>
-                                <p className="main__bold">3. {lastname}</p>
+                                <p className="main__bold">2. {name}</p>
+                                <p className="main__bold">3. {surname}</p>
                                 <p className="main__bold">
                                     4.{' '}
                                     <span className="smaller_text">
                                         {' '}
-                                        {birthdate}{' '}
+                                        {birthDate}{' '}
                                     </span>
                                 </p>
                                 <p className="main__bold">
@@ -458,7 +423,7 @@ const Draft = ({
                                             <b>MO № {id}</b>
                                         </p>
                                         <h4 className="pdf_langName">
-                                            {summarizeName(firstname, lastname)}
+                                            {summarizeName(name, surname)}
                                         </h4>
                                         <h4 className="pdf_langName">АДР</h4>
                                         <p className="pdf_langNameDesc">
@@ -506,7 +471,7 @@ const Draft = ({
 
                                         {/* <h2 className="pdf_id"></h2> */}
                                         <h4 className="pdf_langName">
-                                            {summarizeName(firstname, lastname)}
+                                            {summarizeName(name, surname)}
                                         </h4>
                                         <h4 className="pdf_langName">ADR</h4>
                                         <p className="pdf_langNameDesc">

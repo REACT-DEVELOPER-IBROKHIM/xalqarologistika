@@ -9,7 +9,7 @@ certificate.post('/', verifyAdmin, async (req, res) => {
     const existCertificate = await Certificate.findOne({
         name: req.body.name,
         surname: req.body.surname,
-        birthDate: req.body.birthdate,
+        birthDate: req.body.birthDate,
     })
     if (existCertificate) {
         res.status(409).json('Sertifikat mavjud')
@@ -20,7 +20,8 @@ certificate.post('/', verifyAdmin, async (req, res) => {
             id: generateId(allCertificates + 1, 6),
             name: req.body.name,
             surname: req.body.surname,
-            birthDate: req.body.birthdate,
+            middlename: req.body.middlename,
+            birthDate: req.body.birthDate,
             from: req.body.from,
             to: req.body.to,
         })
@@ -97,6 +98,23 @@ certificate.patch('/delete/:id', verifyAdmin, async (req, res) => {
         res.json(removedCert)
     } catch (error) {
         res.json({ message: error })
+    }
+})
+
+certificate.get('/:id', async (req, res) => {
+    try {
+        const certificate = await Certificate.findById(req.params.id)
+        res.json({
+            data: certificate,
+            error: null,
+            message: 'Sertifikat topildi',
+        })
+    } catch (error) {
+        res.json({
+            data: null,
+            error: 'Sertifikat topilmadi',
+            message: 'Sertifikat topilmadi',
+        })
     }
 })
 

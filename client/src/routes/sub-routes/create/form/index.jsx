@@ -3,6 +3,7 @@ import { Form, Input } from 'antd'
 import dayjs from 'dayjs'
 import { DatePicker } from 'antd'
 import { DATE_FORMAT } from '@/constants/document'
+import { setDataToLocalStorage } from '@/helpers/localStorageActions'
 
 const { Item } = Form
 
@@ -16,6 +17,7 @@ const CreateForm = ({ setDocument, document }) => {
 
     const handleValuesChange = values => {
         setDocument({ ...document, ...values })
+        setDataToLocalStorage('document', { ...document, ...values })
     }
 
     return (

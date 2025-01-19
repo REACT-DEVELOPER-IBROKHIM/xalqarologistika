@@ -22,6 +22,7 @@ mCertificate.post('/', verifyAdmin, async (req, res) => {
             name: req.body.name,
             surname: req.body.surname,
             middlename: req.body.middlename,
+            birthDate: req.body.birthDate,
             from: req.body.from,
             to: req.body.to,
             courseName: req.body.courseName,
@@ -101,6 +102,23 @@ mCertificate.patch('/delete/:id', verifyAdmin, async (req, res) => {
         res.json(removedCert)
     } catch (error) {
         res.json({ message: error })
+    }
+})
+
+mCertificate.get('/:id', async (req, res) => {
+    try {
+        const certificate = await ManagerCertificate.findById(req.params.id)
+        res.json({
+            data: certificate,
+            error: null,
+            message: 'Sertifikat topildi',
+        })
+    } catch (error) {
+        res.json({
+            data: null,
+            error: 'Sertifikat topilmadi',
+            message: 'Sertifikat topilmadi',
+        })
     }
 })
 
