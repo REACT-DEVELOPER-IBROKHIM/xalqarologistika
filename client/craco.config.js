@@ -26,6 +26,9 @@ module.exports = {
         postcssOptions: {
             plugins: [tailwindcss, autoprefixer],
         },
+        postcss: {
+            plugins: [tailwindcss, autoprefixer],
+        },
     },
     babel: {
         plugins: [
