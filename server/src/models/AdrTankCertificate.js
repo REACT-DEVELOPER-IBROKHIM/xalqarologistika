@@ -15,6 +15,11 @@ const AdrTank = new mongoose.Schema({
         required: true,
         max: 1024,
     },
+    middlename: {
+        type: String,
+        required: true,
+        max: 1024,
+    },
     birthDate: {
         type: String,
         required: true,
@@ -23,9 +28,12 @@ const AdrTank = new mongoose.Schema({
         type: String,
         required: true,
     },
-    givenDate: {
+    from: {
         type: String,
         required: true,
+    },
+    signature: {
+        type: String,
     },
 })
 

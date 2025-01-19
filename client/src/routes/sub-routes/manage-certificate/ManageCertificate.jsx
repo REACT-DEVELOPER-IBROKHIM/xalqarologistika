@@ -1,32 +1,37 @@
 import './ManageCertificate.scss'
-import certificateTypeList from '../../../static/CertificateTypeList'
-import { NavLink, Outlet } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid'
-import { useTranslation } from 'react-i18next'
+import { useState } from 'react'
+import generateCertificateTypeList from '@static/CertificateTypeList'
+import { Outlet } from 'react-router-dom'
+import { Menu, Input } from 'antd'
+
+const { Search } = Input
 
 const ManageCertificates = () => {
-    const { t } = useTranslation()
+    const [current, setCurrent] = useState('mail')
+
+    const onClick = e => {
+        setCurrent(e.key)
+    }
+
+    const handleDocumentSearch = () => {}
 
     return (
-        <div admincontent="content" className="manage-certificate">
-            <h2 className="admin-content__heading">{t('manage.title')}</h2>
-            <nav className="manage-certificate__nav">
-                <ul className="manage-certificate__list">
-                    {certificateTypeList('manage').map(
-                        manageCertificateItem => (
-                            <li
-                                className="manage-certificate__item"
-                                key={uuidv4()}
-                            >
-                                <NavLink to={manageCertificateItem.route}>
-                                    {manageCertificateItem.name}
-                                </NavLink>
-                            </li>
-                        )
-                    )}
-                </ul>
+        <div className="flex flex-col">
+            <nav className="bg-white flex items-center shadow-3xl mb-4 p-2 px-8">
+                <Search
+                    placeholder="ID raqami bo'yicha, ismi yoki familiyasi bo'yicha qidirish"
+                    onSearch={handleDocumentSearch}
+                    enterButton
+                />
+                <Menu
+                    className="border-none flex gap-4"
+                    onClick={onClick}
+                    selectedKeys={[current]}
+                    mode="horizontal"
+                    items={generateCertificateTypeList()}
+                />
             </nav>
-            <section className="manage-certificate__content">
+            <section className="p-4 bg-white shadow-3xl">
                 <Outlet />
             </section>
         </div>

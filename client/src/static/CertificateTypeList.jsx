@@ -1,14 +1,15 @@
-const certificateTypeList = () => {
-    const endpoints = [
-        'driver',
-        'driver-manager',
-        'driver-adr',
-        'driver-adr-tank',
-    ]
+import { NavLink } from 'react-router-dom'
+
+const generateCertificateTypeList = () => {
+    const endpoints = ['driver', 'adr', 'manager', 'adr-tank']
     return endpoints.map(endpoint => ({
-        route: `manage-${endpoint}-certificate`,
-        name: `${endpoint[0].toUpperCase() + endpoint.slice(1).replace(/-/g, ' ')} certificate`,
+        key: endpoint,
+        label: (
+            <NavLink end to={endpoint.replace('driver', '')}>
+                {endpoint.toUpperCase()}
+            </NavLink>
+        ),
     }))
 }
 
-export default certificateTypeList
+export default generateCertificateTypeList

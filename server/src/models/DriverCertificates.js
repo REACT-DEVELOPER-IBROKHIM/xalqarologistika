@@ -29,10 +29,17 @@ const DriverCertificates = new Schema({
         type: String,
         required: true,
     },
+    birthDate: {
+        type: String,
+        required: true,
+    },
     courseName: {
         type: String,
         required: true,
         max: 1024,
+    },
+    signature: {
+        type: String,
     },
 })
 

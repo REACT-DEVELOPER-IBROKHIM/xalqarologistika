@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai'
-import axios from '../../api'
+import axios from '@api'
 import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
 import './Comments.scss'
-import { Container } from '../../utils/Utils'
+import { Container } from '@utils/Utils'
 import { useTranslation } from 'react-i18next'
 
 const OurCustomerSay = () => {

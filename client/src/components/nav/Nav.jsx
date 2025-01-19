@@ -1,13 +1,13 @@
 import './Nav.scss'
-import logo from '../../assets/logo/logo.svg'
-import email from '../../assets/icons/email.svg'
-import phone from '../../assets/icons/phone.svg'
-import time from '../../assets/icons/time.svg'
-import i18n from '../../services/lang'
+import logo from '@assets/logo/logo-white.svg'
+import email from '@assets/icons/email.svg'
+import phone from '@assets/icons/phone.svg'
+import time from '@assets/icons/time.svg'
+import i18n from '@services/lang'
 import { useTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
 import { BsTelegram, BsInstagram } from 'react-icons/bs'
-import { Address, Container } from '../../utils/Utils'
+import { Address, Container } from '@utils/Utils'
 
 const Nav = () => {
     const { t } = useTranslation()

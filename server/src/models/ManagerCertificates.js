@@ -24,9 +24,16 @@ const ManagerCertificate = new mongoose.Schema({
         type: String,
         required: true,
     },
+    birthDate: {
+        type: String,
+        required: true,
+    },
     to: {
         type: String,
         required: true,
+    },
+    signature: {
+        type: String,
     },
 })
 

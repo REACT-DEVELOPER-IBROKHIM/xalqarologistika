@@ -1,7 +1,7 @@
 import { useState, useImperativeHandle, forwardRef } from 'react'
 import './Modal.scss'
 import { FiX } from 'react-icons/fi'
-import { Button } from '../../utils/Utils'
+import { Button } from '@utils/Utils'
 
 const Modal = ({ text, title, btn }, ref) => {
     const [isOpen, setIsOpen] = useState(false)

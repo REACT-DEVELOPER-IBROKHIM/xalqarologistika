@@ -1,11 +1,11 @@
 import './Contact.scss'
 import { Address, Button, Container } from '../../utils/Utils'
-import emaill from '../../assets/icons/email.svg'
-import phone from '../../assets/icons/phone.svg'
-import time from '../../assets/icons/time.svg'
+import emaill from '@assets/icons/email.svg'
+import phone from '@assets/icons/phone.svg'
+import time from '@assets/icons/time.svg'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
-import { createStatusInstance } from '../../helpers/createStatusInstance'
+import { createStatusInstance } from '@helpers/createStatusInstance'
 import axios from 'axios'
 const NUMBER_REGEX =
     /^(\+\d{1,2}\s?)?1?-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/

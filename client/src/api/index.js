@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { store } from '../redux/store'
+import { store } from '@store'
+import { logout } from '@slices/auth'
 
 const instance = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
@@ -13,7 +14,8 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
     request => {
-        request.headers['Authorization'] = store.getState().login.token
+        request.headers['Authorization'] =
+            'Bearer ' + store.getState().auth.token
         return request
     },
     error => {
@@ -27,7 +29,7 @@ instance.interceptors.response.use(
     },
     error => {
         if (error.response?.status === 401 || error.response?.status === 403) {
-            store.dispatch({ type: 'LOGOUT' })
+            store.dispatch(logout())
         }
         return Promise.reject(error)
     }
