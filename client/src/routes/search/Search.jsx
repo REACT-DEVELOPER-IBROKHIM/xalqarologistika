@@ -1,55 +1,34 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import './Search.scss'
 import { useParams } from 'react-router-dom'
-import { createStatusInstance } from '../../helpers/createStatusInstance'
-import { useTranslation } from 'react-i18next'
-import axios from '../../api'
-import Draft from '../draft/Draft'
+import Draft from '@routes/draft/Draft'
+import { fetchSingleDocumentByIdThunk } from '@/redux/thunks/single-document-thunk'
+import {
+    getSingleDocument,
+    getSingleDocumentLoading,
+} from '@/redux/selectors/single-document'
+import { Spin } from 'antd'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Search = () => {
-    const { t } = useTranslation()
-    const [certificateDataResult, setCertificateDataResult] = useState(
-        createStatusInstance('pending', t('status.pending'))
-    )
+    const dispatch = useDispatch()
+    const document = useSelector(getSingleDocument)
+    const loading = useSelector(getSingleDocumentLoading)
     const { id } = useParams()
 
     useEffect(() => {
-        async function loadSearchResults() {
-            try {
-                const response = await axios.get(`/search/?id=${id}`)
-                if (response.data) {
-                    setCertificateDataResult(
-                        createStatusInstance(
-                            'success',
-                            t('status.success'),
-                            response.data
-                        )
-                    )
-                } else {
-                    throw new Error('We could not find any certificates')
-                }
-            } catch (error) {
-                setCertificateDataResult(
-                    createStatusInstance('error', t('status.error'))
-                )
-            }
-        }
-        loadSearchResults()
+        dispatch(fetchSingleDocumentByIdThunk(id))
     }, [])
     return (
         <div className="search-certificate">
-            {certificateDataResult.data && (
+            {!loading && document ? (
                 <div className="search-certificate__content">
-                    <Draft
-                        id={certificateDataResult.data.id}
-                        firstname={certificateDataResult.data.name}
-                        lastname={certificateDataResult.data.surname}
-                        parentname={certificateDataResult.data.middlename}
-                        from={certificateDataResult.data.from}
-                        to={certificateDataResult.data.to}
-                        birthdate={certificateDataResult.data.birthDate}
-                    />
+                    <Draft document={document} />
                 </div>
+            ) : !document && !loading ? (
+                <p>No data</p>
+            ) : (
+                <Spin tip="Loading..." />
             )}
         </div>
     )

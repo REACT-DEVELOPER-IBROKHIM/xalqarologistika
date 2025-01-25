@@ -12,9 +12,11 @@ admin.post('/login', async (req, res) => {
         const isAdmin = bcrypt.compareSync(req.body.password, admin.password)
 
         if (!isAdmin) {
-            return res
-                .status(401)
-                .json('Foydalanuvchi ismingiz yoki parolingiz xato!')
+            return res.status(401).json({
+                message: 'Foydalanuvchi topilmadi!',
+                data: null,
+                error: 'Foydalanuvchi topilmadi!',
+            })
         }
 
         const token = jwt.sign(
@@ -25,14 +27,21 @@ admin.post('/login', async (req, res) => {
             process.env.TOKEN_SECRET_KEY
         )
 
-        const { __v, password, ...adminData } = admin._doc
+        const { __v, password, ...user } = admin._doc
         return res.status(200).json({
             message: 'Successfully logged in!',
-            token,
-            user: adminData,
+            data: {
+                user,
+                token,
+            },
+            error: null,
         })
     } catch (err) {
-        res.status(400).json(err)
+        res.status(400).json({
+            message: 'Foydalanuvchi topilmadi!',
+            data: null,
+            error: err,
+        })
     }
 })
 

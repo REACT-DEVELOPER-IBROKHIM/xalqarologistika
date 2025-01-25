@@ -1,7 +1,7 @@
 import './Preview.scss'
-import gerb from '../../assets/images/gerb.png'
-import user from '../../assets/images/images.jpeg'
-import summarizeName from '../../helpers/summarizeName'
+import gerb from '@assets/images/gerb.png'
+import user from '@assets/images/images.jpeg'
+import summarizeName from '@helpers/summarizeName'
 import { forwardRef } from 'react'
 import QRCode from 'react-qr-code'
 

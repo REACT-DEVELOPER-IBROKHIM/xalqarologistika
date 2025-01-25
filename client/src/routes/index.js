@@ -1,12 +1,15 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from './home/Home'
-import Login from './auth/Login'
-import Private from './private/Private'
-import Create from './sub-routes/create/Create'
-import ManageCertificates from './sub-routes/manage-certificate/ManageCertificate'
-import Analytics from './sub-routes/analytics/Analytics'
-import CertificatesTable from '../components/certificates-table/CertificatesTable'
-import Search from './search/Search'
+import Home from '@routes/home/Home'
+import Login from '@routes/auth/Login'
+import Private from '@routes/private/Private'
+import Create from '@routes/sub-routes/create/Create'
+import ManageCertificates from '@routes/sub-routes/manage-certificate/ManageCertificate'
+import Analytics from '@routes/sub-routes/analytics/Analytics'
+import Search from '@routes/search/Search'
+import Certificates from '@routes/sub-routes/manage-certificate/certificate'
+import Adr from '@routes/sub-routes/manage-certificate/adr'
+import Manager from '@routes/sub-routes/manage-certificate/manager'
+import AdrTank from '@routes/sub-routes/manage-certificate/adr-tank'
 
 const index = () => {
     return (
@@ -15,12 +18,15 @@ const index = () => {
             <Route path="login" element={<Login />} />
             <Route path="check-certificates/:id" element={<Search />} />
             <Route path="admin" element={<Private />}>
-                <Route path="create-certificate" element={<Create />} />
+                <Route index path="" element={<Create />} />
                 <Route
                     path="manage-certificate"
                     element={<ManageCertificates />}
                 >
-                    <Route path=":type" element={<CertificatesTable />} />
+                    <Route index path="" element={<Certificates />} />
+                    <Route path="adr" element={<Adr />} />
+                    <Route path="manager" element={<Manager />} />
+                    <Route path="adr-tank" element={<AdrTank />} />
                 </Route>
                 <Route path="analytics" element={<Analytics />} />
             </Route>

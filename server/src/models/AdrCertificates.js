@@ -10,6 +10,11 @@ const Adr = new mongoose.Schema({
         required: true,
         max: 1024,
     },
+    middlename: {
+        type: String,
+        required: true,
+        max: 1024,
+    },
     surname: {
         type: String,
         required: true,
@@ -26,6 +31,9 @@ const Adr = new mongoose.Schema({
     from: {
         type: String,
         required: true,
+    },
+    signature: {
+        type: String,
     },
 })
 

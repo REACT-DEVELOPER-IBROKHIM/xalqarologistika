@@ -17,10 +17,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--krub) !important;
 }
 
 body {
-    font-family: var(--krub);
 }
 
 button {
@@ -38,4 +38,9 @@ button:active:not(:disabled) {
 
 input:focus {
     box-shadow: 0px 0px 3px 2px var(--main-accent-color);
+}
+
+html,
+.pdf_driver {
+    line-height: unset !important;
 }

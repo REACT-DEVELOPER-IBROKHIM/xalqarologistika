@@ -9,7 +9,7 @@ certificate.post('/', verifyAdmin, async (req, res) => {
     const existCertificate = await Certificate.findOne({
         name: req.body.name,
         surname: req.body.surname,
-        birthDate: req.body.birthdate,
+        birthDate: req.body.birthDate,
     })
     if (existCertificate) {
         res.status(409).json('Sertifikat mavjud')
@@ -20,7 +20,8 @@ certificate.post('/', verifyAdmin, async (req, res) => {
             id: generateId(allCertificates + 1, 6),
             name: req.body.name,
             surname: req.body.surname,
-            birthDate: req.body.birthdate,
+            middlename: req.body.middlename,
+            birthDate: req.body.birthDate,
             from: req.body.from,
             to: req.body.to,
         })
@@ -30,7 +31,7 @@ certificate.post('/', verifyAdmin, async (req, res) => {
     }
 })
 
-certificate.get('/all', verifyAdmin, async (req, res) => {
+certificate.get('/', verifyAdmin, async (req, res) => {
     const limit = req.query.limit
     const page = req.query.page || 1
     try {
@@ -39,9 +40,40 @@ certificate.get('/all', verifyAdmin, async (req, res) => {
         const allCertificates = await Certificate.find()
             .limit(limit)
             .skip(limit * (page - 1))
-        res.status(200).json({ allCertificates, totalPage })
+        res.status(200).json({
+            data: allCertificates,
+            total: totalCertificates,
+            total_page: totalPage,
+            error: null,
+            message: 'Sertifikatlar topildi',
+        })
     } catch (err) {
-        res.send(404).json('Sertifikat topilmadi')
+        res.send(404).json({
+            data: null,
+            total: 0,
+            total_page: 0,
+            error: 'Sertifikatlar topilmadi',
+            message: 'Sertifikatlar topilmadi',
+        })
+    }
+})
+
+certificate.get('/document-count', verifyAdmin, async (req, res) => {
+    try {
+        const totalCertificates = await Certificate.countDocuments({})
+        res.status(200).json({
+            data: generateId(totalCertificates + 1, 6),
+            error: null,
+            message: 'Sertifikatlar soni topildi',
+        })
+    } catch (err) {
+        res.send(404).json({
+            data: null,
+            total: 0,
+            total_page: 0,
+            error: 'Sertifikatlar topilmadi',
+            message: 'Sertifikatlar topilmadi',
+        })
     }
 })
 
@@ -66,6 +98,47 @@ certificate.patch('/delete/:id', verifyAdmin, async (req, res) => {
         res.json(removedCert)
     } catch (error) {
         res.json({ message: error })
+    }
+})
+
+certificate.get('/:id', async (req, res) => {
+    try {
+        const certificate = await Certificate.findById(req.params.id)
+        res.json({
+            data: certificate,
+            error: null,
+            message: 'Sertifikat topildi',
+        })
+    } catch (error) {
+        res.json({
+            data: null,
+            error: 'Sertifikat topilmadi',
+            message: 'Sertifikat topilmadi',
+        })
+    }
+})
+
+certificate.put('/:id', verifyAdmin, async (req, res) => {
+    try {
+        const updatedCertificate = await Certificate.updateOne(
+            {
+                _id: req.params.id,
+            },
+            {
+                $set: req.body,
+            }
+        )
+        res.json({
+            data: updatedCertificate,
+            error: null,
+            message: 'Sertifikat tahrirlandi',
+        })
+    } catch (error) {
+        res.json({
+            data: null,
+            error: 'Sertifikat tahrirlanmadi',
+            message: 'Sertifikat tahrirlanmadi',
+        })
     }
 })
 
