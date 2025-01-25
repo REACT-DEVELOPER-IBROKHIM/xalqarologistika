@@ -1,4 +1,3 @@
-import { DATE_FORMAT, EMPTY_DOCUMENT } from '@/constants/document'
 import {
     fetchDriverDocumentsThunk,
     fetchManagerDocumentsThunk,
@@ -7,10 +6,7 @@ import {
     deleteDocumentThunk,
     fetchDocumentIdThunk,
     createDocumentThunk,
-    fetchSingleDocumentThunk,
 } from '@thunks/documents-thunks'
-import { dayjs } from 'dayjs'
-import moment from 'moment'
 
 export const loopDocumentsCases = builder => {
     builder.addCase(fetchDriverDocumentsThunk.pending, state => {
@@ -97,29 +93,6 @@ export const loopDocumentsCases = builder => {
         state.error = false
     })
     builder.addCase(createDocumentThunk.rejected, state => {
-        state.loading = false
-        state.error = true
-    })
-    builder.addCase(fetchSingleDocumentThunk.pending, state => {
-        state.loading = true
-    })
-    builder.addCase(
-        fetchSingleDocumentThunk.fulfilled,
-        (state, { payload }) => {
-            state.loading = false
-            if (payload.id === EMPTY_DOCUMENT) {
-                state.currentDocument = {
-                    ...payload,
-                    birthDate: moment(new Date()).format(DATE_FORMAT),
-                    from: moment(new Date()).format(DATE_FORMAT),
-                    to: moment(new Date()).format(DATE_FORMAT),
-                }
-            } else {
-                state.currentDocument = payload
-            }
-        }
-    )
-    builder.addCase(fetchSingleDocumentThunk.rejected, state => {
         state.loading = false
         state.error = true
     })

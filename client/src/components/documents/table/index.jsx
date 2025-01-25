@@ -3,19 +3,29 @@ import {
     DownloadOutlined,
     EditOutlined,
 } from '@ant-design/icons'
-import { Button, Table } from 'antd'
+import { Button, Table, Modal, message } from 'antd'
 import ReactToPrint from 'react-to-print'
 import DriverCertificate from '@components/documents/driver/DriverCertificate'
 import AdrCertificate from '@components/documents/adr/AdrCertificate'
 import { useState, useRef } from 'react'
-import { EMPTY_DOCUMENT, SIMILAR_DOCUMENT_TYPES } from '@/constants/document'
-import { useDispatch } from 'react-redux'
-import { fetchSingleDocumentThunk } from '@/redux/thunks/documents-thunks'
-import { useNavigate } from 'react-router-dom'
+import { EMPTY_DOCUMENT, SIMILAR_DOCUMENT_TYPES } from '@constants/document'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchSingleDocumentThunk } from '@thunks/single-document-thunk'
+import {
+    getSingleDocument,
+    getSingleDocumentLoading,
+} from '@selectors/single-document'
+import { removeCurrentDocument } from '@slices/single-document'
+import Edit from '@routes/sub-routes/edit'
+import { deleteDocumentThunk } from '@/redux/thunks/documents-thunks'
+import { updateUI } from '@/helpers/update-ui'
 
 const DocumentsTable = ({ data, loading, type }) => {
+    const [isDeleteModalOpen, setDeleteModalOpen] = useState(false)
+    const [deleteDocument, setDeleteDocument] = useState(null)
+    const curretDocument = useSelector(getSingleDocument)
+    const isCurrentDocumentLoading = useSelector(getSingleDocumentLoading)
     const printFrame = useRef()
-    const navigate = useNavigate()
     const dispatch = useDispatch()
     const [document, setDocument] = useState(null)
     const columns = [
@@ -75,7 +85,9 @@ const DocumentsTable = ({ data, loading, type }) => {
                     <Button
                         style={{ backgroundColor: '#FFB629' }}
                         type="primary"
-                        onClick={data => handleEditDocument(document)}
+                        disabled={isCurrentDocumentLoading}
+                        loading={isCurrentDocumentLoading}
+                        onClick={() => handleEditDocument(document)}
                     >
                         <EditOutlined />
                     </Button>
@@ -93,7 +105,8 @@ const DocumentsTable = ({ data, loading, type }) => {
     ]
 
     const handleDeleteDocument = document => {
-        console.log(document)
+        setDeleteModalOpen(true)
+        setDeleteDocument(document)
     }
 
     const handleEditDocument = document => {
@@ -101,12 +114,11 @@ const DocumentsTable = ({ data, loading, type }) => {
             fetchSingleDocumentThunk({
                 endpoint: type,
                 id: document._id,
-                onSuccess: () => {
-                    navigate(`/admin/edit?type=${type}`)
-                },
             })
         )
     }
+
+    console.log(curretDocument)
 
     return (
         <div className="p-4 bg-white">
@@ -134,6 +146,44 @@ const DocumentsTable = ({ data, loading, type }) => {
                     </>
                 )}
             </div>
+            {curretDocument && (
+                <Modal
+                    width={'80%'}
+                    bodyStyle={{ height: '84vh', overflow: 'auto' }}
+                    open={Boolean(curretDocument)}
+                    footer={null}
+                    maskClosable={false}
+                    onCancel={() => dispatch(removeCurrentDocument())}
+                >
+                    <Edit
+                        currentDocument={curretDocument}
+                        documentType={type}
+                    />
+                </Modal>
+            )}
+            {isDeleteModalOpen && deleteDocument && (
+                <Modal
+                    open={isDeleteModalOpen}
+                    onCancel={() => setDeleteModalOpen(false)}
+                    onOk={() => {
+                        setDeleteModalOpen(false)
+                        dispatch(
+                            deleteDocumentThunk({
+                                endpoint: type,
+                                id: deleteDocument._id,
+                                onSuccess: () => {
+                                    dispatch(updateUI(type))
+                                    message.success('Sertifikat o`chirildi')
+                                },
+                            })
+                        )
+                    }}
+                    okText="O`chirish"
+                    cancelText="Orqaga"
+                >
+                    <p>Sertifikatni o`chirishni tasdiqlaysizmi?</p>
+                </Modal>
+            )}
         </div>
     )
 }

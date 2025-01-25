@@ -4,4 +4,3 @@ export const getAdrDocuments = state => state.documents.adr
 export const getAdrTankDocuments = state => state.documents.adrTank
 export const getDocumentsLoading = state => state.documents.loading
 export const getDocumentId = state => state.documents.currentDocumentId
-export const getDocument = state => state.documents.currentDocument

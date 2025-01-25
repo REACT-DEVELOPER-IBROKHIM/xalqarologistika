@@ -3,6 +3,9 @@ import gerb from '@assets/images/gerb.png'
 import summarizeName from '@helpers/summarizeName'
 import QRCode from 'react-qr-code'
 import { forwardRef } from 'react'
+import { Typography } from 'antd'
+
+const { Title, Text } = Typography
 
 const DriverCertificate = forwardRef(({ document }, ref) => {
     const { id, name, surname, middlename, from, to } = document
@@ -30,14 +33,21 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                                 </div>
                             </div>
                             <div className="pdf_content">
-                                <h1 className="pdf_title">
+                                <Title
+                                    variant="h3"
+                                    className="font-bold mt-[100px] mb-[60px]"
+                                >
                                     O'zbekiston Respublikasi
-                                </h1>
-                                <h1 className="pdf_sertifikat">Sertifikat</h1>
-                                <h1 className="pdf_titleD">
+                                </Title>
+                                <Text className="font-bold text-[24px]">
                                     Malaka oshirish haqida
-                                </h1>
-                                <h2 className="pdf_id">MO № {id}</h2>
+                                </Text>
+                                <Title className="!text-[#6969fd] uppercase !text-[60px] !mt-[40px] !mb-[20px]">
+                                    Sertifikat
+                                </Title>
+                                <Title variant="h2" className="!text-[20px]">
+                                    {'MO №' + id}
+                                </Title>
                                 <h2 className="pdf_userName">
                                     {summarizeName(name, surname, middlename)}
                                 </h2>
@@ -113,9 +123,12 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                                 </div>
                             </div>
                             <div className="pdf_content">
-                                <h1 className="pdf_title">
+                                <Title
+                                    variant="h3"
+                                    className="font-bold mt-[100px] mb-[60px]"
+                                >
                                     Республика Узбекистан
-                                </h1>
+                                </Title>
                                 <h1 className="pdf_sertifikat">Сертификат</h1>
                                 <h1 className="pdf_titleDRu">
                                     О ПРОФЕССИОНАЛЬНОЙ КОМПЕТЕНТНОСТИ ПО
@@ -203,14 +216,22 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                     <div className="pdf_lang">
                         <div className="pdf_langContainer">
                             <div className="pdf_langRu">
-                                <h2 className="pdf_langTitle">Сертификат</h2>
-                                <h4>
+                                <Title
+                                    variant="h2"
+                                    className="font-bold !text-[20px]"
+                                >
+                                    Сертификат
+                                </Title>
+                                <Title
+                                    variant="h2"
+                                    className="font-bold !text-[14px]"
+                                >
                                     на осуществление международных автомобильных
                                     перевозов
-                                </h4>
-                                <p>
-                                    <b>MO № {id}</b>
-                                </p>
+                                </Title>
+                                <Text className="pdf_langName">
+                                    {summarizeName(name, surname, middlename)}
+                                </Text>
                                 <h4 className="pdf_langName">
                                     {summarizeName(name, surname, middlename)}
                                 </h4>
@@ -251,15 +272,22 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                                 </h4>
                             </div>
                             <div className="pdf_langEng">
-                                <h2 className="pdf_langTitle">Certificate</h2>
-                                <h4 className="pdf_langdesc">
+                                <Title
+                                    variant="h2"
+                                    className="font-bold !text-[20px]"
+                                >
+                                    Certificate
+                                </Title>
+                                <Title
+                                    variant="h2"
+                                    className="font-bold !text-[14px]"
+                                >
                                     The implementation of international
                                     automobile transportation
-                                </h4>
-                                <p>
-                                    <b>MO № {id}</b>
-                                </p>
-
+                                </Title>
+                                <Text className="pdf_langName">
+                                    {summarizeName(name, surname, middlename)}
+                                </Text>
                                 <h4 className="pdf_langName">
                                     {summarizeName(name, surname, middlename)}
                                 </h4>

@@ -25,3 +25,13 @@ export async function fetchSingleDocument(endpoint, id) {
     const authResponse = await resolve(axios.get(`/${endpoint}/${id}`))
     return authResponse.data
 }
+
+export async function updateSingleDocument(endpoint, id, data) {
+    const authResponse = await resolve(axios.put(`/${endpoint}/${id}`, data))
+    return authResponse.data
+}
+
+export async function fetchSingleDocumentById(id) {
+    const authResponse = await resolve(axios.get(`/search/?id=${id}`))
+    return authResponse.data
+}

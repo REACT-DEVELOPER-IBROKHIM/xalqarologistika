@@ -2,18 +2,26 @@ import { EMPTY_DOCUMENT, SIMILAR_DOCUMENT_TYPES } from '@/constants/document'
 import { removeDataFromLocalStorage } from '@/helpers/localStorageActions'
 import { getDocumentsLoading } from '@/redux/selectors/documents'
 import { createDocumentThunk } from '@/redux/thunks/documents-thunks'
+import { updateDocumentThunk } from '@/redux/thunks/single-document-thunk'
 import { Badge, Button, Descriptions, message } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import ReactToPrint from 'react-to-print'
-import { useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { DownloadOutlined } from '@ant-design/icons'
 import AdrCertificate from '@/components/documents/adr/AdrCertificate'
 import DriverCertificate from '@/components/documents/driver/DriverCertificate'
 import { removeCurrentDocumentId } from '@/redux/slices/documents'
+import { removeCurrentDocument } from '@/redux/slices/single-document'
+import { updateUI } from '@/helpers/update-ui'
 
-const SaveAndCheck = ({ document, setDocument, setCurrent, documentType }) => {
+const SaveAndCheck = ({
+    document,
+    setDocument,
+    setCurrent,
+    documentType,
+    actionType,
+}) => {
     const printFrame = useRef()
-    const [isDownloaded, setDownloaded] = useState(false)
     const dispatch = useDispatch()
     const loading = useSelector(getDocumentsLoading)
     const items = [
@@ -79,21 +87,52 @@ const SaveAndCheck = ({ document, setDocument, setCurrent, documentType }) => {
     const handleCancelValues = () => {
         setCurrent(0)
         setDocument({})
-        dispatch(removeCurrentDocumentId())
-        removeDataFromLocalStorage('document')
+        if (actionType === 'create') {
+            removeDataFromLocalStorage('document')
+            dispatch(removeCurrentDocumentId())
+        } else {
+            removeDataFromLocalStorage('currentDocument')
+            dispatch(removeCurrentDocument())
+        }
     }
 
-    const handleSaveAndCheck = () => {
-        dispatch(
+    const createDocumentHandler = useCallback(
+        () =>
             createDocumentThunk({
                 endpoint: documentType,
                 document,
                 onSuccess: () => {
                     handleCancelValues()
+                    setDocument(null)
                     message.success('Sertifikat saqlandi')
                 },
-            })
-        )
+            }),
+        []
+    )
+
+    const updateDocumentHandler = useCallback(
+        () =>
+            updateDocumentThunk({
+                endpoint: documentType,
+                id: document._id,
+                document,
+                onSuccess: () => {
+                    handleCancelValues()
+                    setDocument(null)
+                    dispatch(updateUI(documentType))
+                    message.success('Sertifikat tahrirlandi')
+                },
+            }),
+        []
+    )
+
+    const handleSaveAndCheck = () => {
+        const action =
+            actionType === 'create'
+                ? createDocumentHandler()
+                : updateDocumentHandler()
+
+        dispatch(action)
     }
 
     return (
@@ -113,25 +152,20 @@ const SaveAndCheck = ({ document, setDocument, setCurrent, documentType }) => {
                                 <Button
                                     disabled={document.id === EMPTY_DOCUMENT}
                                     type="primary"
-                                    onFocus={() => {
-                                        setDownloaded(true)
-                                    }}
                                 >
                                     Yuklab olish <DownloadOutlined />
                                 </Button>
                             )}
                             content={() => printFrame.current}
                         />
-                        {isDownloaded && (
-                            <Button
-                                type="primary"
-                                loading={loading}
-                                disabled={loading}
-                                onClick={handleSaveAndCheck}
-                            >
-                                Saqlash
-                            </Button>
-                        )}
+                        <Button
+                            type="primary"
+                            loading={loading}
+                            disabled={loading}
+                            onClick={handleSaveAndCheck}
+                        >
+                            Saqlash
+                        </Button>
                     </div>
                     <Button
                         onClick={handleCancelValues}

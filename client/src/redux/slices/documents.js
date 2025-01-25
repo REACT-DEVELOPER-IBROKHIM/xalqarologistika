@@ -9,7 +9,6 @@ const initialState = {
     loading: false,
     error: null,
     currentDocumentId: null,
-    currentDocument: null,
 }
 
 export const documentsSlice = createSlice({

@@ -1,8 +1,5 @@
-import './Create.scss'
-import 'react-datepicker/dist/react-datepicker.css'
-import Typography from 'antd/es/typography/Typography'
-import { Button, Checkbox, Input, Select } from 'antd'
-import { Steps } from 'antd'
+import React, { useEffect, useState } from 'react'
+import { Button, Form, Select, Steps, Typography } from 'antd'
 import {
     ArrowLeftOutlined,
     ArrowRightOutlined,
@@ -10,40 +7,18 @@ import {
     EyeOutlined,
     SaveOutlined,
 } from '@ant-design/icons'
-import { useEffect, useState } from 'react'
-import { convertToValueLabel } from '@/helpers/formItems'
-import { DOCUMENT_TYPES_LIST } from '@/constants/document'
-import CreateForm from './form'
+import EditForm from './form'
+import SaveAndCheck from '../create/save-and-check'
 import Preview from '@routes/sub-routes/create/preview'
-import { useDispatch, useSelector } from 'react-redux'
-import { getDocumentId, getDocumentsLoading } from '@/redux/selectors/documents'
-import { fetchDocumentIdThunk } from '@/redux/thunks/documents-thunks'
-import SaveAndCheck from './save-and-check'
-import {
-    getDataFromLocalStorage,
-    setDataToLocalStorage,
-} from '@/helpers/localStorageActions'
+import { DOCUMENT_TYPES_LIST } from '@/constants/document'
+import { convertToValueLabel } from '@/helpers/formItems'
 
 const { Title } = Typography
 
-const Create = () => {
-    const dispatch = useDispatch()
+const Edit = ({ currentDocument, documentType }) => {
+    const [form] = Form.useForm()
     const [isFormValid, setFormValid] = useState(false)
-    const currentDocumentId = useSelector(getDocumentId)
-    const loading = useSelector(getDocumentsLoading)
-    const [documentType, setDocumentType] = useState(DOCUMENT_TYPES_LIST[0].key)
-    const [document, setDocument] = useState(
-        getDataFromLocalStorage('document') || {
-            id: null,
-            name: '',
-            surname: '',
-            middlename: '',
-            birthDate: '',
-            from: '',
-            to: '',
-        }
-    )
-
+    const [document, setDocument] = useState(currentDocument)
     const [current, setCurrent] = useState(0)
 
     const next = () => {
@@ -55,43 +30,27 @@ const Create = () => {
 
     useEffect(() => {
         setFormValid(
-            document.name &&
+            document.id &&
+                document.name &&
                 document.surname &&
                 document.birthDate &&
                 document.middlename &&
                 document.from &&
-                document.to
+                document.to &&
+                !form.getFieldsError().some(({ errors }) => errors.length)
         )
     }, [document])
 
-    useEffect(() => {
-        if (isFormValid) {
-            dispatch(fetchDocumentIdThunk({ endpoint: documentType }))
-        }
-    }, [documentType, isFormValid])
-
-    useEffect(() => {
-        if (currentDocumentId) {
-            setDataToLocalStorage('document', {
-                ...document,
-                id: currentDocumentId,
-            })
-        }
-    }, [currentDocumentId])
-
     return (
-        <div
-            admincontent="content"
-            className="w-full flex-1 flex flex-col shadow-3xl h-full bg-white p-4"
-        >
+        <div>
             <div className="h-[180px] bg-white">
                 <Title level={3}>
                     Sertifikat turi:{' '}
                     <Select
                         value={documentType}
-                        onChange={value => setDocumentType(value)}
                         className="w-[200px]"
-                        defaultValue={DOCUMENT_TYPES_LIST[0].key}
+                        disabled={true}
+                        defaultValue={documentType}
                         options={convertToValueLabel(
                             DOCUMENT_TYPES_LIST,
                             'key',
@@ -121,21 +80,22 @@ const Create = () => {
 
             <div className="flex flex-1 flex-col">
                 {current === 0 && (
-                    <CreateForm document={document} setDocument={setDocument} />
+                    <EditForm
+                        form={form}
+                        document={document}
+                        setDocument={setDocument}
+                    />
                 )}
                 {current === 1 && (
-                    <Preview
-                        document={{ ...document, id: currentDocumentId }}
-                        type={documentType}
-                    />
+                    <Preview document={document} type={documentType} />
                 )}
                 {current === 2 && (
                     <SaveAndCheck
-                        actionType="create"
+                        actionType="edit"
                         documentType={documentType}
                         setDocument={setDocument}
                         setCurrent={setCurrent}
-                        document={{ ...document, id: currentDocumentId }}
+                        document={document}
                     />
                 )}
             </div>
@@ -144,8 +104,7 @@ const Create = () => {
                     <ArrowLeftOutlined /> Orqaga
                 </Button>
                 <Button
-                    loading={loading}
-                    disabled={current === 2 || !currentDocumentId}
+                    disabled={current === 2 || !isFormValid}
                     type="primary"
                     onClick={next}
                 >
@@ -156,4 +115,4 @@ const Create = () => {
     )
 }
 
-export default Create
+export default Edit

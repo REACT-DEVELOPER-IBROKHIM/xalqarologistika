@@ -4,7 +4,6 @@ import {
     deleteDocument,
     fetchDocumentCount,
     fetchDocuments,
-    fetchSingleDocument,
 } from '@api/documents'
 
 export const fetchDriverDocumentsThunk = createAsyncThunk(
@@ -57,9 +56,10 @@ export const fetchAdrTankDocumentsThunk = createAsyncThunk(
 
 export const deleteDocumentThunk = createAsyncThunk(
     'documents/delete',
-    async ({ endpoint, id }) => {
+    async ({ endpoint, id, onSuccess }) => {
         try {
             const response = await deleteDocument(endpoint, id)
+            if (onSuccess) onSuccess()
             return response
         } catch (error) {
             throw error
@@ -84,19 +84,6 @@ export const createDocumentThunk = createAsyncThunk(
     async ({ endpoint, document, onSuccess }) => {
         try {
             const response = await createDocument(endpoint, document)
-            if (onSuccess) onSuccess(response)
-            return response
-        } catch (error) {
-            throw error
-        }
-    }
-)
-
-export const fetchSingleDocumentThunk = createAsyncThunk(
-    'documents/edit',
-    async ({ endpoint, id, onSuccess }) => {
-        try {
-            const response = await fetchSingleDocument(endpoint, id)
             if (onSuccess) onSuccess(response)
             return response
         } catch (error) {
