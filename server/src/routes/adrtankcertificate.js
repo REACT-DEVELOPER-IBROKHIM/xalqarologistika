@@ -119,4 +119,28 @@ certificateTank.get('/:id', async (req, res) => {
     }
 })
 
+certificateTank.put('/:id', verifyAdmin, async (req, res) => {
+    try {
+        const updatedCertificate = await CertificateTank.updateOne(
+            {
+                _id: req.params.id,
+            },
+            {
+                $set: req.body,
+            }
+        )
+        res.json({
+            data: updatedCertificate,
+            error: null,
+            message: 'Sertifikat tahrirlandi',
+        })
+    } catch (error) {
+        res.json({
+            data: null,
+            error: 'Sertifikat tahrirlanmadi',
+            message: 'Sertifikat tahrirlanmadi',
+        })
+    }
+})
+
 module.exports = certificateTank

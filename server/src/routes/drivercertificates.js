@@ -92,6 +92,7 @@ certificate.patch('/delete/:id', verifyAdmin, async (req, res) => {
                     name: 'Mavjud emas',
                     surname: 'Mavjud emas',
                     middlename: 'Mavjud emas',
+                    birthDate: 'Mavjud emas',
                     from: 'Mavjud emas',
                     to: 'Mavjud emas',
                     courseName: 'Mavjud emas',
@@ -150,6 +151,30 @@ certificate.get('/:id', async (req, res) => {
             data: null,
             error: 'Sertifikat topilmadi',
             message: 'Sertifikat topilmadi',
+        })
+    }
+})
+
+certificate.put('/:id', verifyAdmin, async (req, res) => {
+    try {
+        const updatedCertificate = await Certificate.updateOne(
+            {
+                _id: req.params.id,
+            },
+            {
+                $set: req.body,
+            }
+        )
+        res.json({
+            data: updatedCertificate,
+            error: null,
+            message: 'Sertifikat tahrirlandi',
+        })
+    } catch (error) {
+        res.json({
+            data: null,
+            error: 'Sertifikat tahrirlanmadi',
+            message: 'Sertifikat tahrirlanmadi',
         })
     }
 })

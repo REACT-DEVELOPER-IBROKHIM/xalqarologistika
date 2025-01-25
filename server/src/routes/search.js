@@ -21,10 +21,16 @@ search.get('/', async (req, res) => {
         } else {
             certificate = await AdrCertificates.findOne({ id })
         }
-        res.status(200).json(certificate)
+        res.status(200).json({
+            data: certificate,
+            error: null,
+            message: 'Sertifikat topildi',
+        })
     } catch (err) {
         res.send(404).json({
-            error_uz: 'Sertifikat topilmadi',
+            data: null,
+            error: 'Sertifikat topilmadi',
+            message: 'Sertifikat topilmadi',
         })
     }
 })
