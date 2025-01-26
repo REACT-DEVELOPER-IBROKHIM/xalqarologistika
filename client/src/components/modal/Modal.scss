@@ -1,41 +1,41 @@
 .modal-layer {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0000007b;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(5px);
-    z-index: 11;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000007b;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal {
-    width: 100%;
-    max-width: 450px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: #000;
-    background-color: #fff;
-    padding: 40px;
-    gap: 15px 0;
-    border-radius: 10px;
-    position: relative;
-    p {
-        text-align: center;
-    }
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #000;
+  background-color: #fff;
+  padding: 40px;
+  gap: 15px 0;
+  border-radius: 10px;
+  position: relative;
+  p {
+    text-align: center;
+  }
 }
 
 .modal__close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 25px;
-    transition: 0.2s;
-    &:active {
-        transform: scale(0.9);
-    }
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  transition: 0.2s;
+  &:active {
+    transform: scale(0.9);
+  }
 }

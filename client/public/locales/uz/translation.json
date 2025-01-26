@@ -1,146 +1,146 @@
 {
-    "nav": {
-        "home": "Asosiy",
-        "work_hours": "Dush - Yak",
-        "email": "Elektron pochta",
-        "tel": "Tel",
-        "all": "Barcha kunlari"
-    },
-    "hero": {
-        "title": "Sertifikatlangan Professional Bo'ling!",
-        "description": "Bizning ekspert haydovchi ta'lim xizmatlarimiz bilan potentsialingizni oching. Professional va Ishonchli sertificatlarni olish markazi",
-        "check_btn": "Sertifikatni tekshirish",
-        "get_btn": "Sertifikatni biz bilan oling",
-        "input_placeholder": "Sertifikat raqamingiz",
-        "view_btn": "Sertifikatni to'liq ko'rish"
-    },
-    "comments_title": "Biz haqimizda izohlar",
-    "whatWeDo": {
-        "subtitle": "Biz taklif qilamiz",
-        "title": "Xavfsiz va ishonchli Sertifikatlar",
-        "services": [
-            {
-                "title": "Haydovchi Sertifikat Ta'limi",
-                "description": "Yetuk haydovchi bo'ling."
-            },
-            {
-                "title": "ADR Sertifikat Ta'limi",
-                "description": "Xavfsiz yuklarni olib o'tish uchun ko'nikmang."
-            },
-            {
-                "title": "ADR TANK Sertifikat Ta'limi",
-                "description": "Xavfli materiallarni olib o'tishda tajribangizni oshiring."
-            },
-            {
-                "title": "Menejer Sertifikat Ta'limi",
-                "description": "O'zlashtirish va yetkazib berish sohasida boshqarishni o'rganing."
-            }
-        ]
-    },
-    "meet": {
-        "subtitle": "Transportchilar",
-        "title": "Ekspertlar jamoasi bilan tanishing",
-        "main_director": "Bosh direktor",
-        "director": "Direktor",
-        "engineer": "Bosh muhandis"
-    },
-    "contact": {
-        "subtitle": "Aloqa",
-        "title": "Biz bilan bog'laning",
-        "description": "Strategiya uchun ishonchli konspektni taqdim etish uchun tezkor ramkalardan foydalaning, umumiy qiymatni oshirish uchun hamkorlikda fikrlashni rivojlantiradi.",
-        "contact_email": "Elektron pochta",
-        "contact_number": "Bizga qo'ng'iroq qiling",
-        "work_day": "Dush - Yak 9.00 - 18.00",
-        "day_off": "Yakshanba dam olish kuni",
-        "input_name": "Ismingiz*",
-        "input_number": "Telefon Raqam*",
-        "input_email": "Elektron pochta*",
-        "input_city": "Shahar*",
-        "input_message": "Xabaringizni qoldiring",
-        "submit_btn": "XABAR YUBORISH"
-    },
-    "footer": {
-        "description": "Strategiya uchun ishonchli konspektni taqdim etish uchun tezkor ramkalardan foydalaning, umumiy qiymatni oshirish uchun hamkorlikda fikrlashni rivojlantiradi.",
-        "contact_email": "Elektron pochta",
-        "contact_number": "Bizga qo'ng'iroq qiling",
-        "input_email": "Elektron pochta*",
-        "about": "Biz Haqimizda",
-        "team": "Bizning Jamoa",
-        "project": "Bizning Loyiha",
-        "pricing": "Narxlash",
-        "contact": "Aloqa",
-        "style_guide": "Uslub bo'yicha qo'llanma",
-        "changelog": "O'zgarishlar jurnali",
-        "license": "Litsenziya",
-        "protect": "Himoyalangan",
-        "send_email": "Elektron pochta*",
-        "send_btn": "HOZIR YUBORING",
-        "copyright": "Mualliflik huquqi",
-        "password": "Parol"
-    },
-    "status": {
-        "success": "Muvaffaqiyatli amalga oshirildi!",
-        "error": "Xatolik yuz berdi!",
-        "pending": "Yuklanyapti...Iltimos kuting!"
-    },
-    "utils": {
-        "loading": "Yuklanmoqda..."
-    },
-    "login": {
-        "title": "Tizimga kirish",
-        "name": "Admin ismi",
-        "password": "Admin paroli"
-    },
-    "services": {
-        "create": "Sertifikat yaratish",
-        "manage": "Sertifikat boshqarish",
-        "analytics": "Analitika"
-    },
-    "create": {
-        "title": "Sertifikat yaratish",
-        "firstname": "Ism",
-        "validname": "Iltimos, yaroqli ism kiriting",
-        "surname": "Familiya",
-        "validsurname": "Iltimos, yaroqli familiya kiriting",
-        "middlename": "Otasini Ismi",
-        "validmiddlename": "Iltimos, yaroqli otangizni ismini kiriting",
-        "certificate-type": "Sertifikat turi",
-        "select": "Sertifikat turini tanlang",
-        "driver-certificate": "Sertifikat",
-        "driver-manager-certificate": "Menejer",
-        "driver-adr-certificate": "ADR",
-        "driver-adr-tank-certificate": "ADR Tank",
-        "validselect": "Iltimos, sertifikat turini tanlang",
-        "validdate": "Iltimos, haqiqiy sana kiriting",
-        "birthdate": "Tug'ilgan kun sanasi",
-        "issuedate": "Berilgan sanasi",
-        "todate": "Tugash muddati",
-        "vyubtn": "Ko'rinish",
-        "savebtn": "Saqlash",
-        "printbtn": "Chop etish",
-        "clearbtn": "Tozalash",
-        "logoutbtn": "Chiqish",
-        "logoutmodal-title": "Tizimdan chiqish?",
-        "logoutmodal-text": "Haqiqatan ham tizimdan chiqmoqchimisiz?"
-    },
-    "manage": {
-        "title": "Sertifikatlarni boshqarish"
-    },
-    "analytics": {
-        "title": "Analitika"
-    },
-    "setrificatetable": {
-        "first-error": "Hech qanday sertifikat topilmadi yoki biror narsa noto'g'ri kiritildi",
-        "second-error": "Hech qanday sertifikat topa olmadik",
-        "searchinp": "Sertifikatni ID yoki Ism bo'yicha qidiring",
-        "userid": "ID",
-        "userfullname": "F.I.O",
-        "userdate": "SANA",
-        "userdownload": "Yuklab olish",
-        "useredit": "Tahrirlash",
-        "userdelete": "Uchirish",
-        "undefinedtext": "Mavjud emas",
-        "deleteserificate-title": "Bu sertifikat oʻchirilsinmi?",
-        "deleteserificate-text": "Haqiqatan ham bu sertifikatni oʻchirib tashlamoqchimisiz?"
-    }
+  "nav": {
+    "home": "Asosiy",
+    "work_hours": "Dush - Yak",
+    "email": "Elektron pochta",
+    "tel": "Tel",
+    "all": "Barcha kunlari"
+  },
+  "hero": {
+    "title": "Sertifikatlangan Professional Bo'ling!",
+    "description": "Bizning ekspert haydovchi ta'lim xizmatlarimiz bilan potentsialingizni oching. Professional va Ishonchli sertificatlarni olish markazi",
+    "check_btn": "Sertifikatni tekshirish",
+    "get_btn": "Sertifikatni biz bilan oling",
+    "input_placeholder": "Sertifikat raqamingiz",
+    "view_btn": "Sertifikatni to'liq ko'rish"
+  },
+  "comments_title": "Biz haqimizda izohlar",
+  "whatWeDo": {
+    "subtitle": "Biz taklif qilamiz",
+    "title": "Xavfsiz va ishonchli Sertifikatlar",
+    "services": [
+      {
+        "title": "Haydovchi Sertifikat Ta'limi",
+        "description": "Yetuk haydovchi bo'ling."
+      },
+      {
+        "title": "ADR Sertifikat Ta'limi",
+        "description": "Xavfsiz yuklarni olib o'tish uchun ko'nikmang."
+      },
+      {
+        "title": "ADR TANK Sertifikat Ta'limi",
+        "description": "Xavfli materiallarni olib o'tishda tajribangizni oshiring."
+      },
+      {
+        "title": "Menejer Sertifikat Ta'limi",
+        "description": "O'zlashtirish va yetkazib berish sohasida boshqarishni o'rganing."
+      }
+    ]
+  },
+  "meet": {
+    "subtitle": "Transportchilar",
+    "title": "Ekspertlar jamoasi bilan tanishing",
+    "main_director": "Bosh direktor",
+    "director": "Direktor",
+    "engineer": "Bosh muhandis"
+  },
+  "contact": {
+    "subtitle": "Aloqa",
+    "title": "Biz bilan bog'laning",
+    "description": "Strategiya uchun ishonchli konspektni taqdim etish uchun tezkor ramkalardan foydalaning, umumiy qiymatni oshirish uchun hamkorlikda fikrlashni rivojlantiradi.",
+    "contact_email": "Elektron pochta",
+    "contact_number": "Bizga qo'ng'iroq qiling",
+    "work_day": "Dush - Yak 9.00 - 18.00",
+    "day_off": "Yakshanba dam olish kuni",
+    "input_name": "Ismingiz*",
+    "input_number": "Telefon Raqam*",
+    "input_email": "Elektron pochta*",
+    "input_city": "Shahar*",
+    "input_message": "Xabaringizni qoldiring",
+    "submit_btn": "XABAR YUBORISH"
+  },
+  "footer": {
+    "description": "Strategiya uchun ishonchli konspektni taqdim etish uchun tezkor ramkalardan foydalaning, umumiy qiymatni oshirish uchun hamkorlikda fikrlashni rivojlantiradi.",
+    "contact_email": "Elektron pochta",
+    "contact_number": "Bizga qo'ng'iroq qiling",
+    "input_email": "Elektron pochta*",
+    "about": "Biz Haqimizda",
+    "team": "Bizning Jamoa",
+    "project": "Bizning Loyiha",
+    "pricing": "Narxlash",
+    "contact": "Aloqa",
+    "style_guide": "Uslub bo'yicha qo'llanma",
+    "changelog": "O'zgarishlar jurnali",
+    "license": "Litsenziya",
+    "protect": "Himoyalangan",
+    "send_email": "Elektron pochta*",
+    "send_btn": "HOZIR YUBORING",
+    "copyright": "Mualliflik huquqi",
+    "password": "Parol"
+  },
+  "status": {
+    "success": "Muvaffaqiyatli amalga oshirildi!",
+    "error": "Xatolik yuz berdi!",
+    "pending": "Yuklanyapti...Iltimos kuting!"
+  },
+  "utils": {
+    "loading": "Yuklanmoqda..."
+  },
+  "login": {
+    "title": "Tizimga kirish",
+    "name": "Admin ismi",
+    "password": "Admin paroli"
+  },
+  "services": {
+    "create": "Sertifikat yaratish",
+    "manage": "Sertifikat boshqarish",
+    "analytics": "Analitika"
+  },
+  "create": {
+    "title": "Sertifikat yaratish",
+    "firstname": "Ism",
+    "validname": "Iltimos, yaroqli ism kiriting",
+    "surname": "Familiya",
+    "validsurname": "Iltimos, yaroqli familiya kiriting",
+    "middlename": "Otasini Ismi",
+    "validmiddlename": "Iltimos, yaroqli otangizni ismini kiriting",
+    "certificate-type": "Sertifikat turi",
+    "select": "Sertifikat turini tanlang",
+    "driver-certificate": "Sertifikat",
+    "driver-manager-certificate": "Menejer",
+    "driver-adr-certificate": "ADR",
+    "driver-adr-tank-certificate": "ADR Tank",
+    "validselect": "Iltimos, sertifikat turini tanlang",
+    "validdate": "Iltimos, haqiqiy sana kiriting",
+    "birthdate": "Tug'ilgan kun sanasi",
+    "issuedate": "Berilgan sanasi",
+    "todate": "Tugash muddati",
+    "vyubtn": "Ko'rinish",
+    "savebtn": "Saqlash",
+    "printbtn": "Chop etish",
+    "clearbtn": "Tozalash",
+    "logoutbtn": "Chiqish",
+    "logoutmodal-title": "Tizimdan chiqish?",
+    "logoutmodal-text": "Haqiqatan ham tizimdan chiqmoqchimisiz?"
+  },
+  "manage": {
+    "title": "Sertifikatlarni boshqarish"
+  },
+  "analytics": {
+    "title": "Analitika"
+  },
+  "setrificatetable": {
+    "first-error": "Hech qanday sertifikat topilmadi yoki biror narsa noto'g'ri kiritildi",
+    "second-error": "Hech qanday sertifikat topa olmadik",
+    "searchinp": "Sertifikatni ID yoki Ism bo'yicha qidiring",
+    "userid": "ID",
+    "userfullname": "F.I.O",
+    "userdate": "SANA",
+    "userdownload": "Yuklab olish",
+    "useredit": "Tahrirlash",
+    "userdelete": "Uchirish",
+    "undefinedtext": "Mavjud emas",
+    "deleteserificate-title": "Bu sertifikat oʻchirilsinmi?",
+    "deleteserificate-text": "Haqiqatan ham bu sertifikatni oʻchirib tashlamoqchimisiz?"
+  }
 }
