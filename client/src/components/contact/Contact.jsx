@@ -30,9 +30,9 @@ const Contact = () => {
       setContactData(createStatusInstance("pending", t("status.pending")));
       axios
         .post(
-          `https://api.telegram.org/bot${process.env.REACT_APP_BOT_ID}/sendMessage`,
+          `https://api.telegram.org/bot${process.env.VITE_BOT_ID}/sendMessage`,
           {
-            chat_id: process.env.REACT_APP_CHAT_ID,
+            chat_id: process.env.VITE_CHAT_ID,
             text: `\n Ismi: ${name}\n Telefon raqami: ${number}\n Xabar: ${message ? message : "Xabar qoldirilmagan"}`,
             headers: {
               "Content-Type": "application/json",
