@@ -1,45 +1,45 @@
 @import "tailwindcss";
 
 .ant-menu-item-selected {
-    background-color: transparent !important;
-    color: unset !important;
+  background-color: transparent !important;
+  color: unset !important;
 }
 
 .ant-menu-item {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 .ant-menu-item:has(.active) {
-    background-color: #074799 !important;
-    color: #fff !important;
+  background-color: #074799 !important;
+  color: #fff !important;
 }
 
 .ant-menu a {
-    transition: color 0.0001s !important;
+  transition: color 0.0001s !important;
 }
 
 .ant-layout-sider-children {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 input {
-    color: #000 !important;
+  color: #000 !important;
 }
 .message {
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 13px;
-    &--error {
-        background-color: var(--danger-color);
-    }
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 13px;
+  &--error {
+    background-color: var(--danger-color);
+  }
 
-    &--success {
-        background-color: var(--success-color);
-    }
+  &--success {
+    background-color: var(--success-color);
+  }
 
-    &--loading {
-        background-color: var(--warning-color);
-    }
+  &--loading {
+    background-color: var(--warning-color);
+  }
 }

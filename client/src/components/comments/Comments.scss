@@ -1,118 +1,118 @@
 .comments {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    margin-top: 50px;
-    margin-bottom: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .comments__wrapper {
-    flex: 1;
-    display: block;
-    max-height: 218px;
+  flex: 1;
+  display: block;
+  max-height: 218px;
 }
 
 .comments__slide {
-    margin: 20px;
+  margin: 20px;
 }
 
 .comments__card {
-    border-radius: 10px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    height: 200px;
-    padding: 15px;
-    margin: 0 10px;
-    text-align: left;
-    transition: transform 0.3s ease;
-    font-size: 18px;
-    background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  height: 200px;
+  padding: 15px;
+  margin: 0 10px;
+  text-align: left;
+  transition: transform 0.3s ease;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+
+  .comments__card {
+    width: 300px !important;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .comments__card-header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 80%;
+    margin-bottom: 10px;
+  }
 
-    .comments__card {
-        width: 300px !important;
+  .comments__card-image {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    border: 3px solid var(--main-accent-color);
+    width: 60px !important;
+    height: 60px !important;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      border-radius: 50%;
     }
+  }
 
-    &:hover {
-        transform: scale(1.05);
+  .comments__card__header-name {
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .comments__card__header-date {
+    margin-left: auto;
+    font-size: 10px;
+  }
+
+  .comments__card__text {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .comments__card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .comments__card__footer__stars {
+    display: flex;
+
+    svg {
+      color: #f8d64e; /* Star color */
+      font-size: 18px;
     }
-
-    .comments__card-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .comments__card-image {
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 10px;
-        border: 3px solid var(--main-accent-color);
-        width: 60px !important;
-        height: 60px !important;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: 3px solid #fff;
-            border-radius: 50%;
-        }
-    }
-
-    .comments__card__header-name {
-        font-weight: bold;
-        font-size: 12px;
-        margin: 0;
-    }
-
-    .comments__card__header-date {
-        margin-left: auto;
-        font-size: 10px;
-    }
-
-    .comments__card__text {
-        font-size: 14px;
-        line-height: 1.4;
-        margin-bottom: 15px;
-    }
-
-    .comments__card__footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .comments__card__footer__stars {
-        display: flex;
-
-        svg {
-            color: #f8d64e; /* Star color */
-            font-size: 18px;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 552px) {
-    .comments__card {
-        width: 100% !important;
-    }
+  .comments__card {
+    width: 100% !important;
+  }
 
-    .comments__card-header {
-        width: 100%;
-    }
+  .comments__card-header {
+    width: 100%;
+  }
 }
 
 .awssld__container {
-    padding-bottom: 250px !important;
+  padding-bottom: 250px !important;
 }
 
 .awssld__content {
-    background-color: transparent;
+  background-color: transparent;
 }

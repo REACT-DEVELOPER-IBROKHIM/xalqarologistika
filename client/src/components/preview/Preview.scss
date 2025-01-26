@@ -1,251 +1,251 @@
 .preview__status {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    z-index: 3;
-    font-size: 40px;
-    height: 100%;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  z-index: 3;
+  font-size: 40px;
+  height: 100%;
+  width: 100%;
 }
 
 .preview__status.expired {
-    color: red;
-    backdrop-filter: blur(2px);
+  color: red;
+  backdrop-filter: blur(2px);
 }
 
 .certificate-container {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    background-color: #fcf4d8;
-    color: #000;
-    font-family: sans-serif !important;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #fcf4d8;
+  color: #000;
+  font-family: sans-serif !important;
 }
 
 .certificate-wrapper {
-    width: 100%;
-    height: 100%;
-    border: 3px solid #3643fc;
-    display: flex;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #3643fc;
+  display: flex;
 }
 
 .certificate-left {
+  height: 100%;
+  width: 17%;
+  background-color: red;
+  margin-left: 10px;
+  position: relative;
+
+  .certificate-gerb {
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1 / 1 !important;
+    top: 50px;
+    left: 0;
+  }
+
+  .cartificate-flag__stripes {
+    display: flex;
     height: 100%;
-    width: 17%;
-    background-color: red;
-    margin-left: 10px;
-    position: relative;
-
-    .certificate-gerb {
-        position: absolute;
-        width: 100%;
-        aspect-ratio: 1 / 1 !important;
-        top: 50px;
-        left: 0;
+    .green-stripe {
+      flex: 1;
+      height: 100%;
+      background-color: #0bbe0b;
     }
-
-    .cartificate-flag__stripes {
-        display: flex;
-        height: 100%;
-        .green-stripe {
-            flex: 1;
-            height: 100%;
-            background-color: #0bbe0b;
-        }
-        .white-stripe {
-            flex: 1;
-            height: 100%;
-            background-color: white;
-            border-left: 2px solid red;
-            border-right: 2px solid red;
-        }
-        .blue-stripe {
-            flex: 1;
-            height: 100%;
-            background-color: #1e90ff;
-        }
+    .white-stripe {
+      flex: 1;
+      height: 100%;
+      background-color: white;
+      border-left: 2px solid red;
+      border-right: 2px solid red;
     }
+    .blue-stripe {
+      flex: 1;
+      height: 100%;
+      background-color: #1e90ff;
+    }
+  }
 }
 
 .certificate-right {
-    flex: 1;
-    text-align: center;
-    font-family: sans-serif;
-    position: relative;
-    padding: 0 10px;
+  flex: 1;
+  text-align: center;
+  font-family: sans-serif;
+  position: relative;
+  padding: 0 10px;
 }
 
 .certificate__country {
-    margin-top: 30px;
-    font-size: 1em;
-    font-weight: 700;
+  margin-top: 30px;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 .certificate__title {
-    color: #3643fc;
-    margin: 15px 0;
-    font-size: 1.5em;
+  color: #3643fc;
+  margin: 15px 0;
+  font-size: 1.5em;
 }
 
 .certificate__number {
-    font-size: 0.6em;
+  font-size: 0.6em;
 }
 
 .certificate__name,
 .certificate__org,
 .certificate__course {
-    border-bottom: 0.5px solid #000;
-    margin-top: 0.6em;
-    position: relative;
-    font-weight: 600;
-    font-size: 0.53em;
-    padding-bottom: 2px;
+  border-bottom: 0.5px solid #000;
+  margin-top: 0.6em;
+  position: relative;
+  font-weight: 600;
+  font-size: 0.53em;
+  padding-bottom: 2px;
 }
 
 .certificate__name {
-    font-size: 0.6em;
+  font-size: 0.6em;
 }
 
 %bottom-content {
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.5em;
-    font-weight: 400;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.5em;
+  font-weight: 400;
 }
 
 .certificate__name::after {
-    content: '(Familyasi, ismi, otasinig ismi)';
-    @extend %bottom-content;
+  content: "(Familyasi, ismi, otasinig ismi)";
+  @extend %bottom-content;
 }
 
 .certificate__org::after {
-    content: "(Malaka oshirish ta'lim muassasasining nomi)";
-    @extend %bottom-content;
+  content: "(Malaka oshirish ta'lim muassasasining nomi)";
+  @extend %bottom-content;
 }
 
 .certificate__course::after {
-    content: '(Malaka oshirish kusrning nomi)';
-    @extend %bottom-content;
+  content: "(Malaka oshirish kusrning nomi)";
+  @extend %bottom-content;
 }
 
 .certifcate__date {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0.4em;
-    font-size: 0.5em;
-    margin-top: 2em;
-    font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.4em;
+  font-size: 0.5em;
+  margin-top: 2em;
+  font-weight: 600;
 }
 
 .certificate__org,
 .certificate__course {
-    font-size: 0.7em;
-    margin-top: 1.2em;
+  font-size: 0.7em;
+  margin-top: 1.2em;
 }
 
 .certificate__rest {
-    font-size: 0.4em;
-    text-align: left;
-    margin-top: 2em;
+  font-size: 0.4em;
+  text-align: left;
+  margin-top: 2em;
 }
 
 .certificate__bottom {
-    font-size: 0.4em;
-    text-align: center;
-    position: absolute;
-    bottom: 5px;
-    padding-right: 10px;
+  font-size: 0.4em;
+  text-align: center;
+  position: absolute;
+  bottom: 5px;
+  padding-right: 10px;
 }
 
 .certificate__rest-credientials {
-    margin-right: 10px;
-    display: flex;
-    justify-content: space-between;
+  margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media print and (-webkit-min-device-pixel-ratio: 0) {
-    .certificate-container {
-        height: 297mm;
-    }
+  .certificate-container {
+    height: 297mm;
+  }
 }
 
 .certificate-adr {
-    max-width: 90%;
-    margin: 20px auto;
-    height: 170px;
-    border: 1px solid #c5c5c5;
-    border-radius: 10px;
-    background-color: #fff;
-    background: url('https://t3.ftcdn.net/jpg/03/20/14/98/360_F_320149880_YIsJEzdfICARIZtTPsTnhx2YHjpiQhop.jpg');
-    background-size: cover;
-    text-align: center;
+  max-width: 90%;
+  margin: 20px auto;
+  height: 170px;
+  border: 1px solid #c5c5c5;
+  border-radius: 10px;
+  background-color: #fff;
+  background: url("https://t3.ftcdn.net/jpg/03/20/14/98/360_F_320149880_YIsJEzdfICARIZtTPsTnhx2YHjpiQhop.jpg");
+  background-size: cover;
+  text-align: center;
 }
 
 .adr__uz {
-    border: 1px solid black;
-    border-radius: 50%;
-    padding: 3px 10px;
-    font-size: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 3px 10px;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .adr__logo {
-    background-color: dodgerblue;
-    color: #fff;
-    font-style: italic;
-    font-weight: 400;
-    padding: 3px 6px;
-    font-size: 10px;
-    border-radius: 5px 0 5px 0;
+  background-color: dodgerblue;
+  color: #fff;
+  font-style: italic;
+  font-weight: 400;
+  padding: 3px 6px;
+  font-size: 10px;
+  border-radius: 5px 0 5px 0;
 }
 
 .content__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
 }
 
 .adr__content {
-    h5 {
-        font-size: 8px;
-        margin-bottom: 2px;
-    }
+  h5 {
+    font-size: 8px;
+    margin-bottom: 2px;
+  }
 }
 
 .adr_previewqrcode {
-    width: 50px;
-    height: 50px !important;
-    margin-top: 50px;
-    margin-right: 10px;
+  width: 50px;
+  height: 50px !important;
+  margin-top: 50px;
+  margin-right: 10px;
 }
 
 .certificate-adr > h3 {
-    font-size: 10px;
-    margin-top: 2px;
+  font-size: 10px;
+  margin-top: 2px;
 }
 
 .certificate-adr > h4 {
-    font-size: 8px;
+  font-size: 8px;
 }
 
 .content__info {
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    img {
-        max-width: 30%;
-        height: 100px;
-        margin-left: 5px;
-        object-fit: cover;
-        border: 1px solid gray;
-    }
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  img {
+    max-width: 30%;
+    height: 100px;
+    margin-left: 5px;
+    object-fit: cover;
+    border: 1px solid gray;
+  }
 }

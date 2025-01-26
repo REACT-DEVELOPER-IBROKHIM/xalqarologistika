@@ -1,102 +1,102 @@
 .create-certificate {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .create-certificate__content {
-    display: flex;
-    background-color: var(--main-bg-color);
-    flex: 1;
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
-    padding: 20px;
-    gap: 0 20px;
+  display: flex;
+  background-color: var(--main-bg-color);
+  flex: 1;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 0 20px;
 }
 
 .create-certificate__form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px 0;
-    flex: 1;
-    color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+  flex: 1;
+  color: #fff;
 }
-    
+
 .create-certificate__view {
-    max-width: 450px;
-    width: 100%;
-    position: relative;
+  max-width: 450px;
+  width: 100%;
+  position: relative;
 }
 
 .create-certificate__form-fields {
-    display: flex;
-    flex-direction: column;
-    gap: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 20px;
 }
 
-div[inputwrapperitem='true'] {
-    display: flex;
+div[inputwrapperitem="true"] {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 15px 0;
+  label {
+    margin-top: 5px;
+  }
+  input,
+  select {
+    text-transform: uppercase;
     flex: 1;
-    flex-direction: column;
-    gap: 15px 0;
-    label {
-        margin-top: 5px;
+    min-height: 40px;
+    max-height: 40px;
+    outline: none;
+    border-radius: 5px;
+    text-indent: 10px;
+    font-size: 18px;
+    border: 3px solid var(--main-accent-color);
+    &:focus {
+      box-shadow: none !important;
     }
-    input,
-    select {
-        text-transform: uppercase;
-        flex: 1;
-        min-height: 40px;
-        max-height: 40px;
-        outline: none;
-        border-radius: 5px;
-        text-indent: 10px;
-        font-size: 18px;
-        border: 3px solid var(--main-accent-color);
-        &:focus {
-            box-shadow: none !important;
-        }
-    }
+  }
 
-    .react-datepicker-popper {
-        padding-bottom: 0 !important;
-    }
+  .react-datepicker-popper {
+    padding-bottom: 0 !important;
+  }
 
-    .react-datepicker__input-container {
-        input {
-            width: 100%;
-        }
+  .react-datepicker__input-container {
+    input {
+      width: 100%;
     }
+  }
 
-    .react-datepicker__triangle {
-        display: none;
-    }
+  .react-datepicker__triangle {
+    display: none;
+  }
 }
 
 .create-certificate__form-actions {
-    display: flex;
-    justify-content: center;
-    gap: 0 20px;
-    display: flex;
-    button {
-        flex: 1;
-    }
+  display: flex;
+  justify-content: center;
+  gap: 0 20px;
+  display: flex;
+  button {
+    flex: 1;
+  }
 }
 
 .crete-certificate__success {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.655);
-    backdrop-filter: blur(2px);
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.655);
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
 .create-certificate__view:hover .crete-certificate__success {
-    opacity: 0;
+  opacity: 0;
 }
