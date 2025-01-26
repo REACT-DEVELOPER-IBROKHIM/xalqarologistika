@@ -16,7 +16,7 @@ const Certificates = () => {
     useEffect(() => {
         dispatch(fetchDriverDocumentsThunk({ endpoint: docType.type }))
     }, [pathname])
-
+    
     return (
         <div>
             <DocumentsTable data={data} loading={loading} type={docType.type} />

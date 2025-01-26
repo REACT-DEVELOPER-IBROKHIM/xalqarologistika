@@ -39,7 +39,7 @@ const Edit = ({ currentDocument, documentType }) => {
                 document.to &&
                 !form.getFieldsError().some(({ errors }) => errors.length)
         )
-    }, [document])
+    }, [document])  
 
     return (
         <div>

@@ -4,7 +4,6 @@ import Login from '@routes/auth/Login'
 import Private from '@routes/private/Private'
 import Create from '@routes/sub-routes/create/Create'
 import ManageCertificates from '@routes/sub-routes/manage-certificate/ManageCertificate'
-import Analytics from '@routes/sub-routes/analytics/Analytics'
 import Search from '@routes/search/Search'
 import Certificates from '@routes/sub-routes/manage-certificate/certificate'
 import Adr from '@routes/sub-routes/manage-certificate/adr'
@@ -28,7 +27,6 @@ const index = () => {
                     <Route path="manager" element={<Manager />} />
                     <Route path="adr-tank" element={<AdrTank />} />
                 </Route>
-                <Route path="analytics" element={<Analytics />} />
             </Route>
         </Routes>
     )

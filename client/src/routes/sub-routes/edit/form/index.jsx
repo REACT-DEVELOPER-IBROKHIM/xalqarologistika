@@ -45,7 +45,7 @@ const EditForm = ({ setDocument, document, form }) => {
                     : null,
                 from: document.from ? dayjs(document.from, DATE_FORMAT) : null,
                 to: document.to ? dayjs(document.to, DATE_FORMAT) : null,
-            }}
+            }} 
             layout="vertical"
             onFinish={onFinish}
             onValuesChange={handleValuesChange}

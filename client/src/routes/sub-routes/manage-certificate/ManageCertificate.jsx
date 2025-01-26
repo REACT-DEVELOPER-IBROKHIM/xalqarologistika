@@ -1,4 +1,3 @@
-import './ManageCertificate.scss'
 import { useState } from 'react'
 import generateCertificateTypeList from '@static/CertificateTypeList'
 import { Outlet } from 'react-router-dom'
@@ -33,7 +32,7 @@ const ManageCertificates = () => {
             </nav>
             <section className="p-4 bg-white shadow-3xl">
                 <Outlet />
-            </section>
+            </section> 
         </div>
     )
 }

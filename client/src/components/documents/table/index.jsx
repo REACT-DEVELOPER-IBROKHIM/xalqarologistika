@@ -57,7 +57,7 @@ const DocumentsTable = ({ data, loading, type }) => {
             title: 'Berilgan sana',
             dataIndex: 'from',
             key: 'from',
-            width: '10%',
+            width: '10%', 
         },
         {
             title: 'Tugash sana',

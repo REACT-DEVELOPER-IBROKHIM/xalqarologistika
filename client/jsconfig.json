@@ -1,23 +1,23 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["./src/*"],
-            "@components/*": ["./src/components/*"],
-            "@selectors/*": ["./src/redux/selectors/*"],
-            "@thunks/*": ["./src/redux/thunks/*"],
-            "@slices/*": ["./src/redux/slices/*"],
-            "@builders/*": ["./src/redux/builders/*"],
-            "@store/*": ["./src/redux/store/*"],
-            "@assets/*": ["./src/assets/*"],
-            "@services/*": ["./src/services/*"],
-            "@static/*": ["./src/static/*"],
-            "@api/*": ["./src/api/*"],
-            "@constants/*": ["./src/constants/*"],
-            "@utils/*": ["./src/utils/*"],
-            "@routes/*": ["./src/routes/*"],
-            "@helpers/*": ["./src/helpers/*"]
-        },
-        "strict": true
-    }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@selectors/*": ["./src/redux/selectors/*"],
+      "@thunks/*": ["./src/redux/thunks/*"],
+      "@slices/*": ["./src/redux/slices/*"],
+      "@builders/*": ["./src/redux/builders/*"],
+      "@store/*": ["./src/redux/store/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@services/*": ["./src/services/*"],
+      "@static/*": ["./src/static/*"],
+      "@api/*": ["./src/api/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@helpers/*": ["./src/helpers/*"]
+    },
+    "strict": true,
+  }
 }

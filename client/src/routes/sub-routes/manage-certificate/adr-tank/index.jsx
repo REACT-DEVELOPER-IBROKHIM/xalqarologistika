@@ -16,7 +16,7 @@ const AdrTank = () => {
     useEffect(() => {
         dispatch(fetchAdrTankDocumentsThunk({ endpoint: docType.type }))
     }, [pathname])
-
+    
     return (
         <div>
             <DocumentsTable data={data} loading={loading} type={docType.type} />
