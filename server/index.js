@@ -19,7 +19,7 @@ const whitelist = [
     'https://ntl.vercel.app',
     'https://www.xalqarologistika.uz',
     'https://xalqarologistika.uz',
-    'http://localhost:3000',
+    'http://localhost:5173',
 ]
 app.use(
     cors({

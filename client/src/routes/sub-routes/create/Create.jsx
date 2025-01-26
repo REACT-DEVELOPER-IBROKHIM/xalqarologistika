@@ -117,7 +117,7 @@ const Create = () => {
                         },
                     ]}
                 />
-            </div>
+            </div> 
 
             <div className="flex flex-1 flex-col">
                 {current === 0 && (
