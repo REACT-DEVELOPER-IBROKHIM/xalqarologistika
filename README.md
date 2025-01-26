@@ -78,7 +78,7 @@ Follow these steps to set up the project locally.
 4. Create a `.env` file in the project root and add the necessary environment variables:
 
    ```bash
-    REACT_APP_API_URL=****<URL>****
+    VITE_API_URL=****<URL>****
     GENERATE_SOURCEMAP=true
     # Add other environment variables as needed
 
