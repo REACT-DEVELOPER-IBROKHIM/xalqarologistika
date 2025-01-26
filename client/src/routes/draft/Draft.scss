@@ -1,96 +1,96 @@
 .darft_container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    overflow: auto;
-    padding: 50px 30px;
-    flex-direction: column;
-    align-items: center;
-    font-family: sans-serif !important;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: auto;
+  padding: 50px 30px;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif !important;
 }
 
 .darft_container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .pdf_userName {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .pdf_langName {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .pdf_container {
-    position: relative;
+  position: relative;
 }
 
 .draft_text {
-    font-size: 125px;
-    position: absolute;
-    z-index: 3;
-    opacity: 0.1;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    user-select: none;
-    pointer-events: none;
+  font-size: 125px;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.1;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
 }
 
 .draft_text.expired {
-    opacity: 1;
-    backdrop-filter: blur(5px);
+  opacity: 1;
+  backdrop-filter: blur(5px);
 }
 
 .image__avatar {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .main_pageLink {
-    padding: 10px 20px;
-    background-color: var(--main-bg-color);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    z-index: 100;
-    display: flex;
-    margin-bottom: 20px;
-    align-items: center;
+  padding: 10px 20px;
+  background-color: var(--main-bg-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 100;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
 .pdf_langOrganization {
-    text-align: left;
+  text-align: left;
 }
 
 .search-certificate .pdf_container {
-    padding: 0;
+  padding: 0;
 }
 
 .search-certificate .pdf_lang {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .certficate-text__container {
-    text-align: center;
-    margin-top: -600px;
-    padding: 16px;
+  text-align: center;
+  margin-top: -600px;
+  padding: 16px;
 }
 
 .darft_container .cartifificate__adr-danger {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .darft_container .cartifificate__adr-danger > .pdf_lang {
-    min-height: 100%;
-    height: 100%;
+  min-height: 100%;
+  height: 100%;
 }
 
 .expired {
-    color: red;
+  color: red;
 }
 
 .exist {
-    color: green;
+  color: green;
 }

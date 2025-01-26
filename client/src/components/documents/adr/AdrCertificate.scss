@@ -1,186 +1,186 @@
 .adr__container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper__card {
-    height: 700px;
-    margin-top: 772px;
+  height: 700px;
+  margin-top: 772px;
 }
 
 .adr_card {
-    width: 500px;
-    height: 320px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    margin-top: 5px;
-    background-color: #fdfbe8;
-    border: 1px solid gray;
-    background-image: url('https://t3.ftcdn.net/jpg/03/20/14/98/360_F_320149880_YIsJEzdfICARIZtTPsTnhx2YHjpiQhop.jpg');
+  width: 500px;
+  height: 320px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  background-color: #fdfbe8;
+  border: 1px solid gray;
+  background-image: url("https://t3.ftcdn.net/jpg/03/20/14/98/360_F_320149880_YIsJEzdfICARIZtTPsTnhx2YHjpiQhop.jpg");
 }
 
 .adr_englishtitle {
-    text-align: center;
-    font-size: 23px; 
-    padding-top: 10px;
+  text-align: center;
+  font-size: 23px;
+  padding-top: 10px;
 }
 
 .adr_rustitle {
-    font-size: 16px;
-    padding-top: 5px;
-    text-align: center;
+  font-size: 16px;
+  padding-top: 5px;
+  text-align: center;
 }
 
 .adr_maintop {
-    width: 90%;
-    height: 50px;
-    margin: 5px auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 90%;
+  height: 50px;
+  margin: 5px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .uz_wrapper {
-    padding: 7px 15px;
-    border-radius: 50%;
-    border: 2px solid #000;
+  padding: 7px 15px;
+  border-radius: 50%;
+  border: 2px solid #000;
 }
 
 .main__bold {
-    font-size: 20px;
-    font-weight: 600;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .adr_logo {
-    color: #fff;
-    background-color: dodgerblue;
-    padding: 5px 10px;
-    font-style: italic;
-    border-radius: 10px 0px 10px 0px;
+  color: #fff;
+  background-color: dodgerblue;
+  padding: 5px 10px;
+  font-style: italic;
+  border-radius: 10px 0px 10px 0px;
 }
 
 .adr_maincenter {
-    width: 95%;
-    height: 190px;
-    margin: 5px auto;
-    display: flex;
+  width: 95%;
+  height: 190px;
+  margin: 5px auto;
+  display: flex;
 }
 
 .center__image {
-    width: 120px;
-    height: 160px;
-    background-color: #fff;
-    border: 1.5px solid #000;
-    margin-top: 15px;
+  width: 120px;
+  height: 160px;
+  background-color: #fff;
+  border: 1.5px solid #000;
+  margin-top: 15px;
 }
 
 .center__info {
-    width: 200px;
-    height: 190px;
+  width: 200px;
+  height: 190px;
 }
 
 .main__bold {
-    white-space: nowrap;
-    margin-left: 10px;
-    font-size: 18px;
+  white-space: nowrap;
+  margin-left: 10px;
+  font-size: 18px;
 }
 
 .smaller_text {
-    font-size: 14px;
-    font-weight: 700;
-    white-space: nowrap;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .adr_sign {
-    width: 100px;
-    height: 35px;
-    background-color: #fff;
-    margin-left: 10px;
-    margin-top: 2px;
-    border: 1.5px solid #000;
+  width: 100px;
+  height: 35px;
+  background-color: #fff;
+  margin-left: 10px;
+  margin-top: 2px;
+  border: 1.5px solid #000;
 }
 
 .adr_qrcode {
-    width: 50px;
-    height: 0;
+  width: 50px;
+  height: 0;
 }
 
 .adr_qrcodemain {
-    margin: 0;
-    margin-top: 10px;
-    margin-left: -50px;
-    transform: scale(0.3);
+  margin: 0;
+  margin-top: 10px;
+  margin-left: -50px;
+  transform: scale(0.3);
 }
 
 .adr_cardback {
-    width: 500px;
-    height: 320px;
-    border-radius: 20px;
-    background-color: #fdfbe8;
-    border: 1px solid gray;
-    background-image: url('https://t3.ftcdn.net/jpg/03/20/14/98/360_F_320149880_YIsJEzdfICARIZtTPsTnhx2YHjpiQhop.jpg');
+  width: 500px;
+  height: 320px;
+  border-radius: 20px;
+  background-color: #fdfbe8;
+  border: 1px solid gray;
+  background-image: url("https://t3.ftcdn.net/jpg/03/20/14/98/360_F_320149880_YIsJEzdfICARIZtTPsTnhx2YHjpiQhop.jpg");
 }
 
 .back__title {
-    text-align: center;
-    padding-top: 10px;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .back__smalltitle {
-    font-weight: 500;
-    font-size: 15px;
-    text-align: center;
-    letter-spacing: -1px;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: -1px;
 }
 
 .adr_cardback > table {
-    width: 90%;
-    margin: 0px auto;
-    border-collapse: collapse;
+  width: 90%;
+  margin: 0px auto;
+  border-collapse: collapse;
 }
 
 .adr_cardback > table th {
-    padding-top: 10px;
-    font-size: 18px;
-    width: 50%;
-    border-bottom: 2px solid #000;
+  padding-top: 10px;
+  font-size: 18px;
+  width: 50%;
+  border-bottom: 2px solid #000;
 }
 
 .adr_cardback > table td {
-    font-weight: 800;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    padding-left: 20px;
+  font-weight: 800;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  padding-left: 20px;
 }
 
 .adr_cardback > table td:last-child {
-    border-left: 2px solid #000;
+  border-left: 2px solid #000;
 }
 
 .cartifificate__adr-danger {
-    margin-top: 419px;
-    .pdf_langName {
-        margin-top: 0;
-        display: flex;
-        height: 30px;
-        align-items: center;
-        justify-content: center;
-    }
+  margin-top: 419px;
+  .pdf_langName {
+    margin-top: 0;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .signs {
-    width: 100%;
-    height: 50px;
+  width: 100%;
+  height: 50px;
 }
 
 .adr_title-eng {
-    margin-top: 55px;
+  margin-top: 55px;
 }
 
 .adr_lang-eng-date {
-    margin-top: 100px;
+  margin-top: 100px;
 }

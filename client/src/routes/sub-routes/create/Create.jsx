@@ -1,159 +1,158 @@
-import './Create.scss'
-import 'react-datepicker/dist/react-datepicker.css'
-import Typography from 'antd/es/typography/Typography'
-import { Button, Checkbox, Input, Select } from 'antd'
-import { Steps } from 'antd'
+import "./Create.scss";
+import "react-datepicker/dist/react-datepicker.css";
+import Typography from "antd/es/typography/Typography";
+import { Button, Checkbox, Input, Select } from "antd";
+import { Steps } from "antd";
 import {
-    ArrowLeftOutlined,
-    ArrowRightOutlined,
-    EditOutlined,
-    EyeOutlined,
-    SaveOutlined,
-} from '@ant-design/icons'
-import { useEffect, useState } from 'react'
-import { convertToValueLabel } from '@/helpers/formItems'
-import { DOCUMENT_TYPES_LIST } from '@/constants/document'
-import CreateForm from './form'
-import Preview from '@routes/sub-routes/create/preview'
-import { useDispatch, useSelector } from 'react-redux'
-import { getDocumentId, getDocumentsLoading } from '@/redux/selectors/documents'
-import { fetchDocumentIdThunk } from '@/redux/thunks/documents-thunks'
-import SaveAndCheck from './save-and-check'
+  ArrowLeftOutlined,
+  ArrowRightOutlined,
+  EditOutlined,
+  EyeOutlined,
+  SaveOutlined,
+} from "@ant-design/icons";
+import { useEffect, useState } from "react";
+import { convertToValueLabel } from "@/helpers/formItems";
+import { DOCUMENT_TYPES_LIST } from "@/constants/document";
+import CreateForm from "./form";
+import Preview from "@routes/sub-routes/create/preview";
+import { useDispatch, useSelector } from "react-redux";
 import {
-    getDataFromLocalStorage,
-    setDataToLocalStorage,
-} from '@/helpers/localStorageActions'
+  getDocumentId,
+  getDocumentsLoading,
+} from "@/redux/selectors/documents";
+import { fetchDocumentIdThunk } from "@/redux/thunks/documents-thunks";
+import SaveAndCheck from "./save-and-check";
+import {
+  getDataFromLocalStorage,
+  setDataToLocalStorage,
+} from "@/helpers/localStorageActions";
 
-const { Title } = Typography
+const { Title } = Typography;
 
 const Create = () => {
-    const dispatch = useDispatch()
-    const [isFormValid, setFormValid] = useState(false)
-    const currentDocumentId = useSelector(getDocumentId)
-    const loading = useSelector(getDocumentsLoading)
-    const [documentType, setDocumentType] = useState(DOCUMENT_TYPES_LIST[0].key)
-    const [document, setDocument] = useState(
-        getDataFromLocalStorage('document') || {
-            id: null,
-            name: '',
-            surname: '',
-            middlename: '',
-            birthDate: '',
-            from: '',
-            to: '',
-        }
-    )
+  const dispatch = useDispatch();
+  const [isFormValid, setFormValid] = useState(false);
+  const currentDocumentId = useSelector(getDocumentId);
+  const loading = useSelector(getDocumentsLoading);
+  const [documentType, setDocumentType] = useState(DOCUMENT_TYPES_LIST[0].key);
+  const [document, setDocument] = useState(
+    getDataFromLocalStorage("document") || {
+      id: null,
+      name: "",
+      surname: "",
+      middlename: "",
+      birthDate: "",
+      from: "",
+      to: "",
+    },
+  );
 
-    const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(0);
 
-    const next = () => {
-        setCurrent(current + 1)
+  const next = () => {
+    setCurrent(current + 1);
+  };
+  const prev = () => {
+    setCurrent(current - 1);
+  };
+
+  useEffect(() => {
+    setFormValid(
+      document.name &&
+        document.surname &&
+        document.birthDate &&
+        document.middlename &&
+        document.from &&
+        document.to,
+    );
+  }, [document]);
+
+  useEffect(() => {
+    if (isFormValid) {
+      dispatch(fetchDocumentIdThunk({ endpoint: documentType }));
     }
-    const prev = () => {
-        setCurrent(current - 1)
+  }, [documentType, isFormValid]);
+
+  useEffect(() => {
+    if (currentDocumentId) {
+      setDataToLocalStorage("document", {
+        ...document,
+        id: currentDocumentId,
+      });
     }
+  }, [currentDocumentId]);
 
-    useEffect(() => {
-        setFormValid(
-            document.name &&
-                document.surname &&
-                document.birthDate &&
-                document.middlename &&
-                document.from &&
-                document.to
-        )
-    }, [document])
+  return (
+    <div
+      admincontent="content"
+      className="w-full flex-1 flex flex-col shadow-3xl h-full bg-white p-4"
+    >
+      <div className="h-[180px] bg-white">
+        <Title level={3}>
+          Sertifikat turi:{" "}
+          <Select
+            value={documentType}
+            onChange={(value) => setDocumentType(value)}
+            className="w-[200px]"
+            defaultValue={DOCUMENT_TYPES_LIST[0].key}
+            options={convertToValueLabel(DOCUMENT_TYPES_LIST, "key", "label")}
+          />{" "}
+        </Title>
+        <Steps
+          className="mt-4 p-8"
+          current={current}
+          items={[
+            {
+              title: "Ma'lumot kiritish",
+              icon: <EditOutlined />,
+            },
+            {
+              title: "Hujjatni tekshirish",
+              icon: <EyeOutlined />,
+            },
+            {
+              title: "Hujjatni saqlash va holatini tekshirish",
+              icon: <SaveOutlined />,
+            },
+          ]}
+        />
+      </div>
 
-    useEffect(() => {
-        if (isFormValid) {
-            dispatch(fetchDocumentIdThunk({ endpoint: documentType }))
-        }
-    }, [documentType, isFormValid])
-
-    useEffect(() => {
-        if (currentDocumentId) {
-            setDataToLocalStorage('document', {
-                ...document,
-                id: currentDocumentId,
-            })
-        }
-    }, [currentDocumentId])
-
-    return (
-        <div
-            admincontent="content"
-            className="w-full flex-1 flex flex-col shadow-3xl h-full bg-white p-4"
+      <div className="flex flex-1 flex-col">
+        {current === 0 && (
+          <CreateForm document={document} setDocument={setDocument} />
+        )}
+        {current === 1 && (
+          <Preview
+            document={{ ...document, id: currentDocumentId }}
+            type={documentType}
+          />
+        )}
+        {current === 2 && (
+          <SaveAndCheck
+            actionType="create"
+            documentType={documentType}
+            setDocument={setDocument}
+            setCurrent={setCurrent}
+            document={{ ...document, id: currentDocumentId }}
+          />
+        )}
+      </div>
+      <div className="flex justify-between">
+        <Button disabled={current === 0} type="primary" onClick={prev}>
+          <ArrowLeftOutlined /> Orqaga
+        </Button>
+        <Button
+          loading={loading}
+          disabled={current === 2 || !currentDocumentId}
+          type="primary"
+          onClick={next}
         >
-            <div className="h-[180px] bg-white">
-                <Title level={3}>
-                    Sertifikat turi:{' '}
-                    <Select
-                        value={documentType}
-                        onChange={value => setDocumentType(value)}
-                        className="w-[200px]"
-                        defaultValue={DOCUMENT_TYPES_LIST[0].key}
-                        options={convertToValueLabel(
-                            DOCUMENT_TYPES_LIST,
-                            'key',
-                            'label'
-                        )}
-                    />{' '}
-                </Title>
-                <Steps
-                    className="mt-4 p-8"
-                    current={current}
-                    items={[
-                        {
-                            title: "Ma'lumot kiritish",
-                            icon: <EditOutlined />,
-                        },
-                        {
-                            title: 'Hujjatni tekshirish',
-                            icon: <EyeOutlined />,
-                        },
-                        {
-                            title: 'Hujjatni saqlash va holatini tekshirish',
-                            icon: <SaveOutlined />,
-                        },
-                    ]}
-                />
-            </div> 
+          Keyingi <ArrowRightOutlined />
+        </Button>
+      </div>
+    </div>
+  );
+};
 
-            <div className="flex flex-1 flex-col">
-                {current === 0 && (
-                    <CreateForm document={document} setDocument={setDocument} />
-                )}
-                {current === 1 && (
-                    <Preview
-                        document={{ ...document, id: currentDocumentId }}
-                        type={documentType}
-                    />
-                )}
-                {current === 2 && (
-                    <SaveAndCheck
-                        actionType="create"
-                        documentType={documentType}
-                        setDocument={setDocument}
-                        setCurrent={setCurrent}
-                        document={{ ...document, id: currentDocumentId }}
-                    />
-                )}
-            </div>
-            <div className="flex justify-between">
-                <Button disabled={current === 0} type="primary" onClick={prev}>
-                    <ArrowLeftOutlined /> Orqaga
-                </Button>
-                <Button
-                    loading={loading}
-                    disabled={current === 2 || !currentDocumentId}
-                    type="primary"
-                    onClick={next}
-                >
-                    Keyingi <ArrowRightOutlined />
-                </Button>
-            </div>
-        </div>
-    )
-}
-
-export default Create
+export default Create;

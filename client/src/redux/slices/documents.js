@@ -1,27 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { loopDocumentsCases } from '@builders/documents-builder'
+import { createSlice } from "@reduxjs/toolkit";
+import { loopDocumentsCases } from "@builders/documents-builder";
 
 const initialState = {
-    adr: [],
-    driver: [],
-    manager: [],
-    adrTank: [],
-    loading: false,
-    error: null,
-    currentDocumentId: null,
-}
+  adr: [],
+  driver: [],
+  manager: [],
+  adrTank: [],
+  loading: false,
+  error: null,
+  currentDocumentId: null,
+};
 
 export const documentsSlice = createSlice({
-    name: 'documents',
-    initialState,
-    reducers: {
-        removeCurrentDocumentId: state => {
-            state.currentDocumentId = null
-        },
+  name: "documents",
+  initialState,
+  reducers: {
+    removeCurrentDocumentId: (state) => {
+      state.currentDocumentId = null;
     },
-    extraReducers: builder => {
-        loopDocumentsCases(builder)
-    },
-})
+  },
+  extraReducers: (builder) => {
+    loopDocumentsCases(builder);
+  },
+});
 
-export const { removeCurrentDocumentId } = documentsSlice.actions
+export const { removeCurrentDocumentId } = documentsSlice.actions;
