@@ -65,6 +65,7 @@ const Draft = ({ document }) => {
                 <Title variant="h3" className="font-bold mt-[100px] mb-[60px]">
                   O'zbekiston Respublikasi
                 </Title>
+
                 <Title className="!text-[#6969fd] uppercase !text-[60px] !mt-[40px] !mb-[20px]">
                   Sertifikat
                 </Title>
@@ -131,7 +132,7 @@ const Draft = ({ document }) => {
                 <div className="pdf_lang">
                   <div className="pdf_langContainer">
                     <div className="pdf_langRu">
-                      <Title className="!text-[#6969fd] uppercase !text-[60px] !mt-[40px] !mb-[20px]">
+                      <Title variant="h2" className="font-bold !text-[20px]">
                         Сертификат
                       </Title>
                       <Title variant="h2" className="font-bold !text-[14px]">
