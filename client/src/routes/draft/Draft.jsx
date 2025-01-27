@@ -75,9 +75,12 @@ const Draft = ({ document }) => {
                 <Title variant="h2" className="!text-[20px]">
                   {"MO №" + id}
                 </Title>
-                <h2 className="pdf_userName">
+                <Title
+                  variant="h2"
+                  className="!text-[20px] !border-b-[1px] !border-black"
+                >
                   {summarizeName(name, surname, middlename)}
-                </h2>
+                </Title>
                 <p className="pdf_userNameDesc">
                   (Familyasi, ismi, otasinig ismi)
                 </p>
