@@ -65,12 +65,12 @@ const Draft = ({ document }) => {
                 <Title variant="h3" className="font-bold mt-[100px] mb-[60px]">
                   O'zbekiston Respublikasi
                 </Title>
-                <Text className="font-bold text-[24px]">
-                  Malaka oshirish haqida
-                </Text>
                 <Title className="!text-[#6969fd] uppercase !text-[60px] !mt-[40px] !mb-[20px]">
                   Sertifikat
                 </Title>
+                <Text className="font-bold text-[24px]">
+                  Malaka oshirish haqida
+                </Text>
                 <Title variant="h2" className="!text-[20px]">
                   {"MO №" + id}
                 </Title>
@@ -131,11 +131,14 @@ const Draft = ({ document }) => {
                 <div className="pdf_lang">
                   <div className="pdf_langContainer">
                     <div className="pdf_langRu">
-                      <Title variant="h2" className="font-bold !text-[20px]">
+                      <Title className="!text-[#6969fd] uppercase !text-[60px] !mt-[40px] !mb-[20px]">
                         Сертификат
                       </Title>
                       <Title variant="h2" className="font-bold !text-[14px]">
                         на осуществление международных автомобильных перевозов
+                      </Title>
+                      <Title variant="h2" className="font-bold !text-[14px]">
+                        {"MO №" + id}
                       </Title>
                       <Text className="pdf_langName">
                         {summarizeName(name, surname, middlename)}
@@ -178,6 +181,9 @@ const Draft = ({ document }) => {
                       <Title variant="h2" className="font-bold !text-[14px]">
                         The implementation of international automobile
                         transportation
+                      </Title>
+                      <Title variant="h2" className="font-bold !text-[14px]">
+                        {"MO №" + id}
                       </Title>
                       <Text className="pdf_langName">
                         {summarizeName(name, surname, middlename)}
