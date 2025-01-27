@@ -36,12 +36,12 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                 <Title variant="h3" className="font-bold mt-[100px] mb-[60px]">
                   O'zbekiston Respublikasi
                 </Title>
-                <Text className="font-bold text-[24px]">
-                  Malaka oshirish haqida
-                </Text>
                 <Title className="!text-[#6969fd] uppercase !text-[60px] !mt-[40px] !mb-[20px]">
                   Sertifikat
                 </Title>
+                <Text className="font-bold text-[24px]">
+                  Malaka oshirish haqida
+                </Text>
                 <Title variant="h2" className="!text-[20px]">
                   {"MO №" + id}
                 </Title>
@@ -108,7 +108,9 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                 <Title variant="h3" className="font-bold mt-[100px] mb-[60px]">
                   Республика Узбекистан
                 </Title>
-                <h1 className="pdf_sertifikat">Сертификат</h1>
+                <Title className="!text-[#6969fd] uppercase !text-[60px] !mt-[40px] !mb-[20px]">
+                  Сертификат
+                </Title>
                 <h1 className="pdf_titleDRu">
                   О ПРОФЕССИОНАЛЬНОЙ КОМПЕТЕНТНОСТИ ПО НАЦИОНАЛЬНЫМ И
                   МЕЖДУНАРОДНЫМ АВТОМОБИЛЬНЫМ ПЕРЕВОЗКАМ ГРУЗОВ
@@ -178,6 +180,9 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                 <Title variant="h2" className="font-bold !text-[14px]">
                   на осуществление международных автомобильных перевозов
                 </Title>
+                <Title variant="h2" className="font-bold !text-[14px]">
+                  {"MO №" + id}
+                </Title>
                 <Text className="pdf_langName">
                   {summarizeName(name, surname, middlename)}
                 </Text>
@@ -217,6 +222,9 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                 </Title>
                 <Title variant="h2" className="font-bold !text-[14px]">
                   The implementation of international automobile transportation
+                </Title>
+                <Title variant="h2" className="font-bold !text-[14px]">
+                  {"MO №" + id}
                 </Title>
                 <Text className="pdf_langName">
                   {summarizeName(name, surname, middlename)}
