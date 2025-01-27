@@ -45,9 +45,12 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                 <Title variant="h2" className="!text-[20px]">
                   {"MO №" + id}
                 </Title>
-                <h2 className="pdf_userName">
+                <Title
+                  variant="h2"
+                  className="!text-[20px] !border-b-[1px] !border-black"
+                >
                   {summarizeName(name, surname, middlename)}
-                </h2>
+                </Title>
                 <p className="pdf_userNameDesc">
                   (Familyasi, ismi, otasinig ismi)
                 </p>
@@ -110,10 +113,15 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                   О ПРОФЕССИОНАЛЬНОЙ КОМПЕТЕНТНОСТИ ПО НАЦИОНАЛЬНЫМ И
                   МЕЖДУНАРОДНЫМ АВТОМОБИЛЬНЫМ ПЕРЕВОЗКАМ ГРУЗОВ
                 </h1>
-                <h2 className="pdf_id">MO № {id}</h2>
-                <h2 className="pdf_userName">
+                <Title variant="h2" className="!text-[20px]">
+                  MO № {id}
+                </Title>
+                <Title
+                  variant="h2"
+                  className="!text-[20px] !border-b-[1px] !border-black"
+                >
                   {summarizeName(name, surname, middlename)}
-                </h2>
+                </Title>
                 <p className="pdf_userNameDesc">(Фамилия, Имя, Отчество)</p>
                 <p className="pdf_date">
                   <span>выдан:{from}</span>
@@ -174,9 +182,6 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                   {summarizeName(name, surname, middlename)}
                 </Text>
                 <h4 className="pdf_langName">
-                  {summarizeName(name, surname, middlename)}
-                </h4>
-                <h4 className="pdf_langName">
                   {id?.startsWith("M") ? "72" : "36"} часов
                 </h4>
                 <p className="pdf_langNameDesc">
@@ -216,9 +221,6 @@ const DriverCertificate = forwardRef(({ document }, ref) => {
                 <Text className="pdf_langName">
                   {summarizeName(name, surname, middlename)}
                 </Text>
-                <h4 className="pdf_langName">
-                  {summarizeName(name, surname, middlename)}
-                </h4>
                 <h4 className="pdf_langName">
                   {id?.startsWith("M") ? "72" : "36"} hours
                 </h4>
