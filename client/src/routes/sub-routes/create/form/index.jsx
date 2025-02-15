@@ -26,11 +26,11 @@ const CreateForm = ({ setDocument, document }) => {
       name="basic"
       initialValues={{
         ...document,
-        birthDate: document.birthDate
+        birthDate: document?.birthDate
           ? dayjs(document.birthDate, DATE_FORMAT)
           : null,
-        from: document.from ? dayjs(document.from, DATE_FORMAT) : null,
-        to: document.to ? dayjs(document.to, DATE_FORMAT) : null,
+        from: document?.from ? dayjs(document.from, DATE_FORMAT) : null,
+        to: document?.to ? dayjs(document.to, DATE_FORMAT) : null,
       }}
       layout="vertical"
       onFinish={onFinish}
