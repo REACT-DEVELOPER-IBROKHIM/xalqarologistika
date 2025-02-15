@@ -20,6 +20,8 @@ const CreateForm = ({ setDocument, document }) => {
     setDataToLocalStorage("document", { ...document, ...values });
   };
 
+  console.log(document);
+
   return (
     <Form
       className="p-10"

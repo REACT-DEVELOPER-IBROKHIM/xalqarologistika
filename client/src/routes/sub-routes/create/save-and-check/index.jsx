@@ -86,7 +86,15 @@ const SaveAndCheck = ({
 
   const handleCancelValues = () => {
     setCurrent(0);
-    setDocument({});
+    setDocument({
+      id: null,
+      name: "",
+      surname: "",
+      middlename: "",
+      birthDate: "",
+      from: "",
+      to: "",
+    });
     if (actionType === "create") {
       removeDataFromLocalStorage("document");
       dispatch(removeCurrentDocumentId());
@@ -103,7 +111,6 @@ const SaveAndCheck = ({
         document,
         onSuccess: () => {
           handleCancelValues();
-          setDocument(null);
           message.success("Sertifikat saqlandi");
         },
       }),
@@ -118,7 +125,6 @@ const SaveAndCheck = ({
         document,
         onSuccess: () => {
           handleCancelValues();
-          setDocument(null);
           dispatch(updateUI(documentType));
           message.success("Sertifikat tahrirlandi");
         },
