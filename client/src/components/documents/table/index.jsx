@@ -21,6 +21,8 @@ import { deleteDocumentThunk } from "@/redux/thunks/documents-thunks";
 import { updateUI } from "@/helpers/update-ui";
 
 const DocumentsTable = ({ data, loading, type }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const [deleteDocument, setDeleteDocument] = useState(null);
   const curretDocument = useSelector(getSingleDocument);
@@ -34,18 +36,43 @@ const DocumentsTable = ({ data, loading, type }) => {
       dataIndex: "id",
       key: "id",
       width: "10%",
+      filterSearch: true,
+      filters: data
+        .slice((currentPage - 1) * pageSize, currentPage * pageSize)
+        .map((item) => ({
+          text: item.id,
+          value: item.id + item._id,
+        })),
+      onFilter: (value, record) => (record.id + record._id).includes(value),
     },
     {
       title: "Ism",
       dataIndex: "name",
       key: "name",
       width: "20%",
+      filterSearch: true,
+      filters: data
+        .slice((currentPage - 1) * pageSize, currentPage * pageSize)
+        .map((item) => ({
+          text: item.name,
+          value: item.name + item._id,
+        })),
+      onFilter: (value, record) => (record.name + record._id).includes(value),
     },
     {
       title: "Familiya",
       dataIndex: "surname",
       key: "surname",
       width: "20%",
+      filterSearch: true,
+      filters: data
+        .slice((currentPage - 1) * pageSize, currentPage * pageSize)
+        .map((item) => ({
+          text: item.surname,
+          value: item.surname + item._id,
+        })),
+      onFilter: (value, record) =>
+        (record.surname + record._id).includes(value),
     },
     {
       title: "Tug`ulgan sana",
@@ -128,6 +155,10 @@ const DocumentsTable = ({ data, loading, type }) => {
         rowKey="_id"
         columns={columns}
         dataSource={data}
+        onChange={(pagination) => {
+          setCurrentPage(pagination.current);
+          setPageSize(pagination.pageSize);
+        }}
       />
       <div className="hidden w-0 h-0">
         {document && (
