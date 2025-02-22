@@ -70,7 +70,7 @@ const Preview = (
                 <span> amal qilish muddati: {to}</span>
               </p>
               <p className="certificate__org">NAMANAGANTRANS MCHJ</p>
-              <p className="certificate__course">36 soat</p>
+              <p className="certificate__course">40 soat</p>
               <div className="certificate__rest">
                 <p>bo'yicha malakasini oshirdi</p>
                 <br />
