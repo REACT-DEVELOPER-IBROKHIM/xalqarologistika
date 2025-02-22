@@ -15,7 +15,7 @@ export const searchSlice = createSlice({
       state.searchResults = null;
     },
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     loopSearchResult(builder);
-  }
+  },
 });

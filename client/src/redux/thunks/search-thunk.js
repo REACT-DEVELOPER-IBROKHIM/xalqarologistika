@@ -10,5 +10,5 @@ export const fetchSearchResultThunk = createAsyncThunk(
     } catch (error) {
       throw error;
     }
-  }
+  },
 );

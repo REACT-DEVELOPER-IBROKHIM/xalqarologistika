@@ -25,7 +25,7 @@ const Hero = () => {
     dispatch(
       fetchSearchResultThunk({
         id: searchCertificateNumber,
-      })
+      }),
     );
   };
 
