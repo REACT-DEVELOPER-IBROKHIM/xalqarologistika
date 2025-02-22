@@ -4,7 +4,7 @@ import { getAdrTankDocuments, getDocumentsLoading } from "@selectors/documents";
 import { generateDocumentType } from "@helpers/document-type";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import DocumentsTable from "@components/documents/table";
+import DocumentsTable from "@/components/table";
 
 const AdrTank = () => {
   const dispatch = useDispatch();

@@ -5,28 +5,25 @@ import {
 } from "@ant-design/icons";
 import { Button, Table, Modal, message } from "antd";
 import ReactToPrint from "react-to-print";
-import DriverCertificate from "@components/documents/driver/DriverCertificate";
-import AdrCertificate from "@components/documents/adr/AdrCertificate";
+import DriverCertificate from "@components/documents/driver/index";
+import AdrCertificate from "@components/documents/adr";
 import { useState, useRef } from "react";
 import { EMPTY_DOCUMENT, SIMILAR_DOCUMENT_TYPES } from "@constants/document";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleDocumentThunk } from "@thunks/single-document-thunk";
-import {
-  getSingleDocument,
-  getSingleDocumentLoading,
-} from "@selectors/single-document";
+import { getSingleDocument } from "@selectors/single-document";
 import { removeCurrentDocument } from "@slices/single-document";
 import Edit from "@routes/sub-routes/edit";
-import { deleteDocumentThunk } from "@/redux/thunks/documents-thunks";
-import { updateUI } from "@/helpers/update-ui";
+import { deleteDocumentThunk } from "@thunks/documents-thunks";
+import { updateUI } from "@helpers/update-ui";
 
 const DocumentsTable = ({ data, loading, type }) => {
+  const [editingDocumentId, setEditingDocumentId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const [deleteDocument, setDeleteDocument] = useState(null);
   const curretDocument = useSelector(getSingleDocument);
-  const isCurrentDocumentLoading = useSelector(getSingleDocumentLoading);
   const printFrame = useRef();
   const dispatch = useDispatch();
   const [document, setDocument] = useState(null);
@@ -98,6 +95,7 @@ const DocumentsTable = ({ data, loading, type }) => {
       render: (document) => (
         <div className="flex gap-2">
           <ReactToPrint
+            pageStyle="@page { size: 2480px 3508px;}"
             trigger={() => (
               <Button
                 disabled={document.id === EMPTY_DOCUMENT}
@@ -112,8 +110,8 @@ const DocumentsTable = ({ data, loading, type }) => {
           <Button
             style={{ backgroundColor: "#FFB629" }}
             type="primary"
-            disabled={isCurrentDocumentLoading}
-            loading={isCurrentDocumentLoading}
+            disabled={editingDocumentId === document._id}
+            loading={editingDocumentId === document._id}
             onClick={() => handleEditDocument(document)}
           >
             <EditOutlined />
@@ -137,15 +135,14 @@ const DocumentsTable = ({ data, loading, type }) => {
   };
 
   const handleEditDocument = (document) => {
+    setEditingDocumentId(document._id);
     dispatch(
       fetchSingleDocumentThunk({
         endpoint: type,
         id: document._id,
       }),
-    );
+    ).then(() => setEditingDocumentId(null));
   };
-
-  console.log(curretDocument);
 
   return (
     <div className="p-4 bg-white">

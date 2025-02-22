@@ -9,7 +9,6 @@ import {
 } from "@ant-design/icons";
 import EditForm from "./form";
 import SaveAndCheck from "../create/save-and-check";
-import Preview from "@routes/sub-routes/create/preview";
 import { DOCUMENT_TYPES_LIST } from "@/constants/document";
 import { convertToValueLabel } from "@/helpers/formItems";
 
@@ -63,10 +62,6 @@ const Edit = ({ currentDocument, documentType }) => {
               icon: <EditOutlined />,
             },
             {
-              title: "Hujjatni tekshirish",
-              icon: <EyeOutlined />,
-            },
-            {
               title: "Hujjatni saqlash va holatini tekshirish",
               icon: <SaveOutlined />,
             },
@@ -78,8 +73,7 @@ const Edit = ({ currentDocument, documentType }) => {
         {current === 0 && (
           <EditForm form={form} document={document} setDocument={setDocument} />
         )}
-        {current === 1 && <Preview document={document} type={documentType} />}
-        {current === 2 && (
+        {current === 1 && (
           <SaveAndCheck
             actionType="edit"
             documentType={documentType}
@@ -94,7 +88,7 @@ const Edit = ({ currentDocument, documentType }) => {
           <ArrowLeftOutlined /> Orqaga
         </Button>
         <Button
-          disabled={current === 2 || !isFormValid}
+          disabled={current === 1 || !isFormValid}
           type="primary"
           onClick={next}
         >
