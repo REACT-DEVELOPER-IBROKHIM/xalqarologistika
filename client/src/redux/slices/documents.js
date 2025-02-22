@@ -8,7 +8,7 @@ const initialState = {
   adrTank: [],
   loading: false,
   error: null,
-  currentDocumentId: null,
+  currentDocumentId: null
 };
 
 export const documentsSlice = createSlice({

@@ -1,40 +1,32 @@
 import "./Hero.scss";
-import axios from "@api";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { createStatusInstance } from "@helpers/createStatusInstance";
 import { Link } from "react-router-dom";
-import { Anchor, Container, Button } from "@utils/Utils";
+import { Container, Button } from "@utils/Utils";
 import heroImage from "@assets/images/hero.jpg";
 import Preview from "@components/preview/Preview";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSearchResultThunk } from "@/redux/thunks/search-thunk";
+import {
+  getSearchResultLoading,
+  getSearchResult,
+} from "@/redux/selectors/search";
 
 const Hero = () => {
+  const document = useSelector(getSearchResult);
+  const isDocumentLoadding = useSelector(getSearchResultLoading);
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const [searchCertificateNumber, setSearchCertificateNumber] = useState("");
-  const [searchResult, setSearchResult] = useState(
-    createStatusInstance("backlog"),
-  );
 
   const handleSearchCertificate = async (e) => {
     e.preventDefault();
-    try {
-      if (searchCertificateNumber.trim().length > 4) {
-        setSearchResult(createStatusInstance("pending", t("status.pending")));
-        let response = await axios(`/search?id=${searchCertificateNumber}`);
-        let data = response.data;
-        if (response.status === 200 && data != null) {
-          setSearchResult(
-            createStatusInstance("success", t("status.success"), data),
-          );
-        } else {
-          throw new Error("Please enter a valid certificate number");
-        }
-      } else {
-        throw new Error("Please enter a valid certificate number");
-      }
-    } catch (error) {
-      setSearchResult(createStatusInstance("error", t("status.error")));
-    }
+    dispatch(
+      fetchSearchResultThunk({
+        id: searchCertificateNumber,
+      })
+    );
   };
 
   return (
@@ -60,52 +52,51 @@ const Hero = () => {
                 }}
                 required
               />
-              {searchResult.error && searchResult.message && (
+              {/* {document.error && searchResult.message && (
                 <p className="message message--error">{searchResult.message}</p>
               )}
-              {searchResult.success && searchResult.message && (
+              {document.success && searchResult.message && (
                 <p className="message message--success">
                   {searchResult.message}
                 </p>
               )}
-              {searchResult.loading && searchResult.message && (
+              {isDocumentLoadding && document.message && (
                 <p className="message message--loading">
                   {searchResult.message}
                 </p>
-              )}
+              )} */}
               <div className="hero__content-actions">
                 <Button
                   appearance="primary"
                   text={t("hero.check_btn")}
-                  loading={searchResult.loading}
+                  loading={isDocumentLoadding}
                 />
               </div>
             </form>
           </div>
-          {searchResult.data && (
+          {document && (
             <div
               className="hero__content-certificate"
               style={
-                searchResult.data.id.startsWith("0") ||
-                searchResult.data.id.startsWith("T")
+                document.id?.startsWith("0") || document.id?.startsWith("T")
                   ? { height: "auto" }
                   : { height: "400px" }
               }
             >
               <Preview
-                id={searchResult.data.id}
-                firstname={searchResult.data.name}
-                lastname={searchResult.data.surname}
-                parentname={searchResult.data.middlename}
-                coursehours={searchResult.data.courseName}
-                from={searchResult.data.from || searchResult.data.givenDate}
-                to={searchResult.data.to}
-                birthdate={searchResult.data.birthDate}
+                id={document.id}
+                firstname={document.name}
+                lastname={document.surname}
+                parentname={document.middlename}
+                coursehours={document.courseName}
+                from={document.from}
+                to={document.to}
+                birthdate={document.birthDate}
                 size={12}
               />
               <Link
                 className="hero__content-certificate-link"
-                to={`/check-certificates/${searchResult.data.id}`}
+                to={`/check-certificates/${document.id}`}
               >
                 <span>{t("hero.view_btn")}</span>
               </Link>

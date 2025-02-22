@@ -35,3 +35,8 @@ export async function fetchSingleDocumentById(id) {
   const authResponse = await resolve(axios.get(`/search/?id=${id}`));
   return authResponse.data;
 }
+
+export async function fetchSearchResult(id) {
+  const authResponse = await resolve(axios.get(`/search?id=${id}`));
+  return authResponse.data;
+}
