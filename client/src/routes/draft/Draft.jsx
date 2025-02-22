@@ -34,7 +34,12 @@ const Draft = ({ document }) => {
   return (
     <div className="darft_container drafted">
       {id.startsWith("D") || id.startsWith("M") ? (
-        <div className="pdf_container ">
+        <div className="pdf_container">
+          {certificateStatus === "EXPIRED" && (
+            <div data-certificate-status={certificateStatus}>
+              {certificateStatus}
+            </div>
+          )}
           <div className="pdf_mainSection">
             <div className="pdf_flag">
               <div className="pdf_flagBlue"></div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import DocumentsTable from "@components/documents/table";
+import DocumentsTable from "@/components/table";
 import { fetchManagerDocumentsThunk } from "@thunks/documents-thunks";
 import { useDispatch, useSelector } from "react-redux";
 import { getDocumentsLoading, getManagerDocuments } from "@selectors/documents";

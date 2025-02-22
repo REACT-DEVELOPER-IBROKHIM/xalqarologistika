@@ -8,8 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import ReactToPrint from "react-to-print";
 import { useCallback, useRef, useState } from "react";
 import { DownloadOutlined } from "@ant-design/icons";
-import AdrCertificate from "@/components/documents/adr/AdrCertificate";
-import DriverCertificate from "@/components/documents/driver/DriverCertificate";
+import AdrCertificate from "@/components/documents/adr";
+import DriverCertificate from "@/components/documents/driver";
 import { removeCurrentDocumentId } from "@/redux/slices/documents";
 import { removeCurrentDocument } from "@/redux/slices/single-document";
 import { updateUI } from "@/helpers/update-ui";
@@ -154,6 +154,7 @@ const SaveAndCheck = ({
         <div className="flex justify-between mt-4">
           <div className="flex gap-4">
             <ReactToPrint
+              pageStyle="@page { size: 2480px 3508px;}"
               trigger={() => (
                 <Button
                   disabled={document.id === EMPTY_DOCUMENT}

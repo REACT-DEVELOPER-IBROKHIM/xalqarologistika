@@ -9,6 +9,8 @@ import {
 } from "@/redux/selectors/single-document";
 import { Spin } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import DriverCertificate from "@/components/documents/driver";
+import AdrCertificate from "@/components/documents/adr";
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -23,7 +25,13 @@ const Search = () => {
     <div className="search-certificate">
       {!loading && document ? (
         <div className="search-certificate__content">
-          <Draft document={document} />
+          <div className="search-wrapper">
+            {document.id?.startsWith("D") || document.id?.startsWith("M") ? (
+              <DriverCertificate document={document} type={"search"} />
+            ) : (
+              <AdrCertificate document={document} type={"search"} />
+            )}
+          </div>
         </div>
       ) : !document && !loading ? (
         <p>No data</p>

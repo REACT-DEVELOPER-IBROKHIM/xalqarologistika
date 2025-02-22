@@ -9,6 +9,7 @@ import Certificates from "@routes/sub-routes/manage-certificate/certificate";
 import Adr from "@routes/sub-routes/manage-certificate/adr";
 import Manager from "@routes/sub-routes/manage-certificate/manager";
 import AdrTank from "@routes/sub-routes/manage-certificate/adr-tank";
+import DriverCertificate from "@/components/documents/driver";
 
 const index = () => {
   return (

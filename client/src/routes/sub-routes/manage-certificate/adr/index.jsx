@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import DocumentsTable from "@components/documents/table";
+import DocumentsTable from "@/components/table";
 import { useLocation } from "react-router-dom";
 import { generateDocumentType } from "@helpers/document-type";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,20 +1,18 @@
 import "./Create.scss";
 import "react-datepicker/dist/react-datepicker.css";
 import Typography from "antd/es/typography/Typography";
-import { Button, Checkbox, Input, Select } from "antd";
+import { Button, Select } from "antd";
 import { Steps } from "antd";
 import {
   ArrowLeftOutlined,
   ArrowRightOutlined,
   EditOutlined,
-  EyeOutlined,
   SaveOutlined,
 } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { convertToValueLabel } from "@/helpers/formItems";
 import { DOCUMENT_TYPES_LIST } from "@/constants/document";
 import CreateForm from "./form";
-import Preview from "@routes/sub-routes/create/preview";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getDocumentId,
@@ -107,10 +105,6 @@ const Create = () => {
               icon: <EditOutlined />,
             },
             {
-              title: "Hujjatni tekshirish",
-              icon: <EyeOutlined />,
-            },
-            {
               title: "Hujjatni saqlash va holatini tekshirish",
               icon: <SaveOutlined />,
             },
@@ -123,12 +117,6 @@ const Create = () => {
           <CreateForm document={document} setDocument={setDocument} />
         )}
         {current === 1 && (
-          <Preview
-            document={{ ...document, id: currentDocumentId }}
-            type={documentType}
-          />
-        )}
-        {current === 2 && (
           <SaveAndCheck
             actionType="create"
             documentType={documentType}
@@ -144,7 +132,7 @@ const Create = () => {
         </Button>
         <Button
           loading={loading}
-          disabled={current === 2 || !currentDocumentId}
+          disabled={current === 1 || !currentDocumentId}
           type="primary"
           onClick={next}
         >
