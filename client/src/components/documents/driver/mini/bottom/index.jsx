@@ -90,7 +90,6 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
                 : " Organization and implementation of international automobile transportation"}
             </p>
             <div className="w-full my-[125px]">
-              <p className="text-[45px] mt-[30px]">OOO "NAMANGANTRANS 2022"</p>
               <p className="text-[35px] border-b-[1px] border-black mt-[50px] font-bold w-full">
                 issued: {from}
               </p>
@@ -98,6 +97,9 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
                 valid: {to}
               </p>
             </div>
+             <p className="text-[50px] mt-[30px]">
+              Director: OOO "NAMANGANTRANS 2022" B.Muhidinov
+            </p>
           </div>
         </div>
         {type === "search" && certType !== "adr" && (
