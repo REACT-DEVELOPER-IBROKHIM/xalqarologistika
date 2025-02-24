@@ -61,7 +61,7 @@ const DriverCertificateTop = ({ document }) => {
                 (Malaka oshirish ta'lim muassasasining nomi)
               </p>
               <p className="text-[65px] border-b-[1px] font-medium border-black mt-[120px]">
-                40 soat
+                36 soat
               </p>
               <p className="text-[35px] mt-[20px]">
                 (Malaka oshirish kusrning muddati)
@@ -79,7 +79,7 @@ const DriverCertificateTop = ({ document }) => {
                   Qayd raqami:{"№" + id}
                 </p>
               </div>
-              <div className="text-[50px] mt-[600px]">
+              <div className="text-[50px] mt-[560px]">
                 <span className="font-bold">
                   {summarizeName(name, surname, middlename)}
                 </span>

@@ -65,7 +65,7 @@ const DriverCertificateBottom = ({ document, type }) => {
                   (Название учебного заведения)
                 </p>
                 <p className="text-[65px] border-b-[1px] font-medium border-black mt-[120px]">
-                  40 часов
+                  36 часов
                 </p>
                 <p className="text-[35px] mt-[20px]">
                   (Продолжительность курса обучения)
@@ -85,7 +85,7 @@ const DriverCertificateBottom = ({ document, type }) => {
                     Регистрационный номер:{"№" + id}
                   </p>
                 </div>
-                <div className="text-[50px] mt-[600px]">
+                <div className="text-[50px] mt-[530px]">
                   <span className="font-bold">
                     {summarizeName(name, surname, middlename)}
                   </span>{" "}
