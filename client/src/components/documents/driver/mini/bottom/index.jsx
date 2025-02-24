@@ -19,7 +19,7 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
             )}
             <p className="text-[45px] mt-[50px] font-bold">MO №{id}</p>
             <p className="text-[45px] border-b-[1px] border-black mt-[40px] uppercase w-full">
-              {summarizeName(name, surname, middlename)}
+              {summarizeName(name, surname)}
             </p>
             <p className="text-[45px] border-b-[1px] border-black mt-[60px] uppercase w-full">
               {certType === "adr" ? "АДР" : "36 часов"}
@@ -67,7 +67,7 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
             </p>
             <p className="text-[45px] mt-[50px] font-bold">MO №{id}</p>
             <p className="text-[45px] border-b-[1px] border-black mt-[40px] uppercase w-full">
-              {summarizeName(name, surname, middlename)}
+              {summarizeName(name, surname)}
             </p>
             <p className="text-[45px] border-b-[1px] border-black mt-[60px] uppercase w-full">
               {certType === "adr" ? "ADR" : "36 hours"}
