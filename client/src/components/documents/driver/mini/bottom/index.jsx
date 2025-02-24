@@ -19,7 +19,11 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
             )}
             <p className="text-[45px] mt-[50px] font-bold">MO №{id}</p>
             <p className="text-[45px] border-b-[1px] border-black mt-[40px] uppercase w-full">
-              {summarizeName(name, surname, certType === "adr" ? "" : middlename)}
+              {summarizeName(
+                name,
+                surname,
+                certType === "adr" ? "" : middlename,
+              )}
             </p>
             <p className="text-[45px] border-b-[1px] border-black mt-[60px] uppercase w-full">
               {certType === "adr" ? "АДР" : "36 часов"}
@@ -67,7 +71,11 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
             </p>
             <p className="text-[45px] mt-[50px] font-bold">MO №{id}</p>
             <p className="text-[45px] border-b-[1px] border-black mt-[40px] uppercase w-full">
-              {summarizeName(name, surname, certType === "adr" ? "" : middlename)}
+              {summarizeName(
+                name,
+                surname,
+                certType === "adr" ? "" : middlename,
+              )}
             </p>
             <p className="text-[45px] border-b-[1px] border-black mt-[60px] uppercase w-full">
               {certType === "adr" ? "ADR" : "36 hours"}
@@ -90,12 +98,9 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
                 valid: {to}
               </p>
             </div>
-            <p className="text-[50px] mt-[30px]">
-              Director: OOO "NAMANGANTRANS 2022" B.Muhidinov
-            </p>
           </div>
         </div>
-        {type === "search" && (
+        {type === "search" && certType !== "adr" && (
           <div className="text-[50px] text-center mt-[50px]">
             <p className="my-[50px]">
               Сертификат Профессиональной компетентности (СПК) международного
