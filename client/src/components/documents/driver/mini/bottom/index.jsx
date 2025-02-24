@@ -70,7 +70,7 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
               {summarizeName(name, surname, middlename)}
             </p>
             <p className="text-[45px] border-b-[1px] border-black mt-[60px] uppercase w-full">
-              {certType === "adr" ? "ADR" : "40 hours"}
+              {certType === "adr" ? "ADR" : "36 hours"}
             </p>
             <p className="text-[40px] mt-[10px]">
               This certificate that he completed training course on special
