@@ -97,7 +97,7 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
                 valid: {to}
               </p>
             </div>
-             <p className="text-[50px] mt-[30px]">
+            <p className="text-[50px] mt-[30px]">
               Director: OOO "NAMANGANTRANS 2022" B.Muhidinov
             </p>
           </div>
