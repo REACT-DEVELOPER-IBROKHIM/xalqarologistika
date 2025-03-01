@@ -13,6 +13,7 @@ import DriverCertificate from "@/components/documents/driver";
 import { removeCurrentDocumentId } from "@/redux/slices/documents";
 import { removeCurrentDocument } from "@/redux/slices/single-document";
 import { updateUI } from "@/helpers/update-ui";
+import { checkCertificateStatus } from "@/helpers/check-certificate-status";
 
 const SaveAndCheck = ({
   document,
@@ -80,7 +81,12 @@ const SaveAndCheck = ({
       key: "10",
       label: "Sertifikat mavjudligi",
       span: 3,
-      children: <Badge status="success" text={"Mavjud"} />,
+      children: (
+        <Badge
+          status={checkCertificateStatus(document) ? "success" : "error"}
+          text={checkCertificateStatus(document) ? "Mavjud" : "Mavjud emas"}
+        />
+      ),
     },
   ];
 
@@ -98,7 +104,7 @@ const SaveAndCheck = ({
     if (actionType === "create") {
       removeDataFromLocalStorage("document");
       dispatch(removeCurrentDocumentId());
-    } else {
+    } else if (actionType === "edit") {
       removeDataFromLocalStorage("currentDocument");
       dispatch(removeCurrentDocument());
     }
@@ -114,7 +120,7 @@ const SaveAndCheck = ({
           message.success("Sertifikat saqlandi");
         },
       }),
-    [],
+    []
   );
 
   const updateDocumentHandler = useCallback(
@@ -129,7 +135,7 @@ const SaveAndCheck = ({
           message.success("Sertifikat tahrirlandi");
         },
       }),
-    [],
+    []
   );
 
   const handleSaveAndCheck = () => {
@@ -140,6 +146,13 @@ const SaveAndCheck = ({
 
     dispatch(action);
   };
+
+  const handleCopyImageUploadLink = () => {
+    navigator.clipboard.writeText(
+      `${window.location.origin}/image-upload/${document._id}`
+    );
+    message.success("Havola nusxalandi");
+  }
 
   return (
     <div className="flex h-[580px] overflow-y-auto">
@@ -165,18 +178,30 @@ const SaveAndCheck = ({
               )}
               content={() => printFrame.current}
             />
+            {actionType && (
+              <Button
+                type="primary"
+                loading={loading}
+                disabled={loading}
+                onClick={handleSaveAndCheck}
+              >
+                Saqlash
+              </Button>
+            )}
             <Button
               type="primary"
               loading={loading}
               disabled={loading}
-              onClick={handleSaveAndCheck}
+              onClick={handleCopyImageUploadLink}
             >
-              Saqlash
+              Rasm yuklash uchun havola
             </Button>
           </div>
-          <Button onClick={handleCancelValues} variant="outlined" danger>
-            Bekor qilish
-          </Button>
+          {actionType && (
+            <Button onClick={handleCancelValues} variant="outlined" danger>
+              Bekor qilish
+            </Button>
+          )}
         </div>
       </div>
       <div className="hidden w-0 h-0">

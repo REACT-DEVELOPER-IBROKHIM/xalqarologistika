@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Admin.scss";
-import { PlusCircleOutlined, SettingOutlined } from "@ant-design/icons";
+import { FileDoneOutlined, PlusCircleOutlined, SettingOutlined } from "@ant-design/icons";
 import { Outlet, useLocation } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import { useTranslation } from "react-i18next";
@@ -37,6 +37,15 @@ const Admin = () => {
               label: (
                 <NavLink to="manage-certificate">
                   {t("services.manage")}
+                </NavLink>
+              ),
+            },
+            {
+              key: "3",
+              icon: <FileDoneOutlined />,
+              label: (
+                <NavLink to="status">
+                  {t("services.status")}
                 </NavLink>
               ),
             },

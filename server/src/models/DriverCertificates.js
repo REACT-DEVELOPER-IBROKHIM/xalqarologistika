@@ -41,6 +41,13 @@ const DriverCertificates = new Schema({
     signature: {
         type: String,
     },
+    photo: {
+        type: String,
+    },
+    photo_uploaded: {
+        type: Boolean,
+        default: false,
+    }
 })
 
 const model = mongoose.model('drivercertificates', DriverCertificates)

@@ -11,7 +11,6 @@ const login = require('./src/routes/login')
 const analytics = require('./src/routes/analytics')
 const admin = require('./src/routes/admin')
 const comments = require('./src/routes/comments')
-const uploads = require('./src/routes/upload')
 
 const port = process.env.PORT || 1000
 const app = express()
@@ -22,16 +21,18 @@ const whitelist = [
     'https://xalqarologistika.uz',
     'http://localhost:5173',
 ]
-app.use(cors())
-// {
-// origin: function (origin, callback) {
-//         if (whitelist.indexOf(origin) !== -1) {
-//             callback(null, true)
-//         } else {
-//             callback(new Error('Not allowed by CORS'))
-//         }
-//     },
-// }
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            if (whitelist.indexOf(origin) !== -1) {
+                callback(null, true)
+            } else {
+                callback(new Error('Not allowed by CORS'))
+            }
+        },
+    })
+)
+
 app.use(express.json())
 
 mongoose
@@ -51,7 +52,6 @@ app.use('/api/analytics', analytics)
 app.use('/api/auth', login)
 app.use('/api/admin', admin)
 app.use('/api/comments', comments)
-app.use('/api/upload', uploads)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
