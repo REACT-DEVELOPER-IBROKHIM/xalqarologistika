@@ -4,7 +4,10 @@ import SaveAndCheck from "../../create/save-and-check";
 import { useDispatch, useSelector } from "react-redux";
 import { Spin } from "antd";
 import { fetchDocumentStatusDataThunk } from "@/redux/thunks/document-status";
-import { getDocumentStatusData, getDocumentStatusDataLoading } from "@/redux/selectors";
+import {
+  getDocumentStatusData,
+  getDocumentStatusDataLoading,
+} from "@/redux/selectors";
 
 const Details = () => {
   const dispatch = useDispatch();
@@ -20,7 +23,20 @@ const Details = () => {
 
   console.log(document);
 
-  return <div>{loading ? <Spin /> : document && <SaveAndCheck documentType={document?.id?.startsWith('D') ? "driver" : "adr"} document={document} />}</div>;
+  return (
+    <div>
+      {loading ? (
+        <Spin />
+      ) : (
+        document && (
+          <SaveAndCheck
+            documentType={document?.id?.startsWith("D") ? "driver" : "adr"}
+            document={document}
+          />
+        )
+      )}
+    </div>
+  );
 };
 
 export default Details;

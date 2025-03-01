@@ -120,7 +120,7 @@ const SaveAndCheck = ({
           message.success("Sertifikat saqlandi");
         },
       }),
-    []
+    [],
   );
 
   const updateDocumentHandler = useCallback(
@@ -135,7 +135,7 @@ const SaveAndCheck = ({
           message.success("Sertifikat tahrirlandi");
         },
       }),
-    []
+    [],
   );
 
   const handleSaveAndCheck = () => {
@@ -149,10 +149,10 @@ const SaveAndCheck = ({
 
   const handleCopyImageUploadLink = () => {
     navigator.clipboard.writeText(
-      `${window.location.origin}/image-upload/${document._id}`
+      `${window.location.origin}/image-upload/${document._id}`,
     );
     message.success("Havola nusxalandi");
-  }
+  };
 
   return (
     <div className="flex h-[580px] overflow-y-auto">

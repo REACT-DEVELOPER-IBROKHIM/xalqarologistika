@@ -9,7 +9,6 @@ export const checkCertificateStatus = (document) => {
     const month = +to.split(".")[1];
     const day = +to.split(".")[0];
 
-
     const isCurrentDateValid = () => {
       if (currentYear > year) return false;
       if (currentYear === year && currentMonth > month) return false;

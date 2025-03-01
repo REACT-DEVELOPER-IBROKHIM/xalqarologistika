@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
 import "./Admin.scss";
-import { FileDoneOutlined, PlusCircleOutlined, SettingOutlined } from "@ant-design/icons";
+import {
+  FileDoneOutlined,
+  PlusCircleOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
 import { Outlet, useLocation } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import { useTranslation } from "react-i18next";
@@ -43,11 +47,7 @@ const Admin = () => {
             {
               key: "3",
               icon: <FileDoneOutlined />,
-              label: (
-                <NavLink to="status">
-                  {t("services.status")}
-                </NavLink>
-              ),
+              label: <NavLink to="status">{t("services.status")}</NavLink>,
             },
           ]}
         />

@@ -116,7 +116,7 @@ const DocumentsTable = ({ data, loading, type }) => {
             disabled={document.id === EMPTY_DOCUMENT}
             onClick={() => handleCheckCertificateStatus(document)}
           >
-            <FileDoneOutlined/>
+            <FileDoneOutlined />
           </Button>
           <Button
             style={{ backgroundColor: "#FFB629" }}
@@ -156,8 +156,8 @@ const DocumentsTable = ({ data, loading, type }) => {
   };
 
   const handleCheckCertificateStatus = (document) => {
-      navigate(`/admin/status/${document.id}`);
-  }
+    navigate(`/admin/status/${document.id}`);
+  };
 
   return (
     <div className="p-4 bg-white">

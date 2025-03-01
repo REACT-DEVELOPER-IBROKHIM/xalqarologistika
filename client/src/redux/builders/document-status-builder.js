@@ -9,7 +9,7 @@ export const loopDocumentStatusBuilder = (builder) => {
     (state, { payload }) => {
       state.statusDataLoading = false;
       state.statusData = payload;
-    }
+    },
   );
   builder.addCase(fetchDocumentStatusDataThunk.rejected, (state) => {
     state.statusDataLoading = false;

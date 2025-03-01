@@ -27,7 +27,7 @@ const index = () => {
           <Route path="manager" element={<Manager />} />
           <Route path="adr-tank" element={<AdrTank />} />
         </Route>
-        <Route path="status" element={<Status />} >
+        <Route path="status" element={<Status />}>
           <Route path=":id" element={<Details />} />
         </Route>
       </Route>

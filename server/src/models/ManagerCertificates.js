@@ -41,7 +41,7 @@ const ManagerCertificate = new mongoose.Schema({
     photo_uploaded: {
         type: Boolean,
         default: false,
-    }
+    },
 })
 
 const model = mongoose.model('managercertificates', ManagerCertificate)

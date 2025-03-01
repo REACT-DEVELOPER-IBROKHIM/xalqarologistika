@@ -47,7 +47,7 @@ const DriverCertificates = new Schema({
     photo_uploaded: {
         type: Boolean,
         default: false,
-    }
+    },
 })
 
 const model = mongoose.model('drivercertificates', DriverCertificates)

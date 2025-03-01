@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Input } from 'antd';
+import { Input } from "antd";
 const { Search } = Input;
 
 const Status = () => {

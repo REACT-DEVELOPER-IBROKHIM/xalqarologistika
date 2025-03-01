@@ -27,7 +27,7 @@ const ImageUpload = () => {
         },
       });
       const data = response.data;
-      setUrl(data?.microsoft?.image_resource_url)
+      setUrl(data?.microsoft?.image_resource_url);
     } catch (error) {
       console.error(error);
     }
@@ -53,16 +53,13 @@ const ImageUpload = () => {
         mirrored={true}
         videoConstraints={videoConstraints}
       />
-        <button
-          className="absolute bottom-4 p-2 bg-white rounded-md"
-          onClick={captureImage}
-        >
-          <CameraFilled />
-        </button>
-        {
-          url &&
-          <img src={url} alt="" />
-        }
+      <button
+        className="absolute bottom-4 p-2 bg-white rounded-md"
+        onClick={captureImage}
+      >
+        <CameraFilled />
+      </button>
+      {url && <img src={url} alt="" />}
     </div>
   );
 };
