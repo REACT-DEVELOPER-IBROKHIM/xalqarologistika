@@ -95,7 +95,8 @@
   "services": {
     "create": "Create certificate",
     "manage": "Manage certificate",
-    "analytics": "Analytics"
+    "analytics": "Analytics",
+    "status": "Status"
   },
   "create": {
     "title": "Create",

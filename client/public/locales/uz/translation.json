@@ -94,7 +94,8 @@
   "services": {
     "create": "Sertifikat yaratish",
     "manage": "Sertifikat boshqarish",
-    "analytics": "Analitika"
+    "analytics": "Analitika",
+    "status": "Xolat"
   },
   "create": {
     "title": "Sertifikat yaratish",

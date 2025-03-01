@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import DriverCertificate from "@/components/documents/driver";
 import AdrCertificate from "@/components/documents/adr";
 import { Watermark } from "antd";
+import { checkCertificateStatus } from "@/helpers/check-certificate-status";
 
 const Search = () => {
   const [isCertificateValid, setIsCertificateValid] = useState(null);
@@ -24,35 +25,16 @@ const Search = () => {
   }, []);
 
   useEffect(() => {
-    if (document) {
-      const { to } = document;
-      const currentYear = new Date().getFullYear();
-      const currentMonth = new Date().getMonth() + 1;
-      const currentDay = new Date().getDate();
-
-      const year = +to.split(".")[2];
-      const month = +to.split(".")[1];
-      const day = +to.split(".")[0];
-
-      const isCurrentDateValid = () => {
-        if (currentYear > year) return true;
-        if (currentYear === year && currentMonth > month) return true;
-        if (currentYear === year && currentMonth === month && currentDay >= day)
-          return true;
-        return false;
-      };
-
-      setIsCertificateValid(isCurrentDateValid());
-    }
+    setIsCertificateValid(checkCertificateStatus(document));
   }, [document]);
 
   return (
     <Watermark
-      content={isCertificateValid ? `EXPIRED` : `NAMANGANTRANS 2022`}
+      content={!isCertificateValid ? `EXPIRED` : `NAMANGANTRANS 2022`}
       gap={[10, 10]}
       font={{
         fontSize: 20,
-        color: isCertificateValid
+        color: !isCertificateValid
           ? `rgba(255, 0, 0, 0.5)`
           : `rgba(0, 0, 0, 0.5)`,
       }}
@@ -62,7 +44,7 @@ const Search = () => {
           <div className="search-certificate__content">
             <div className={`search-wrapper`}>
               <div
-                className={`w-full h-full absolute top-0 left-0 z-10 ${isCertificateValid ? "backdrop-blur-[20px]" : ""}`}
+                className={`w-full h-full absolute top-0 left-0 z-10 ${!isCertificateValid ? "backdrop-blur-[20px]" : ""}`}
               ></div>
               {document.id?.startsWith("D") || document.id?.startsWith("M") ? (
                 <DriverCertificate document={document} type={"search"} />

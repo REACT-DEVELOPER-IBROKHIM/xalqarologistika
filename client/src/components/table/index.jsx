@@ -2,6 +2,7 @@ import {
   DeleteOutlined,
   DownloadOutlined,
   EditOutlined,
+  FileDoneOutlined,
 } from "@ant-design/icons";
 import { Button, Table, Modal, message } from "antd";
 import ReactToPrint from "react-to-print";
@@ -16,6 +17,7 @@ import { removeCurrentDocument } from "@slices/single-document";
 import Edit from "@routes/sub-routes/edit";
 import { deleteDocumentThunk } from "@thunks/documents-thunks";
 import { updateUI } from "@helpers/update-ui";
+import { useNavigate } from "react-router-dom";
 
 const DocumentsTable = ({ data, loading, type }) => {
   const [editingDocumentId, setEditingDocumentId] = useState(null);
@@ -27,6 +29,7 @@ const DocumentsTable = ({ data, loading, type }) => {
   const printFrame = useRef();
   const dispatch = useDispatch();
   const [document, setDocument] = useState(null);
+  const navigate = useNavigate();
   const columns = [
     {
       title: "  Id raqami",
@@ -108,6 +111,14 @@ const DocumentsTable = ({ data, loading, type }) => {
             content={() => printFrame.current}
           />
           <Button
+            type="primary"
+            style={{ backgroundColor: "#6FCF97" }}
+            disabled={document.id === EMPTY_DOCUMENT}
+            onClick={() => handleCheckCertificateStatus(document)}
+          >
+            <FileDoneOutlined />
+          </Button>
+          <Button
             style={{ backgroundColor: "#FFB629" }}
             type="primary"
             disabled={editingDocumentId === document._id}
@@ -142,6 +153,10 @@ const DocumentsTable = ({ data, loading, type }) => {
         id: document._id,
       }),
     ).then(() => setEditingDocumentId(null));
+  };
+
+  const handleCheckCertificateStatus = (document) => {
+    navigate(`/admin/status/${document.id}`);
   };
 
   return (

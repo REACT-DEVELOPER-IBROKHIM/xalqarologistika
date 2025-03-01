@@ -3,6 +3,7 @@ import {
   fetchSingleDocumentByIdThunk,
 } from "@thunks/single-document-thunk";
 import moment from "moment";
+import { fetchDocumentStatusDataThunk } from "@thunks/document-status";
 import { DATE_FORMAT, EMPTY_DOCUMENT } from "@constants/document";
 import { setDataToLocalStorage } from "@/helpers/localStorageActions";
 

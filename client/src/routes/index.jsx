@@ -9,7 +9,9 @@ import Certificates from "@routes/sub-routes/manage-certificate/certificate";
 import Adr from "@routes/sub-routes/manage-certificate/adr";
 import Manager from "@routes/sub-routes/manage-certificate/manager";
 import AdrTank from "@routes/sub-routes/manage-certificate/adr-tank";
-import DriverCertificate from "@/components/documents/driver";
+import Status from "./sub-routes/status";
+import Details from "./sub-routes/status/details";
+import ImageUpload from "./image-upload";
 
 const index = () => {
   return (
@@ -25,7 +27,11 @@ const index = () => {
           <Route path="manager" element={<Manager />} />
           <Route path="adr-tank" element={<AdrTank />} />
         </Route>
+        <Route path="status" element={<Status />}>
+          <Route path=":id" element={<Details />} />
+        </Route>
       </Route>
+      <Route path="image-upload/:id" element={<ImageUpload />} />
     </Routes>
   );
 };
