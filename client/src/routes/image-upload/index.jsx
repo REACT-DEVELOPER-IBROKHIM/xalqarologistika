@@ -30,20 +30,19 @@ const ImageUpload = () => {
       const data = response.data;
       setUrl(data?.microsoft?.image_resource_url);
       fetch(data?.microsoft?.image_resource_url)
-      .then(response => response.blob())
-      .then(blob => {
-        const file = new File([blob], "filename.jpg", { type: "image/jpeg" });
-      
-        const formData = new FormData();
-        formData.append('file', file);
+        .then((response) => response.blob())
+        .then((blob) => {
+          const file = new File([blob], "filename.jpg", { type: "image/jpeg" });
 
-        console.log('File:', file);
-      })
-      .catch(error => {
-        console.error('Error fetching and converting image:', error);
-      })
-    }
-    catch (error) {
+          const formData = new FormData();
+          formData.append("file", file);
+
+          console.log("File:", file);
+        })
+        .catch((error) => {
+          console.error("Error fetching and converting image:", error);
+        });
+    } catch (error) {
       console.error("Error uploading image: ", error);
     }
   };
@@ -74,9 +73,7 @@ const ImageUpload = () => {
       >
         <CameraFilled className="text-3xl" />
       </button>
-      {
-      url && <img src={url} alt="" />
-      }
+      {url && <img src={url} alt="" />}
     </div>
   );
 };
