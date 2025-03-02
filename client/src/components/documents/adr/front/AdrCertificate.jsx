@@ -1,10 +1,7 @@
-import summarizeName from "@helpers/summarizeName";
-import gerb from "@assets/images/gerb.png";
-import signs from "@assets/images/signs.png";
 import QRCode from "react-qr-code";
 
 const AdrCertificateFront = ({ document, type }) => {
-  const { name, surname, to, birthDate, id, from } = document;
+  const { name, surname, to, birthDate, id, signature } = document;
   return (
     <div
       className={`w-[2480px] ${type !== "search" && "h-[3508px]"} flex justify-center`}
@@ -32,7 +29,15 @@ const AdrCertificateFront = ({ document, type }) => {
             <p>5.REPUBLIC OF UZBEKISTAN</p>
             <p>6.NAMANGANTRANS 2022</p>
             <p>Until (date) {to}</p>
-            <div className="w-[400px] h-[150px] bg-white border-[2px] border-black"></div>
+            <div className="w-[400px] h-[130px] bg-white border-[2px] border-black">
+              <img
+                width={"100%"}
+                height={"80%"}
+                src={signature}
+                alt=""
+                className="scale-75"
+              />
+            </div>
           </div>
           <div className="h-full flex items-end justify-center">
             <QRCode

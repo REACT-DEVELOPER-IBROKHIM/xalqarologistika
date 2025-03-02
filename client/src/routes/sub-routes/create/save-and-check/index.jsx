@@ -79,12 +79,12 @@ const SaveAndCheck = ({
     },
     {
       key: "10",
-      label: "Sertifikat mavjudligi",
+      label: "Sertifikat holati",
       span: 3,
       children: (
         <Badge
           status={checkCertificateStatus(document) ? "success" : "error"}
-          text={checkCertificateStatus(document) ? "Mavjud" : "Mavjud emas"}
+          text={checkCertificateStatus(document) ? "Mavjud" : "Maddati tugagan"}
         />
       ),
     },
@@ -149,7 +149,7 @@ const SaveAndCheck = ({
 
   const handleCopyImageUploadLink = () => {
     navigator.clipboard.writeText(
-      `${window.location.origin}/image-upload/${document._id}`,
+      `${window.location.origin}/signature-upload/${documentType}-${document._id}`,
     );
     message.success("Havola nusxalandi");
   };
@@ -194,7 +194,7 @@ const SaveAndCheck = ({
               disabled={loading}
               onClick={handleCopyImageUploadLink}
             >
-              Rasm yuklash uchun havola
+              Imzo qo'yish uchun havola
             </Button>
           </div>
           {actionType && (
