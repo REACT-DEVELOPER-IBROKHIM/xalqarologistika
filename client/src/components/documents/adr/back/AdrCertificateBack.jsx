@@ -5,7 +5,7 @@ const AdrCertificateBack = ({ type }) => {
     <div
       className={`w-[2480px] ${type !== "search" && "h-[3508px]"} flex justify-center`}
     >
-      <div className="w-[1600px] h-[1070px] border-[6px] border-gray-400 mt-[10px] rounded-[50px] bg-wave bg-cover bg-no-repeat text-center px-[30px]">
+      <div className="w-[1600px] h-[1000px] border-[6px] border-gray-400 mt-[10px] rounded-[50px] bg-wave bg-cover bg-no-repeat text-center px-[30px]">
         <p className="text-[60px] mt-[30px]">VALID FOR CLASS(ES) OR UN NOS.:</p>
         <p className="text-[45px] mt-[20px]">
           ДЕЙСТВИТЕЛЬНОВОТНОШЕНИИ ВЕЩЕСТВКЛАССА(ОВ) ИЛИ№ООН
