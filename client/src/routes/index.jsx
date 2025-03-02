@@ -11,7 +11,7 @@ import Manager from "@routes/sub-routes/manage-certificate/manager";
 import AdrTank from "@routes/sub-routes/manage-certificate/adr-tank";
 import Status from "./sub-routes/status";
 import Details from "./sub-routes/status/details";
-import ImageUpload from "./image-upload";
+import SignatureUpload from "./signature-upload";
 
 const index = () => {
   return (
@@ -31,7 +31,7 @@ const index = () => {
           <Route path=":id" element={<Details />} />
         </Route>
       </Route>
-      <Route path="image-upload/:id" element={<ImageUpload />} />
+      <Route path="signature-upload/:id" element={<SignatureUpload />} />
     </Routes>
   );
 };
