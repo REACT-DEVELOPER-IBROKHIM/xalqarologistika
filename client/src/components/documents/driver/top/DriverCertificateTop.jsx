@@ -6,7 +6,7 @@ const DriverCertificateTop = ({ document }) => {
   const { id, name, surname, middlename, from, to } = document;
 
   return (
-    <div className="w-[2480px] h-[3508px] bg-[#fff8eb] p-[30px]">
+    <div className="w-[2480px] h-[3508px] bg-[#fff8eb] p-[50px]">
       <div className="w-full h-full border-[12px] border-indigo-500">
         <div className="w-[100%] h-[100%] px-[60px] flex">
           <div className="w-[20%] h-full relative">
@@ -79,7 +79,7 @@ const DriverCertificateTop = ({ document }) => {
                   Qayd raqami:{"№" + id}
                 </p>
               </div>
-              <div className="text-[50px] mt-[560px]">
+              <div className="text-[50px] mt-[540px]">
                 <span className="font-bold">
                   {summarizeName(name, surname, middlename)}
                 </span>

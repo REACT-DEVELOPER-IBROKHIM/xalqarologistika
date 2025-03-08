@@ -7,7 +7,7 @@ const DriverCertificateBottom = ({ document, type }) => {
 
   return (
     type !== "search" && (
-      <div className="w-[2480px] h-[3508px] bg-[#fff8eb] p-[30px]">
+      <div className="w-[2480px] h-[3508px] bg-[#fff8eb] p-[50px]">
         <div className="w-full h-full border-[12px] border-indigo-500">
           <div className="w-[100%] h-[100%] px-[60px] flex">
             <div className="w-[20%] h-full relative">
@@ -85,7 +85,7 @@ const DriverCertificateBottom = ({ document, type }) => {
                     Регистрационный номер:{"№" + id}
                   </p>
                 </div>
-                <div className="text-[50px] mt-[530px]">
+                <div className="text-[50px] mt-[510px]">
                   <span className="font-bold">
                     {summarizeName(name, surname, middlename)}
                   </span>{" "}
