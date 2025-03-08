@@ -11,7 +11,7 @@ const AdrCertificateBack = ({ type }) => {
           ДЕЙСТВИТЕЛЬНОВОТНОШЕНИИ ВЕЩЕСТВКЛАССА(ОВ) ИЛИ№ООН
         </p>
         <div className="font-bold">
-          <div className="flex justify-between items-center  mt-[50px]">
+          <div className="flex justify-between items-center mt-[50px]">
             <div className="w-[50%] h-[100px] text-[60px] flex items-end justify-center">
               9. In tank
             </div>
@@ -19,7 +19,7 @@ const AdrCertificateBack = ({ type }) => {
               10. Other than in tank
             </div>
           </div>
-          <div className="border-t-8 border-black w-full h-[700px] flex font-black text-[50px] text-left">
+          <div className="border-t-8 border-black w-full h-[630px] flex font-black text-[50px] text-left">
             <div className="w-[50%] h-full border-r-[3px] border-black px-[100px] flex flex-col gap-[10px] pt-[50px]">
               <p>2</p>
               <p>3</p>

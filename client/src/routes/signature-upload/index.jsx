@@ -1,16 +1,34 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import SignatureCanvas from "react-signature-canvas";
-import { Button, message, Spin } from "antd";
+import { Button, message, Spin, Typography } from "antd";
 import { uploadSignatureThunk } from "@thunks/upload-thunk";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getSingleDocument, getSingleDocumentLoading } from "@/redux/selectors";
+import { fetchSingleDocumentThunk } from "@/redux/thunks/single-document-thunk";
+import { removeCurrentDocument } from "@/redux/slices/single-document";
+
+const { Title } = Typography;
 
 const SignatureUpload = () => {
+  const document = useSelector(getSingleDocument);
+  const documentLoading = useSelector(getSingleDocumentLoading);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const signatureRef = useRef(null);
   const { id } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (id) {
+      dispatch(
+        fetchSingleDocumentThunk({
+          endpoint: id?.split("-")[0],
+          id: id?.split("-")[1],
+        }),
+      );
+    }
+  }, [id]);
 
   const handleSave = () => {
     const signature = signatureRef.current
@@ -42,6 +60,7 @@ const SignatureUpload = () => {
         },
       }),
     );
+    dispatch(removeCurrentDocument());
   };
 
   const handleReset = () => {
@@ -50,28 +69,34 @@ const SignatureUpload = () => {
 
   return (
     <div className="max-w-[500px] mx-auto h-screen flex flex-col gap-[20px] justify-center items-center">
-      {loading ? (
-        <Spin />
+      {document?.signature ? (
+        <Title level={4}>Sizning imzongiz mavjud</Title>
       ) : (
         <>
-          {" "}
-          <SignatureCanvas
-            ref={signatureRef}
-            penColor="black"
-            canvasProps={{
-              width: 500,
-              height: 200,
-              className: "border-2 border-black",
-            }}
-          />
-          <div className="flex gap-4">
-            <Button type="primary" disabled={loading} onClick={handleSave}>
-              Saqlash
-            </Button>
-            <Button type="default" disabled={loading} onClick={handleReset}>
-              Qaytadan chizish
-            </Button>
-          </div>
+          {loading || documentLoading ? (
+            <Spin />
+          ) : (
+            <>
+              {" "}
+              <SignatureCanvas
+                ref={signatureRef}
+                penColor="black"
+                canvasProps={{
+                  width: 500,
+                  height: 200,
+                  className: "border-2 border-black",
+                }}
+              />
+              <div className="flex gap-4">
+                <Button type="primary" disabled={loading} onClick={handleSave}>
+                  Saqlash
+                </Button>
+                <Button type="default" disabled={loading} onClick={handleReset}>
+                  Qaytadan chizish
+                </Button>
+              </div>
+            </>
+          )}
         </>
       )}
     </div>

@@ -56,7 +56,7 @@ const Admin = () => {
         <Header className="px-4 bg-white shadow-xl flex items-center text-xl font-semibold">
           {pathname === "/admin" ? t("services.create") : t("services.manage")}
         </Header>
-        <Content className="p-4">
+        <Content className="flex flex-col p-4">
           <Outlet />
         </Content>
       </Layout>

@@ -18,14 +18,14 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
               </p>
             )}
             <p className="text-[45px] mt-[50px] font-bold">MO №{id}</p>
-            <p className="text-[45px] border-b-[1px] border-black mt-[40px] uppercase w-full">
+            <p className="text-[45px] border-b-[1px] font-semibold border-black mt-[40px] uppercase w-full">
               {summarizeName(
                 name,
                 surname,
                 certType === "adr" ? "" : middlename,
               )}
             </p>
-            <p className="text-[45px] border-b-[1px] border-black mt-[60px] uppercase w-full">
+            <p className="text-[45px] border-b-[1px] border-black font-semibold mt-[60px] uppercase w-full">
               {certType === "adr" ? "АДР" : "36 часов"}
             </p>
             <p className="text-[40px] mt-[10px]">
@@ -49,10 +49,10 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
                 </div>
               </div>
               <div className="w-[60%]">
-                <p className="text-[45px] mt-[70px]">
+                <p className="text-[40px] mt-[70px] font-semibold">
                   OOO "NAMANGANTRANS 2022"
                 </p>
-                <p className="text-[35px] border-b-[1px] border-black mt-[50px] font-bold w-full">
+                <p className="text-[35px] border-b-[1px] border-black mt-[100px] font-bold w-full">
                   выдан: {from}
                 </p>
                 <p className="text-[35px] border-b-[1px] border-black mt-[50px] font-bold w-full">
@@ -70,26 +70,28 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
               The implementation of international automobile transportation
             </p>
             <p className="text-[45px] mt-[50px] font-bold">MO №{id}</p>
-            <p className="text-[45px] border-b-[1px] border-black mt-[40px] uppercase w-full">
+            <p className="text-[45px] border-b-[1px]  font-semibold border-black mt-[40px] uppercase w-full">
               {summarizeName(
                 name,
                 surname,
                 certType === "adr" ? "" : middlename,
               )}
             </p>
-            <p className="text-[45px] border-b-[1px] border-black mt-[60px] uppercase w-full">
+            <p className="text-[45px] border-b-[1px] border-black mt-[60px] font-semibold uppercase w-full">
               {certType === "adr" ? "ADR" : "36 hours"}
             </p>
             <p className="text-[40px] mt-[10px]">
               This certificate that he completed training course on special
               program
             </p>
-            <p className="text-[40px] mt-[30px] italic">
+            <p className="text-[40px] mt-[105px] italic">
               {certType === "adr"
                 ? "Certificate of Professional Competence in the Transport of Dangerous Goods by Road (ADR)"
-                : " Organization and implementation of international automobile transportation"}
+                : "Organization and implementation of international automobile transportation"}
             </p>
-            <div className="w-full my-[125px]">
+            <div
+              className={`w-full ${certType !== "adr" ? "mt-[125px]" : "mt-[160px]"}`}
+            >
               <p className="text-[35px] border-b-[1px] border-black mt-[50px] font-bold w-full">
                 issued: {from}
               </p>
@@ -97,7 +99,7 @@ const MiniCertificateBottom = ({ document, type, certType }) => {
                 valid: {to}
               </p>
             </div>
-            <p className="text-[50px] mt-[30px]">
+            <p className="text-[50px] mt-[130px]">
               Director: OOO "NAMANGANTRANS 2022" B.Muhidinov
             </p>
           </div>

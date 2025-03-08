@@ -1,4 +1,5 @@
 import QRCode from "react-qr-code";
+import flag from "@assets/images/flag.png";
 
 const AdrCertificateFront = ({ document, type }) => {
   const { name, surname, to, birthDate, id, signature } = document;
@@ -16,32 +17,44 @@ const AdrCertificateFront = ({ document, type }) => {
             UZ
           </div>
           <p className="text-[50px] font-bold ml-[-200px]">1.Nr. {id}</p>
-          <div className="bg-blue-500 text-white text-[50px] py-[25px] px-[40px] flex items-center justify-center rounded-ee-[30px] rounded-ss-[30px]">
-            NT2022
+          <div>
+            {Number(id) > 891 && (
+              <img src={flag} alt="NT2022" className="w-[200px]" />
+            )}
+            {Number(id) <= 891 && (
+              <div className="bg-blue-500 text-white text-[50px] py-[25px] px-[40px] flex items-center justify-center rounded-ee-[30px] rounded-ss-[30px]">
+                NT2022
+              </div>
+            )}
           </div>
         </div>
-        <div className="h-[600px] flex justify-between items-center mt-[30px] gap-[30px]">
+        <div className="h-[570px] flex items-center mt-[60px] gap-[30px]">
           <div className="h-full aspect-[3/4] bg-white border-[2px] border-black"></div>
-          <div className="h-full bg-blue  font-bold text-left text-[50px] flex flex-col gap-[20px] flex-1">
+          <div className="h-full bg-blue  font-bold text-left text-[50px] flex flex-col gap-[20px]">
             <p>2.{name}</p>
             <p>3.{surname}</p>
             <p>4.{birthDate}</p>
             <p>5.REPUBLIC OF UZBEKISTAN</p>
             <p>6.NAMANGANTRANS 2022</p>
             <p>Until (date) {to}</p>
-            <div className="w-[400px] h-[130px] bg-white border-[2px] border-black">
+            <div className="w-[300px] h-[100px] bg-white border-[2px] border-black">
               <img
                 width={"100%"}
                 height={"80%"}
                 src={signature}
                 alt=""
-                className="scale-75"
+                className="scale-[0.7]"
               />
             </div>
           </div>
-          <div className="h-full flex items-end justify-start">
+          <div className="h-full flex flex-col items-end justify-end">
+            {Number(id) > 891 && (
+              <div className="bg-blue-500 text-white text-[35px] py-[25px] px-[40px] flex items-center justify-center rounded-ee-[30px] rounded-ss-[30px] mb-[40px]">
+                NT2022
+              </div>
+            )}
             <QRCode
-              className="mb-[30px]"
+              className="mb-[20px]"
               value={`https://www.xalqarologistika.uz/check-certificates/${id}`}
             />
           </div>
