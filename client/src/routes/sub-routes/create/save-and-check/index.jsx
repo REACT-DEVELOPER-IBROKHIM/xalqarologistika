@@ -2,11 +2,15 @@ import { EMPTY_DOCUMENT, SIMILAR_DOCUMENT_TYPES } from "@/constants/document";
 import { removeDataFromLocalStorage } from "@/helpers/localStorageActions";
 import { getDocumentsLoading } from "@/redux/selectors/documents";
 import { createDocumentThunk } from "@/redux/thunks/documents-thunks";
-import { updateDocumentThunk } from "@/redux/thunks/single-document-thunk";
+import {
+  fetchSingleDocumentByIdThunk,
+  updateDocumentThunk,
+} from "@/redux/thunks/single-document-thunk";
 import { Badge, Button, Descriptions, message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import ReactToPrint from "react-to-print";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef } from "react";
+import { deleteDocumentSignatureThunk } from "@thunks/upload-thunk";
 import { DownloadOutlined } from "@ant-design/icons";
 import AdrCertificate from "@/components/documents/adr";
 import DriverCertificate from "@/components/documents/driver";
@@ -14,6 +18,7 @@ import { removeCurrentDocumentId } from "@/redux/slices/documents";
 import { removeCurrentDocument } from "@/redux/slices/single-document";
 import { updateUI } from "@/helpers/update-ui";
 import { checkCertificateStatus } from "@/helpers/check-certificate-status";
+import { fetchDocumentStatusDataThunk } from "@/redux/thunks/document-status";
 
 const SaveAndCheck = ({
   document,
@@ -154,6 +159,18 @@ const SaveAndCheck = ({
     message.success("Havola nusxalandi");
   };
 
+  const handleRemoveSignature = () => {
+    dispatch(
+      deleteDocumentSignatureThunk({
+        id: document._id,
+        endpoint: documentType,
+        onSuccess: () => {
+          message.success("Imzo o'chirildi");
+        },
+      }),
+    );
+  };
+
   return (
     <div className="flex h-[580px] overflow-y-auto">
       <div className="w-full">
@@ -196,6 +213,16 @@ const SaveAndCheck = ({
             >
               Imzo qo'yish uchun havola
             </Button>
+            {document?.signature && (
+              <Button
+                type="primary"
+                onClick={handleRemoveSignature}
+                danger
+                disabled={loading}
+              >
+                Imzoni o'chirish
+              </Button>
+            )}
           </div>
           {actionType && (
             <Button onClick={handleCancelValues} variant="outlined" danger>

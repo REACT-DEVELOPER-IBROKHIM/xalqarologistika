@@ -55,4 +55,21 @@ router.post('/signature', upload.single('file'), async (req, res) => {
     })
 })
 
+router.delete('/signature', async (req, res) => {
+    const type = req.query.type
+    const id = req.query.id
+
+    if (type === 'driver') {
+        await DriverCertificate.findByIdAndUpdate(id, {
+            signature: '',
+        })
+    } else if (type === 'adr') {
+        await AdrCertificate.findByIdAndUpdate(id, {
+            signature: '',
+        })
+    }
+
+    res.send('File deleted successfully!')
+})
+
 module.exports = router
