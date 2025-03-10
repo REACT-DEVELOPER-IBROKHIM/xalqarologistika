@@ -44,8 +44,8 @@ const Adr = new mongoose.Schema({
     },
     tank: {
         type: Boolean,
-        default: false
-    }
+        default: false,
+    },
 })
 
 const model = mongoose.model('Adr', Adr)

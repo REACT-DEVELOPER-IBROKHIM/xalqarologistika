@@ -21,7 +21,7 @@ const AdrCertificateBack = ({ type, tank }) => {
           </div>
           <div className="border-t-8 border-black w-full h-[630px] flex font-black text-[50px] text-left">
             <div className="w-[50%] h-full border-r-[3px] border-black px-[100px] flex flex-col gap-[10px] pt-[50px]">
-              {tank &&
+              {tank && (
                 <>
                   <p>2</p>
                   <p>3</p>
@@ -31,7 +31,7 @@ const AdrCertificateBack = ({ type, tank }) => {
                   <p>8</p>
                   <p>9</p>
                 </>
-              }
+              )}
             </div>
             <div className="w-[50%] h-full border-l-[3px] border-black px-[100px] flex flex-col gap-[10px] pt-[50px]">
               <p>2</p>
