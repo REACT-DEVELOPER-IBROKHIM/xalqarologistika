@@ -1,6 +1,6 @@
 import React from "react";
 
-const AdrCertificateBack = ({ type }) => {
+const AdrCertificateBack = ({ type, tank }) => {
   return (
     <div
       className={`w-[2480px] ${type !== "search" && "h-[3508px]"} flex justify-center`}
@@ -21,13 +21,17 @@ const AdrCertificateBack = ({ type }) => {
           </div>
           <div className="border-t-8 border-black w-full h-[630px] flex font-black text-[50px] text-left">
             <div className="w-[50%] h-full border-r-[3px] border-black px-[100px] flex flex-col gap-[10px] pt-[50px]">
-              <p>2</p>
-              <p>3</p>
-              <p>4.1, 4.2, 4.3</p>
-              <p>5.1, 5.2</p>
-              <p>6.1, 6.2</p>
-              <p>8</p>
-              <p>9</p>
+              {tank &&
+                <>
+                  <p>2</p>
+                  <p>3</p>
+                  <p>4.1, 4.2, 4.3</p>
+                  <p>5.1, 5.2</p>
+                  <p>6.1, 6.2</p>
+                  <p>8</p>
+                  <p>9</p>
+                </>
+              }
             </div>
             <div className="w-[50%] h-full border-l-[3px] border-black px-[100px] flex flex-col gap-[10px] pt-[50px]">
               <p>2</p>

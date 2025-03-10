@@ -42,6 +42,7 @@ const Create = () => {
       birthDate: "",
       from: "",
       to: "",
+      tank: false
     },
   );
 

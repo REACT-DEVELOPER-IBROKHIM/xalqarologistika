@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Input } from "antd";
 import dayjs from "dayjs";
-import { DatePicker } from "antd";
+import { DatePicker, Checkbox } from "antd";
 import { DATE_FORMAT } from "@/constants/document";
 import { setDataToLocalStorage } from "@/helpers/localStorageActions";
 
@@ -204,6 +204,14 @@ const EditForm = ({ setDocument, document, form }) => {
           />
         </Item>
       </div>
+      <Checkbox
+        checked={document.tank}
+        onChange={(e) =>
+          handleValuesChange({ ...document, tank: e.target.checked })
+        }
+      >
+        Sisterna
+      </Checkbox>
     </Form>
   );
 };

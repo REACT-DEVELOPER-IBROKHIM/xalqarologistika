@@ -4,7 +4,6 @@ import {
   ArrowLeftOutlined,
   ArrowRightOutlined,
   EditOutlined,
-  EyeOutlined,
   SaveOutlined,
 } from "@ant-design/icons";
 import EditForm from "./form";
