@@ -1,7 +1,4 @@
-import AdrCertificate from "@/components/documents/adr/front/AdrCertificate";
 import DriverCertificate from "@/components/documents/driver/index";
-import { SIMILAR_DOCUMENT_TYPES } from "@/constants/document";
-import Draft from "@/routes/draft/Draft";
 import React from "react";
 
 const Preview = ({ document }) => {

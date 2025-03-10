@@ -5,9 +5,9 @@ import MiniCertificate from "./mini";
 const DriverCertificate = forwardRef(({ document, type }, ref) => {
   return (
     <div ref={ref}>
-      <DriverCertificateTop document={document} type={type} ref={ref} />
-      <DriverCertificateBottom document={document} type={type} ref={ref} />
-      <MiniCertificate document={document} type={type} ref={ref} />
+      <DriverCertificateTop document={document} type={type} />
+      <DriverCertificateBottom document={document} type={type} />
+      <MiniCertificate document={document} type={type} />
     </div>
   );
 });

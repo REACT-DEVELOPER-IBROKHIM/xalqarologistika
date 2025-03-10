@@ -22,10 +22,11 @@ const index = () => {
       <Route path="admin" element={<Private />}>
         <Route index path="" element={<Create />} />
         <Route path="manage-certificate" element={<ManageCertificates />}>
-          <Route index path="" element={<Certificates />} />
+          <Route path="driver" element={<Certificates />} />
           <Route path="adr" element={<Adr />} />
           <Route path="manager" element={<Manager />} />
           <Route path="adr-tank" element={<AdrTank />} />
+          <Route path="drivercard" element={<Certificates />} />
         </Route>
         <Route path="status" element={<Status />}>
           <Route path=":id" element={<Details />} />

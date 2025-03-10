@@ -18,7 +18,7 @@ import { removeCurrentDocumentId } from "@/redux/slices/documents";
 import { removeCurrentDocument } from "@/redux/slices/single-document";
 import { updateUI } from "@/helpers/update-ui";
 import { checkCertificateStatus } from "@/helpers/check-certificate-status";
-import { fetchDocumentStatusDataThunk } from "@/redux/thunks/document-status";
+import DriverCertificateCard from "@/components/documents/driver-card";
 
 const SaveAndCheck = ({
   document,
@@ -234,10 +234,16 @@ const SaveAndCheck = ({
       <div className="hidden w-0 h-0">
         {document && (
           <>
-            {SIMILAR_DOCUMENT_TYPES.DRIVER.includes(documentType) ? (
+            {SIMILAR_DOCUMENT_TYPES.DRIVER.includes(documentType) && (
               <DriverCertificate document={document} ref={printFrame} />
-            ) : (
+            )}
+
+            {SIMILAR_DOCUMENT_TYPES.ADR.includes(documentType) && (
               <AdrCertificate document={document} ref={printFrame} />
+            )}
+
+            {SIMILAR_DOCUMENT_TYPES.DRIVER_CARD.includes(documentType) && (
+              <DriverCertificateCard document={document} ref={printFrame} />
             )}
           </>
         )}

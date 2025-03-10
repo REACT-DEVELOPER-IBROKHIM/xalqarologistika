@@ -70,7 +70,12 @@ const Edit = ({ currentDocument, documentType }) => {
 
       <div className="flex flex-1 flex-col">
         {current === 0 && (
-          <EditForm form={form} document={document} setDocument={setDocument} />
+          <EditForm
+            form={form}
+            document={document}
+            documentType={documentType}
+            setDocument={setDocument}
+          />
         )}
         {current === 1 && (
           <SaveAndCheck

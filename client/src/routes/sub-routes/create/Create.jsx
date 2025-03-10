@@ -10,20 +10,17 @@ import {
   SaveOutlined,
 } from "@ant-design/icons";
 import { useEffect, useState } from "react";
-import { convertToValueLabel } from "@/helpers/formItems";
-import { DOCUMENT_TYPES_LIST } from "@/constants/document";
+import { convertToValueLabel } from "@helpers/formItems";
+import { DOCUMENT_TYPES_LIST } from "@constants/document";
 import CreateForm from "./form";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getDocumentId,
-  getDocumentsLoading,
-} from "@/redux/selectors/documents";
-import { fetchDocumentIdThunk } from "@/redux/thunks/documents-thunks";
+import { getDocumentId, getDocumentsLoading } from "@selectors/documents";
+import { fetchDocumentIdThunk } from "@thunks/documents-thunks";
 import SaveAndCheck from "./save-and-check";
 import {
   getDataFromLocalStorage,
   setDataToLocalStorage,
-} from "@/helpers/localStorageActions";
+} from "@helpers/localStorageActions";
 
 const { Title } = Typography;
 
@@ -92,7 +89,7 @@ const Create = () => {
           <Select
             value={documentType}
             onChange={(value) => setDocumentType(value)}
-            className="w-[200px]"
+            className="w-[300px]"
             defaultValue={DOCUMENT_TYPES_LIST[0].key}
             options={convertToValueLabel(DOCUMENT_TYPES_LIST, "key", "label")}
           />{" "}
@@ -115,7 +112,11 @@ const Create = () => {
 
       <div className="flex flex-1 flex-col">
         {current === 0 && (
-          <CreateForm document={document} setDocument={setDocument} />
+          <CreateForm
+            document={document}
+            documentType={documentType}
+            setDocument={setDocument}
+          />
         )}
         {current === 1 && (
           <SaveAndCheck

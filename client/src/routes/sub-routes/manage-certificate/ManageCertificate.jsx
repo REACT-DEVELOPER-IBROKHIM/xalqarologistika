@@ -1,16 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import generateCertificateTypeList from "@static/CertificateTypeList";
-import { Outlet } from "react-router-dom";
-import { Menu, Input } from "antd";
-
-const { Search } = Input;
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Menu } from "antd";
 
 const ManageCertificates = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [current, setCurrent] = useState("mail");
 
   const onClick = (e) => {
     setCurrent(e.key);
   };
+
+  useEffect(() => {
+    if (pathname?.endsWith("/manage-certificate")) {
+      navigate("drivercard");
+    }
+  }, [pathname]);
+
+  console.log(pathname);
 
   return (
     <div className="flex flex-col">

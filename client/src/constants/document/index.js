@@ -1,5 +1,6 @@
 export const DOCUMENT_TYPES = {
   DRIVER: "driver",
+  DRIVER_CARD: "drivercard",
   MANAGER: "manager",
   ADR: "adr",
   ADR_TANK: "adr_tank",
@@ -8,9 +9,14 @@ export const DOCUMENT_TYPES = {
 export const SIMILAR_DOCUMENT_TYPES = {
   DRIVER: ["driver", "manager"],
   ADR: ["adr", "adr-tank"],
+  DRIVER_CARD: ["drivercard"],
 };
 
 export const DOCUMENT_TYPES_LIST = [
+  {
+    key: "drivercard",
+    label: "Haydovchi sertifikat (kartochka)",
+  },
   {
     key: "driver",
     label: "Haydovchi sertifikat",

@@ -3,6 +3,7 @@ const express = require('express')
 const multer = require('multer')
 const AWS = require('aws-sdk')
 const DriverCertificate = require('../models/DriverCertificates')
+const DriverCardCertificate = require('../models/DriverCardCertificate')
 const AdrCertificate = require('../models/AdrCertificates')
 const router = express.Router()
 
@@ -41,7 +42,11 @@ router.post('/signature', upload.single('file'), async (req, res) => {
             return res.status(500).send('Failed to upload')
         }
 
-        if (type === 'driver') {
+        if (type === 'drivercard') {
+            await DriverCardCertificate.findByIdAndUpdate(id, {
+                signature: data.Location,
+            })
+        } else if (type === 'driver') {
             await DriverCertificate.findByIdAndUpdate(id, {
                 signature: data.Location,
             })
@@ -59,7 +64,11 @@ router.delete('/signature', async (req, res) => {
     const type = req.query.type
     const id = req.query.id
 
-    if (type === 'driver') {
+    if (type === 'drivercard') {
+        await DriverCardCertificate.findByIdAndUpdate(id, {
+            signature: '',
+        })
+    } else if (type === 'driver') {
         await DriverCertificate.findByIdAndUpdate(id, {
             signature: '',
         })

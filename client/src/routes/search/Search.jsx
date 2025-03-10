@@ -12,6 +12,7 @@ import DriverCertificate from "@/components/documents/driver";
 import AdrCertificate from "@/components/documents/adr";
 import { Watermark } from "antd";
 import { checkCertificateStatus } from "@/helpers/check-certificate-status";
+import DriverCertificateCard from "@/components/documents/driver-card";
 
 const Search = () => {
   const [isCertificateValid, setIsCertificateValid] = useState(null);
@@ -46,7 +47,10 @@ const Search = () => {
               <div
                 className={`w-full h-full absolute top-0 left-0 z-10 ${!isCertificateValid ? "backdrop-blur-[20px]" : ""}`}
               ></div>
-              {document.id?.startsWith("D") || document.id?.startsWith("M") ? (
+              {document.id?.startsWith("DC") ? (
+                <DriverCertificateCard document={document} type={"search"} />
+              ) : document.id?.startsWith("D") ||
+                document.id?.startsWith("M") ? (
                 <DriverCertificate document={document} type={"search"} />
               ) : (
                 <AdrCertificate document={document} type={"search"} />
