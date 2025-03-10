@@ -7,7 +7,7 @@ import { setDataToLocalStorage } from "@/helpers/localStorageActions";
 
 const { Item } = Form;
 
-const EditForm = ({ setDocument, document, form }) => {
+const EditForm = ({ setDocument, document, form, documentType }) => {
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -135,6 +135,29 @@ const EditForm = ({ setDocument, document, form }) => {
             }}
           />
         </Item>
+        {documentType === "drivercard" && (
+          <Item
+            className="flex-1"
+            label="Haydovchilik guvohnomasi raqami"
+            name="driverLicenceNumber"
+            rules={[
+              {
+                required: true,
+                message: "Iltimos haydovchilik guvohnomasi raqamini kiriting!",
+              },
+            ]}
+          >
+            <Input
+              className="flex-1 uppercase"
+              onChange={(e) => {
+                handleValuesChange({
+                  ...document,
+                  driverLicenceNumber: e.target.value.toUpperCase(),
+                });
+              }}
+            />
+          </Item>
+        )}
       </div>
       <div className="flex justify-between gap-10">
         <Item
@@ -204,14 +227,16 @@ const EditForm = ({ setDocument, document, form }) => {
           />
         </Item>
       </div>
-      <Checkbox
-        checked={document.tank}
-        onChange={(e) =>
-          handleValuesChange({ ...document, tank: e.target.checked })
-        }
-      >
-        Sisterna
-      </Checkbox>
+      {documentType === "adr" && (
+        <Checkbox
+          checked={document.tank}
+          onChange={(e) =>
+            handleValuesChange({ ...document, tank: e.target.checked })
+          }
+        >
+          Sisterna
+        </Checkbox>
+      )}
     </Form>
   );
 };

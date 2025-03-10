@@ -7,6 +7,8 @@ import {
 
 export const updateUI = (type) => {
   switch (type) {
+    case "drivercard":
+      return fetchDriverDocumentsThunk({ endpoint: type });
     case "driver":
       return fetchDriverDocumentsThunk({ endpoint: type });
     case "adr":

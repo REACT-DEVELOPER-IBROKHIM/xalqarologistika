@@ -18,6 +18,7 @@ import Edit from "@routes/sub-routes/edit";
 import { deleteDocumentThunk } from "@thunks/documents-thunks";
 import { updateUI } from "@helpers/update-ui";
 import { useNavigate } from "react-router-dom";
+import DriverCertificateCard from "../documents/driver-card";
 
 const DocumentsTable = ({ data, loading, type }) => {
   const [editingDocumentId, setEditingDocumentId] = useState(null);
@@ -78,6 +79,12 @@ const DocumentsTable = ({ data, loading, type }) => {
       title: "Tug`ulgan sana",
       dataIndex: "birthDate",
       key: "birthDate",
+      width: "10%",
+    },
+    {
+      title: "Haydovchilik guvohnomasi raqami",
+      dataIndex: "driverLicenceNumber",
+      key: "driverLicenceNumber",
       width: "10%",
     },
     {
@@ -151,7 +158,7 @@ const DocumentsTable = ({ data, loading, type }) => {
       fetchSingleDocumentThunk({
         endpoint: type,
         id: document._id,
-      }),
+      })
     ).then(() => setEditingDocumentId(null));
   };
 
@@ -175,10 +182,16 @@ const DocumentsTable = ({ data, loading, type }) => {
       <div className="hidden w-0 h-0">
         {document && (
           <>
-            {SIMILAR_DOCUMENT_TYPES.DRIVER.includes(type) ? (
+            {SIMILAR_DOCUMENT_TYPES.DRIVER.includes(type) && (
               <DriverCertificate document={document} ref={printFrame} />
-            ) : (
+            )}
+
+            {SIMILAR_DOCUMENT_TYPES.ADR.includes(type) && (
               <AdrCertificate document={document} ref={printFrame} />
+            )}
+
+            {SIMILAR_DOCUMENT_TYPES.DRIVER_CARD.includes(type) && (
+              <DriverCertificateCard document={document} ref={printFrame} />
             )}
           </>
         )}
@@ -209,7 +222,7 @@ const DocumentsTable = ({ data, loading, type }) => {
                   dispatch(updateUI(type));
                   message.success("Sertifikat o`chirildi");
                 },
-              }),
+              })
             );
           }}
           okText="O`chirish"

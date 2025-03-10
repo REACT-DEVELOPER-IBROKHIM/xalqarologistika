@@ -5,7 +5,9 @@ export default {
     extend: {
       backgroundImage: {
         sign: "url('/src/assets/images/signs.png')",
-        wave: "url('https://t3.ftcdn.net/jpg/03/20/14/98/360_F_320149880_YIsJEzdfICARIZtTPsTnhx2YHjpiQhop.jpg')",
+        wave: "url('/src/assets/images/wave.jpg')",
+        silk: "url('/src/assets/images/silk-road.jpg')",
+        silkBack: "url('/src/assets/images/silk-back.jpg')",
       },
     },
   },

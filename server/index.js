@@ -12,6 +12,7 @@ const analytics = require('./src/routes/analytics')
 const admin = require('./src/routes/admin')
 const comments = require('./src/routes/comments')
 const upload = require('./src/routes/upload')
+const drivercardcertificate = require('./src/routes/drivercardcertificate')
 
 const port = process.env.PORT || 1000
 const app = express()
@@ -22,17 +23,17 @@ const whitelist = [
     'https://xalqarologistika.uz',
     'http://localhost:5173',
 ]
-app.use(cors())
-
-// {
-//     origin: function (origin, callback) {
-//         if (whitelist.indexOf(origin) !== -1) {
-//             callback(null, true)
-//         } else {
-//             callback(new Error('Not allowed by CORS'))
-//         }
-//     },
-// }
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            if (whitelist.indexOf(origin) !== -1) {
+                callback(null, true)
+            } else {
+                callback(new Error('Not allowed by CORS'))
+            }
+        },
+    })
+)
 
 app.use(express.json())
 
@@ -45,6 +46,7 @@ mongoose
     .catch(err => console.log(err))
 
 app.use('/api/driver', driverCertificate)
+app.use('/api/drivercard', drivercardcertificate)
 app.use('/api/adr', adrCertificate)
 app.use('/api/manager', managerCertificate)
 app.use('/api/adr-tank', adrTankCertificate)
