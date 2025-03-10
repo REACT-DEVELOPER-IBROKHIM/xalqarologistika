@@ -51,7 +51,7 @@ const DriverCardCertificates = new Schema({
     driverLicenceNumber: {
         type: String,
         required: true,
-    }
+    },
 })
 
 const model = mongoose.model('drivercardcertificates', DriverCardCertificates)

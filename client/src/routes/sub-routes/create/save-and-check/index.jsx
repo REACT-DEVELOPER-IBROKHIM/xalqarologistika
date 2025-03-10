@@ -125,7 +125,7 @@ const SaveAndCheck = ({
           message.success("Sertifikat saqlandi");
         },
       }),
-    []
+    [],
   );
 
   const updateDocumentHandler = useCallback(
@@ -140,7 +140,7 @@ const SaveAndCheck = ({
           message.success("Sertifikat tahrirlandi");
         },
       }),
-    []
+    [],
   );
 
   const handleSaveAndCheck = () => {
@@ -154,7 +154,7 @@ const SaveAndCheck = ({
 
   const handleCopyImageUploadLink = () => {
     navigator.clipboard.writeText(
-      `${window.location.origin}/signature-upload/${documentType}-${document._id}`
+      `${window.location.origin}/signature-upload/${documentType}-${document._id}`,
     );
     message.success("Havola nusxalandi");
   };
@@ -167,7 +167,7 @@ const SaveAndCheck = ({
         onSuccess: () => {
           message.success("Imzo o'chirildi");
         },
-      })
+      }),
     );
   };
 

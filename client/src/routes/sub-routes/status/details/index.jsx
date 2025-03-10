@@ -32,7 +32,13 @@ const Details = () => {
         </div>
       ) : document ? (
         <SaveAndCheck
-          documentType={document?.id?.startsWith("DC") ? "drivercard" : document?.id?.startsWith("D") ? "driver" : "adr"}
+          documentType={
+            document?.id?.startsWith("DC")
+              ? "drivercard"
+              : document?.id?.startsWith("D")
+                ? "driver"
+                : "adr"
+          }
           document={document}
         />
       ) : (

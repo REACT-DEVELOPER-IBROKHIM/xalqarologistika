@@ -97,29 +97,29 @@ const CreateForm = ({ setDocument, document, documentType }) => {
             }}
           />
         </Item>
-        {documentType === "drivercard" &&
-           <Item
-           className="flex-1"
-           label="Haydovchilik guvohnomasi raqami"
-           name="driverLicenceNumber"
-           rules={[
-             {
-               required: true,
-               message: "Iltimos haydovchilik guvohnomasi raqamini kiriting!",
-             }
-           ]}
-         >
-           <Input
-             className="flex-1 uppercase"
-             onChange={(e) => {
-               handleValuesChange({
-                 ...document,
-                 driverLicenceNumber: e.target.value.toUpperCase(),
-               });
-             }}
-           />
-         </Item>
-        }
+        {documentType === "drivercard" && (
+          <Item
+            className="flex-1"
+            label="Haydovchilik guvohnomasi raqami"
+            name="driverLicenceNumber"
+            rules={[
+              {
+                required: true,
+                message: "Iltimos haydovchilik guvohnomasi raqamini kiriting!",
+              },
+            ]}
+          >
+            <Input
+              className="flex-1 uppercase"
+              onChange={(e) => {
+                handleValuesChange({
+                  ...document,
+                  driverLicenceNumber: e.target.value.toUpperCase(),
+                });
+              }}
+            />
+          </Item>
+        )}
       </div>
       <div className="flex justify-between gap-10">
         <Item
@@ -189,14 +189,16 @@ const CreateForm = ({ setDocument, document, documentType }) => {
           />
         </Item>
       </div>
-      { documentType === "adr" && <Checkbox
-        checked={document.tank}
-        onChange={(e) =>
-          handleValuesChange({ ...document, tank: e.target.checked })
-        }
-      >
-        Sisterna
-      </Checkbox>}
+      {documentType === "adr" && (
+        <Checkbox
+          checked={document.tank}
+          onChange={(e) =>
+            handleValuesChange({ ...document, tank: e.target.checked })
+          }
+        >
+          Sisterna
+        </Checkbox>
+      )}
     </Form>
   );
 };

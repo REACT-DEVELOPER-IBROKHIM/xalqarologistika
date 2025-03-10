@@ -28,8 +28,12 @@ const DriverCardBack = ({ document }) => {
           <div className="text-[45px]">
             <table className="border-2 border-black">
               <tr>
-                <th className="px-[30px] border-2 border-black">Category <br /> Категории</th>
-                <th className="px-[30px] border-2 border-black">Until <br /> До</th>
+                <th className="px-[30px] border-2 border-black">
+                  Category <br /> Категории
+                </th>
+                <th className="px-[30px] border-2 border-black">
+                  Until <br /> До
+                </th>
               </tr>
               <tr>
                 <td className="px-[30px] border-2 border-black">C1</td>

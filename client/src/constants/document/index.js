@@ -32,7 +32,7 @@ export const DOCUMENT_TYPES_LIST = [
   {
     key: "adr-tank",
     label: "ADR Tank sertifikat",
-  }
+  },
 ];
 
 export const EMPTY_DOCUMENT = "Mavjud emas";

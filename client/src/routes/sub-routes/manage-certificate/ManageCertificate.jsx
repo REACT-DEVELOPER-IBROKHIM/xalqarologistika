@@ -4,7 +4,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "antd";
 
 const ManageCertificates = () => {
-  const {pathname} = useLocation()
+  const { pathname } = useLocation();
   const navigate = useNavigate();
   const [current, setCurrent] = useState("mail");
 
@@ -13,12 +13,12 @@ const ManageCertificates = () => {
   };
 
   useEffect(() => {
-    if(pathname?.endsWith("/manage-certificate")) {
-      navigate("drivercard")
+    if (pathname?.endsWith("/manage-certificate")) {
+      navigate("drivercard");
     }
-  }, [pathname])
+  }, [pathname]);
 
-  console.log(pathname)
+  console.log(pathname);
 
   return (
     <div className="flex flex-col">

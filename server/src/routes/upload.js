@@ -42,12 +42,11 @@ router.post('/signature', upload.single('file'), async (req, res) => {
             return res.status(500).send('Failed to upload')
         }
 
-        if (type === "drivercard") {
+        if (type === 'drivercard') {
             await DriverCardCertificate.findByIdAndUpdate(id, {
                 signature: data.Location,
             })
-        }
-        else if (type === 'driver') {
+        } else if (type === 'driver') {
             await DriverCertificate.findByIdAndUpdate(id, {
                 signature: data.Location,
             })
@@ -65,12 +64,11 @@ router.delete('/signature', async (req, res) => {
     const type = req.query.type
     const id = req.query.id
 
-    if (type === "drivercard") {
+    if (type === 'drivercard') {
         await DriverCardCertificate.findByIdAndUpdate(id, {
             signature: '',
         })
-    }
-    else if (type === 'driver') {
+    } else if (type === 'driver') {
         await DriverCertificate.findByIdAndUpdate(id, {
             signature: '',
         })

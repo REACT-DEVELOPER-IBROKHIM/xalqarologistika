@@ -9,11 +9,7 @@ const AdrCertificate = forwardRef(({ document, type }, ref) => {
     <div ref={ref}>
       <AdrCertificateFront type={type} document={document} />
       <AdrCertificateBack type={type} tank={document?.tank} />
-      <MiniCertificate
-        document={document}
-        type={type}
-        certType="adr"
-      />
+      <MiniCertificate document={document} type={type} certType="adr" />
     </div>
   );
 });

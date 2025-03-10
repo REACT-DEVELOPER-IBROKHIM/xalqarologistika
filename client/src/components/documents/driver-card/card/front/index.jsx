@@ -2,15 +2,16 @@ import React from "react";
 import flag from "@assets/images/flag.png";
 
 const DriverCardFront = ({ document }) => {
-  const { name, surname, to, birthDate, id, signature, driverLicenceNumber } = document;
-  console.log(document)
+  const { name, surname, to, birthDate, id, signature, driverLicenceNumber } =
+    document;
+  console.log(document);
   return (
     <div className={`w-[2480px] h-[3508px] flex justify-center mt-[10px]`}>
       <div className="w-[1600px] h-[1000px] border-[6px] border-gray-400 mt-[10px] rounded-[50px] bg-silk bg-cover bg-no-repeat text-center px-[30px]">
-        <p className="text-[48px] font-bold mt-[30px]">CERTIFICATE OF PROFESSIONAL COMPETENCE OF THE DRIVER</p>
-        <p className="text-[45px] mt-[20px]">
-          DRIVER QUALIFICATION CARD
+        <p className="text-[48px] font-bold mt-[30px]">
+          CERTIFICATE OF PROFESSIONAL COMPETENCE OF THE DRIVER
         </p>
+        <p className="text-[45px] mt-[20px]">DRIVER QUALIFICATION CARD</p>
         <div className="flex justify-between items-center mt-[50px] px-[60px]">
           <div className="text-[60px] py-[15px] px-[40px] border-[6px] border-black rounded-[100%]">
             UZ

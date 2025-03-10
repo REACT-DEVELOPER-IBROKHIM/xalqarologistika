@@ -158,7 +158,7 @@ const DocumentsTable = ({ data, loading, type }) => {
       fetchSingleDocumentThunk({
         endpoint: type,
         id: document._id,
-      })
+      }),
     ).then(() => setEditingDocumentId(null));
   };
 
@@ -222,7 +222,7 @@ const DocumentsTable = ({ data, loading, type }) => {
                   dispatch(updateUI(type));
                   message.success("Sertifikat o`chirildi");
                 },
-              })
+              }),
             );
           }}
           okText="O`chirish"

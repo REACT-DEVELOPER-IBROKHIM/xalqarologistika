@@ -14,10 +14,7 @@ import { convertToValueLabel } from "@helpers/formItems";
 import { DOCUMENT_TYPES_LIST } from "@constants/document";
 import CreateForm from "./form";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getDocumentId,
-  getDocumentsLoading,
-} from "@selectors/documents";
+import { getDocumentId, getDocumentsLoading } from "@selectors/documents";
 import { fetchDocumentIdThunk } from "@thunks/documents-thunks";
 import SaveAndCheck from "./save-and-check";
 import {
@@ -115,7 +112,11 @@ const Create = () => {
 
       <div className="flex flex-1 flex-col">
         {current === 0 && (
-          <CreateForm document={document} documentType={documentType} setDocument={setDocument} />
+          <CreateForm
+            document={document}
+            documentType={documentType}
+            setDocument={setDocument}
+          />
         )}
         {current === 1 && (
           <SaveAndCheck
