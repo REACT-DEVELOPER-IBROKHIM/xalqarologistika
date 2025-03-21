@@ -4,6 +4,7 @@ import summarizeName from "@/helpers/summarizeName";
 import QRCode from "react-qr-code";
 
 const DriverCardMini = ({ document }) => {
+  console.log("hello");
   const { name, surname, middlename, birthDate, from, to, id } = document;
   return (
     <>
