@@ -8,6 +8,7 @@ export default {
         wave: "url('/src/assets/images/wave.jpg')",
         silk: "url('/src/assets/images/silk-road.jpg')",
         silkBack: "url('/src/assets/images/silk-back.jpg')",
+        pattern: "url('/src/assets/images/pattern.png')",
       },
     },
   },
