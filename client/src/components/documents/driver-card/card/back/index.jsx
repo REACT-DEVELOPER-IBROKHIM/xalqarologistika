@@ -10,7 +10,7 @@ const DriverCardBack = ({ document }) => {
         <p className="text-[45px] mt-[20px]">DRIVER QUALIFICATION CARD</p>
         <div className="flex justify-between p-[30px]">
           <div>
-            <div className="text-[35px] font-semibold text-left mt-[30px] flex flex-col gap-[10px]">
+            <div className="text-[30px] font-semibold text-left mt-[30px] flex flex-col gap-[10px]">
               <p>1.Фамилия</p>
               <p>2.Имя</p>
               <p>3.Дата рождения</p>
@@ -42,7 +42,7 @@ const DriverCardBack = ({ document }) => {
               </tr>
               <tr>
                 <td className="px-[30px] border-2 border-black">C</td>
-                <td className="px-[30px] border-2 border-black">{to}</td>
+                <td className="px-[30px] border-2 border-black">95.{to}</td>
               </tr>
               <tr>
                 <td className="px-[30px] border-2 border-black">D1</td>
@@ -58,7 +58,7 @@ const DriverCardBack = ({ document }) => {
               </tr>
               <tr>
                 <td className="px-[30px] border-2 border-black">CE</td>
-                <td className="px-[30px] border-2 border-black">{to}</td>
+                <td className="px-[30px] border-2 border-black">95.{to}</td>
               </tr>
               <tr>
                 <td className="px-[30px] border-2 border-black">D1E</td>

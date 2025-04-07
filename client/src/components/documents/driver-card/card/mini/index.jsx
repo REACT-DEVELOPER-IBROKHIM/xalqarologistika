@@ -10,7 +10,7 @@ const DriverCardMini = ({ document }) => {
       <div className="w-[2480px] h-[3508px]">
         <div className="w-[100%] h-[100%]">
           <div className="h-[1504px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[250px]">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[200px]">
               <div className="flex-1 w-full ml-[-27px]">
                 <p className="text-[22px] mt-[30px] text-green-800 font-semibold">
                   Avtomobilda xalqaro tashuvchining kasbiy mahorat (KMS)
@@ -115,8 +115,8 @@ const DriverCardMini = ({ document }) => {
                 </div>
               </div>
             </div>
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[250px]">
-              <div className="flex-1 w-full mr-[-27px] text-center flex flex-col items-center">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[200px]">
+              <div className="flex-1 w-full px-[30px] text-center flex flex-col items-center">
                 <img
                   src={gerb}
                   alt=""
@@ -170,7 +170,7 @@ const DriverCardMini = ({ document }) => {
       <div className="w-[2480px] h-[3508px]">
         <div className="w-[100%] h-[100%]">
           <div className="h-[1504px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[250px]">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[200px]">
               <div className="flex-1 w-full ml-[-27px]">
                 <p className="text-[22px] mt-[30px] text-green-800 font-semibold">
                   <span>СЕРТИФИКАТ</span>
@@ -280,8 +280,8 @@ const DriverCardMini = ({ document }) => {
                 </div>
               </div>
             </div>
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[250px]">
-              <div className="flex-1 w-full mr-[-27px]">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[200px]">
+              <div className="flex-1 w-full">
                 <p className="text-[22px] mt-[30px] text-green-800 font-semibold">
                   <span>CERTIFICATE</span> <br /> of Professional Competence
                   (CPC) <br /> for international road transport
@@ -300,7 +300,8 @@ const DriverCardMini = ({ document }) => {
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {from.split(".")[2]}
                     </span>{" "}
-                    ; date:{" "}
+                    ; <br />
+                    date:{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {" "}
                       {from.split(".")[0]}.{from.split(".")[1]}

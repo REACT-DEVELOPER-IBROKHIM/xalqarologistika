@@ -28,7 +28,7 @@ router.post('/signature', upload.single('file'), async (req, res) => {
 
     const params = {
         Bucket: process.env.SPACE_BUCKET,
-        Key: file.originalname,
+        Key: file.originalname + Date.now(),
         Body: file.buffer,
         ACL: 'public-read',
     }
