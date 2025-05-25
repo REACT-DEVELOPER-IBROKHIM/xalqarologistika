@@ -9,15 +9,15 @@ const DriverCardMini = ({ document }) => {
     <>
       <div className="w-[2480px] h-[3508px]">
         <div className="w-[100%] h-[100%]">
-          <div className="h-[1504px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[200px]">
+          <div className="h-[1704px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[200px]">
               <div className="flex-1 w-full ml-[-27px]">
                 <p className="text-[22px] mt-[30px] text-green-800 font-semibold">
                   Avtomobilda xalqaro tashuvchining kasbiy mahorat (KMS)
                   <br />
                   <span>SERTIFIKATI</span>
                 </p>
-                <div className="text-[25px] text-left my-[50px] text-green-900 leading-[70px]">
+                <div className="text-[27px] text-left my-[50px] text-green-900 leading-[70px]">
                   <p>
                     Berildi{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold uppercase">
@@ -115,7 +115,7 @@ const DriverCardMini = ({ document }) => {
                 </div>
               </div>
             </div>
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[200px]">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[200px]">
               <div className="flex-1 w-full px-[30px] text-center flex flex-col items-center">
                 <img
                   src={gerb}
@@ -169,15 +169,15 @@ const DriverCardMini = ({ document }) => {
       </div>
       <div className="w-[2480px] h-[3508px]">
         <div className="w-[100%] h-[100%]">
-          <div className="h-[1504px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[200px]">
+          <div className="h-[1704px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[200px]">
               <div className="flex-1 w-full ml-[-27px]">
                 <p className="text-[22px] mt-[30px] text-green-800 font-semibold">
                   <span>СЕРТИФИКАТ</span>
                   <br /> профессиональной компетентности <br /> (СПК)
                   международного автомобильного перевозчика
                 </p>
-                <div className="text-[25px] text-left my-[50px] text-green-900 leading-[70px]">
+                <div className="text-[27px] text-left my-[50px] text-green-900 leading-[70px]">
                   <p>
                     Выдано{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold uppercase">
@@ -208,7 +208,7 @@ const DriverCardMini = ({ document }) => {
                     </span>
                   </p>
                 </div>
-                <div className="text-[25px] text-center my-[20px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
+                <div className="text-[27px] text-center my-[20px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
                   <div className="flex gap-5">
                     Выдано:
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
@@ -280,13 +280,13 @@ const DriverCardMini = ({ document }) => {
                 </div>
               </div>
             </div>
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[150px] px-[200px]">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[200px]">
               <div className="flex-1 w-full">
                 <p className="text-[22px] mt-[30px] text-green-800 font-semibold">
                   <span>CERTIFICATE</span> <br /> of Professional Competence
                   (CPC) <br /> for international road transport
                 </p>
-                <div className="text-[25px] text-left my-[50px] text-green-900 leading-[70px]">
+                <div className="text-[27px] text-left my-[50px] text-green-900 leading-[70px]">
                   <p>
                     Issued to{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold uppercase">

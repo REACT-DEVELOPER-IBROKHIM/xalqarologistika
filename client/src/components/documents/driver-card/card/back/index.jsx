@@ -7,8 +7,10 @@ const DriverCardBack = ({ document }) => {
   return (
     <div className={`w-[2480px] h-[3498px] flex justify-center mt-[10px]`}>
       <div className="w-[1600px] h-[1000px] border-[6px] border-gray-400 mt-[10px] rounded-[50px] bg-silkBack bg-cover bg-no-repeat text-center px-[30px]">
-        <p className="text-[45px] mt-[20px]">DRIVER QUALIFICATION CARD</p>
-        <div className="flex justify-between p-[30px]">
+        <p className="text-[45px] mt-[20px] font-semibold">
+          DRIVER QUALIFICATION CARD
+        </p>
+        <div className="flex justify-between py-[30px] pr-[30px]">
           <div>
             <div className="text-[30px] font-semibold text-left mt-[30px] flex flex-col gap-[10px]">
               <p>1.Фамилия</p>
