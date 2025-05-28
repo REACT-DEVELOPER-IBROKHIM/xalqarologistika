@@ -25,8 +25,8 @@ const DriverCardFront = ({ document, type }) => {
           DRIVER QUALIFICATION CARD
         </p>
         <div className="flex justify-between items-center mt-[50px] px-[60px]">
-          <div className="text-[60px] py-[15px] px-[40px] border-[6px] border-black rounded-[100%]">
-            UZ
+          <div className="text-[60px] w-[155px] h-[110px] bg-ornate bg-cover bg-no-repeat flex items-center justify-center">
+            <p className="mt-[5px] text-blue-800 font-bold">UZ</p>
           </div>
           <img src={flag} alt="NT2022" className="w-[200px]" />
         </div>
@@ -35,7 +35,7 @@ const DriverCardFront = ({ document, type }) => {
             <div className="w-[370px] h-[700px] flex-1 bg-white border-[2px] border-black"></div>
             <p className="text-[50px] mt-[30px]">8.C/CE</p>
           </div>
-          <div className="h-full bg-blue  font-bold text-left text-[45px] flex flex-col flex-1 gap-[15px]">
+          <div className="h-full bg-blue  font-bold text-left text-[45px] flex flex-col flex-1 gap-[15px] mt-[-80px]">
             <p>1.{surname}</p>
             <p>2.{name}</p>
             <p>3.{birthDate}</p>
