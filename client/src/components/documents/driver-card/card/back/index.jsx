@@ -7,8 +7,10 @@ const DriverCardBack = ({ document }) => {
   return (
     <div className={`w-[2480px] h-[3498px] flex justify-center mt-[10px]`}>
       <div className="w-[1600px] h-[1000px] border-[6px] border-gray-400 mt-[10px] rounded-[50px] bg-silkBack bg-cover bg-no-repeat text-center px-[30px]">
-        <p className="text-[45px] mt-[20px]">DRIVER QUALIFICATION CARD</p>
-        <div className="flex justify-between p-[30px]">
+        <p className="text-[45px] mt-[20px] font-semibold">
+          DRIVER QUALIFICATION CARD
+        </p>
+        <div className="flex justify-between py-[30px] pr-[30px]">
           <div>
             <div className="text-[30px] font-semibold text-left mt-[30px] flex flex-col gap-[10px]">
               <p>1.Фамилия</p>
@@ -29,43 +31,51 @@ const DriverCardBack = ({ document }) => {
           <div className="text-[45px]">
             <table className="border-2 border-black">
               <tr>
-                <th className="px-[30px] border-2 border-black">
-                  8. Category <br /> Категории
-                </th>
-                <th className="px-[30px] border-2 border-black">
-                  9. Until <br /> До
-                </th>
+                <th className="px-[30px] border-2 border-black">8.</th>
+                <th className="px-[30px] border-2 border-black">9.</th>
               </tr>
               <tr>
-                <td className="px-[30px] border-2 border-black">C1</td>
+                <td className="px-[30px] border-2 border-black font-bold">
+                  C1
+                </td>
                 <td className="px-[30px] border-2 border-black"></td>
               </tr>
               <tr>
-                <td className="px-[30px] border-2 border-black">C</td>
+                <td className="px-[30px] border-2 border-black font-bold">C</td>
                 <td className="px-[30px] border-2 border-black">95.{to}</td>
               </tr>
               <tr>
-                <td className="px-[30px] border-2 border-black">D1</td>
+                <td className="px-[30px] border-2 border-black font-bold">
+                  D1
+                </td>
                 <td className="px-[30px] border-2 border-black"></td>
               </tr>
               <tr>
-                <td className="px-[30px] border-2 border-black">D</td>
+                <td className="px-[30px] border-2 border-black font-bold">D</td>
                 <td className="px-[30px] border-2 border-black"></td>
               </tr>
               <tr>
-                <td className="px-[30px] border-2 border-black">C1E</td>
+                <td className="px-[30px] border-2 border-black font-bold">
+                  C1E
+                </td>
                 <td className="px-[30px] border-2 border-black"></td>
               </tr>
               <tr>
-                <td className="px-[30px] border-2 border-black">CE</td>
+                <td className="px-[30px] border-2 border-black font-bold">
+                  CE
+                </td>
                 <td className="px-[30px] border-2 border-black">95.{to}</td>
               </tr>
               <tr>
-                <td className="px-[30px] border-2 border-black">D1E</td>
+                <td className="px-[30px] border-2 border-black font-bold">
+                  D1E
+                </td>
                 <td className="px-[30px] border-2 border-black"></td>
               </tr>
               <tr>
-                <td className="px-[30px] border-2 border-black">DE</td>
+                <td className="px-[30px] border-2 border-black font-bold">
+                  DE
+                </td>
                 <td className="px-[30px] border-2 border-black"></td>
               </tr>
             </table>
