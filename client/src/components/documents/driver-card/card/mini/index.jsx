@@ -3,11 +3,11 @@ import gerb from "@assets/images/gerb.png";
 import summarizeName from "@/helpers/summarizeName";
 import QRCode from "react-qr-code";
 
-const DriverCardMini = ({ document }) => {
+const DriverCardMini = ({ document, type }) => {
   const { name, surname, middlename, birthDate, from, to, id } = document;
   return (
     <>
-      <div className="w-[2480px] h-[3508px]">
+      <div className={`w-[2480px] ${type !== "search" && "h-[3508px]"}`}>
         <div className="w-[100%] h-[100%]">
           <div className="h-[1704px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
             <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[150px]">

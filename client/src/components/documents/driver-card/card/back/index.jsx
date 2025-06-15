@@ -1,11 +1,13 @@
 import React from "react";
 import QRCode from "react-qr-code";
 
-const DriverCardBack = ({ document }) => {
+const DriverCardBack = ({ document, type }) => {
   const { to, id } = document;
 
   return (
-    <div className={`w-[2480px] h-[3498px] flex justify-center mt-[10px]`}>
+    <div
+      className={`w-[2480px] ${type !== "search" && "h-[3508px]"} flex justify-center mt-[10px]`}
+    >
       <div className="w-[1600px] h-[1000px] border-[6px] border-gray-400 mt-[10px] rounded-[50px] bg-silkBack bg-cover bg-no-repeat text-center px-[30px]">
         <p className="text-[45px] mt-[70px] font-semibold">
           DRIVER QUALIFICATION CARD
