@@ -18,19 +18,19 @@ const DriverCardFront = ({ document, type }) => {
       className={`w-[2480px] ${type !== "search" && "h-[3508px]"} flex justify-center mt-[10px]`}
     >
       <div className="w-[1600px] h-[1000px] border-[6px] border-gray-400 mt-[10px] rounded-[50px] bg-silk bg-cover bg-no-repeat text-center px-[30px]">
-        <p className="text-[48px] font-bold mt-[30px]">
+        <p className="text-[44px] font-bold mt-[60px]">
           CERTIFICATE OF PROFESSIONAL COMPETENCE OF THE DRIVER
         </p>
         <p className="text-[45px] mt-[20px] font-semibold">
           DRIVER QUALIFICATION CARD
         </p>
         <div className="flex justify-between items-center mt-[50px] px-[60px]">
-          <div className="text-[60px] w-[155px] h-[110px] bg-ornate bg-cover bg-no-repeat flex items-center justify-center">
+          <div className="text-[60px] w-[155px] h-[110px] bg-ornate bg-cover bg-no-repeat flex items-center justify-center ml-[100px]">
             <p className="mt-[5px] text-blue-800 font-bold">UZ</p>
           </div>
           <img src={flag} alt="NT2022" className="w-[200px]" />
         </div>
-        <div className="h-[560px] flex items-center mt-[60px] mx-[50px] gap-[40px]">
+        <div className="h-[575px] flex items-center mt-[60px] mx-[50px] gap-[40px]">
           <div className="h-full w-[370px] flex flex-col">
             <div className="w-[370px] h-[700px] flex-1 bg-white border-[2px] border-black"></div>
             <p className="text-[50px] mt-[30px]">8.C/CE</p>
@@ -61,7 +61,7 @@ const DriverCardFront = ({ document, type }) => {
             </div>
           </div>
           <div className="h-full flex flex-col items-end justify-end">
-            <div className="bg-blue-500 text-white text-[35px] py-[20px] px-[40px] flex items-center justify-center rounded-ee-[30px] rounded-ss-[30px] mb-[500px]">
+            <div className="bg-blue-500 text-white text-[35px] py-[20px] px-[40px] flex items-center justify-center rounded-ee-[30px] rounded-ss-[30px] mb-[470px]">
               NT2022
             </div>
           </div>

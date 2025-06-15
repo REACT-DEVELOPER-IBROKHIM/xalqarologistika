@@ -10,8 +10,8 @@ const DriverCardMini = ({ document }) => {
       <div className="w-[2480px] h-[3508px]">
         <div className="w-[100%] h-[100%]">
           <div className="h-[1704px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[200px]">
-              <div className="flex-1 w-full ml-[-27px]">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[150px]">
+              <div className="flex-1 w-full">
                 <p className="text-[27px] mt-[30px] text-green-800 font-semibold">
                   Avtomobilda xalqaro tashuvchining kasbiy mahorat (KMS)
                   <br />
@@ -170,8 +170,8 @@ const DriverCardMini = ({ document }) => {
       <div className="w-[2480px] h-[3508px]">
         <div className="w-[100%] h-[100%]">
           <div className="h-[1704px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[200px]">
-              <div className="flex-1 w-full ml-[-27px]">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[150px]">
+              <div className="flex-1 w-full">
                 <p className="text-[27px] mt-[30px] text-green-800 font-semibold">
                   <span>СЕРТИФИКАТ</span>
                   <br /> профессиональной компетентности <br /> (СПК)
