@@ -48,7 +48,9 @@ const DriverCertificateBottom = ({ document, type }) => {
                 <p className="text-[60px] font-bold mb-[100px]">
                   {"MO №" + id}
                 </p>
-                <p className="text-[60px] border-b-[1px] border-black font-bold">
+                <p
+                  className={`${summarizeName(name, surname, middlename).length > 35 ? "text-[50px]" : "text-[60px]"} border-b-[1px] border-black font-bold`}
+                >
                   {summarizeName(name, surname, middlename)}
                 </p>
                 <p className="text-[35px] mt-[20px]">
