@@ -17,7 +17,7 @@ const DriverCardMini = ({ document, type }) => {
                   <br />
                   <span>SERTIFIKATI</span>
                 </p>
-                <div className="text-[30px] text-left my-[50px] text-green-900 leading-[70px]">
+                <div className="text-[32px] text-left my-[50px] text-green-900 leading-[70px]">
                   <p>
                     Berildi{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold uppercase">
@@ -49,7 +49,7 @@ const DriverCardMini = ({ document, type }) => {
                     sifatida kasbiy faoliyat uchun malakali deb e'tirof etildi.
                   </p>
                 </div>
-                <div className="text-[30px] text-center my-[50px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
+                <div className="text-[32px] text-center my-[50px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
                   <div className="flex gap-5">
                     Berilgan sana:
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
@@ -115,7 +115,7 @@ const DriverCardMini = ({ document, type }) => {
                 </div>
               </div>
             </div>
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[200px]">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[150px]">
               <div className="flex-1 w-full px-[30px] text-center flex flex-col items-center">
                 <img
                   src={gerb}
@@ -127,41 +127,41 @@ const DriverCardMini = ({ document, type }) => {
                   <p>Республика Узбекистан</p>
                   <p>The republic of uzbekistan</p>
                 </div>
-                <div className="w-full text-[27px] border-b-[1px] border-gray-600 pb-[4px] mb-[10px] mt-[30px]">
+                <div className="w-full text-[30px] border-b-[1px] border-gray-600 pb-[4px] mb-[10px] mt-[30px]">
                   NAMANGANTRANS 2022
                 </div>
                 <p className="text-[16px] italic text-green-900">
                   (o'quv muassasasi nomi)
                 </p>
-                <div className="w-full text-[27px] border-b-[1px] border-gray-600 pb-[4px] mb-[10px] mt-[30px]">
+                <div className="w-full text-[30px] border-b-[1px] border-gray-600 pb-[4px] mb-[10px] mt-[30px]">
                   НАМАНГАНТРАНС 2022
                 </div>
                 <p className="text-[16px] italic text-green-900">
                   (образовательное учреждение)
                 </p>
-                <div className="w-full text-[27px] border-b-[1px] border-gray-600 pb-[4px] mb-[10px] mt-[30px]">
+                <div className="w-full text-[30px] border-b-[1px] border-gray-600 pb-[4px] mb-[10px] mt-[30px]">
                   NAMANGANTRANS 2022
                 </div>
                 <p className="text-[16px] italic text-green-900">
                   (the name of the educational school)
                 </p>
-                <p className="text-[27px] mt-[30px] text-green-800 font-semibold">
+                <p className="text-[30px] mt-[30px] text-green-800 font-semibold">
                   Avtomobilda xalqaro tashuvchining kasbiy mahorat (KMS)
                   <br />
                   <span>SERTIFIKATI</span>
                 </p>
-                <p className="text-[27px] mt-[30px] text-green-800 font-semibold">
+                <p className="text-[30px] mt-[30px] text-green-800 font-semibold">
                   <span>СЕРТИФИКАТ</span>
                   <br /> профессиональной компетентности <br /> (СПК)
                   международного автомобильного перевозчика
                 </p>
-                <p className="text-[27px] mt-[30px] text-green-800 font-semibold">
+                <p className="text-[30px] mt-[30px] text-green-800 font-semibold">
                   <span>CERTIFICATE</span> <br /> of Professional Competence
                   (CPC) <br /> for international road transport
                 </p>
-                <p className="text-[20px] mt-[60px] text-green-900">Shahar</p>
-                <p className="text-[20] text-green-900">Город</p>
-                <p className="text-[20] text-green-900">City</p>
+                <p className="text-[24px] mt-[60px] text-green-900">Shahar</p>
+                <p className="text-[24px] text-green-900">Город</p>
+                <p className="text-[24px] text-green-900">City</p>
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@ const DriverCardMini = ({ document, type }) => {
                   <br /> профессиональной компетентности <br /> (СПК)
                   международного автомобильного перевозчика
                 </p>
-                <div className="text-[30px] text-left my-[50px] text-green-900 leading-[70px]">
+                <div className="text-[32px] text-left my-[50px] text-green-900 leading-[70px]">
                   <p>
                     Выдано{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold uppercase">
@@ -208,7 +208,7 @@ const DriverCardMini = ({ document, type }) => {
                     </span>
                   </p>
                 </div>
-                <div className="text-[30px] text-center my-[20px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
+                <div className="text-[32px] text-center my-[20px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
                   <div className="flex gap-5">
                     Выдано:
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
@@ -267,7 +267,7 @@ const DriverCardMini = ({ document, type }) => {
                       М.П.
                     </p>
                     <QRCode
-                      className="w-[100px] h-[100px]"
+                      className="w-[200px] h-[200px]"
                       value={`https://www.xalqarologistika.uz/check-certificates/${id}`}
                     />
                   </div>
@@ -280,13 +280,13 @@ const DriverCardMini = ({ document, type }) => {
                 </div>
               </div>
             </div>
-            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[200px]">
+            <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[150px]">
               <div className="flex-1 w-full">
                 <p className="text-[27px] mt-[30px] text-green-800 font-semibold">
                   <span>CERTIFICATE</span> <br /> of Professional Competence
                   (CPC) <br /> for international road transport
                 </p>
-                <div className="text-[30px] text-left my-[50px] text-green-900 leading-[70px]">
+                <div className="text-[32px] text-left my-[50px] text-green-900 leading-[70px]">
                   <p>
                     Issued to{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold uppercase">
@@ -300,8 +300,7 @@ const DriverCardMini = ({ document, type }) => {
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {from.split(".")[2]}
                     </span>{" "}
-                    ; <br />
-                    date:{" "}
+                    ; date:{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {" "}
                       {from.split(".")[0]}.{from.split(".")[1]}
@@ -317,7 +316,7 @@ const DriverCardMini = ({ document, type }) => {
                     </span>
                   </p>
                 </div>
-                <div className="text-[25px] text-center my-[50px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
+                <div className="text-[32px] text-center my-[50px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
                   <div className="flex gap-5">
                     Issued by:
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
