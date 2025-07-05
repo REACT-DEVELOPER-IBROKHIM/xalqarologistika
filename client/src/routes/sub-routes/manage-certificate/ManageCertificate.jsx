@@ -18,8 +18,6 @@ const ManageCertificates = () => {
     }
   }, [pathname]);
 
-  console.log(pathname);
-
   return (
     <div className="flex flex-col">
       <nav className="bg-white flex items-center shadow-3xl mb-4 p-2 px-8">
