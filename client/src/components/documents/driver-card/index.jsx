@@ -2,9 +2,9 @@ import { forwardRef } from "react";
 import DriverCardFront from "./card/front";
 import DriverCardBack from "./card/back";
 import DriverCardMini from "./card/mini";
+import CPC from "./card/cpc";
 
 const DriverCertificateCard = forwardRef(({ document, type }, ref) => {
-  console.log("DriverCertificateCard", document, type);
   return (
     <div
       ref={ref}
@@ -13,6 +13,7 @@ const DriverCertificateCard = forwardRef(({ document, type }, ref) => {
       <DriverCardFront document={document} type={type} />
       <DriverCardBack document={document} type={type} />
       <DriverCardMini document={document} type={type} />
+      <CPC document={document} type={type} />
     </div>
   );
 });

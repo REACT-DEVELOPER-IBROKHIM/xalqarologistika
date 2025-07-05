@@ -8,13 +8,6 @@ import { setDataToLocalStorage } from "@/helpers/localStorageActions";
 const { Item } = Form;
 
 const EditForm = ({ setDocument, document, form, documentType }) => {
-  const onFinish = (values) => {
-    console.log("Success:", values);
-  };
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
-
   const handleValuesChange = (values) => {
     setDocument({ ...document, ...values });
     setDataToLocalStorage("currentDocument", { ...document, ...values });

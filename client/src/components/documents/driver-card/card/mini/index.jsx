@@ -167,7 +167,7 @@ const DriverCardMini = ({ document, type }) => {
           </div>
         </div>
       </div>
-      <div className="w-[2480px] h-[3508px]">
+      <div className={`w-[2480px] ${type !== "search" && "h-[3508px]"}`}>
         <div className="w-[100%] h-[100%]">
           <div className="h-[1704px] w-full flex bg-pattern bg-cover bg-center bg-no-repeat">
             <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[150px]">

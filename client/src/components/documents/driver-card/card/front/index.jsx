@@ -12,7 +12,6 @@ const DriverCardFront = ({ document, type }) => {
     signature,
     driverLicenceNumber,
   } = document;
-  console.log(document);
   return (
     <div
       className={`w-[2480px] ${type !== "search" && "h-[3508px]"} flex justify-center mt-[10px]`}
