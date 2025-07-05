@@ -38,9 +38,7 @@ const EditForm = ({ setDocument, document, form, documentType }) => {
         to: document?.to ? dayjs(document.to, DATE_FORMAT) : null,
       }}
       layout="vertical"
-      onFinish={onFinish}
       onValuesChange={handleValuesChange}
-      onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       <div className="flex justify-between gap-10">
