@@ -1,5 +1,5 @@
 import React from "react";
-import gerb from "@assets/images/gerb.png";
+import gerbWithFlag from "@assets/images/gerb-with-flag.png";
 import summarizeName from "@/helpers/summarizeName";
 import QRCode from "react-qr-code";
 
@@ -118,9 +118,9 @@ const DriverCardMini = ({ document, type }) => {
             <div className="w-[50%] h-[1504px] text-center flex flex-col items-center py-[250px] px-[150px]">
               <div className="flex-1 w-full px-[30px] text-center flex flex-col items-center">
                 <img
-                  src={gerb}
+                  src={gerbWithFlag}
                   alt=""
-                  className="w-[150px] h-[150px] mt-[50px]"
+                  className="w-[850px] h-[250px] mt-[50px]"
                 />
                 <div className="text-[30px] mt-[50px] mb-[30px] text-green-800 font-semibold flex flex-col gap-5 uppercase">
                   <p>O'zbekiston respublikasi</p>
