@@ -1,0 +1,23 @@
+previews:
+  generation: automatic
+
+services:
+  # Backend: Node / Express server
+  - type: web
+    name: ntl-server
+    runtime: node
+    plan: standard
+    buildCommand: cd server && npm ci
+    startCommand: cd server && node index.js
+    envVars:
+      - key: PORT
+        value: "4000"
+      - key: MONGO_URI
+        value: "mongodb+srv://ibrokhim:Ibrokhim1234@base.agtyh.mongodb.net/NTL?retryWrites=true&w=majority"
+      - key: JWT_SECRET
+        generateValue: true
+    healthCheckPath: /
+# Notes:
+# - Replace <YOUR_MONGODB_CONNECTION_STRING> with a real MongoDB URI (Atlas or self-hosted).
+# - After deploying, update `API_BASE_URL` to the server's actual public URL or a custom domain.
+# - If you prefer the server to use a process manager, adjust `startCommand` (for example `pm2 start`).
