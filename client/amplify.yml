@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+env:
+  variables:
+    VITE_API_URL: $VITE_API_URL
+    VITE_EDENAI_API_KEY: $VITE_EDENAI_API_KEY
+    VITE_CHAT_ID: $VITE_CHAT_ID
+    VITE_BOT_ID: $VITE_BOT_ID
+    GENERATE_SOURCEMAP: FALSE
