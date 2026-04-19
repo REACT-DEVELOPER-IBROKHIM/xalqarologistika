@@ -4,7 +4,7 @@ import axios from "@api";
 export async function uploadSignature(id, type, file) {
   const authResponse = await resolve(
     fetch(
-      `${import.meta.env.VITE_API_URL}upload/signature?id=` +
+      `${import.meta.env.VITE_API_URL}/upload/signature?id=` +
         id +
         "&type=" +
         type,
