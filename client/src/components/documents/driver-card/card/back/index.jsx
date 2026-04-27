@@ -14,7 +14,7 @@ const DriverCardBack = ({ document, type }) => {
         </p>
         <div className="flex py-[30px] pr-[30px]">
           <div>
-            <div className="text-[30px] font-semibold text-left ml-[10px] mt-[30px] flex flex-col gap-[10px]">
+            <div className="text-[34px] font-semibold text-left ml-[10px] mt-[30px] flex flex-col gap-[10px]">
               <p>1.Фамилия</p>
               <p>2.Имя</p>
               <p>3.Дата рождения</p>
@@ -30,7 +30,7 @@ const DriverCardBack = ({ document, type }) => {
               <p>10.Вносится отметка сертификатя СРС</p>
             </div>
           </div>
-          <div className="text-[45px] ml-[230px]">
+          <div className="text-[45px] ml-[260px]">
             <table className="border-2 border-black">
               <tr>
                 <th className="px-[30px] border-2 border-black">8.</th>
