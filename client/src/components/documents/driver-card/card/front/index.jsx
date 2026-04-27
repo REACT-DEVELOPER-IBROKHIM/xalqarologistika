@@ -17,7 +17,7 @@ const DriverCardFront = ({ document, type }) => {
       className={`w-[2480px] ${type !== "search" && "h-[3508px]"} flex justify-center mt-[10px]`}
     >
       <div className="w-[1600px] h-[1000px] border-[6px] border-gray-400 mt-[10px] rounded-[50px] bg-silk bg-cover bg-no-repeat text-center px-[30px]">
-        <p className="text-[40px] font-black mt-[60px]">
+        <p className="text-[44px] font-black mt-[60px]">
           CERTIFICATE OF PROFESSIONAL COMPETENCE OF THE DRIVER
         </p>
         <p className="text-[45px] mt-[20px] font-bold">
@@ -32,9 +32,9 @@ const DriverCardFront = ({ document, type }) => {
         <div className="h-[575px] flex items-center mt-[60px] mx-[50px] gap-[40px]">
           <div className="h-full w-[370px] flex flex-col">
             <div className="w-[370px] h-[700px] flex-1 bg-white border-[2px] border-black"></div>
-            <p className="text-[50px] mt-[30px] mb-[10px]">8.C/CE</p>
+            <p className="text-[50px] mt-[20px] mb-[20px]">8.C/CE</p>
           </div>
-          <div className="h-full bg-blue  font-bold text-left text-[45px] flex flex-col flex-1 gap-[15px] mt-[-80px]">
+          <div className="h-full bg-blue  font-bold text-left text-[48px] flex flex-col flex-1 gap-[15px] mt-[-80px]">
             <p>1.{surname}</p>
             <p>2.{name}</p>
             <p>3.{birthDate}</p>
@@ -42,7 +42,7 @@ const DriverCardFront = ({ document, type }) => {
               <p>4a.{from}</p>
               <p>4b.{to}</p>
             </div>
-            <p>4c.LTD "NAMANGANTRANS 2022"</p>
+            <p className="text-[46px]">4c.LTD "NAMANGANTRANS 2022"</p>
             <div className="flex gap-10">
               <p>5a.{driverLicenceNumber}</p> <p>5b.{id}</p>
             </div>

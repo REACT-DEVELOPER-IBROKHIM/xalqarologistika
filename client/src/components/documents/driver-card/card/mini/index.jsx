@@ -17,7 +17,7 @@ const DriverCardMini = ({ document, type }) => {
                   <br />
                   <span>SERTIFIKATI</span>
                 </p>
-                <div className="text-[32px] text-left my-[50px] text-green-900 leading-[70px]">
+                <div className="text-[36px] text-left my-[50px] text-green-900 leading-[70px]">
                   <p>
                     Berildi{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold uppercase">
@@ -84,8 +84,8 @@ const DriverCardMini = ({ document, type }) => {
                   </p>
                   <div className="flex items-center gap-5">
                     <div className="flex gap-5">
-                      <p className="mt-[50px] font-bold text-[30px] text-green-900">
-                        Rahbar:{" "}
+                      <p className="mt-[50px] font-bold text-[20px] text-green-900">
+                        Rahbar (Руководитель, Director):{" "}
                       </p>
                       <div className="mt-[40px]">
                         <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[80px] font-bold"></span>
@@ -103,15 +103,12 @@ const DriverCardMini = ({ document, type }) => {
                       </p>
                     </div>
                   </div>
-                  <p className="text-[22px] self-start ml-[30px] mt-[30px] text-green-800">
-                    M.O'.
-                  </p>
-                  <div className="w-full text-[25px] border-b-[1px] border-gray-600 pb-[4px] mb-[10px] mt-[50px]">
-                    Namangan
-                  </div>
-                  <p className="text-[16px] italic text-green-900">
-                    (berilgan joyi)
-                  </p>
+                 <div className="flex w-full justify-end">
+                   <QRCode
+                    className="w-[250px] h-[250px]"
+                    value={`https://www.xalqarologistika.uz/check-certificates/${id}`}
+                  />
+                 </div>
                 </div>
               </div>
             </div>
@@ -122,7 +119,7 @@ const DriverCardMini = ({ document, type }) => {
                   alt=""
                   className="w-[850px] h-[250px] mt-[50px]"
                 />
-                <div className="text-[30px] mt-[50px] mb-[30px] text-green-800 font-semibold flex flex-col gap-5 uppercase">
+                <div className="text-[45px] mt-[50px] mb-[30px] text-green-800 font-semibold flex flex-col gap-5 uppercase">
                   <p>O'zbekiston respublikasi</p>
                   <p>Республика Узбекистан</p>
                   <p>The republic of uzbekistan</p>
@@ -177,7 +174,7 @@ const DriverCardMini = ({ document, type }) => {
                   <br /> профессиональной компетентности <br /> (СПК)
                   международного автомобильного перевозчика
                 </p>
-                <div className="text-[32px] text-left my-[50px] text-green-900 leading-[70px]">
+                <div className="text-[36px] text-left my-[50px] text-green-900 leading-[70px]">
                   <p>
                     Выдано{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold uppercase">
@@ -241,42 +238,6 @@ const DriverCardMini = ({ document, type }) => {
                       {id}
                     </span>
                   </p>
-                  <div className="flex items-center gap-5">
-                    <div className="flex gap-5">
-                      <p className="mt-[50px] font-bold text-[30px] text-green-900">
-                        Руководитель:{" "}
-                      </p>
-                      <div className="mt-[40px]">
-                        <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[80px] font-bold"></span>
-                        <p className="text-[16px] italic text-green-900">
-                          (подпись)
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-[40px]">
-                      <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[100px] font-bold">
-                        B.Muhitdinov
-                      </span>
-                      <p className="text-[16px] italic text-green-900">
-                        ( имя, фамилия )
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center w-full">
-                    <p className="text-[22px] self-start ml-[30px] mt-[30px] text-green-800">
-                      М.П.
-                    </p>
-                    <QRCode
-                      className="w-[200px] h-[200px]"
-                      value={`https://www.xalqarologistika.uz/check-certificates/${id}`}
-                    />
-                  </div>
-                  <div className="w-full text-[25px] border-b-[1px] border-gray-600 pb-[4px] mt-[-30px]">
-                    Наманган
-                  </div>
-                  <p className="text-[16px] italic text-green-900">
-                    (место выдачи)
-                  </p>
                 </div>
               </div>
             </div>
@@ -286,7 +247,7 @@ const DriverCardMini = ({ document, type }) => {
                   <span>CERTIFICATE</span> <br /> of Professional Competence
                   (CPC) <br /> for international road transport
                 </p>
-                <div className="text-[32px] text-left my-[50px] text-green-900 leading-[70px]">
+                <div className="text-[36px] text-left my-[50px] text-green-900 leading-[70px]">
                   <p>
                     Issued to{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold uppercase">
@@ -348,36 +309,6 @@ const DriverCardMini = ({ document, type }) => {
                     <span className="text-bold text-black !font-mono text-[35px]">
                       {id}
                     </span>
-                  </p>
-                  <div className="flex items-center gap-5">
-                    <div className="flex gap-5">
-                      <p className="mt-[50px] font-bold text-[30px] text-green-900">
-                        Director:{" "}
-                      </p>
-                      <div className="mt-[40px]">
-                        <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[80px] font-bold"></span>
-                        <p className="text-[16px] italic text-green-900">
-                          (signature)
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-[40px]">
-                      <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[100px] font-bold">
-                        B.Muhitdinov
-                      </span>
-                      <p className="text-[16px] italic text-green-900">
-                        ( name, surname )
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-[22px] self-start ml-[30px] mt-[30px] text-green-800">
-                    P.S.
-                  </p>
-                  <div className="w-full text-[25px] border-b-[1px] border-gray-600 pb-[4px] mb-[10px] mt-[50px]">
-                    Namangan
-                  </div>
-                  <p className="text-[16px] italic text-green-900">
-                    (place of issue)
                   </p>
                 </div>
               </div>
