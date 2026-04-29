@@ -18,10 +18,10 @@ const AdrCertificateFront = ({ document, type }) => {
           </div>
           <p className="text-[50px] font-bold ml-[-200px]">1.Nr. {id}</p>
           <div>
-            {Number(id) > 891 && (
+            {Number(id) >= 0 && (
               <img src={flag} alt="NT2022" className="w-[200px]" />
             )}
-            {Number(id) <= 891 && (
+            {Number(id) < 0 && (
               <div className="bg-blue-500 text-white text-[50px] py-[25px] px-[40px] flex items-center justify-center rounded-ee-[30px] rounded-ss-[30px]">
                 NT2022
               </div>
@@ -48,7 +48,7 @@ const AdrCertificateFront = ({ document, type }) => {
             </div>
           </div>
           <div className="h-full flex flex-col items-end justify-end">
-            {Number(id) > 891 && (
+            {Number(id) >= 0 && (
               <div className="bg-blue-500 text-white text-[35px] py-[25px] px-[40px] flex items-center justify-center rounded-ee-[30px] rounded-ss-[30px] mb-[40px]">
                 NT2022
               </div>
