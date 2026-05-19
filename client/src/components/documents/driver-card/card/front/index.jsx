@@ -48,7 +48,7 @@ const DriverCardFront = ({ document, type }) => {
             </div>
             <div className="flex items-center gap-5 mt-[10px]">
               7.
-              <div className="w-[300px] h-[100px] bg-white border-[2px] border-black">
+              <div className="w-[290px] h-[100px] bg-white border-[2px] border-black">
                 <img
                   width={"100%"}
                   height={"80%"}
