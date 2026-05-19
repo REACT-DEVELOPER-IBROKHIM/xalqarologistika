@@ -277,7 +277,7 @@ const DriverCardMini = ({ document, type }) => {
                     </span>
                   </p>
                 </div>
-                <div className="text-[32px] text-center my-[50px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
+                <div className="text-[32px] text-center my-[250px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
                   <div className="flex gap-5">
                     Issued by:
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
@@ -304,7 +304,7 @@ const DriverCardMini = ({ document, type }) => {
                     </span>
                     - year
                   </div>
-                  <p className="mt-[50px] font-bold text-[30px] text-green-900">
+                  <p className="mt-[20px] font-bold text-[30px] text-green-900">
                     IRT №{" "}
                     <span className="text-bold text-black !font-mono text-[35px]">
                       {id}
