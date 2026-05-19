@@ -41,7 +41,7 @@ const DriverCardMini = ({ document, type }) => {
                       tashishlar bo'yicha malakasini oshirish
                     </span>
                     dasturi bo'yicha malaka imtihonini topshirdi (sana{" "}
-                    {from.split(".")[2]}-yil, {from.split(".")[0]}.
+                    {from.split(".")[2]}-yilda, {from.split(".")[0]}.
                     {from.split(".")[1]}) va{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       haydovchi
@@ -74,7 +74,7 @@ const DriverCardMini = ({ document, type }) => {
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {to.split(".")[2]}
                     </span>
-                    - yil
+                    - yilgacha
                   </div>
                   <p className="mt-[50px] font-bold text-[30px] text-green-900">
                     XT №{" "}
@@ -103,12 +103,12 @@ const DriverCardMini = ({ document, type }) => {
                       </p>
                     </div>
                   </div>
-                 <div className="flex w-full justify-end">
-                   <QRCode
-                    className="w-[250px] h-[250px]"
-                    value={`https://www.xalqarologistika.uz/check-certificates/${id}`}
-                  />
-                 </div>
+                  <div className="flex w-full justify-end">
+                    <QRCode
+                      className="w-[250px] h-[250px]"
+                      value={`https://www.xalqarologistika.uz/check-certificates/${id}`}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -184,7 +184,7 @@ const DriverCardMini = ({ document, type }) => {
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {birthDate}
                     </span>
-                    сдал (а) квалификационный экзамен (год:
+                    сдал (а) квалификационный экзамен (годy:
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {from.split(".")[2]}
                     </span>{" "}
@@ -217,7 +217,7 @@ const DriverCardMini = ({ document, type }) => {
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {from.split(".")[2]}
                     </span>
-                    - год
+                    - годy
                   </div>
                   <div className="flex gap-5 mt-[20px]">
                     Действителен до:
@@ -230,7 +230,7 @@ const DriverCardMini = ({ document, type }) => {
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {to.split(".")[2]}
                     </span>
-                    - год
+                    - годa
                   </div>
                   <p className="mt-[20px] font-bold text-[30px] text-green-900">
                     МП №{" "}
@@ -277,7 +277,7 @@ const DriverCardMini = ({ document, type }) => {
                     </span>
                   </p>
                 </div>
-                <div className="text-[32px] text-center my-[50px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
+                <div className="text-[32px] text-center my-[250px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
                   <div className="flex gap-5">
                     Issued by:
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
@@ -304,7 +304,7 @@ const DriverCardMini = ({ document, type }) => {
                     </span>
                     - year
                   </div>
-                  <p className="mt-[50px] font-bold text-[30px] text-green-900">
+                  <p className="mt-[20px] font-bold text-[30px] text-green-900">
                     IRT №{" "}
                     <span className="text-bold text-black !font-mono text-[35px]">
                       {id}
