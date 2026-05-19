@@ -196,12 +196,12 @@ const DriverCardMini = ({ document, type }) => {
                     ) на профессиональную компетентность и признан(а)
                     квалифицированным(ой) для профессиональной работы в качестве
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
-                      водителя
+                      Bодителя
                     </span>
                     По программе{" "}
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       Повышение квалификации водителей автомобильного транспорта
-                      при межд. авт. перевозка
+                      при осуществлении международных автомобильных перевозок
                     </span>
                   </p>
                 </div>
@@ -219,7 +219,7 @@ const DriverCardMini = ({ document, type }) => {
                     </span>
                     - годy
                   </div>
-                  <div className="flex gap-5 mt-[20px]">
+                  <div className="flex gap-5 mt-[50px]">
                     Действителен до:
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       {to.split(".")[0]}
@@ -232,7 +232,7 @@ const DriverCardMini = ({ document, type }) => {
                     </span>
                     - годa
                   </div>
-                  <p className="mt-[20px] font-bold text-[30px] text-green-900">
+                  <p className="mt-[100px] font-bold text-[30px] text-green-900">
                     МП №{" "}
                     <span className="text-bold text-black !font-mono text-[35px]">
                       {id}
@@ -271,13 +271,16 @@ const DriverCardMini = ({ document, type }) => {
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       driver
                     </span>
+                    <br />
                     on program
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
                       On training for drivers of international road transport
                     </span>
                   </p>
                 </div>
-                <div className="text-[32px] text-center my-[250px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
+                <div className="w-[800px] h-[5px] bg-gray-300 mt-[50px] ml-[50px]"></div>
+                <div className="w-[800px] h-[5px] bg-gray-300 mt-[50px] ml-[50px]"></div>
+                <div className="text-[32px] text-center my-[100px] text-green-900 leading-[40px] font-bold flex flex-col items-center">
                   <div className="flex gap-5">
                     Issued by:
                     <span className="border-b-[1px] border-gray-600 text-center pb-[4px] text-black px-[30px] font-bold">
@@ -304,7 +307,7 @@ const DriverCardMini = ({ document, type }) => {
                     </span>
                     - year
                   </div>
-                  <p className="mt-[20px] font-bold text-[30px] text-green-900">
+                  <p className="mt-[80px] font-bold text-[30px] text-green-900">
                     IRT №{" "}
                     <span className="text-bold text-black !font-mono text-[35px]">
                       {id}
