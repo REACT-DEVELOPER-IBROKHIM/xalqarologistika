@@ -23,20 +23,20 @@ const whitelist = [
     'https://xalqarologistika.uz',
     'http://localhost:5173',
 ]
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (!origin || whitelist.indexOf(origin) !== -1) {
-            callback(null, true)
-        } else {
-            callback(new Error('Not allowed by CORS'))
-        }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-}
-
-app.options('*', cors(corsOptions))
-app.use(cors(corsOptions))
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            // Brauzerdan tashqari so'rovlar (masalan, Postman) uchun origin 'undefined' bo'ladi
+            if (!origin || whitelist.indexOf(origin) !== -1) {
+                callback(null, true)
+            } else {
+                callback(new Error('Not allowed by CORS'))
+            }
+        },
+        // Muammoni hal qiluvchi qism: sarlavhalarga ruxsat berish
+        allowedHeaders: ['Content-Type', 'Authorization', 'access-control-allow-origin']
+    })
+)
 
 app.use(express.json())
 
