@@ -9,13 +9,15 @@ const router = express.Router()
 
 const s3 = new S3Client({
     region: process.env.AWS_REGION,
-    credentials: {
-        accessKeyId: process.env.ACCESS_KEY_ID,
-        secretAccessKey: process.env.SECRET_ACCESS_KEY,
-    },
+    ...(process.env.ACCESS_KEY_ID && process.env.SECRET_ACCESS_KEY
+        ? {
+              credentials: {
+                  accessKeyId: process.env.ACCESS_KEY_ID.trim(),
+                  secretAccessKey: process.env.SECRET_ACCESS_KEY.trim(),
+              },
+          }
+        : {}),
 })
-
-console.log("cred", process.env.AWS_REGION, process.env.ACCESS_KEY_ID, process.env.SECRET_ACCESS_KEY)
 
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
