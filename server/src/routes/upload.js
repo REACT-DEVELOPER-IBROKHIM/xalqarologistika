@@ -1,18 +1,21 @@
 require('dotenv').config()
 const express = require('express')
 const multer = require('multer')
-const AWS = require('aws-sdk')
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3')
 const DriverCertificate = require('../models/DriverCertificates')
 const DriverCardCertificate = require('../models/DriverCardCertificate')
 const AdrCertificate = require('../models/AdrCertificates')
 const router = express.Router()
 
-const spacesEndpoint = new AWS.Endpoint(process.env.ORIGIN_ENDPOINT)
-const s3 = new AWS.S3({
-    endpoint: spacesEndpoint,
-    accessKeyId: process.env.ACCESS_KEY_ID,
-    secretAccessKey: process.env.SECRET_KEY,
+const s3 = new S3Client({
+    region: process.env.AWS_REGION,
+    credentials: {
+        accessKeyId: process.env.ACCESS_KEY_ID,
+        secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    },
 })
+
+console.log("cred", process.env.AWS_REGION, process.env.ACCESS_KEY_ID, process.env.SECRET_ACCESS_KEY)
 
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
@@ -26,38 +29,39 @@ router.post('/signature', upload.single('file'), async (req, res) => {
         return res.status(400).send('No file uploaded.')
     }
 
+    const key = file.originalname + Date.now()
+
     const params = {
-        Bucket: process.env.SPACE_BUCKET,
-        Key: file.originalname + Date.now(),
+        Bucket: process.env.AWS_BUCKET,
+        Key: key,
         Body: file.buffer,
-        ACL: 'public-read',
+        ContentType: file.mimetype,
     }
 
-    s3.upload(params, async (err, data) => {
-        if (err) {
-            console.log(
-                'Error occured while trying to upload to S3 bucket',
-                err
-            )
-            return res.status(500).send('Failed to upload')
-        }
+    try {
+        await s3.send(new PutObjectCommand(params))
+
+        const location = `https://${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`
 
         if (type === 'drivercard') {
             await DriverCardCertificate.findByIdAndUpdate(id, {
-                signature: data.Location,
+                signature: location,
             })
         } else if (type === 'driver') {
             await DriverCertificate.findByIdAndUpdate(id, {
-                signature: data.Location,
+                signature: location,
             })
         } else if (type === 'adr') {
             await AdrCertificate.findByIdAndUpdate(id, {
-                signature: data.Location,
+                signature: location,
             })
         }
 
-        res.send('File uploaded successfully! File URL: ' + data.Location)
-    })
+        res.send('File uploaded successfully! File URL: ' + location)
+    } catch (err) {
+        console.log('Error occured while trying to upload to S3 bucket', err)
+        return res.status(500).send('Failed to upload')
+    }
 })
 
 router.delete('/signature', async (req, res) => {

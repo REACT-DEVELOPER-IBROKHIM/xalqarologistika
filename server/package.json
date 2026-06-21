@@ -12,7 +12,7 @@
     "license": "ISC",
     "dependencies": {
         "@remove-background-ai/rembg.js": "^1.1.9",
-        "aws-sdk": "^2.1692.0",
+        "@aws-sdk/client-s3": "^3.0.0",
         "bcrypt": "^5.1.1",
         "cors": "^2.8.5",
         "dotenv": "^16.3.1",
