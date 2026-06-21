@@ -23,20 +23,21 @@ const whitelist = [
     'https://xalqarologistika.uz',
     'http://localhost:5173',
 ]
-app.use(
-    cors({
-        origin: function (origin, callback) {
-            if (!origin || whitelist.indexOf(origin) !== -1) {
-                callback(null, true)
-            } else {
-                callback(new Error('Not allowed by CORS'))
-            }
-        },
-        credentials: true,
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-        allowedHeaders: ['Content-Type', 'Authorization'],
-    })
-)
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}
+
+app.options('*', cors(corsOptions))
+app.use(cors(corsOptions))
 
 app.use(express.json())
 
