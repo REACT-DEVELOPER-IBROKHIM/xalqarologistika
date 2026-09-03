@@ -48,13 +48,11 @@ const DriverCardFront = ({ document, type }) => {
             </div>
             <div className="flex items-center gap-5 mt-[10px]">
               7.
-              <div className="w-[290px] h-[100px] bg-white border-[2px] border-black">
+              <div className="w-[290px] h-[100px] bg-white border-[2px] border-black overflow-hidden flex items-center justify-center">
                 <img
-                  width={"100%"}
-                  height={"80%"}
                   src={signature}
                   alt=""
-                  className="scale-[0.7]"
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
             </div>
