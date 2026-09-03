@@ -43,7 +43,9 @@ const Search = () => {
       <div className="search-certificate">
         {!loading && document ? (
           <div className="search-certificate__content">
-            <div className={`search-wrapper`}>
+            <div
+              className={`search-wrapper ${document.id?.startsWith("DC") ? "search-wrapper--driver-card" : ""}`}
+            >
               <div
                 className={`w-full h-full absolute top-0 left-0 z-10 ${!isCertificateValid ? "backdrop-blur-[20px]" : ""}`}
               ></div>
