@@ -16,12 +16,13 @@ const EditForm = ({ setDocument, document, form, documentType }) => {
   const validateInput = (_, value) => {
     const pattern1 = /^D\d{4}$/;
     const pattern2 = /^\d{6}$/;
+    const pattern3 = /^DC\d{6}$/;
 
-    if (pattern1.test(value) || pattern2.test(value)) {
+    if (pattern1.test(value) || pattern2.test(value) || pattern3.test(value)) {
       return Promise.resolve();
     }
 
-    return Promise.reject(new Error('Shu formatda kiriting "D0001", "000001"'));
+    return Promise.reject(new Error('Shu formatda kiriting "D0001", "000001", "DC000000"'));
   };
 
   return (
